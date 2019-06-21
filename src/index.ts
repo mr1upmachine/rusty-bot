@@ -1,27 +1,26 @@
-import { config } from 'dotenv';
-config();
-
 import { Client } from 'discord.js';
+import { config } from 'dotenv';
 
 const client = new Client();
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
+config();
 
 client.on('message', (msg) => {
-  if (msg.content === 'ping') {
-    msg.react('👍');
-    msg.channel.send('message');
+  // TODO add custom prefix & configurable prefix support
+  const prefix = '!';
+  if (msg.content[0] !== prefix) { return; }
+
+  const args = msg.content.trim().split(' '); // Setting-up arguments of command
+  const cmd = (args.shift() || '').toLowerCase(); // LowerCase command
+
+  try {
+    const commandFile = require(`./commands/${cmd}.js`); // Require command from folder
+    commandFile.run(client, msg, args); // Pass four args into 'command'.js and run it
+  } catch (e) {
+    return;
   }
 });
 
-// client.on('messageReactionAdd', (msgReaction, user) => {
-//   console.log('user add', user);
-// });
-
-// client.on('messageReactionRemove', (msgReaction, user) => {
-//   console.log('user remove', user);
-// });
-
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.TOKEN).then(() => {
+  // tslint:disable-next-line: no-console
+  console.log('All done!');
+});
