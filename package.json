@@ -1,0 +1,36 @@
+{
+  "name": "rusty-bot",
+  "version": "0.0.1",
+  "description": "A discord bot for idiots",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "deploy": "tsc && gcloud app deploy",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr1upMachine/rusty-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "rusty"
+  ],
+  "author": "Sean Hale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mr1upMachine/rusty-bot/issues"
+  },
+  "homepage": "https://github.com/Mr1upMachine/rusty-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.0",
+    "dotenv": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^12.0.2",
+    "nodemon": "^1.19.0",
+    "typescript": "^3.4.5"
+  }
+}
