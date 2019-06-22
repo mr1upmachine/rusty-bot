@@ -13,12 +13,12 @@ client.on('message', (msg) => {
   const cmd = (args.shift() || '').toLowerCase().substring(prefix.length); // LowerCase command
 
   try {
-    const commandFile = require(`./commands/${cmd}.js`); // Require command from folder
-    commandFile.run(client, msg, args); // Pass four args into 'command'.js and run it
+    const commandFile = require(`./commands/${cmd}.js`);
+    commandFile.run(client, msg, args);
   } catch (e) {
     try {
-      const commandFile = require(`./commands/${cmd}.ts`); // Require command from folder
-      commandFile.run(client, msg, args); // Pass four args into 'command'.js and run it
+      const commandFile = require(`./commands/${cmd}.ts`);
+      commandFile.run(client, msg, args);
     } catch (e) {
       return;
     }
