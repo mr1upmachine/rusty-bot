@@ -5,12 +5,14 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
   const myRole = msg.guild.roles.find((role) => role.name === roleName);
   let chosenColor = args[0].toUpperCase();
 
-  if (!/(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i.test(chosenColor)) { // Ensures first argument is a valid hex color
+  const isValidHex = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i.test(chosenColor); // Test if chosenColor is valid
+  if (!isValidHex) {
     msg.channel.send('Please input a valid hex color code!'); // Output error message to discord channel
     return;
   }
 
-  if (/(^#?[0-9A-F]{3}$)/i.test(chosenColor)) { // Tests if chosenColor is a 3 character code
+  const isShortenedHex = /(^#?[0-9A-F]{3}$)/i.test(chosenColor); // Tests if chosenColor is a 3 character code
+  if (isShortenedHex) {
     // tslint:disable-next-line: max-line-length
     chosenColor = chosenColor.replace(/#?([0-9A-F])([0-9A-F])([0-9A-F])/, '#$1$1$2$2$3$3'); // Convert 3 character hex codes to 6 characters
   }
