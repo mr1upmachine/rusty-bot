@@ -1,6 +1,7 @@
 import { Client, Message } from 'discord.js';
 
 exports.run = (client: Client, msg: Message, args: string[]) => {
+  // Joins args together in case spaces are in the expression
   const diceEq = args.join('').replace(' ', '').toLowerCase();
 
   const result = roll(diceEq);
@@ -16,6 +17,7 @@ const ADV_SYMBOL = '^';
 const DIS_SYMBOL = 'v';
 
 function roll(diceExpr: string): string | number {
+  // Validate if pattern only contains dice expressions
   if (!diceExpr && !diceExpr.match(VALIDATION_REGEX)) { return NaN; }
 
   const parsedExpr = evalExpr(diceExpr);
@@ -26,6 +28,7 @@ function roll(diceExpr: string): string | number {
 // TODO: Investigate optimizations through rxjs
 // TODO: Add string building for resolved dice eq
 function evalExpr(expr: string): string {
+  // Eval paren groups first
   const parenGroup = expr.match(PAREN_GROUP_REGEX);
   if (parenGroup && parenGroup.length) {
     for (const group of parenGroup) {
@@ -34,10 +37,13 @@ function evalExpr(expr: string): string {
     }
   }
 
+  // Get all the dice in an array
   const dice = expr.match(DICE_REGEX);
   if (!dice || !dice.length) { return expr; }
 
+  // Iterate through the dice
   for (const die of dice) {
+    // Get index values for each key character
     const indexOfD = die.indexOf(DICE_SYMBOL);
     const numDie = indexOfD
                     ? Number.parseInt(die.substring(0, indexOfD), 10)
@@ -46,24 +52,25 @@ function evalExpr(expr: string): string {
     const indexOfDis = die.indexOf(DIS_SYMBOL);
 
     let rollResults: number[] = [];
-    if (indexOfAdv !== -1) {
+    if (indexOfAdv !== -1) { // IF has advantage symbol
       const dieValue = Number.parseInt(die.substring(indexOfD + 1, indexOfAdv), 10);
       const advValue = Number.parseInt(die.substring(indexOfAdv + 1), 10);
 
       rollResults = generateRollArray(numDie, dieValue);
       rollResults.splice(0, rollResults.length - advValue);
-    } else if (indexOfDis !== -1) {
+    } else if (indexOfDis !== -1) { // ELSE IF has disadvangage symbol
       const dieValue = Number.parseInt(die.substring(indexOfD + 1, indexOfDis), 10);
       const disValue = Number.parseInt(die.substring(indexOfDis + 1), 10);
 
       rollResults = generateRollArray(numDie, dieValue);
       const disOffset = rollResults.length - disValue;
       rollResults.splice(disOffset - 1, disOffset);
-    } else {
+    } else { // ELSE a normal dice roll
       const dieValue = Number.parseInt(die.substring(indexOfD + 1), 10);
       rollResults = generateRollArray(numDie, dieValue);
     }
 
+    // Add up all results and place back into string expr for recursion support
     const rollTotal = rollResults.reduce((a, b) => a + b, 0);
     expr = expr.replace(die, rollTotal.toString());
   }
@@ -71,6 +78,7 @@ function evalExpr(expr: string): string {
   return expr;
 }
 
+/** Rolls dice individually */
 function generateRollArray(numDie: number, dieValue: number): number[] {
   const rollResults: number[] = [];
   for (let i = 0; i < numDie; i++) {
