@@ -14,7 +14,6 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
     const generator = new MersenneTwister(hash);
     let size = 0;
 
-    // TODO: determine if user should get normal or magnum dong
     const modifier = determineSize(hash);
     msg.channel.send('Your dong is: ' + modifier);
 
