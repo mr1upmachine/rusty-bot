@@ -3,19 +3,43 @@ import { readdir } from 'fs';
 import { resolve } from 'path';
 
 exports.run = (client: Client, msg: Message, args: string[]) => {
-  // cycles through every file in commands and returns their help export.
-  // if no args: list commands
-    if (args === undefined || args.length === 0) {
-    let commands = new Array<string>();
+  // IF no args: output list of commands
+  if (args === undefined || args.length === 0) {
+
+    // find commands folder based on relative directory.
     const commandsFolder = resolve(__dirname, '../commands');
+
+    // Iterate through the commands folder
     readdir(resolve(commandsFolder), (err, files) => {
-      files.forEach((file) => {
-        commands.push(file);
-      });
+      // Add all files in command folder to string and format to remove file extensions
+      const commands = files.toString().replace(/(\.ts,)|(\.js,)/g, ', ').replace(/(\.ts)|(\.js)/g, '');
+      msg.channel.send('The available commands are ' + commands); // Output list of commands
     });
+  } else {
 
-    console.log(commands);
-    msg.channel.send('The available commands are ' + commands.toString());
+    const cmd = args[0];
+
+    try {
+      // Load command module and break help object into individual strings
+      const cmdFile = require(`./${cmd}`);
+      const name = cmdFile.help.name;
+      const desc = cmdFile.help.description;
+      const use = cmdFile.help.usage;
+
+      // Output command help info
+      msg.channel.send('Name: ' + name +
+                      '\nDescription: ' + desc +
+                     '\nUsage: ' + use);
+    } catch (e) {
+      // Output error if command not found
+      msg.channel.send('No such command: ' + cmd);
+      return;
+    }
   }
+};
 
+exports.help =  {
+  description: 'Displays a list of commands or detailed information about a specific command.',
+  name: 'Help',
+  usage: 'help [command]',
 };
