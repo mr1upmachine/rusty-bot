@@ -22,10 +22,10 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
     let message = '';
 
     if (modifier === 'magnum') {
-        size = ((generator.random() * 5) + 6);
+        size = ((generator.random() * 5) + 5);
         message += 'Wow ' + user + ' you got a *MAGNUM* dong!';
     } else if (modifier === 'normal') {
-        size = ((generator.random() * 3) + 4);
+        size = ((generator.random() * 3) + 3);
         message += 'Hey ' + user + ' it\'s not the size of the wave, it\'s the motion of the ocean.';
     } else if (modifier === 'micro') {
         size = ((generator.random() * 3));
