@@ -8,4 +8,4 @@ exports.help = {
   description: 'Play table tennis!',
   name: 'Ping',
   usage: 'ping',
-}
+};
