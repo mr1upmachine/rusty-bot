@@ -13,15 +13,9 @@ client.on('message', (msg) => {
   const cmd = (args.shift() || '').toLowerCase().substring(prefix.length); // LowerCase command
 
   try {
-    const commandFile = require(`./commands/${cmd}.js`);
+    const commandFile = require(`./commands/${cmd}`);
     commandFile.run(client, msg, args);
   } catch (e) {
-    try {
-      const commandFile = require(`./commands/${cmd}.ts`);
-      commandFile.run(client, msg, args);
-    } catch (e) {
-      return;
-    }
     return;
   }
 });
