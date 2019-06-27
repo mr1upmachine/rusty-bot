@@ -34,7 +34,7 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
     message += '\nYour dong is ' + size.toFixed(2) + ' inches!';
 
     let donger = '8';
-    for (let i = 0; i < Math.round(size); i++) {
+    for (let i = 0; i < Math.floor(size); i++) {
         donger += '=';
     }
     donger += 'D';
@@ -56,7 +56,7 @@ function hashCode(x: string) {
 }
 
 function determineSize(hash: number) {
-    const modulo = hash % 100;
+    const modulo = Math.abs(hash) % 100;
     if (modulo < 10) {
         // micro dong
         return 'micro';
