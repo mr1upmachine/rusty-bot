@@ -9,14 +9,15 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
     // find commands folder based on relative directory.
     const commandsFolder = resolve(__dirname, '../commands');
 
-    // Iterate through the commands folder
+    // Add all files in command folder to string and format to remove file extensions
     readdir(resolve(commandsFolder), (err, files) => {
-      // Add all files in command folder to string and format to remove file extensions
       const commands = files.toString().replace(/(\.ts,)|(\.js,)/g, ', ').replace(/(\.ts)|(\.js)/g, '');
-      msg.channel.send('The available commands are ' + commands); // Output list of commands
+
+      // Output list of commands
+      msg.channel.send('The available commands are: ' + commands +
+                     '\nUse help <command> for detailed information.');
     });
   } else {
-
     const cmd = args[0];
 
     try {
@@ -28,7 +29,7 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
 
       // Output command help info
       msg.channel.send('Name: ' + name +
-                      '\nDescription: ' + desc +
+                     '\nDescription: ' + desc +
                      '\nUsage: ' + use);
     } catch (e) {
       // Output error if command not found
