@@ -31,3 +31,9 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
     msg.channel.send('Color changed!');
   }
 };
+
+exports.help = {
+  description: 'Changes the color of the user\'s name.',
+  name: 'Color Change',
+  usage: 'color <hex code>',
+};
