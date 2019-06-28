@@ -23,13 +23,13 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
 
     if (modifier === 'magnum') {
         size = ((generator.random() * 5) + 5);
-        message += 'Wow ' + user + ' you got a *MAGNUM* dong!';
+        message += `Wow ${user} you got a *MAGNUM* dong!`;
     } else if (modifier === 'normal') {
         size = ((generator.random() * 3) + 3);
-        message += 'Hey ' + user + ' it\'s not the size of the wave, it\'s the motion of the ocean.';
+        message += `Hey ${user} it\'s not the size of the wave, it\'s the motion of the ocean.`;
     } else if (modifier === 'micro') {
         size = ((generator.random() * 3));
-        message += 'Uhh.. ' + user + ', where is it..?';
+        message += `Uhh.. ${user}, where is it..?`;
     }
     message += '\nYour dong is ' + size.toFixed(2) + ' inches!';
 
@@ -44,18 +44,16 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
 
 function hashCode(x: string) {
     let hash = 0;
-    let i;
-    let chr;
     if (x.length === 0) { return hash; }
-    for (i = 0; i < x.length; i++) {
-        chr = x.charCodeAt(i);
+    for (let i = 0; i < x.length; i++) {
+        const chr = x.charCodeAt(i);
         hash = ((hash << 5) - hash) + chr;
         hash |= 0; // Convert to 32bit integer
     }
     return hash;
 }
 
-function determineSize(hash: number) {
+function determineSize(hash: number): 'micro' | 'magnum' | 'normal' {
     const modulo = Math.abs(hash) % 100;
     if (modulo < 10) {
         // micro dong
