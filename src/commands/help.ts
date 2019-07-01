@@ -36,7 +36,7 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
   }
 };
 
-exports.help =  {
+exports.help = {
   description: 'Displays a list of commands or detailed information about a specific command.',
   name: 'Help',
   usage: 'help [command]',

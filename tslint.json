@@ -13,7 +13,15 @@
       true,
       "spaces",
       2
-    ]
+    ],
+    "max-line-length": [
+      true, 
+      {
+        "limit": 140, 
+        "ignore-pattern": "^import [^,]+ from |^export | implements"
+      }
+    ],
+    "no-console": false
   },
   "rulesDirectory": []
 }
