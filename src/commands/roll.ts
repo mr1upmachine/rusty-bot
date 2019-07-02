@@ -9,6 +9,12 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
   msg.channel.send(result);
 };
 
+exports.help = {
+  description: 'Roll some dice! Input any dice euqation and recieve a result.',
+  name: 'Roll',
+  usage: 'roll 2d6+5',
+};
+
 const VALIDATION_REGEX = /(([\+\-\*\/]?(\(*[0-9]*d[0-9]+([\^v][0-9]+)?)+\)*)|(\(*[\+\-\*\/]?[0-9]+\)*))+/g;
 const PAREN_GROUP_REGEX = /\(.+\)/g;
 const DICE_REGEX = /[0-9]*d[0-9]+([\^v][0-9])?/g;
