@@ -13,8 +13,8 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
     // @param args - NO OPTIONAL ARGS AVAILABLE
 
     // test(msg);
-    const user = msg.author.username;
-    const userId = msg.author.id;
+    const user = msg.author!.username;
+    const userId = msg.author!.id;
     const hash = hashCode(userId);
     const generator = new MersenneTwister(hash);
     const modifier = determineSize(hash);
