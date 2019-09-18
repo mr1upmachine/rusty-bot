@@ -7,14 +7,14 @@ import MersenneTwister from 'mersenne-twister';
 // TODO: Implement dong leaderboard
 // TODO: Allow people to regenerate their dong on occasion (need to redesign how hash works)
 // TODO: Add gifs maybe?
-exports.run = (client: Client, msg: Message, args: string[]) => {
+exports.run = async (client: Client, msg: Message, args: string[]) => {
     // size generates a random number for each user and then prints their
     // size to the messages
     // @param args - NO OPTIONAL ARGS AVAILABLE
 
     // test(msg);
-    const user = msg.author.username;
-    const userId = msg.author.id;
+    const user = msg.author!.username;
+    const userId = msg.author!.id;
     const hash = hashCode(userId);
     const generator = new MersenneTwister(hash);
     const modifier = determineSize(hash);

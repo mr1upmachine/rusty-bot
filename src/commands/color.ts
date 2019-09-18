@@ -1,8 +1,8 @@
 import { Client, Message } from 'discord.js';
 
-exports.run = (client: Client, msg: Message, args: string[]) => {
-  const roleName = `USER-${msg.author.id}`;
-  const myRole = msg.guild.roles.find((role) => role.name === roleName);
+exports.run = async (client: Client, msg: Message, args: string[]) => {
+  const roleName = `USER-${msg.author!.id}`;
+  const myRole = msg.guild!.roles.find((role) => role.name === roleName);
   let chosenColor = args[0].toUpperCase();
 
   const isValidHex = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i.test(chosenColor); // Test if chosenColor is valid
@@ -17,16 +17,23 @@ exports.run = (client: Client, msg: Message, args: string[]) => {
   }
 
   if (!myRole) {
-    msg.guild.createRole({ // Creates new role with user selected color
-      color: chosenColor,
-      name: roleName,
-    }).then(() => msg.member.addRole(msg.guild.roles.find((role) => role.name === roleName))); // Assigns created role to user
-    msg.channel.send('Role created!');
-  } else {
-    myRole.edit({ // Edits existing role with user selected color
+    try {
+      const createdRole = await msg.guild!.roles.create({ data: { // Creates new role with user selected color
+        color: chosenColor,
+        name: roleName,
+      }});
+
+      msg.member!.roles.add(createdRole); // Assigns newly created role to user
+
+      msg.channel.send(`Role created with color ${chosenColor}`);
+    } catch (e) {
+      return;
+    }
+  } else { // Updates existing role with new color
+    myRole.edit({
       color: chosenColor,
     });
-    msg.channel.send('Color changed!');
+    msg.channel.send(`Color changed to ${chosenColor}`);
   }
 };
 

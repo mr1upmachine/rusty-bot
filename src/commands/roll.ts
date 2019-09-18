@@ -1,6 +1,6 @@
 import { Client, Message } from 'discord.js';
 
-exports.run = (client: Client, msg: Message, args: string[]) => {
+exports.run = async (client: Client, msg: Message, args: string[]) => {
   // Joins args together in case spaces are in the expression
   const diceEq = args.join('').replace(' ', '').toLowerCase();
 
