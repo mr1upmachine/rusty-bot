@@ -3,7 +3,7 @@ import { Client, Message } from 'discord.js';
 
 // TODO: Allow option to remove meme flag from a channel
 
-exports.run = (client: Client, msg: Message, args: string[], firestore: Firestore) => {
+exports.run = async (client: Client, msg: Message, args: string[], firestore: Firestore) => {
 
   if (msg.member!.permissions.has('ADMINISTRATOR') ) { // Ensures only admins may use this command
 

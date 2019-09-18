@@ -5,6 +5,8 @@ import { config } from 'dotenv';
 // Setup for dotenv
 config();
 if (!process.env.TOKEN) { throw new Error('TOKEN must be provided'); }
+if (!process.env.KEYFILE) { throw new Error('KEYFILE must be provided'); }
+if (!process.env.PROJECTID) { throw new Error('PROJECTID must be provided'); }
 
 // Setup for discord.js
 const client = new Client({ partials: ['MESSAGE'] });
@@ -12,12 +14,12 @@ client.token = process.env.TOKEN;
 
 // Setup for GCP
 const firestore = new Firestore({
-  keyFilename: 'rustykey.json',
-  projectId: 'rusty-244803',
+  keyFilename: process.env.KEYFILE,
+  projectId: process.env.PROJECTID,
 });
 
 // discord.js message event
-client.on('message', (msg) => {
+client.on('message', async (msg) => {
 
   // TODO add configurable prefix support
   const prefix = '!';
@@ -30,7 +32,7 @@ client.on('message', (msg) => {
   // attempts to fetch the comand file, returning if not found
   try {
     const commandFile = require(`./commands/${cmd}`); // Loads up the command based on file name
-    commandFile.run(client, msg, args, firestore); // Executes any function titled 'run' within the file
+    await commandFile.run(client, msg, args, firestore); // Executes any function titled 'run' within the file
   } catch (e) {
     return;
   }
@@ -44,7 +46,7 @@ client.on('messageReactionAdd', async (messageReaction, user) => {
 
   try {
     const statsFile = require(`./utilities/statistics`); // Loads the stats file
-    statsFile.addReaction(client, messageReaction, user, firestore); // Executes any function titled 'addReaction' within the file
+    await statsFile.addReaction(client, messageReaction, user, firestore);
   } catch (e) {
     return;
   }
@@ -58,7 +60,7 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
 
   try {
     const statsFile = require(`./utilities/statistics`); // Loads the stats file
-    statsFile.removeReaction(client, messageReaction, user, firestore); // Executes any function titled 'removeReaction' within the file
+    await statsFile.removeReaction(client, messageReaction, user, firestore);
   } catch (e) {
     return;
   }

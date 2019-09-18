@@ -1,7 +1,7 @@
 import { FieldValue, Firestore } from '@google-cloud/firestore';
 import { Client, Message, MessageReaction, User } from 'discord.js';
 
-exports.addReaction = (client: Client, msgReact: MessageReaction, user: User, firestore: Firestore) => {
+exports.addReaction = async (client: Client, msgReact: MessageReaction, user: User, firestore: Firestore) => {
   const guild = msgReact.message.guild;
   const msg = msgReact.message;
   const channelRef = firestore.collection('guilds').doc(guild!.id).collection('channels');
@@ -12,7 +12,7 @@ exports.addReaction = (client: Client, msgReact: MessageReaction, user: User, fi
   }, {merge: true});
 };
 
-exports.removeReaction = (client: Client, msgReact: MessageReaction, user: User, firestore: Firestore) => {
+exports.removeReaction = async (client: Client, msgReact: MessageReaction, user: User, firestore: Firestore) => {
   const guild = msgReact.message.guild;
   const msg = msgReact.message;
   const channelRef = firestore.collection('guilds').doc(guild!.id).collection('channels');

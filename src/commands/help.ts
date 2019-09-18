@@ -2,7 +2,7 @@ import { Client, Message } from 'discord.js';
 import { readdir } from 'fs';
 import { resolve } from 'path';
 
-exports.run = (client: Client, msg: Message, args: string[]) => {
+exports.run = async (client: Client, msg: Message, args: string[]) => {
   // IF no args: output list of commands
   if (args === undefined || args.length === 0) {
 
