@@ -1,6 +1,6 @@
-# rusty-bot
+# Rusty Bot
 
-A bot created in Typescript with Discord.js for use in the Rusty's Bois Discord server.
+A Discord bot created in Typescript with Discord.js for use in the Rusty's Bois server.
 
 ### Requirements
 Requres a GCP firestore instance.
