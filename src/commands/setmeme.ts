@@ -2,10 +2,19 @@ import { Firestore } from '@google-cloud/firestore';
 import { Client, Message } from 'discord.js';
 
 // TODO: Allow option to remove meme flag from a channel
+// TODO: Ensure first argument is a valid channel
 
 exports.run = async (client: Client, msg: Message, args: string[], firestore: Firestore) => {
 
   if (msg.member!.permissions.has('ADMINISTRATOR') ) { // Ensures only admins may use this command
+
+    if (args === undefined || args.length === 0) {
+      const desc = module.exports.help.description;
+      const name = module.exports.help.name;
+      const usage = module.exports.help.usage;
+      msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${usage}`);
+      return;
+  }
 
     const docRef = firestore.collection('guilds').doc(msg.guild!.id).collection('channels').doc(args[0]);
 
