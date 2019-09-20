@@ -23,6 +23,9 @@ client.on('message', async (msg) => {
 
   if (msg.partial) { await msg.fetch(); }
 
+  // Prevent Rusty from responding to and logging other bots
+  if (msg.author!.bot) { return; }
+
   try {
     const statsFile = require(`./utilities/statistics`);
     await statsFile.messageSent(client, msg, firestore);
@@ -53,6 +56,9 @@ client.on('messageReactionAdd', async (messageReaction, user) => {
   // fetch and cache partial messages
   if (messageReaction.message.partial) { await messageReaction.message.fetch(); }
 
+  // Prevent Rusty from responding to and logging other bots
+  if (user.bot) { return; }
+
   try {
     const statsFile = require(`./utilities/statistics`); // Loads the stats file
     await statsFile.addReaction(client, messageReaction, user, firestore);
@@ -66,6 +72,9 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
 
   // fetch and cache partial messages
   if (messageReaction.message.partial) { await messageReaction.message.fetch(); }
+
+  // Prevent Rusty from responding to and logging other bots
+  if (user.bot) { return; }
 
   try {
     const statsFile = require(`./utilities/statistics`); // Loads the stats file
