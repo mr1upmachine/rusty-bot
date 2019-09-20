@@ -1,7 +1,6 @@
 import { FieldValue, Firestore } from '@google-cloud/firestore';
 import { Client, Message, MessageReaction, User } from 'discord.js';
 
-// TODO: Verify users aren't giving themselves karma
 // TODO: Only give karma in meme channels
 // TODO: Update member post count on deletion? Would require channel and message partials, probably not worth the extra effort
 
@@ -16,11 +15,13 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
     reactionCount: FieldValue.increment(1),
   }, {merge: true});
 
-  // Add to user karma
-  const userRef = guildRef.collection('members').doc(msg.member!.id);
-  const addToMember = userRef.set({
-    karma: FieldValue.increment(1),
-  }, {merge: true});
+  if (user !== msgReact.message.author) {
+    // Add to user karma
+    const userRef = guildRef.collection('members').doc(msg.member!.id);
+    const addToMember = userRef.set({
+      karma: FieldValue.increment(1),
+    }, {merge: true});
+  }
 };
 
 exports.removeReaction = async (client: Client, msgReact: MessageReaction, user: User, firestore: Firestore) => {
@@ -34,11 +35,13 @@ exports.removeReaction = async (client: Client, msgReact: MessageReaction, user:
     reactionCount: FieldValue.increment(-1),
   }, {merge: true});
 
-  // Remove from user karma
-  const userRef = guildRef.collection('members').doc(msg.member!.id);
-  const addToMember = userRef.set({
-    karma: FieldValue.increment(-1),
-  }, {merge: true});
+  if (user !== msgReact.message.author) {
+    // Remove from user karma
+    const userRef = guildRef.collection('members').doc(msg.member!.id);
+    const addToMember = userRef.set({
+      karma: FieldValue.increment(-1),
+    }, {merge: true});
+  }
 };
 
 exports.messageSent = async (client: Client, msg: Message, firestore: Firestore) => {
