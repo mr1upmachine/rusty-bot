@@ -21,6 +21,18 @@ const firestore = new Firestore({
 // discord.js message event
 client.on('message', async (msg) => {
 
+  if (msg.partial) { await msg.fetch(); }
+
+  // Prevent Rusty from responding to and logging other bots
+  if (msg.author!.bot) { return; }
+
+  try {
+    const statsFile = require(`./utilities/statistics`);
+    await statsFile.messageSent(client, msg, firestore);
+  } catch (e) {
+    console.log(e);
+  }
+
   // TODO add configurable prefix support
   const prefix = '!';
   if (msg.content[0] !== prefix) { return; }
@@ -44,6 +56,9 @@ client.on('messageReactionAdd', async (messageReaction, user) => {
   // fetch and cache partial messages
   if (messageReaction.message.partial) { await messageReaction.message.fetch(); }
 
+  // Prevent Rusty from responding to and logging other bots
+  if (user.bot) { return; }
+
   try {
     const statsFile = require(`./utilities/statistics`); // Loads the stats file
     await statsFile.addReaction(client, messageReaction, user, firestore);
@@ -57,6 +72,9 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
 
   // fetch and cache partial messages
   if (messageReaction.message.partial) { await messageReaction.message.fetch(); }
+
+  // Prevent Rusty from responding to and logging other bots
+  if (user.bot) { return; }
 
   try {
     const statsFile = require(`./utilities/statistics`); // Loads the stats file
