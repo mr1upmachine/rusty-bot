@@ -7,6 +7,13 @@ import MersenneTwister from 'mersenne-twister';
 // TODO: Implement dong leaderboard
 // TODO: Allow people to regenerate their dong on occasion (need to redesign how hash works)
 // TODO: Add gifs maybe?
+
+exports.help = {
+    description: 'Measure the size of your dong!',
+    name: 'Dong Size',
+    usage: 'dong',
+  };
+
 exports.run = async (client: Client, msg: Message, args: string[]) => {
     // size generates a random number for each user and then prints their
     // size to the messages
