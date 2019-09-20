@@ -21,6 +21,15 @@ const firestore = new Firestore({
 // discord.js message event
 client.on('message', async (msg) => {
 
+  if (msg.partial) { await msg.fetch(); }
+
+  try {
+    const statsFile = require(`./utilities/statistics`);
+    await statsFile.messageSent(client, msg, firestore);
+  } catch (e) {
+    console.log(e);
+  }
+
   // TODO add configurable prefix support
   const prefix = '!';
   if (msg.content[0] !== prefix) { return; }
