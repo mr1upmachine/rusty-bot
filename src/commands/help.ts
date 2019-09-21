@@ -2,6 +2,8 @@ import { Client, Message } from 'discord.js';
 import { readdir } from 'fs';
 import { resolve } from 'path';
 
+// TODO: add configurable prefix support
+
 exports.run = async (client: Client, msg: Message, args: string[]) => {
   // IF no args: output list of commands
   if (args === undefined || args.length === 0) {
@@ -14,7 +16,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
       const commands = files.toString().replace(/(\.ts,)|(\.js,)/g, ', ').replace(/(\.ts)|(\.js)/g, '');
 
       // Output list of commands
-      msg.channel.send(`The available commands are: ${commands}\nUse help <command> for detailed information.`);
+      msg.channel.send(`The available commands are: ${commands}\nUse \`!help <command>\` for detailed information.`);
     });
   } else {
     const cmd = args[0];
@@ -27,7 +29,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
       const use = cmdFile.help.usage;
 
       // Output command help info
-      msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${use}`);
+      msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: \`!${use}\``);
     } catch (e) {
       // Output error if command not found
       msg.channel.send('No such command: ' + cmd);
