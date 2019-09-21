@@ -20,7 +20,6 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
   const getChannel = guildRef.collection('channels').doc(msg.channel.id).get()
   .then((doc) => {
     if (!doc.exists) {
-      msg.channel.send('Error retrieving channel!');
       return;
     } else {
       if (doc.data()!.meme) { meme = doc.data()!.meme; }
@@ -54,7 +53,6 @@ exports.removeReaction = async (client: Client, msgReact: MessageReaction, user:
   const getChannel = guildRef.collection('channels').doc(msg.channel.id).get()
   .then((doc) => {
     if (!doc.exists) {
-      msg.channel.send('Error retrieving channel!');
       return;
     } else {
       if (doc.data()!.meme) { meme = doc.data()!.meme; }
