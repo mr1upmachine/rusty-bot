@@ -1,5 +1,5 @@
 import { FieldValue, Firestore } from '@google-cloud/firestore';
-import { Client, Message, MessageReaction, User } from 'discord.js';
+import { Client, GuildMember, Message, MessageReaction, User } from 'discord.js';
 
 // TODO: Update member post count on deletion? Would require channel and message partials, probably not worth the extra effort
 // TODO: Optimize
@@ -121,6 +121,16 @@ exports.messageEdit = async (client: Client, oldMsg: Message, newMsg: Message, f
   .catch((err) => {
     newMsg.channel.send('Error retrieving channel info: ' + err);
   });
+};
+
+exports.memberEdit = async (client: Client, oldMember: GuildMember, newMember: GuildMember, firestore: Firestore) => {
+  if (newMember.nickname !== oldMember.nickname) {
+    const guildRef = firestore.collection('guilds').doc( newMember.guild!.id);
+    const userRef = guildRef.collection('members').doc(newMember!.id);
+    const addToMember = userRef.set({
+      name: newMember.nickname,
+    }, {merge: true});
+  }
 };
 
 /* Things to track:

@@ -1,6 +1,7 @@
 import { Firestore } from '@google-cloud/firestore';
 import { Client, ReactionCollector } from 'discord.js';
 import { config } from 'dotenv';
+import { userInfo } from 'os';
 
 // Setup for dotenv
 config();
@@ -97,6 +98,17 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
   try {
     const statsFile = require(`./utilities/statistics`); // Loads the stats file
     await statsFile.removeReaction(client, messageReaction, user, firestore);
+  } catch (e) {
+    return;
+  }
+});
+
+client.on('guildMemberUpdate', async (oldMember, newMember) => {
+  if (oldMember.user.bot) { return; }
+
+  try {
+    const statsFile = require(`./utilities/statistics`); // Loads the stats file
+    await statsFile.memberEdit(client, oldMember, newMember, firestore);
   } catch (e) {
     return;
   }
