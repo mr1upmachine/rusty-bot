@@ -50,6 +50,24 @@ client.on('message', async (msg) => {
   }
 });
 
+// discord.js message edit event
+client.on('messageUpdate', async (oldMsg, newMsg) => {
+
+  // fetch and cache partial messages
+  if (oldMsg.partial) { await oldMsg.fetch(); }
+  if (newMsg.partial) { await newMsg.fetch(); }
+
+  // Prevent Rusty from responding to and logging other bots
+  if (newMsg.author!.bot) { return; }
+
+  try {
+    const statsFile = require(`./utilities/statistics`); // Loads the stats file
+    await statsFile.messageEdit(client, oldMsg, newMsg, firestore);
+  } catch (e) {
+    return;
+  }
+});
+
 // discord.js add reaction event
 client.on('messageReactionAdd', async (messageReaction, user) => {
 

@@ -16,6 +16,8 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
   }, {merge: true});
 
   let meme = false;
+  let msgContent = '';
+  let msgAttach = '';
 
   const getChannel = guildRef.collection('channels').doc(msg.channel.id).get()
   .then((doc) => {
@@ -23,13 +25,23 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
       return;
     } else {
       if (doc.data()!.meme) { meme = doc.data()!.meme; }
+      if (doc.data()!.content) { msgContent = doc.data()!.content; }
+      if (doc.data()!.attachment) { msgAttach = doc.data()!.attachments; }
 
-      if (user !== msgReact.message.author) {
+      if (user !== msgReact.message.author && meme) {
         // Add to user karma
         const userRef = guildRef.collection('members').doc(msg.member!.id);
         const addToMember = userRef.set({
           karma: FieldValue.increment(1),
         }, {merge: true});
+
+        // Add message content
+        if (msg.cleanContent !== msgContent || msg.attachments.first()!.url !== msgAttach) {
+          const addToMessage = msgRef.set({
+            attachment: msg.attachments.first()!.url,
+            content: msg.cleanContent,
+          }, {merge: true});
+        }
       }
     }
   })
@@ -80,3 +92,47 @@ exports.messageSent = async (client: Client, msg: Message, firestore: Firestore)
     posts: FieldValue.increment(1),
   }, {merge: true});
 };
+
+exports.messageEdit = async (client: Client, oldMsg: Message, newMsg: Message, firestore: Firestore) => {
+  const guild = newMsg.guild;
+  const guildRef = firestore.collection('guilds').doc(guild!.id);
+  let meme = false;
+  let content = '';
+  let attach = '';
+
+  const getChannel = guildRef.collection('channels').doc(oldMsg.channel.id).get()
+  .then((doc) => {
+    if (!doc.exists) {
+      return;
+    } else {
+      if (doc.data()!.meme) { meme = doc.data()!.meme; }
+      if (doc.data()!.content) { content = doc.data()!.content; }
+      if (doc.data()!.attachment) { attach = doc.data()!.attachments; }
+
+      if (meme) {
+        const msgRef = guildRef.collection('channels').doc(oldMsg.channel.id).collection('messages').doc(oldMsg.id);
+        const addToMessage = msgRef.set({
+          attachment: newMsg.attachments.first()!.url,
+            content: newMsg.cleanContent,
+        }, {merge: true});
+      }
+    }
+  })
+  .catch((err) => {
+    newMsg.channel.send('Error retrieving channel info: ' + err);
+  });
+};
+
+/* Things to track:
+Karma:
+  [Done] Message Sender id
+  [Done?] Message Contents (instantiate on first reaction add, update on edit)
+  [Done] Reaction Count
+
+User leaderboard:
+  [Done] User ID
+  [Done] Karma count
+  [Done] Post count
+  [Done] About info
+  [Doneish] Nickname (currently user setable, not ready for release)
+*/

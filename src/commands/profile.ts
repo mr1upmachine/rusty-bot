@@ -53,7 +53,22 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
                 }
 
             } else {
-                msg.channel.send('About sections can only be 2048 characters in length!');
+                msg.channel.send('About sections can only be up to 2048 characters in length!');
+            }
+            break;
+        case 'name':
+
+            if (!args[1]) {
+                msg.channel.send('Usage: ' + module.exports.help.usage);
+                break;
+            } else if (args[1].length <= 32) {
+                const userName = args.slice(1).join(' ');
+                const changeName = userRef.set({
+                    name: userName,
+                }, {merge: true});
+                msg.channel.send('Name set!');
+            } else {
+                msg.channel.send('Names can only be up to 32 characters in length!');
             }
             break;
         default:
@@ -64,5 +79,5 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
 exports.help = {
     description: 'Customize your user card!',
     name: 'Profile',
-    usage: 'profile <color [hexcode]> | <about [text]>',
+    usage: 'profile <color [hexcode]> | <about [text]> | <name> [nickname]',
 };
