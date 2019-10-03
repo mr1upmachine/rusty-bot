@@ -1,8 +1,7 @@
 import { FieldValue, Firestore } from '@google-cloud/firestore';
 import { Client, GuildMember, Message, MessageReaction, User } from 'discord.js';
 
-// TODO: Update member post count on deletion? Would require channel and message partials, probably not worth the extra effort
-// TODO: Optimize
+// TODO: Use firestore batches where possible
 
 exports.addReaction = async (client: Client, msgReact: MessageReaction, user: User, firestore: Firestore) => {
   const guild = msgReact.message.guild;
@@ -142,7 +141,7 @@ exports.memberEdit = async (client: Client, oldMember: GuildMember, newMember: G
 /* Things to track:
 Karma:
   [Done] Message Sender id
-  [Done?] Message Contents (instantiate on first reaction add, update on edit)
+  [Done] Message Contents (instantiate on first reaction add, update on edit)
   [Done] Reaction Count
 
 User leaderboard:
@@ -150,5 +149,5 @@ User leaderboard:
   [Done] Karma count
   [Done] Post count
   [Done] About info
-  [Doneish] Nickname (currently user setable, not ready for release)
+  [Done] Nickname
 */

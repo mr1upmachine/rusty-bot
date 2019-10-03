@@ -1,7 +1,6 @@
 import { Firestore } from '@google-cloud/firestore';
 import { Client, ReactionCollector } from 'discord.js';
 import { config } from 'dotenv';
-import { userInfo } from 'os';
 
 // Setup for dotenv
 config();
