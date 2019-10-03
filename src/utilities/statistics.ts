@@ -127,9 +127,15 @@ exports.memberEdit = async (client: Client, oldMember: GuildMember, newMember: G
   if (newMember.nickname !== oldMember.nickname) {
     const guildRef = firestore.collection('guilds').doc( newMember.guild!.id);
     const userRef = guildRef.collection('members').doc(newMember!.id);
-    const addToMember = userRef.set({
-      name: newMember.nickname,
-    }, {merge: true});
+    if (newMember.nickname === null) {
+      const addToMember = userRef.set({
+        name: newMember.user.username,
+      }, {merge: true});
+    } else {
+      const addToMember = userRef.set({
+        name: newMember.nickname,
+      }, {merge: true});
+    }
   }
 };
 
