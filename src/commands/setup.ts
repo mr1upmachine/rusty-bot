@@ -1,22 +1,48 @@
-import { FieldValue, Firestore } from '@google-cloud/firestore';
+import { Firestore, WriteBatch } from '@google-cloud/firestore';
 import { Client, Message } from 'discord.js';
-
-// TODO: Unknown behavior in large servers, batch most likely fails with 500+ users.
-// TODO: Make success message tied to batch with .then()
 
 exports.run = async (client: Client, msg: Message, args: string[], firestore: Firestore) => {
     if (msg.member!.permissions.has('ADMINISTRATOR') ) { // Ensures only admins may use this command
         const guildRef = firestore.collection('guilds').doc(msg.guild!.id);
 
-        const batch = firestore.batch();
+        const batchArray: WriteBatch[] = [];
+        batchArray.push(firestore.batch());
+        let operationCount = 0;
+        let batchIndex = 0;
+
+        // Setup Firestore batches into array
         msg.guild!.members.forEach((member) => {
             if (!member.user.bot) {
-                console.log(member.displayName + '   ' + member.user.bot);
-                batch.set(guildRef.collection('members').doc(member.id), {name: member.displayName}, {merge: true});
+                batchArray[batchIndex].set(guildRef.collection('members').doc(member.id), {name: member.displayName}, {merge: true});
+                operationCount++;
+
+                // Firestore batches have a limit of 500 operations
+                if (operationCount === 499) {
+                    batchArray.push(firestore.batch());
+                    batchIndex++;
+                    operationCount = 0;
+                }
             }
         });
-        batch.commit();
-        msg.channel.send(`Updated member profiles in Firebase.`);
+
+        // Write batches to Firestore
+        let batchCount = 1;
+        batchArray.forEach(async (batch: WriteBatch) => await batch.commit()
+        .then((result) => {
+            msg.channel.send(`User batch ${batchCount} updated in Firebase successfully.`);
+            console.log(result);
+
+            // Output when all batches are processed.
+            if (batchCount === batchIndex + 1) {
+                msg.channel.send('All batches processed. To enable karma tracking, please use the \`setmeme\` command.');
+            }
+            batchCount++;
+
+        }).catch((err) => {
+            msg.channel.send(`Batch ${batchCount} has encountered an error. See console for more details.`);
+            console.log(err);
+            batchCount++;
+        }));
     } else {
         msg.channel.send('Error: insufficient permissions. Only Administrators may use this command.');
     }
@@ -27,8 +53,3 @@ exports.help = {
   name: 'Setup',
   usage: 'setup',
 };
-
-/* Things this command should do:
-Instantiate all guild members in firebase, with name/nickname and post count (if possible)
-Inform the user to use !setmeme to configure meme channels
-*/
