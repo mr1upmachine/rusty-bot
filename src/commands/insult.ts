@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Client, Message } from 'discord.js';
-import GraphVariables from '../entities/graphVariables';
-import Users from '../entities/Users';
+import { GraphVariables } from '../entities/graphVariables';
+import { Users } from '../entities/Users';
 
 class GraphRequest {
     constructor(public variables: GraphVariables, public operationName: string,  public query: string) {}
@@ -26,7 +26,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
 /**
  * getInsult forms a graphQL request using provided variables, and sends a POST to the insult service endpoint.
  * It then returns a Promise from this call that resolves to a string.
- * @param users
+ * @param users - Users (To and From) to be used when generating an insult.
  */
 function getInsult(users: Users): Promise<string> {
     const gqlRequest = new GraphRequest(new GraphVariables(users), 'getInsult', 'query getInsult($users: Users!) { GetInsult(people: $users) { message }}');

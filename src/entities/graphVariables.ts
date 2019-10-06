@@ -1,5 +1,5 @@
-import Users from './Users';
+import { Users } from './Users';
 
-export default class GraphVariables {
+export class GraphVariables {
     constructor(public users: Users) {}
 }
