@@ -19,7 +19,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
 
 exports.help = {
   // tslint:disable-next-line: max-line-length
-  description: 'Roll some dice! Input a dice euqation and recieve a result. Equations may only contain addition & subtraction and numbers can\'t be larger then 3 digits long',
+  description: 'Roll some dice! Input a dice equation and receive a result. Equations may only contain addition & subtraction and numbers can\'t be larger then 3 digits long',
   name: 'Roll',
   usage: 'roll 2d6+5',
 };
