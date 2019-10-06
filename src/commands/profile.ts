@@ -53,7 +53,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
                 }
 
             } else {
-                msg.channel.send('About sections can only be 2048 characters in length!');
+                msg.channel.send('About sections can only be up to 2048 characters in length!');
             }
             break;
         default:
