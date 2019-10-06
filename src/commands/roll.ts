@@ -43,14 +43,15 @@ class DiceStatement extends Statement {
 
     const index = statementString.indexOf('d');
 
-    this.sides = parseInt(statementString.substring(0, index), 10);
-    this.numberOfDice = parseInt(statementString.substring(index + 1), 10);
+    this.numberOfDice = index === 0 ? 1 : parseInt(statementString.substring(0, index), 10);
+    this.sides = parseInt(statementString.substring(index + 1), 10);
   }
 
   public calc(): number {
     let total = 0;
     for (let i = 0; i < this.numberOfDice; i++) {
-      total += Math.floor((Math.random() * this.sides) + 1);
+      const result = Math.floor(Math.random() * this.sides);
+      total += result + 1;
     }
     return this.negative ? total * -1 : total;
   }
@@ -84,8 +85,8 @@ function coerceDiceEq(expr: string): string {
 
 // END DATA MODELS
 
-const FULL_EXPRESSION_REGEX = /^([+-]([0-9]{1,3}d[0-9]{1,3}|[+-]?([0-9]{1,3})))+$/gi;
-const STATEMENT_REGEX = /[+-]([0-9]{1,3}d[0-9]{1,3}|[+-]?([0-9]{1,3}))/gi;
+const FULL_EXPRESSION_REGEX = /^([+-]([0-9]{0,3}d[0-9]{1,3}|[+-]?([0-9]{1,3})))+$/i;
+const STATEMENT_REGEX = /[+-]([0-9]{0,3}d[0-9]{1,3}|[+-]?([0-9]{1,3}))/gi;
 
 /** Validates if a given string is a valid dice statement */
 async function validate(expr: string): Promise<void> {
@@ -93,7 +94,6 @@ async function validate(expr: string): Promise<void> {
     throw new Error('No empty expressions!');
   }
 
-  console.log('FULL_EXPRESSION_REGEX.test(expr): ', FULL_EXPRESSION_REGEX.test(expr));
   if (!FULL_EXPRESSION_REGEX.test(expr)) {
     throw new Error('Invalid dice expression');
   }
