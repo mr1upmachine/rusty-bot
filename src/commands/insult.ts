@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Client, Message } from 'discord.js';
 import { GraphVariables } from '../entities/graphVariables';
-import { Users } from '../entities/Users';
+import { Users } from '../entities/users';
 
 class GraphRequest {
     constructor(public variables: GraphVariables, public operationName: string,  public query: string) {}

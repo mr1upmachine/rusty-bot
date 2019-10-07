@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Mr1upMachine/rusty-bot#readme",
   "dependencies": {
     "@google-cloud/firestore": "^2.3.0",
+    "@types/ws": "^6.0.3",
     "axios": "^0.19.0",
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "^8.1.0",
