@@ -34,16 +34,22 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
 
         // Add message content
         if (msg.cleanContent !== msgContent || msg.attachments.first()!.url !== msgAttach) {
-          const addToMessage = msgRef.set({
-            attachment: msg.attachments.first()!.url,
-            content: msg.cleanContent,
-          }, {merge: true});
+          if (msg.attachments.first()) {
+            const addToMessage = msgRef.set({
+              attachment: msg.attachments.first()!.url,
+              content: msg.cleanContent,
+            }, {merge: true});
+          } else {
+            const addToMessage = msgRef.set({
+              content: msg.cleanContent,
+            }, {merge: true});
+          }
         }
       }
     }
   })
   .catch((err) => {
-    msg.channel.send('Error retrieving channel info: ' + err);
+    msg.channel.send('Error in statistics.addReaction: ' + err);
   });
 };
 
@@ -76,7 +82,7 @@ exports.removeReaction = async (client: Client, msgReact: MessageReaction, user:
     }
   })
   .catch((err) => {
-    msg.channel.send('Error retrieving channel info: ' + err);
+    msg.channel.send('Error in statistics.removeReaction: ' + err);
   });
 };
 
@@ -108,15 +114,21 @@ exports.messageEdit = async (client: Client, oldMsg: Message, newMsg: Message, f
 
       if (meme) {
         const msgRef = guildRef.collection('channels').doc(oldMsg.channel.id).collection('messages').doc(oldMsg.id);
-        const addToMessage = msgRef.set({
-          attachment: newMsg.attachments.first()!.url,
+        if (newMsg.attachments.first()) {
+          const addToMessage = msgRef.set({
+            attachment: newMsg.attachments.first()!.url,
             content: newMsg.cleanContent,
-        }, {merge: true});
+          }, {merge: true});
+        } else {
+          const addToMessage = msgRef.set({
+            content: newMsg.cleanContent,
+          }, {merge: true});
+        }
       }
     }
   })
   .catch((err) => {
-    newMsg.channel.send('Error retrieving channel info: ' + err);
+    newMsg.channel.send('Error in statistics.messageEdit: ' + err);
   });
 };
 
