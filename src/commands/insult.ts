@@ -14,12 +14,19 @@ exports.help = {
 };
 
 exports.run = async (client: Client, msg: Message, args: string[]) => {
-    // User to be insulted.
-    const to = args[0];
     // UID of the author for the message.
     const from = `<@${msg.author!.id}>`;
-    //  Create a REST client and make a POST request to the endpoint.
-    const insult = await getInsult(new Users(to, from));
+    // User to be insulted.
+    let to = '';
+    if (args.length > 0) {
+        for (const arg of args) {
+            to += arg + ' ';
+        }
+    } else {
+        to = from;
+    }
+    //  Create a REST client and make a POST request to the insultService endpoint.
+    const insult = await getInsult(new Users(to.trim(), from));
 
     msg.channel.send(insult);
 };
