@@ -13,5 +13,9 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'us.gcr.io/rusty-244803/prod:latest', '.' ]
   timeout: 600s
-images:
-- 'us.gcr.io/rusty-244803/prod'
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us.gcr.io/rusty-244803/prod:latest']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['compute', 'instances', 'update-container', 'rusty-bot-prod', '--zone', 'us-central1-a', '--container-image=us.gcr.io/rusty-244803/prod']
