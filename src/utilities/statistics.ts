@@ -44,15 +44,18 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
             if (msgDoc.data()!.content) { content = msgDoc.data()!.content; }
             if (msgDoc.data()!.attachment) { attach = msgDoc.data()!.attachments; }
 
+            // Prevent constant uploading of the same content
             if (msg.cleanContent !== content || msg.attachments.first()!.url !== attach) {
               if (msg.attachments.first()) {
                 const addToMessage = msgRef.set({
                   attachment: msg.attachments.first()!.url,
                   content: msg.cleanContent,
+                  member: msg.author!.id,
                 }, {merge: true});
               } else {
                 const addToMessage = msgRef.set({
                   content: msg.cleanContent,
+                  member: msg.author!.id,
                 }, {merge: true});
               }
             }
