@@ -6,6 +6,11 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
   const msg = msgReact.message;
   const guildRef = firestore.collection('guilds').doc( guild!.id);
 
+  // Prevent bots from affecting stats
+  if (msg.author!.bot) {
+    return;
+  }
+
   // Add to post count
   const msgRef = guildRef.collection('channels').doc(msg.channel.id).collection('messages').doc(msg.id);
   const addToReactions = msgRef.set({
@@ -58,6 +63,11 @@ exports.removeReaction = async (client: Client, msgReact: MessageReaction, user:
   const msg = msgReact.message;
   const guildRef = firestore.collection('guilds').doc(guild!.id);
 
+  // Prevent bots from affecting stats
+  if (msg.author!.bot) {
+    return;
+  }
+
   // Remove from post count
   const msgRef = guildRef.collection('channels').doc(msg.channel.id).collection('messages').doc(msg.id);
   const addToReactions = msgRef.set({
@@ -90,6 +100,11 @@ exports.messageSent = async (client: Client, msg: Message, firestore: Firestore)
   const guild = msg.guild;
   const guildRef = firestore.collection('guilds').doc(guild!.id);
 
+  // Prevent bots from affecting stats
+  if (msg.author!.bot) {
+    return;
+  }
+
   const userRef = guildRef.collection('members').doc(msg.member!.id);
   const addToMember = userRef.set({
     posts: FieldValue.increment(1),
@@ -102,6 +117,11 @@ exports.messageEdit = async (client: Client, oldMsg: Message, newMsg: Message, f
   let meme = false;
   let content = '';
   let attach = '';
+
+  // Prevent bots from affecting stats
+  if (newMsg.author!.bot) {
+    return;
+  }
 
   const getChannel = guildRef.collection('channels').doc(oldMsg.channel.id).get()
   .then((doc) => {
@@ -133,6 +153,12 @@ exports.messageEdit = async (client: Client, oldMsg: Message, newMsg: Message, f
 };
 
 exports.memberEdit = async (client: Client, oldMember: GuildMember, newMember: GuildMember, firestore: Firestore) => {
+
+  // Prevent bots from affecting stats
+  if (newMember.user.bot) {
+    return;
+  }
+
   if (newMember.nickname !== oldMember.nickname) {
     const guildRef = firestore.collection('guilds').doc( newMember.guild!.id);
     const userRef = guildRef.collection('members').doc(newMember!.id);
