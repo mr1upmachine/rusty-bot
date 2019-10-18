@@ -12,7 +12,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
       const getChannel = docRef.get()
       .then((doc) => {
         if (!doc.exists) {
-          msg.channel.send('Error retrieving channel!');
+          msg.channel.send('This channel is not flagged as a meme channel.');
           return;
         } else {
           if (doc.data()!.meme) { meme = doc.data()!.meme; }
