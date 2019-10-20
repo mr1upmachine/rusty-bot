@@ -41,9 +41,10 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
           // Add message content
           const getMessage = msgRef.get().then((msgDoc) => {
 
-            if (msgDoc.data()!.content) { content = msgDoc.data()!.content; }
-            if (msgDoc.data()!.attachment) { attach = msgDoc.data()!.attachments; }
-
+            if (msgDoc.data()) {
+              if (msgDoc.data()!.content) { content = msgDoc.data()!.content; }
+              if (msgDoc.data()!.attachment) { attach = msgDoc.data()!.attachments; }
+            }
             // Prevent constant uploading of the same content
             if (msg.cleanContent !== content || msg.attachments.first()!.url !== attach) {
               if (msg.attachments.first()) {
@@ -61,7 +62,7 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
             }
           })
           .catch((err) => {
-            msg.channel.send('Error in statistics.addReaction: ' + err);
+            msg.channel.send('Error in statistics.addReaction (getMessage): ' + err);
           });
           }
         }
@@ -87,7 +88,9 @@ exports.removeReaction = async (client: Client, msgReact: MessageReaction, user:
     if (!doc.exists) {
       return;
     } else {
-      if (doc.data()!.meme) { meme = doc.data()!.meme; }
+      if (doc.data()) {
+        if (doc.data()!.meme) { meme = doc.data()!.meme; }
+      }
 
       if (user !== msgReact.message.author && meme) {
         // Remove from post count
