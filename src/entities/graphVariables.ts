@@ -1,5 +1,5 @@
 import { Users } from './users';
 
 export class GraphVariables {
-    constructor(public users: Users) {}
+  constructor(public users: Users) {}
 }
