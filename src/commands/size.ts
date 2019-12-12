@@ -9,69 +9,72 @@ import MersenneTwister from 'mersenne-twister';
 // TODO: Add gifs maybe?
 
 exports.help = {
-    description: 'Measure the size of your dong!',
-    name: 'Dong Size',
-    usage: 'dong',
-  };
+  description: 'Measure the size of your dong!',
+  name: 'Dong Size',
+  usage: 'dong',
+};
 
 exports.run = async (client: Client, msg: Message, args: string[]) => {
-    // size generates a random number for each user and then prints their
-    // size to the messages
-    // @param args - NO OPTIONAL ARGS AVAILABLE
+  // size generates a random number for each user and then prints their
+  // size to the messages
+  // @param args - NO OPTIONAL ARGS AVAILABLE
 
-    // test(msg);
-    const user = msg.author!.username;
-    const userId = msg.author!.id;
-    const hash = hashCode(userId);
-    const generator = new MersenneTwister(hash);
-    const modifier = determineSize(hash);
-    let size = 0;
-    let message = '';
+  // test(msg);
+  const user = msg.author!.username;
+  const userId = msg.author!.id;
+  const hash = hashCode(userId);
+  const generator = new MersenneTwister(hash);
+  const modifier = determineSize(hash);
+  let size = 0;
+  let message = '';
 
-    if (modifier === 'magnum') {
-        size = ((generator.random() * 5) + 5);
-        message += `Wow ${user} you got a *MAGNUM* dong!`;
-    } else if (modifier === 'normal') {
-        size = ((generator.random() * 3) + 3);
-        message += `Hey ${user} it\'s not the size of the wave, it\'s the motion of the ocean.`;
-    } else if (modifier === 'micro') {
-        size = ((generator.random() * 3));
-        message += `Uhh.. ${user}, where is it..?`;
-    }
-    message += '\nYour dong is ' + size.toFixed(2) + ' inches!';
+  if (modifier === 'magnum') {
+    size = generator.random() * 5 + 5;
+    message += `Wow ${user} you got a *MAGNUM* dong!`;
+  } else if (modifier === 'normal') {
+    size = generator.random() * 3 + 3;
+    message += `Hey ${user} it\'s not the size of the wave, it\'s the motion of the ocean.`;
+  } else if (modifier === 'micro') {
+    size = generator.random() * 3;
+    message += `Uhh.. ${user}, where is it..?`;
+  }
+  message += '\nYour dong is ' + size.toFixed(2) + ' inches!';
 
-    let donger = '8';
-    for (let i = 0; i < Math.floor(size); i++) {
-        donger += '=';
-    }
-    donger += 'D';
-    msg.channel.send(message);
-    msg.channel.send('Everyone look at ' + user + '\'s dong: ' + donger);
+  let donger = '8';
+  for (let i = 0; i < Math.floor(size); i++) {
+    donger += '=';
+  }
+  donger += 'D';
+  msg.channel.send(message);
+  msg.channel.send('Everyone look at ' + user + "'s dong: " + donger);
 };
 
 function hashCode(x: string) {
-    let hash = 0;
-    if (x.length === 0) { return hash; }
-    for (let i = 0; i < x.length; i++) {
-        const chr = x.charCodeAt(i);
-        hash = ((hash << 5) - hash) + chr;
-        hash |= 0; // Convert to 32bit integer
-    }
+  let hash = 0;
+  if (x.length === 0) {
     return hash;
+  }
+
+  for (let i = 0; i < x.length; i++) {
+    const chr = x.charCodeAt(i);
+    hash = (hash << 5) - hash + chr;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash;
 }
 
 function determineSize(hash: number): 'micro' | 'magnum' | 'normal' {
-    const modulo = Math.abs(hash) % 100;
-    if (modulo < 10) {
-        // micro dong
-        return 'micro';
-    } else if (modulo > 85) {
-        // magnum dong
-        return 'magnum';
-    } else {
-        // normal dong
-        return 'normal';
-    }
+  const modulo = Math.abs(hash) % 100;
+  if (modulo < 10) {
+    // micro dong
+    return 'micro';
+  } else if (modulo > 85) {
+    // magnum dong
+    return 'magnum';
+  } else {
+    // normal dong
+    return 'normal';
+  }
 }
 
 // Commenting test code for later use

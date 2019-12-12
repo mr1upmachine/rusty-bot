@@ -7,13 +7,15 @@ import { resolve } from 'path';
 exports.run = async (client: Client, msg: Message, args: string[]) => {
   // IF no args: output list of commands
   if (args === undefined || args.length === 0) {
-
     // find commands folder based on relative directory.
     const commandsFolder = resolve(__dirname, '../commands');
 
     // Add all files in command folder to string and format to remove file extensions
     readdir(resolve(commandsFolder), (err, files) => {
-      const commands = files.toString().replace(/(\.ts,)|(\.js,)/g, ', ').replace(/(\.ts)|(\.js)/g, '');
+      const commands = files
+        .toString()
+        .replace(/(\.ts,)|(\.js,)/g, ', ')
+        .replace(/(\.ts)|(\.js)/g, '');
 
       // Output list of commands
       msg.channel.send(`The available commands are: ${commands}\nUse \`!help <command>\` for detailed information.`);
