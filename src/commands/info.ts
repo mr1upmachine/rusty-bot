@@ -29,32 +29,31 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
   let karma = 0;
   let color = '#1B9403';
 
-  userRef
-    .get()
-    .then(doc => {
-      if (!doc.exists) {
-        msg.channel.send('Error retrieving user!');
-        return;
-      }
+  try {
+    const doc = await userRef.get();
 
-      if (doc.data()!.about) {
-        about = doc.data()!.about;
-      }
-      if (doc.data()!.infoColor) {
-        color = doc.data()!.infoColor;
-      }
-      if (doc.data()!.posts || doc.data()!.posts === 0) {
-        postCount = doc.data()!.posts;
-      }
-      if (doc.data()!.karma || doc.data()!.karma === 0) {
-        karma = doc.data()!.karma;
-      }
+    if (!doc.exists) {
+      msg.channel.send('Error retrieving user!');
+      return;
+    }
 
-      embedBuilder(msg, pfp, userNick, about, postCount, karma, color);
-    })
-    .catch(err => {
-      msg.channel.send('Error retrieving user: ', err);
-    });
+    if (doc.data()?.about) {
+      about = doc.data()!.about;
+    }
+    if (doc.data()?.infoColor) {
+      color = doc.data()!.infoColor;
+    }
+    if (doc.data()?.posts || doc.data()?.posts === 0) {
+      postCount = doc.data()!.posts;
+    }
+    if (doc.data()?.karma || doc.data()?.karma === 0) {
+      karma = doc.data()!.karma;
+    }
+
+    embedBuilder(msg, pfp, userNick, about, postCount, karma, color);
+  } catch (err) {
+    msg.channel.send('Error retrieving user: ', err);
+  }
 };
 
 function embedBuilder(

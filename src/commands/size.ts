@@ -1,6 +1,5 @@
 import { Client, Message } from 'discord.js';
 import MersenneTwister from 'mersenne-twister';
-// import { MersenneTwister } from "mersenne-twister"; // unused import
 
 // TODO: Evaluate the spread of the modifier generation
 // TODO: Improve message formatting
@@ -15,38 +14,35 @@ exports.help = {
 };
 
 exports.run = async (client: Client, msg: Message, args: string[]) => {
-  // size generates a random number for each user and then prints their
-  // size to the messages
-  // @param args - NO OPTIONAL ARGS AVAILABLE
+  const userId = msg.mentions.users.first()?.id || msg.author!.id;
 
-  // test(msg);
-  const user = msg.author!.username;
-  const userId = msg.author!.id;
   const hash = hashCode(userId);
+  const displayId = /^\d+$/.test(userId) ? `<@!${userId}>` : userId; // Adds mention characters
   const generator = new MersenneTwister(hash);
   const modifier = determineSize(hash);
   let size = 0;
   let message = '';
 
-  if (modifier === 'magnum') {
-    size = generator.random() * 5 + 5;
-    message += `Wow ${user} you got a *MAGNUM* dong!`;
-  } else if (modifier === 'normal') {
-    size = generator.random() * 3 + 3;
-    message += `Hey ${user} it\'s not the size of the wave, it\'s the motion of the ocean.`;
-  } else if (modifier === 'micro') {
-    size = generator.random() * 3;
-    message += `Uhh.. ${user}, where is it..?`;
+  switch (modifier) {
+    case 'magnum':
+      size = generator.random() * 5 + 5;
+      message += `Wow ${displayId} you got a *MAGNUM* dong!`;
+      break;
+    case 'normal':
+      size = generator.random() * 3 + 3;
+      message += `Hey ${displayId} it\'s not the size of the wave, it\'s the motion of the ocean.`;
+      break;
+    case 'micro':
+      size = generator.random() * 3;
+      message += `Uhh.. ${displayId}, where is it..?`;
+      break;
   }
-  message += '\nYour dong is ' + size.toFixed(2) + ' inches!';
+  message += `\nYour dong is ${size.toFixed(2)} inches!`;
 
-  let donger = '8';
-  for (let i = 0; i < Math.floor(size); i++) {
-    donger += '=';
-  }
-  donger += 'D';
+  const donger = `8${'='.repeat(Math.floor(size))}D`;
+
+  message += `\nEveryone look at ${displayId}'s dong: ${donger}`;
   msg.channel.send(message);
-  msg.channel.send('Everyone look at ' + user + "'s dong: " + donger);
 };
 
 function hashCode(x: string) {
@@ -66,13 +62,10 @@ function hashCode(x: string) {
 function determineSize(hash: number): 'micro' | 'magnum' | 'normal' {
   const modulo = Math.abs(hash) % 100;
   if (modulo < 10) {
-    // micro dong
     return 'micro';
   } else if (modulo > 85) {
-    // magnum dong
     return 'magnum';
   } else {
-    // normal dong
     return 'normal';
   }
 }
