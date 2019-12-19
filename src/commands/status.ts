@@ -12,7 +12,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
   if (args[0].match(/^(playing|listening|watching)$/i)) {
     client
       .user!.setActivity(args.slice(1).join(' '), { type: args[0].toUpperCase() as any })
-      .then(presence => msg.channel.send(`Activity set.`))
+      .then(() => msg.channel.send(`Activity set.`))
       .catch(console.error);
   } else {
     const desc = module.exports.help.description;
