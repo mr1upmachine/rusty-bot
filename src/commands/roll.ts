@@ -100,7 +100,7 @@ async function validate(expr: string): Promise<void> {
   }
 
   const matchedArr = expr.match(STATEMENT_REGEX);
-  if (matchedArr && matchedArr.length > 15) {
+  if (matchedArr && matchedArr?.length > 15) {
     throw new Error('Too many statements!');
   }
 }
