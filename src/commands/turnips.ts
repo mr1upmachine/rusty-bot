@@ -1,20 +1,20 @@
 import axios from 'axios';
 import { Client, Message } from 'discord.js';
 
-
-let firebaseUrl = "https://us-central1-turniprofit-864ba.cloudfunctions.net";
+let firebaseFuncUrl = "https://us-central1-turniprofit-864ba.cloudfunctions.net";
+let firebaseDbUrl = "https://turniprofit-864ba.firebaseio.com/"
 
 exports.help = {
     description: 'Register yourself with the turnip bot!\n Then use me to set the current price of your turnips!',
     name: 'Turnip Price Tool',
-    usage: '!turnips [price (int)] \n !turnips register',
+    usage: 'turnips register \n!turnips [price (int)]',
 };
 
 exports.run = async (client: Client, msg: Message, args: string[]) => {
     // turnips will register users or take in the current price of their turnips if they
     // are already registered
 
-    // @param args 
+    // @param args  
     //      register - submits the users name and id to the firebase DB
     //      currentprice - submits the users current price to the DB
 
@@ -33,28 +33,73 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
 
     if (command.toLowerCase() === 'register') {
         const register = await postRegister(userId, username);
-    } else if (/^\d+$/.test(command)) {
+        msg.channel.send(register)
+    } else if (/^\d+$/.test(command) && args.length === 1) {
         // command is num, cast to int
-        currentprice(parseInt(command), userId);
+        //console.log(validateRegisteredUser(userId))
+        if (await validateRegisteredUser(userId)) {
+            console.log("validated user, submitting price")
+            const priceRes = await currentprice(parseInt(command), userId);
+            msg.channel.send(priceRes)
+        } else {
+            msg.channel.send(`Please register with the bot before submitting a price!\nUse \`!turnips register\``)
+        }
     } else {
         msg.channel.send("Invalid command, either register or send the current turnip price");
     }
 };
 
-function postRegister(userId: String, username: String): Promise<string> {
-    const data = { "userId": userId, "username": username };
-    return axios
-        .post(`${firebaseUrl}/register`, data, {
+function validateRegisteredUser(userId: string): Promise<boolean> {
+    // check user against submitted users in db
+    const res = axios.get(`${firebaseDbUrl}/users.json`)
+        .then(response => {
+            console.log(response.data)
+            if (response.data === null) {
+                console.log("null data")
+                return false;
+            }
+            if (userId in response.data) {
+                console.log("returning true")
+                return true;
+            }
+            return false;
+        });
+    return res;
+}
+
+async function postRegister(userId: String, username: String): Promise<string> {
+    const data = { "userId": userId, "name": username };
+    const res = await axios
+        .post(`${firebaseFuncUrl}/register`, data, {
             headers: {
                 'Content-Type': 'application/json',
             }
-        })
-        .then(res => {
-            console.log(res);
-            return "Response Recieved";
         });
+    //console.log(res);
+    return res.data;
 };
 
-function currentprice(price: number, userId: String) {
-    return
+async function currentprice(price: number, userId: String): Promise<string> {
+    // current price will check if the price is valid
+    let today = new Date();
+    let time = new Date(today.getTime());
+    let mornOrEve;
+    let date;
+    if (time.getHours() < 12) {
+        mornOrEve = "morning";
+    } else {
+        mornOrEve = "evening";
+    }
+
+    date = `${time.getFullYear()}-${time.getMonth()}-${time.getDay()}`;
+    console.log(date + " " + mornOrEve);
+
+    const data = { "price": price, "userId": userId, "day": date, "mornOrEve": mornOrEve };
+    const res = await axios
+        .post(`${firebaseFuncUrl}/setCurrentPrice`, data, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+    return res.data;
 };
