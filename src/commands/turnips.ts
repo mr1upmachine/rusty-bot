@@ -1,8 +1,17 @@
 import axios from 'axios';
 import { Client, Message } from 'discord.js';
+import { config } from 'dotenv';
 
-let firebaseFuncUrl = "https://us-central1-turniprofit-864ba.cloudfunctions.net";
-let firebaseDbUrl = "https://turniprofit-864ba.firebaseio.com/"
+config();
+if (!process.env.TURNIPROFITDB) {
+    throw new Error('TURNIPROFITDB must be provided');
+}
+if (!process.env.TURNIPROFITURL) {
+    throw new Error('TURNIPROFITURL must be provided');
+}
+
+let firebaseFuncUrl = process.env.TURNIPROFITURL;
+let firebaseDbUrl = process.env.TURNIPROFITDB;
 
 exports.help = {
     description: 'Register yourself with the turnip bot!\n Then use me to set the current price of your turnips!',
@@ -14,7 +23,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
     // turnips will register users or take in the current price of their turnips if they
     // are already registered
 
-    // @param args  
+    // @param args
     //      register - submits the users name and id to the firebase DB
     //      currentprice - submits the users current price to the DB
 
@@ -29,7 +38,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
     const userId = msg.author!.id;
     const username = msg.author!.username;
     let command = args[0];
-    console.log("In Command with arg: " + command)
+    console.log("In Command with arg: " + command);
 
     if (command.toLowerCase() === 'register') {
         const register = await postRegister(userId, username);
@@ -59,7 +68,6 @@ function validateRegisteredUser(userId: string): Promise<boolean> {
                 return false;
             }
             if (userId in response.data) {
-                console.log("returning true")
                 return true;
             }
             return false;
@@ -91,7 +99,7 @@ async function currentprice(price: number, userId: String): Promise<string> {
         mornOrEve = "evening";
     }
 
-    date = `${time.getFullYear()}-${time.getMonth()}-${time.getDay()}`;
+    date = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`;
     console.log(date + " " + mornOrEve);
 
     const data = { "price": price, "userId": userId, "day": date, "mornOrEve": mornOrEve };
