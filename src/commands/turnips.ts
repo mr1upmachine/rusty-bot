@@ -46,12 +46,18 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
     } else if (/^\d+$/.test(command) && args.length === 1) {
         // command is num, cast to int
         //console.log(validateRegisteredUser(userId))
+        const commandInt = parseInt(command)
+        if (commandInt < 0 || commandInt > 900) {
+            msg.channel.send("YOU TRYNA BREAK MY BOT? Number out of range, try again");
+            return
+        }
+
         if (await validateRegisteredUser(userId)) {
             console.log("validated user, submitting price")
             const priceRes = await currentprice(parseInt(command), userId);
             msg.channel.send(priceRes)
         } else {
-            msg.channel.send(`Please register with the bot before submitting a price!\nUse \`!turnips register\``)
+            msg.channel.send(`Please register with the bot before submitting a price!\nUse \`!turnips register\``);
         }
     } else {
         msg.channel.send("Invalid command, either register or send the current turnip price");
