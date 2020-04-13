@@ -38,7 +38,6 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
     const userId = msg.author!.id;
     const username = msg.author!.username;
     let command = args[0];
-    console.log("In Command with arg: " + command);
 
     if (command.toLowerCase() === 'register') {
         const register = await postRegister(userId, username);
@@ -53,7 +52,6 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
         }
 
         if (await validateRegisteredUser(userId)) {
-            console.log("validated user, submitting price")
             const priceRes = await currentprice(parseInt(command), userId);
             msg.channel.send(priceRes)
         } else {
@@ -64,21 +62,16 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
     }
 };
 
-function validateRegisteredUser(userId: string): Promise<boolean> {
+async function validateRegisteredUser(userId: string): Promise<boolean> {
     // check user against submitted users in db
-    const res = axios.get(`${firebaseDbUrl}/users.json`)
-        .then(response => {
-            console.log(response.data)
-            if (response.data === null) {
-                console.log("null data")
-                return false;
-            }
-            if (userId in response.data) {
-                return true;
-            }
-            return false;
-        });
-    return res;
+    const res = await axios.get(`${firebaseDbUrl}/users.json`)
+    if (res.data === null) {
+        return false;
+    }
+    if (userId in res.data) {
+        return true;
+    }
+    return false;
 }
 
 async function postRegister(userId: String, username: String): Promise<string> {
@@ -106,7 +99,6 @@ async function currentprice(price: number, userId: String): Promise<string> {
     }
 
     date = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`;
-    console.log(date + " " + mornOrEve);
 
     const data = { "price": price, "userId": userId, "day": date, "mornOrEve": mornOrEve };
     const res = await axios
