@@ -18,8 +18,8 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
 };
 
 exports.help = {
-  // tslint:disable-next-line: max-line-length
-  description: 'Roll some dice! Input a dice equation and receive a result. Equations may only contain addition & subtraction and numbers can\'t be larger then 3 digits long',
+  description:
+    "Roll some dice! Input a dice equation and receive a result. Equations may only contain addition & subtraction and numbers can't be larger then 3 digits long",
   name: 'Roll',
   usage: 'roll 2d6+5',
 };
@@ -27,7 +27,7 @@ exports.help = {
 // DATA MODELS
 
 abstract class Statement {
-  constructor(public negative?: boolean) { }
+  constructor(public negative?: boolean) {}
 
   /** Calculate the value based on object properties */
   public abstract calc(): number;
@@ -100,7 +100,7 @@ async function validate(expr: string): Promise<void> {
   }
 
   const matchedArr = expr.match(STATEMENT_REGEX);
-  if (matchedArr && matchedArr.length > 15) {
+  if (matchedArr && matchedArr?.length > 15) {
     throw new Error('Too many statements!');
   }
 }

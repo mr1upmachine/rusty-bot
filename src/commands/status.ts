@@ -1,31 +1,30 @@
 import { Client, Message } from 'discord.js';
 
 exports.run = async (client: Client, msg: Message, args: string[]) => {
-    if (args === undefined || args.length === 0) {
-        const desc = module.exports.help.description;
-        const name = module.exports.help.name;
-        const usage = module.exports.help.usage;
-        msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${usage}`);
-        return;
-    }
+  if (args === undefined || args.length === 0) {
+    const desc = module.exports.help.description;
+    const name = module.exports.help.name;
+    const usage = module.exports.help.usage;
+    msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${usage}`);
+    return;
+  }
 
-    if (args[0].match(/^(playing|listening|watching)$/i)) {
-
-        client.user!.setActivity(args.slice(1).join(' '), {type: args[0].toUpperCase() as any})
-        .then((presence) => msg.channel.send (`Activity set.`))
-        .catch(console.error);
-
-    } else {
-        const desc = module.exports.help.description;
-        const name = module.exports.help.name;
-        const usage = module.exports.help.usage;
-        msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${usage}`);
-        return;
-    }
+  if (args[0].match(/^(playing|listening|watching)$/i)) {
+    client
+      .user!.setActivity(args.slice(1).join(' '), { type: args[0].toUpperCase() as any })
+      .then(() => msg.channel.send(`Activity set.`))
+      .catch(console.error);
+  } else {
+    const desc = module.exports.help.description;
+    const name = module.exports.help.name;
+    const usage = module.exports.help.usage;
+    msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${usage}`);
+    return;
+  }
 };
 
 exports.help = {
-  description: 'Set Rusty\'s current status.',
+  description: "Set Rusty's current status.",
   name: 'Status',
   usage: 'status [playing | listening | watching] [activity]',
 };

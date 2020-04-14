@@ -1,6 +1,6 @@
 node_modules/
-.vscode/
 dist/
 
 .env
 rustykey.json
+package-lock.json

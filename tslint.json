@@ -1,28 +1,20 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended"
-  ],
+  "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-plugin-prettier"],
   "jsRules": {},
   "rules": {
-    "quotemark": [
-      true,
-      "single"
-    ],
-    "indent": [
-      true,
-      "spaces",
-      2
-    ],
+    "quotemark": [true, "single"],
+    "indent": [true, "spaces", 2],
     "max-line-length": [
-      true, 
+      true,
       {
-        "limit": 140, 
+        "limit": 140,
         "ignore-pattern": "^import [^,]+ from |^export | implements"
       }
     ],
     "no-console": false,
-    "max-classes-per-file": [true, 5]
+    "max-classes-per-file": [true, 5],
+    "prettier": true
   },
   "rulesDirectory": []
 }
