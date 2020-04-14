@@ -9,3 +9,5 @@ Requres a user created file at root named `.env` with three variables:
 - `TOKEN=` The bot secret token from your Discord Developer Portal
 - `KEYFILE=` The name (with .json extension) of your GCP service account key file.
 - `PROJECTID=` The ID of your GCP project
+- `TURNIPROFITDB=` The URL of the Turniprofit Firebase DB. Ask Adam for link
+- `TURNIPROFITURL=` The URL of the turniprofit Firebase functions. Ask Adam for link
