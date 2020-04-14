@@ -125,10 +125,6 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
 });
 
 client.on('guildMemberUpdate', async (oldMember, newMember) => {
-  if (oldMember.user.bot) {
-    return;
-  }
-
   try {
     const statsFile = require(`./utilities/statistics`); // Loads the stats file
     await statsFile.memberEdit(client, oldMember, newMember, firestore);
