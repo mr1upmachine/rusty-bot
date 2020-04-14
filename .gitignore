@@ -3,3 +3,4 @@ dist/
 
 .env
 rustykey.json
+package-lock.json

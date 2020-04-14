@@ -10,7 +10,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
   }
 
   const roleName = `USER-${msg.author!.id}`;
-  const myRole = msg.guild!.roles.find(role => role.name === roleName);
+  const myRole = msg.guild!.roles.cache.find((role: { name: string; }) => role.name === roleName);
   let chosenColor = args[0].toUpperCase();
 
   const isValidHex = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i.test(chosenColor); // Test if chosenColor is valid
