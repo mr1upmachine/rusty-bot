@@ -18,4 +18,4 @@ steps:
   args: ['push', 'us.gcr.io/rusty-244803/prod:latest']
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute', 'instances', 'update-container', 'rusty-bot-prod', '--zone', 'us-central1-a', '--container-image=us.gcr.io/rusty-244803/prod']
+  args: ['compute', 'instances', 'update-container', 'rusty-bot-prod', '--zone', 'us-central1-a', '--container-image=us.gcr.io/rusty-244803/prod:latest']
