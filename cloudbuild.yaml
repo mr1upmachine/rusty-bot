@@ -1,21 +1,29 @@
 steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - kms
+      - decrypt
+      - --ciphertext-file=rustykey.json.enc
+      - --plaintext-file=rustykey.json
+      - --location=global
+      - --keyring=RustyKeyRing
+      - --key=rustykey
 
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - kms
-  - decrypt
-  - --ciphertext-file=rustykey.json.enc
-  - --plaintext-file=rustykey.json
-  - --location=global
-  - --keyring=RustyKeyRing
-  - --key=rustykey
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us.gcr.io/rusty-244803/prod:latest', '.']
+    timeout: 600s
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'us.gcr.io/rusty-244803/prod:latest', '.' ]
-  timeout: 600s
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us.gcr.io/rusty-244803/prod:latest']
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us.gcr.io/rusty-244803/prod:latest']
-
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute', 'instances', 'update-container', 'rusty-bot-prod', '--zone', 'us-central1-a', '--container-image=us.gcr.io/rusty-244803/prod:latest']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      [
+        'compute',
+        'instances',
+        'update-container',
+        'rusty-prod',
+        '--zone',
+        'us-east1-b',
+        '--container-image=us.gcr.io/rusty-244803/prod:latest',
+      ]
