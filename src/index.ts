@@ -1,4 +1,4 @@
-import { Firestore } from '@google-cloud/firestore';
+import * as firestoreAdmin from 'firebase-admin';
 import { Client } from 'discord.js';
 import { config } from 'dotenv';
 
@@ -14,18 +14,29 @@ if (!process.env.PROJECTID) {
   throw new Error('PROJECTID must be provided');
 }
 
+let runningLocally = false;
+if (process.env.LOCAL) {
+  runningLocally = true;
+}
+
 // Setup for discord.js
 const client = new Client({ partials: ['MESSAGE'] });
 client.token = process.env.TOKEN;
 
 // Setup for GCP
-const firestore = new Firestore({
-  keyFilename: process.env.KEYFILE,
-  projectId: process.env.PROJECTID,
-});
+if (runningLocally) {
+  const serviceAccount = require('../rustykey.json');
+
+  firestoreAdmin.initializeApp({
+    credential: firestoreAdmin.credential.cert(serviceAccount)
+  });
+} else {
+  firestoreAdmin.initializeApp();
+}
+const firestore = firestoreAdmin.firestore();
 
 // discord.js message event
-client.on('message', async msg => {
+client.on('message', async (msg) => {
   if (msg.partial) {
     await msg.fetch();
   }
