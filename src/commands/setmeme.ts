@@ -11,11 +11,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
   let meme = false;
 
   if (args === undefined || args.length === 0) {
-    const docRef = firestore
-      .collection('guilds')
-      .doc(msg.guild!.id)
-      .collection('channels')
-      .doc(msg.channel.id);
+    const docRef = firestore.collection('guilds').doc(msg.guild!.id).collection('channels').doc(msg.channel.id);
 
     try {
       const doc = await docRef.get();
@@ -46,21 +42,17 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
 exports.help = {
   description: 'Sets the meme channel for stat tracking',
   name: 'Set Meme',
-  usage: 'setmeme [true | false]',
+  usage: 'setmeme [true | false]'
 };
 
 function setMeme(msg: Message, args: string[], isMeme: boolean, firestore: Firestore) {
-  const docRef = firestore
-    .collection('guilds')
-    .doc(msg.guild!.id)
-    .collection('channels')
-    .doc(msg.channel.id);
+  const docRef = firestore.collection('guilds').doc(msg.guild!.id).collection('channels').doc(msg.channel.id);
 
   docRef.set(
     {
-      meme: isMeme,
+      meme: isMeme
     },
-    { merge: true },
+    { merge: true }
   );
 
   msg.channel.send(`Meme channel set to ${args[0]}.`);

@@ -8,5 +8,5 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
 exports.help = {
   description: 'Displays version information',
   name: 'About',
-  usage: 'about',
+  usage: 'about'
 };
