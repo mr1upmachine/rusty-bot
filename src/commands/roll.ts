@@ -21,7 +21,7 @@ exports.help = {
   description:
     "Roll some dice! Input a dice equation and receive a result. Equations may only contain addition & subtraction and numbers can't be larger then 3 digits long",
   name: 'Roll',
-  usage: 'roll 2d6+5',
+  usage: 'roll 2d6+5'
 };
 
 // DATA MODELS

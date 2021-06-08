@@ -4,11 +4,7 @@ import { Client, Message } from 'discord.js';
 exports.run = async (client: Client, msg: Message, args: string[], firestore: Firestore) => {
   let pfp = msg.author!.displayAvatarURL();
   let userNick = msg.author!.username;
-  let userRef = firestore
-    .collection('guilds')
-    .doc(msg.guild!.id)
-    .collection('members')
-    .doc(msg.member!.id);
+  let userRef = firestore.collection('guilds').doc(msg.guild!.id).collection('members').doc(msg.member!.id);
 
   const mention = msg.mentions.users.first();
   if (mention) {
@@ -16,11 +12,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
     if (member) {
       pfp = member.user.displayAvatarURL();
       userNick = member.user.username;
-      userRef = firestore
-        .collection('guilds')
-        .doc(msg.guild!.id)
-        .collection('members')
-        .doc(member.id);
+      userRef = firestore.collection('guilds').doc(msg.guild!.id).collection('members').doc(member.id);
     }
   }
 
@@ -52,7 +44,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
 
     embedBuilder(msg, pfp, userNick, about, postCount, karma, color);
   } catch (err) {
-    msg.channel.send('Error retrieving user: ', err);
+    msg.channel.send('Error retrieving user.');
   }
 };
 
@@ -63,7 +55,7 @@ function embedBuilder(
   about: string,
   postCount: number,
   karma: number,
-  userColor: string,
+  userColor: string
 ) {
   try {
     msg.channel.send({
@@ -74,28 +66,28 @@ function embedBuilder(
         color: userColor,
         timestamp: new Date(),
         footer: {
-          text: 'Use the `profile` command for customization!',
+          text: 'Use the `profile` command for customization!'
         },
         thumbnail: {
-          url: pfp,
+          url: pfp
         },
         author: {
           icon_url: pfp,
-          name: userNick,
+          name: userNick
         },
         fields: [
           {
             inline: true,
             name: 'Post Count',
-            value: postCount,
+            value: postCount
           },
           {
             inline: true,
             name: 'Meme Karma',
-            value: karma,
-          },
-        ],
-      },
+            value: karma
+          }
+        ]
+      }
     });
   } catch (e) {
     console.log(e);
@@ -105,7 +97,7 @@ function embedBuilder(
 exports.help = {
   description: 'Displays information about a user.',
   name: 'Info',
-  usage: 'info [user]',
+  usage: 'info [user]'
 };
 
 // Items needed for embed:

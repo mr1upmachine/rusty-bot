@@ -24,7 +24,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
     batchArray[batchIndex].set(
       guildRef.collection('members').doc(member.id),
       { name: member.displayName },
-      { merge: true },
+      { merge: true }
     );
     operationCount++;
 
@@ -41,7 +41,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
   for (const batch of batchArray) {
     await batch
       .commit()
-      .then(result => {
+      .then((result) => {
         msg.channel.send(`User batch ${batchCount} updated in Firebase successfully.`);
         console.log(result);
 
@@ -51,7 +51,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
         }
         batchCount++;
       })
-      .catch(err => {
+      .catch((err) => {
         msg.channel.send(`Batch ${batchCount} has encountered an error. See console for more details.`);
         console.log(err);
         batchCount++;
@@ -62,5 +62,5 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
 exports.help = {
   description: 'Configure Rusty for the first time',
   name: 'Setup',
-  usage: 'setup',
+  usage: 'setup'
 };

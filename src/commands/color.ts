@@ -10,7 +10,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
   }
 
   const roleName = `USER-${msg.author!.id}`;
-  const myRole = msg.guild!.roles.cache.find((role: { name: string; }) => role.name === roleName);
+  const myRole = msg.guild!.roles.cache.find((role: { name: string }) => role.name === roleName);
   let chosenColor = args[0].toUpperCase();
 
   const isValidHex = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i.test(chosenColor); // Test if chosenColor is valid
@@ -30,8 +30,8 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
         data: {
           // Creates new role with user selected color
           color: chosenColor,
-          name: roleName,
-        },
+          name: roleName
+        }
       });
 
       msg.member!.roles.add(createdRole); // Assigns newly created role to user
@@ -43,7 +43,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
   } else {
     // Updates existing role with new color
     myRole.edit({
-      color: chosenColor,
+      color: chosenColor
     });
     msg.channel.send(`Color changed to ${chosenColor}`);
   }
@@ -52,5 +52,5 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
 exports.help = {
   description: "Changes the color of the user's name.",
   name: 'Color Change',
-  usage: 'color <hex code>',
+  usage: 'color <hex code>'
 };

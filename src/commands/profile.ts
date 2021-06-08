@@ -10,11 +10,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
     return;
   }
 
-  const userRef = firestore
-    .collection('guilds')
-    .doc(msg.guild!.id)
-    .collection('members')
-    .doc(msg.member!.id);
+  const userRef = firestore.collection('guilds').doc(msg.guild!.id).collection('members').doc(msg.member!.id);
 
   switch (args[0].toLowerCase()) {
     case 'color':
@@ -37,9 +33,9 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
       }
       userRef.set(
         {
-          infoColor: chosenColor,
+          infoColor: chosenColor
         },
-        { merge: true },
+        { merge: true }
       );
 
       msg.channel.send(`Color set to ${chosenColor}!`);
@@ -49,9 +45,9 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
       if (userAbout.length <= 2048) {
         userRef.set(
           {
-            about: userAbout,
+            about: userAbout
           },
-          { merge: true },
+          { merge: true }
         );
 
         if (!args[1]) {
@@ -71,5 +67,5 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
 exports.help = {
   description: 'Customize your user card!',
   name: 'Profile',
-  usage: 'profile <color [hexcode]> | <about [text]>',
+  usage: 'profile <color [hexcode]> | <about [text]>'
 };

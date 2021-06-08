@@ -10,7 +10,7 @@ import MersenneTwister from 'mersenne-twister';
 exports.help = {
   description: 'Measure the size of your dong!',
   name: 'Dong Size',
-  usage: 'dong',
+  usage: 'dong'
 };
 
 exports.run = async (client: Client, msg: Message, args: string[]) => {
