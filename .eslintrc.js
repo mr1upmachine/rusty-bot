@@ -32,7 +32,6 @@ module.exports = {
         "eslint-plugin-jsdoc",
         "eslint-plugin-prefer-arrow",
         "eslint-plugin-import",
-        "eslint-plugin-react",
         "@typescript-eslint",
         "@typescript-eslint/tslint"
     ],
@@ -229,16 +228,6 @@ module.exports = {
         "quote-props": "off",
         "quotes": "error",
         "radix": "error",
-        "react/jsx-curly-spacing": "off",
-        "react/jsx-equals-spacing": "off",
-        "react/jsx-tag-spacing": [
-            "off",
-            {
-                "afterOpening": "allow",
-                "closingSlash": "allow"
-            }
-        ],
-        "react/jsx-wrap-multilines": "off",
         "semi": "off",
         "space-before-function-paren": "off",
         "space-in-parens": [
