@@ -16,7 +16,7 @@ exports.run = async (client: Client, msg: Message, args: string[], firestore: Fi
   let batchIndex = 0;
 
   // Setup Firestore batches into array
-  for (const member of msg.guild!.members.cache.array()) {
+  for (const member of msg.guild!.members.cache.values()) {
     if (member.user.bot) {
       continue;
     } // Skips any bot members

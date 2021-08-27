@@ -11,7 +11,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
 
     const result = await roll(statements);
 
-    msg.channel.send(result);
+    msg.channel.send(`${result}`);
   } catch (e) {
     msg.channel.send((e as Error).message);
   }

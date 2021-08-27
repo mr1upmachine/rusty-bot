@@ -4,7 +4,7 @@
   "description": "A discord bot for idiots",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "deploy": "genversion src/utilities/version.ts && tsc && gcloud app deploy",
     "dev": "nodemon src/index.ts",
     "build": "genversion src/utilities/version.ts && tsc"
@@ -17,37 +17,44 @@
     "discord",
     "rusty"
   ],
-  "author": "Sean Hale, Ty Simpson",
+  "contributors": [
+    "Sean Hale",
+    "Ty Simpson"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Mr1upMachine/rusty-bot/issues"
   },
   "homepage": "https://github.com/Mr1upMachine/rusty-bot#readme",
+  "engines": {
+    "node": ">=16.8.0",
+    "npm": ">=7.21.0"
+  },
   "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
     "axios": "^0.21.1",
-    "discord.js": "^12.5.3",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
-    "firebase-admin": "^9.9.0",
+    "firebase-admin": "^9.11.1",
     "mersenne-twister": "^1.1.0"
   },
   "devDependencies": {
-    "@types/dotenv": "^8.2.0",
     "@types/mersenne-twister": "^1.1.2",
-    "@types/node": "^15.12.1",
-    "@types/ws": "^7.4.4",
-    "@typescript-eslint/eslint-plugin": "^4.26.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^4.26.0",
-    "@typescript-eslint/parser": "^4.26.0",
-    "eslint": "^7.28.0",
+    "@types/node": "^16.7.2",
+    "@types/ws": "^7.4.7",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/eslint-plugin-tslint": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsdoc": "^35.1.2",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsdoc": "^36.0.8",
     "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-react": "^7.24.0",
-    "genversion": "^3.0.0",
-    "nodemon": "^2.0.7",
-    "prettier": "^2.3.1",
-    "ts-node": "^10.0.0",
-    "typescript": "~4.3.2"
+    "genversion": "^3.0.1",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.2.1",
+    "typescript": "~4.4.2"
   }
 }

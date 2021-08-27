@@ -1,9 +1,9 @@
 import * as firestoreAdmin from 'firebase-admin';
-import { Client } from 'discord.js';
-import { config } from 'dotenv';
+import { Client, Intents } from 'discord.js';
+import * as dotenv from 'dotenv';
 
 // Setup for dotenv
-config();
+dotenv.config();
 if (!process.env.TOKEN) {
   throw new Error('TOKEN must be provided');
 }
@@ -20,7 +20,18 @@ if (process.env.LOCAL) {
 }
 
 // Setup for discord.js
-const client = new Client({ partials: ['MESSAGE'] });
+const client = new Client({
+  intents: [
+    Intents.FLAGS.GUILDS,
+    Intents.FLAGS.GUILD_MEMBERS,
+    Intents.FLAGS.GUILD_MESSAGES,
+    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+    Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,
+    Intents.FLAGS.DIRECT_MESSAGES,
+    Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
+  ],
+  partials: ['MESSAGE']
+});
 client.token = process.env.TOKEN;
 
 // Setup for GCP
@@ -35,8 +46,8 @@ if (runningLocally) {
 }
 const firestore = firestoreAdmin.firestore();
 
-// discord.js message event
-client.on('message', async (msg) => {
+// discord.js messageCreate event
+client.on('messageCreate', async (msg) => {
   if (msg.partial) {
     await msg.fetch();
   }
@@ -68,6 +79,7 @@ client.on('message', async (msg) => {
     const commandFile = require(`./commands/${cmd}`); // Loads up the command based on file name
     await commandFile.run(client, msg, args, firestore); // Executes any function titled 'run' within the file
   } catch (e) {
+    console.error(e)
     return;
   }
 });

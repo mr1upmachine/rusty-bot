@@ -1,4 +1,4 @@
-import { Client, Message } from 'discord.js';
+import { Client, ColorResolvable, Message } from 'discord.js';
 
 exports.run = async (client: Client, msg: Message, args: string[]) => {
   if (args === undefined || args.length === 0) {
@@ -27,12 +27,11 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
   if (!myRole) {
     try {
       const createdRole = await msg.guild!.roles.create({
-        data: {
           // Creates new role with user selected color
-          color: chosenColor,
+          color: chosenColor as ColorResolvable,
           name: roleName
         }
-      });
+      );
 
       msg.member!.roles.add(createdRole); // Assigns newly created role to user
 
@@ -43,7 +42,7 @@ exports.run = async (client: Client, msg: Message, args: string[]) => {
   } else {
     // Updates existing role with new color
     myRole.edit({
-      color: chosenColor
+      color: chosenColor as ColorResolvable
     });
     msg.channel.send(`Color changed to ${chosenColor}`);
   }
