@@ -1,64 +1,78 @@
-import { Firestore } from '@google-cloud/firestore';
-import { Client, ColorResolvable, Message, MessageEmbed } from 'discord.js';
+import { SlashCommandBuilder } from '@discordjs/builders';
+import { ColorResolvable, CommandInteraction, Guild, GuildMember, MessageEmbed } from 'discord.js';
+import { Command } from '../utilities/command';
 
-exports.run = async (client: Client, msg: Message, args: string[], firestore: Firestore) => {
-  let pfp = msg.author!.displayAvatarURL();
-  let userNickname = msg.author!.username;
-  let userRef = firestore.collection('guilds').doc(msg.guild!.id).collection('members').doc(msg.member!.id);
-
-  const mentionedUser = msg.mentions.users.first();
-  if (mentionedUser) {
-    const member = msg.guild!.members.cache.get(mentionedUser.id);
-    if (member) {
-      pfp = member.user.displayAvatarURL();
-      userNickname = member.user.username;
-      userRef = firestore.collection('guilds').doc(msg.guild!.id).collection('members').doc(member.id);
-    }
+export default class InfoCommand extends Command {
+  async build() {
+    return new SlashCommandBuilder()
+      .setName('info')
+      .setDescription('Displays information about a user.')
+      .addUserOption(option =>
+        option
+          .setName('user')
+          .setDescription('User to display info for')
+      );
   }
 
-  let about = 'This is a default about section! Use the profile command to edit it!';
-  let postCount = 0;
-  let karma = 0;
-  let color: ColorResolvable = '#1B9403';
-
-  try {
-    const doc = await userRef.get();
-
-    if (!doc.exists) {
-      msg.channel.send('Error retrieving user!');
-      return;
+  async execute(interaction: CommandInteraction) {
+    const guild = interaction.guild as Guild;
+    let member = interaction.member as GuildMember;
+    let user = interaction.options.getUser('user');
+  
+    if (!user) {
+      user = interaction.user;
+      member = guild.members.cache.get(user.id)!;
     }
-
-    if (doc.data()?.about) {
-      about = doc.data()!.about;
+  
+    const profilePictureUrl = user.displayAvatarURL();
+    const memberNickname = member.nickname || member.user.username;
+    const userFirestoreRef = this.firestore.collection('guilds').doc(guild.id).collection('members').doc(member.id);
+  
+    let about = 'This is a default about section! Use the profile command to edit it!';
+    let postCount = 0;
+    let karma = 0;
+    let color: ColorResolvable = '#1B9403';
+  
+    try {
+      const doc = await userFirestoreRef.get();
+  
+      if (!doc.exists) {
+        interaction.reply('Error retrieving user!');
+        return;
+      }
+  
+      if (doc.data()?.about) {
+        about = doc.data()!.about;
+      }
+      if (doc.data()?.infoColor) {
+        color = doc.data()!.infoColor as ColorResolvable;
+      }
+      if (doc.data()?.posts || doc.data()?.posts === 0) {
+        postCount = doc.data()!.posts;
+      }
+      if (doc.data()?.karma || doc.data()?.karma === 0) {
+        karma = doc.data()!.karma;
+      }
+  
+      const embed = this.embedBuilder(profilePictureUrl, memberNickname, about, postCount, karma, color);
+      interaction.reply({
+        embeds: [embed] 
+      });
+    } catch (err) {
+      interaction.reply('Error retrieving user.');
+      throw err;
     }
-    if (doc.data()?.infoColor) {
-      color = doc.data()!.infoColor as ColorResolvable;
-    }
-    if (doc.data()?.posts || doc.data()?.posts === 0) {
-      postCount = doc.data()!.posts;
-    }
-    if (doc.data()?.karma || doc.data()?.karma === 0) {
-      karma = doc.data()!.karma;
-    }
-
-    embedBuilder(msg, pfp, userNickname, about, postCount, karma, color);
-  } catch (err) {
-    msg.channel.send('Error retrieving user.');
   }
-};
-
-function embedBuilder(
-  msg: Message,
-  pfp: string,
-  userNickname: string,
-  about: string,
-  postCount: string | number,
-  karma: string | number,
-  userColor: ColorResolvable
-) {
-  try {
-    const embed = new MessageEmbed({
+  
+  private embedBuilder(
+    pfp: string,
+    userNickname: string,
+    about: string,
+    postCount: string | number,
+    karma: string | number,
+    userColor: ColorResolvable
+  ): MessageEmbed {
+    return new MessageEmbed({
       title: 'About',
       description: about,
       color: userColor,
@@ -86,19 +100,5 @@ function embedBuilder(
         }
       ]
     });
-    msg.channel.send({
-      embeds: [embed] 
-    });
-  } catch (e) {
-    console.log(e);
   }
 }
-
-exports.help = {
-  description: 'Displays information about a user.',
-  name: 'Info',
-  usage: 'info [user]'
-};
-
-// Items needed for embed:
-// User picture, about section, color, post count, meme karma

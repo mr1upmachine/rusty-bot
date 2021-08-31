@@ -1,6 +1,8 @@
-import * as firestoreAdmin from 'firebase-admin';
 import { Client, Intents } from 'discord.js';
 import * as dotenv from 'dotenv';
+import * as firestoreAdmin from 'firebase-admin';
+import { deployCommands } from './deploy-commands';
+import { CommandDerived } from './utilities/command';
 
 // Setup for dotenv
 dotenv.config();
@@ -46,8 +48,34 @@ if (runningLocally) {
 }
 const firestore = firestoreAdmin.firestore();
 
+// setup discord.js commands
+client.on('ready', () => {
+  for (const [guildId] of client.guilds.cache) {
+    if (!client.user) {
+      console.error(client.user);
+      continue;
+    }
+
+    deployCommands(client.user.id, guildId, process.env.TOKEN!, firestore)
+  }
+});
+
+// listen for discord.js command
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	try {
+    const commandDerived: CommandDerived = require(`./commands/${interaction.commandName}`).default; // Loads up the command based on file name
+    const command = new commandDerived(firestore);
+    await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		await interaction.reply({ content: `ERROR: ${error}`, ephemeral: true });
+	}
+});
+
 // discord.js messageCreate event
-client.on('messageCreate', async (msg) => {
+client.on('messageCreate', async msg => {
   if (msg.partial) {
     await msg.fetch();
   }
@@ -62,25 +90,6 @@ client.on('messageCreate', async (msg) => {
     await statsFile.messageSent(client, msg, firestore);
   } catch (e) {
     console.log(e);
-  }
-
-  // TODO add configurable prefix support
-  const prefix = '!';
-  if (msg.content[0] !== prefix) {
-    return;
-  }
-
-  // TODO command splitting needs to account for commands that allow spaces in non-final args
-  const args = msg.content.trim().split(' '); // Setting-up arguments of command
-  const cmd = (args.shift() || '').toLowerCase().substring(prefix.length); // LowerCase command
-
-  // attempts to fetch the comand file, returning if not found
-  try {
-    const commandFile = require(`./commands/${cmd}`); // Loads up the command based on file name
-    await commandFile.run(client, msg, args, firestore); // Executes any function titled 'run' within the file
-  } catch (e) {
-    console.error(e)
-    return;
   }
 });
 
