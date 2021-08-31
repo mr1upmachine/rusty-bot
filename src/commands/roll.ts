@@ -1,28 +1,38 @@
-import { Client, Message } from 'discord.js';
+import { SlashCommandBuilder } from '@discordjs/builders';
+import { CommandInteraction } from 'discord.js';
+import { Command } from '../utilities/command';
 
-exports.run = async (client: Client, msg: Message, args: string[]) => {
-  try {
-    // Joins args together in case spaces are in the expression
-    const diceEq = coerceDiceEq(args.join(''));
-
-    await validate(diceEq);
-
-    const statements = await parse(diceEq);
-
-    const result = await roll(statements);
-
-    msg.channel.send(`${result}`);
-  } catch (e) {
-    msg.channel.send((e as Error).message);
+export default class RollCommand extends Command {
+  async build() {
+    return new SlashCommandBuilder()
+      .setName('roll')
+      .setDescription('Roll some dice! Input a dice equation and receive a result.')
+      .addStringOption(option =>
+        option
+          .setName('expression')
+          .setDescription('Equations may only contain addition & subtraction and numbers can\'t be larger then 3 digits long')
+          .setRequired(true)
+      );
   }
-};
 
-exports.help = {
-  description:
-    "Roll some dice! Input a dice equation and receive a result. Equations may only contain addition & subtraction and numbers can't be larger then 3 digits long",
-  name: 'Roll',
-  usage: 'roll 2d6+5'
-};
+  async execute(interaction: CommandInteraction) {
+    try {
+      // Joins args together in case spaces are in the expression
+      const expression = interaction.options.getString('expression', true);
+      const diceEq = coerceDiceEq(expression);
+  
+      await validate(diceEq);
+  
+      const statements = await parse(diceEq);
+  
+      const result = await roll(statements);
+  
+      interaction.reply(`${result}`);
+    } catch (e) {
+      interaction.reply((e as Error).message);
+    }
+  }
+}
 
 // DATA MODELS
 

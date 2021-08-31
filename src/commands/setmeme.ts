@@ -1,59 +1,40 @@
-import { Firestore } from '@google-cloud/firestore';
-import { Client, Message } from 'discord.js';
+import { SlashCommandBuilder } from '@discordjs/builders';
+import { CommandInteraction, GuildMember } from 'discord.js';
+import { Command } from '../utilities/command';
 
-exports.run = async (client: Client, msg: Message, args: string[], firestore: Firestore) => {
-  // Ensures only admins may use this command
-  if (!msg.member!.permissions.has('ADMINISTRATOR')) {
-    msg.channel.send('Error: insufficient permissions. Only Administrators may use this command.');
-    return;
+export default class SetMemeCommand extends Command {
+  async build() {
+    return new SlashCommandBuilder()
+      .setName('setmeme')
+      .setDescription('Sets the meme channel for stat tracking')
+      .addBooleanOption(option =>
+        option
+          .setName('value')
+          .setDescription('Boolean whether the meme channel should be set to this or not')
+          .setRequired(true)
+      );
   }
 
-  let meme = false;
-
-  if (args === undefined || args.length === 0) {
-    const docRef = firestore.collection('guilds').doc(msg.guild!.id).collection('channels').doc(msg.channel.id);
-
-    try {
-      const doc = await docRef.get();
-      if (!doc.exists) {
-        msg.channel.send('This channel is not flagged as a meme channel.');
-        return;
-      } else {
-        if (doc.data()!.meme) {
-          meme = doc.data()!.meme;
-        }
-
-        if (meme) {
-          msg.channel.send('This channel is flagged as a meme channel.');
-        } else {
-          msg.channel.send('This channel is not flagged as a meme channel.');
-        }
-      }
-    } catch (err) {
-      msg.channel.send('Error retrieving channel info: ' + err);
+  async execute(interaction: CommandInteraction) {
+    const guildId = interaction.guildId!;
+    const member = interaction.member as GuildMember;
+    const channelName = interaction.channel?.toString();
+    const channelId = interaction.channelId;
+    let meme = interaction.options.getBoolean('value', true);
+  
+    // Ensures only admins may use this command
+    if (member.permissions.has('ADMINISTRATOR')) {
+      interaction.reply('Insufficient permissions. Only Administrators may use this command.');
+      return;
     }
-    return;
-  }
-
-  meme = args[0].toLowerCase() === 'true';
-  setMeme(msg, args, meme, firestore);
-};
-
-exports.help = {
-  description: 'Sets the meme channel for stat tracking',
-  name: 'Set Meme',
-  usage: 'setmeme [true | false]'
-};
-
-function setMeme(msg: Message, args: string[], isMeme: boolean, firestore: Firestore) {
-  const docRef = firestore.collection('guilds').doc(msg.guild!.id).collection('channels').doc(msg.channel.id);
-
-  docRef.set(
-    {
-      meme: isMeme
-    },
-    { merge: true }
-  );
-
-  msg.channel.send(`Meme channel set to ${args[0]}.`);
+  
+    const docRef = this.firestore.collection('guilds').doc(guildId).collection('channels').doc(channelId);
+  
+    docRef.set(
+      { meme },
+      { merge: true }
+    );
+  
+    interaction.reply(`Meme channel set to ${channelName}.`);
+  };
 }

@@ -1,12 +1,16 @@
-import { Client, Message } from 'discord.js';
+import { SlashCommandBuilder } from '@discordjs/builders';
+import { CommandInteraction } from 'discord.js';
+import { Command } from '../utilities/command';
 
-exports.run = async (client: Client, msg: Message, args: string[]) => {
-  const version: string = require('../utilities/version');
-  msg.channel.send("Hi, I'm Rusty, mascot of the Rusty's Bois server! My current version is " + version + '!');
-};
+export default class AboutCommand extends Command {
+  async build() {
+		return new SlashCommandBuilder()
+			.setName('about')
+			.setDescription('Displays version information');
+  }
 
-exports.help = {
-  description: 'Displays version information',
-  name: 'About',
-  usage: 'about'
-};
+  async execute(interaction: CommandInteraction) {
+		const version: string = require('../utilities/version');
+		interaction.reply(`Hi, I'm Rusty, mascot of the Rusty's Bois server! My current version is ${version}!`);
+	}
+}

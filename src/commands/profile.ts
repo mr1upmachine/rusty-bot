@@ -1,71 +1,72 @@
-import { Firestore } from '@google-cloud/firestore';
-import { Client, Message } from 'discord.js';
+import { SlashCommandBuilder } from '@discordjs/builders';
+import { CommandInteraction, Guild, GuildMember } from 'discord.js';
+import { Command } from '../utilities/command';
 
-exports.run = async (client: Client, msg: Message, args: string[], firestore: Firestore) => {
-  if (args === undefined || args.length === 0) {
-    const desc = module.exports.help.description;
-    const name = module.exports.help.name;
-    const usage = module.exports.help.usage;
-    msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${usage}`);
-    return;
+export default class ProfileCommand extends Command {
+  async build() {
+    return new SlashCommandBuilder()
+      .setName('profile')
+      .setDescription('Customize your user card!')
+      .addStringOption(option =>
+        option
+          .setName('color')
+          .setDescription('Hex color code on your user profile')
+      )
+      .addStringOption(option =>
+        option
+          .setName('about')
+          .setDescription('Text on your user profile')
+      );
   }
 
-  const userRef = firestore.collection('guilds').doc(msg.guild!.id).collection('members').doc(msg.member!.id);
-
-  switch (args[0].toLowerCase()) {
-    case 'color':
-      if (!args[1]) {
-        msg.channel.send('Please input a valid hex color code!');
-        return;
-      }
-
-      let chosenColor = args[1].toUpperCase();
-
-      const isValidHex = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i.test(chosenColor);
+  async execute(interaction: CommandInteraction) {
+    const guild = interaction.guild as Guild;
+    const member = interaction.member as GuildMember;
+  
+    const color = interaction.options.getString('color');
+    const about = interaction.options.getString('about');
+  
+    const userFirestoreRef = this.firestore.collection('guilds').doc(guild.id).collection('members').doc(member.id);
+  
+    if (color) {
+      const isValidHex = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i.test(color);
       if (!isValidHex) {
-        msg.channel.send('Please input a valid hex color code!');
-        return;
+        throw new Error('Please input a valid hex color code!');
       }
-
-      const isShortenedHex = /(^#?[0-9A-F]{3}$)/i.test(chosenColor);
+  
+      let newColor = color;
+      const isShortenedHex = /(^#?[0-9A-F]{3}$)/i.test(color);
       if (isShortenedHex) {
-        chosenColor = chosenColor.replace(/#?([0-9A-F])([0-9A-F])([0-9A-F])/, '$1$1$2$2$3$3');
+        newColor = color.replace(/#?([0-9A-F])([0-9A-F])([0-9A-F])/, '$1$1$2$2$3$3');
       }
-      userRef.set(
+  
+      userFirestoreRef.set(
         {
-          infoColor: chosenColor
+          infoColor: newColor
         },
         { merge: true }
       );
-
-      msg.channel.send(`Color set to ${chosenColor}!`);
-      break;
-    case 'about':
-      const userAbout = args.slice(1).join(' ');
-      if (userAbout.length <= 2048) {
-        userRef.set(
-          {
-            about: userAbout
-          },
-          { merge: true }
-        );
-
-        if (!args[1]) {
-          msg.channel.send('About cleared!');
-        } else {
-          msg.channel.send('About set!');
-        }
-      } else {
-        msg.channel.send('About sections can only be up to 2048 characters in length!');
+  
+      interaction.reply(`Color set to ${newColor}!`);
+    }
+  
+    // TODO break into separate method
+    if (about !== null && about !== undefined) {
+      if (about.length > 2048) {
+        interaction.reply('About sections can only be up to 2048 characters in length!');
+        return;
       }
-      break;
-    default:
-      msg.channel.send('Usage: ' + module.exports.help.usage);
+  
+      userFirestoreRef.set(
+        { about },
+        { merge: true }
+      );
+  
+      if (about) {
+        interaction.reply('About set!');
+      } else {
+        interaction.reply('About cleared!');
+      }
+    }
   }
-};
-
-exports.help = {
-  description: 'Customize your user card!',
-  name: 'Profile',
-  usage: 'profile <color [hexcode]> | <about [text]>'
-};
+}

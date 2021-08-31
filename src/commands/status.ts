@@ -1,30 +1,40 @@
-import { Client, Message } from 'discord.js';
+import { SlashCommandBuilder } from '@discordjs/builders';
+import { ActivityType, CommandInteraction } from 'discord.js';
+import { Command } from '../utilities/command';
 
-exports.run = async (client: Client, msg: Message, args: string[]) => {
-  if (args === undefined || args.length === 0) {
-    const desc = module.exports.help.description;
-    const name = module.exports.help.name;
-    const usage = module.exports.help.usage;
-    msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${usage}`);
-    return;
+export default class StatusCommand extends Command {
+  async build() {
+    return new SlashCommandBuilder()
+      .setName('status')
+      .setDescription('Set Rusty\'s current status.')
+      .addStringOption(option =>
+        option
+          .setName('activitytype')
+          .setDescription('Type of activity that discord will display')
+          .setRequired(true)
+          .addChoice('Playing', 'PLAYING')
+          .addChoice('Listening', 'LISTENING')
+          // Technically, 'streaming' is also an option but it doesn't seem to work without a URL, so I've not enabled it for now.
+          // .addChoice('Streaming', 'STREAMING')
+          .addChoice('Watching', 'WATCHING')
+          .addChoice('Competing', 'COMPETING')
+          // .addChoice('Custom', 'CUSTOM')
+      )
+      .addStringOption(option =>
+        option
+          .setName('activity')
+          .setDescription('Activity text to display as the status')
+          .setRequired(true)
+      );
   }
 
-  if (args[0].match(/^(playing|listening|watching)$/i)) {
-    client.user!.setActivity(args.slice(1).join(' '), { type: args[0].toUpperCase() as any })
-    return;
-  }
+  async execute(interaction: CommandInteraction) {
+    const activityType = interaction.options.getString('activitytype', true) as ActivityType;
+    const activity = interaction.options.getString('activity', true);
+    const client = interaction.client;
   
-  const desc = module.exports.help.description;
-  const name = module.exports.help.name;
-  const usage = module.exports.help.usage;
-  msg.channel.send(`Name: ${name}\nDescription: ${desc}\nUsage: ${usage}`);
-
-};
-
-exports.help = {
-  description: "Set Rusty's current status.",
-  name: 'Status',
-  usage: 'status [playing | listening | watching] [activity]'
-};
-
-// Technically, 'streaming' is also an option but it doesn't seem to work without a URL, so I've not enabled it for now.
+    client.user!.setActivity(activity, { type: activityType })
+  
+    interaction.reply('Status updated!');
+  }
+}
