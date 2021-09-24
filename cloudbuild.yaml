@@ -1,5 +1,5 @@
 steps:
-# Get the key we need to talk to the server
+# Decrypt the credentials in the repo before we deploy
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       [
