@@ -7,7 +7,9 @@ const messages = readFileSync(
   path.join(__dirname, '../src/assets/activity-messages.txt')
 )
   .toString()
-  .split('\n');
+  .split('\n')
+  .filter((message) => !message.startsWith('//'))
+  .filter((message) => message.trim() !== '');
 
 for (const message of messages) {
   if (message.startsWith('//')) {
