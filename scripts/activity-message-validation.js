@@ -8,7 +8,8 @@ const messages = readFileSync(
 )
   .toString()
   .split('\n')
-  .filter(message => message.trim() !== '');
+  .filter((message) => !message.startsWith('//'))
+  .filter((message) => message.trim() !== '');
 
 for (const message of messages) {
   if (message.startsWith('//')) {
