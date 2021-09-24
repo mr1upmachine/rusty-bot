@@ -1,13 +1,16 @@
 {
   "name": "rusty-bot",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A discord bot for idiots",
   "main": "dist/index.js",
   "scripts": {
     "start": "npm run build && node dist/index.js",
-    "deploy": "genversion src/utilities/version.ts && tsc && gcloud app deploy",
-    "dev": "nodemon src/index.ts",
-    "build": "genversion src/utilities/version.ts && tsc"
+    "deploy": "npm run build && gcloud app deploy",
+    "dev": "nodemon src/index.ts && npm run copy-files",
+    "build": "npm run validate && genversion src/utilities/version.ts && tsc && npm run copy-files",
+    "copy-files": "copyfiles \"src/assets/*\" \"dist/assets\" --flat",
+    "validate": "npm run validate-activity-messages",
+    "validate-activity-messages": "node ./scripts/activity-message-validation.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +37,7 @@
     "@discordjs/builders": "0.6.0",
     "@discordjs/rest": "0.1.0-canary.0",
     "axios": "0.21.1",
+    "cron": "1.8.2",
     "discord-api-types": "0.22.0",
     "discord.js": "13.1.0",
     "dotenv": "10.0.0",
@@ -41,6 +45,7 @@
     "mersenne-twister": "1.1.0"
   },
   "devDependencies": {
+    "@types/cron": "^1.7.3",
     "@types/mersenne-twister": "1.1.2",
     "@types/node": "16.7.2",
     "@types/node-fetch": "2.5.12",
@@ -48,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "4.29.3",
     "@typescript-eslint/eslint-plugin-tslint": "4.29.3",
     "@typescript-eslint/parser": "4.29.3",
+    "copyfiles": "2.4.1",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.24.2",

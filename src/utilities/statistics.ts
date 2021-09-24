@@ -1,8 +1,19 @@
 import { FieldValue, Firestore } from '@google-cloud/firestore';
-import { Client, GuildMember, Message, MessageReaction, User } from 'discord.js';
+import {
+  Client,
+  GuildMember,
+  Message,
+  MessageReaction,
+  User
+} from 'discord.js';
 
 // TODO Convert file to async await pattern to fix callback hell
-exports.addReaction = async (client: Client, msgReact: MessageReaction, user: User, firestore: Firestore) => {
+exports.addReaction = async (
+  client: Client,
+  msgReact: MessageReaction,
+  user: User,
+  firestore: Firestore
+) => {
   const guild = msgReact.message.guild;
   const msg = msgReact.message;
   const guildRef = firestore.collection('guilds').doc(guild!.id);
@@ -32,7 +43,11 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
         // prevent users from giving themselves karma, prevent tracking non-meme channels
         if (user !== msgReact.message.author && meme) {
           // Add to post reaction count
-          const msgRef = guildRef.collection('channels').doc(msg.channel.id).collection('messages').doc(msg.id);
+          const msgRef = guildRef
+            .collection('channels')
+            .doc(msg.channel.id)
+            .collection('messages')
+            .doc(msg.id);
           msgRef.set(
             {
               reactionCount: FieldValue.increment(1)
@@ -62,7 +77,10 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
                 }
               }
               // Prevent constant uploading of the same content
-              if (msg.cleanContent !== content || msg.attachments.first()!.url !== attach) {
+              if (
+                msg.cleanContent !== content ||
+                msg.attachments.first()!.url !== attach
+              ) {
                 if (msg.attachments.first()) {
                   msgRef.set(
                     {
@@ -84,7 +102,9 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
               }
             })
             .catch((err) => {
-              msg.channel.send('Error in statistics.addReaction (getMessage): ' + err);
+              msg.channel.send(
+                'Error in statistics.addReaction (getMessage): ' + err
+              );
             });
         }
       }
@@ -94,7 +114,12 @@ exports.addReaction = async (client: Client, msgReact: MessageReaction, user: Us
     });
 };
 
-exports.removeReaction = async (client: Client, msgReact: MessageReaction, user: User, firestore: Firestore) => {
+exports.removeReaction = async (
+  client: Client,
+  msgReact: MessageReaction,
+  user: User,
+  firestore: Firestore
+) => {
   const guild = msgReact.message.guild;
   const msg = msgReact.message;
   const guildRef = firestore.collection('guilds').doc(guild!.id);
@@ -121,7 +146,11 @@ exports.removeReaction = async (client: Client, msgReact: MessageReaction, user:
 
         if (user !== msgReact.message.author && meme) {
           // Remove from post count
-          const msgRef = guildRef.collection('channels').doc(msg.channel.id).collection('messages').doc(msg.id);
+          const msgRef = guildRef
+            .collection('channels')
+            .doc(msg.channel.id)
+            .collection('messages')
+            .doc(msg.id);
 
           msgRef.set(
             {
@@ -147,7 +176,11 @@ exports.removeReaction = async (client: Client, msgReact: MessageReaction, user:
     });
 };
 
-exports.messageSent = async (client: Client, msg: Message, firestore: Firestore) => {
+exports.messageSent = async (
+  client: Client,
+  msg: Message,
+  firestore: Firestore
+) => {
   const guild = msg.guild;
   const guildRef = firestore.collection('guilds').doc(guild!.id);
   const userRef = guildRef.collection('members').doc(msg.member!.id);
@@ -165,7 +198,12 @@ exports.messageSent = async (client: Client, msg: Message, firestore: Firestore)
   );
 };
 
-exports.messageEdit = async (client: Client, oldMsg: Message, newMsg: Message, firestore: Firestore) => {
+exports.messageEdit = async (
+  client: Client,
+  oldMsg: Message,
+  newMsg: Message,
+  firestore: Firestore
+) => {
   const guild = newMsg.guild;
   const guildRef = firestore.collection('guilds').doc(guild!.id);
   let meme = false;
@@ -194,7 +232,11 @@ exports.messageEdit = async (client: Client, oldMsg: Message, newMsg: Message, f
         // }
 
         if (meme) {
-          const msgRef = guildRef.collection('channels').doc(oldMsg.channel.id).collection('messages').doc(oldMsg.id);
+          const msgRef = guildRef
+            .collection('channels')
+            .doc(oldMsg.channel.id)
+            .collection('messages')
+            .doc(oldMsg.id);
           if (newMsg.attachments.first()) {
             msgRef.set(
               {
@@ -219,7 +261,12 @@ exports.messageEdit = async (client: Client, oldMsg: Message, newMsg: Message, f
     });
 };
 
-exports.memberEdit = async (client: Client, oldMember: GuildMember, newMember: GuildMember, firestore: Firestore) => {
+exports.memberEdit = async (
+  client: Client,
+  oldMember: GuildMember,
+  newMember: GuildMember,
+  firestore: Firestore
+) => {
   // Prevent bots from affecting stats
   if (newMember.user.bot) {
     return;
@@ -231,7 +278,11 @@ exports.memberEdit = async (client: Client, oldMember: GuildMember, newMember: G
   }
 
   // Update saved name in firestore
-  const userRef = firestore.collection('guilds').doc(newMember.guild!.id).collection('members').doc(newMember!.id);
+  const userRef = firestore
+    .collection('guilds')
+    .doc(newMember.guild!.id)
+    .collection('members')
+    .doc(newMember!.id);
 
   userRef.set(
     {

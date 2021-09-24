@@ -1,8 +1,11 @@
+import { CronJob } from 'cron';
 import { Client, Intents } from 'discord.js';
 import * as dotenv from 'dotenv';
 import * as firestoreAdmin from 'firebase-admin';
+
 import { deployCommands } from './deploy-commands';
 import { CommandDerived } from './utilities/command';
+import { setRandomActivity } from './utilities/set-random-activity';
 
 // Setup for dotenv
 dotenv.config();
@@ -48,34 +51,42 @@ if (runningLocally) {
 }
 const firestore = firestoreAdmin.firestore();
 
-// setup discord.js commands
 client.on('ready', () => {
+  // setup discord.js commands
   for (const [guildId] of client.guilds.cache) {
     if (!client.user) {
       console.error(client.user);
       continue;
     }
 
-    deployCommands(client.user.id, guildId, process.env.TOKEN!, firestore)
+    deployCommands(client.user.id, guildId, process.env.TOKEN!, firestore);
   }
+
+  // setup activity status cycle
+  setRandomActivity(client);
+  const activityCronJob = new CronJob('0 0 0 * * *', () => {
+    setRandomActivity(client);
+  });
+  activityCronJob.start();
 });
 
 // listen for discord.js command
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
+client.on('interactionCreate', async (interaction) => {
+  if (!interaction.isCommand()) return;
 
-	try {
-    const commandDerived: CommandDerived = require(`./commands/${interaction.commandName}`).default; // Loads up the command based on file name
+  try {
+    const commandDerived: CommandDerived =
+      require(`./commands/${interaction.commandName}`).default; // Loads up the command based on file name
     const command = new commandDerived(firestore);
     await command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		await interaction.reply({ content: `ERROR: ${error}`, ephemeral: true });
-	}
+  } catch (error) {
+    console.error(error);
+    await interaction.reply({ content: `ERROR: ${error}`, ephemeral: true });
+  }
 });
 
 // discord.js messageCreate event
-client.on('messageCreate', async msg => {
+client.on('messageCreate', async (msg) => {
   if (msg.partial) {
     await msg.fetch();
   }
