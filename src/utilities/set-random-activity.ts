@@ -15,7 +15,8 @@ export function setRandomActivity(client: Client): void {
   )
     .toString()
     .split('\n')
-    .filter((message) => !message.startsWith('//'));
+    .filter((message) => !message.startsWith('//'))
+    .filter((message) => message.trim() !== '');
 
   const randomIndex = Math.floor(Math.random() * messages.length);
   const randomMessage = messages[randomIndex];
