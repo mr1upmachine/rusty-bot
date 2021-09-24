@@ -7,10 +7,12 @@ export default class SetMemeCommand extends Command {
     return new SlashCommandBuilder()
       .setName('setmeme')
       .setDescription('Sets the meme channel for stat tracking')
-      .addBooleanOption(option =>
+      .addBooleanOption((option) =>
         option
           .setName('value')
-          .setDescription('Boolean whether the meme channel should be set to this or not')
+          .setDescription(
+            'Boolean whether the meme channel should be set to this or not'
+          )
           .setRequired(true)
       );
   }
@@ -21,20 +23,23 @@ export default class SetMemeCommand extends Command {
     const channelName = interaction.channel?.toString();
     const channelId = interaction.channelId;
     let meme = interaction.options.getBoolean('value', true);
-  
+
     // Ensures only admins may use this command
     if (member.permissions.has('ADMINISTRATOR')) {
-      interaction.reply('Insufficient permissions. Only Administrators may use this command.');
+      interaction.reply(
+        'Insufficient permissions. Only Administrators may use this command.'
+      );
       return;
     }
-  
-    const docRef = this.firestore.collection('guilds').doc(guildId).collection('channels').doc(channelId);
-  
-    docRef.set(
-      { meme },
-      { merge: true }
-    );
-  
+
+    const docRef = this.firestore
+      .collection('guilds')
+      .doc(guildId)
+      .collection('channels')
+      .doc(channelId);
+
+    docRef.set({ meme }, { merge: true });
+
     interaction.reply(`Meme channel set to ${channelName}.`);
-  };
+  }
 }

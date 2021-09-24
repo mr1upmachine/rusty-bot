@@ -6,11 +6,15 @@ export default class RollCommand extends Command {
   async build() {
     return new SlashCommandBuilder()
       .setName('roll')
-      .setDescription('Roll some dice! Input a dice equation and receive a result.')
-      .addStringOption(option =>
+      .setDescription(
+        'Roll some dice! Input a dice equation and receive a result.'
+      )
+      .addStringOption((option) =>
         option
           .setName('expression')
-          .setDescription('Equations may only contain addition & subtraction and numbers can\'t be larger then 3 digits long')
+          .setDescription(
+            "Equations may only contain addition & subtraction and numbers can't be larger then 3 digits long"
+          )
           .setRequired(true)
       );
   }
@@ -20,13 +24,13 @@ export default class RollCommand extends Command {
       // Joins args together in case spaces are in the expression
       const expression = interaction.options.getString('expression', true);
       const diceEq = coerceDiceEq(expression);
-  
+
       await validate(diceEq);
-  
+
       const statements = await parse(diceEq);
-  
+
       const result = await roll(statements);
-  
+
       interaction.reply(`${result}`);
     } catch (e) {
       interaction.reply((e as Error).message);
@@ -54,7 +58,8 @@ class DiceStatement extends Statement {
 
     const index = statementString.indexOf('d');
 
-    this.numberOfDice = index === 0 ? 1 : parseInt(statementString.substring(0, index), 10);
+    this.numberOfDice =
+      index === 0 ? 1 : parseInt(statementString.substring(0, index), 10);
     this.sides = parseInt(statementString.substring(index + 1), 10);
   }
 
@@ -96,7 +101,8 @@ function coerceDiceEq(expr: string): string {
 
 // END DATA MODELS
 
-const FULL_EXPRESSION_REGEX = /^([+-]([0-9]{0,3}d[0-9]{1,3}|[+-]?([0-9]{1,3})))+$/i;
+const FULL_EXPRESSION_REGEX =
+  /^([+-]([0-9]{0,3}d[0-9]{1,3}|[+-]?([0-9]{1,3})))+$/i;
 const STATEMENT_REGEX = /[+-]([0-9]{0,3}d[0-9]{1,3}|[+-]?([0-9]{1,3}))/gi;
 
 /** Validates if a given string is a valid dice statement */
