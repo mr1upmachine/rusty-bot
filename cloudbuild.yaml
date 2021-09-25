@@ -11,16 +11,12 @@ steps:
         '--keyring=RustyKeyRing',
         '--key=rustykey'
       ]
-      
+
 # Build the new version of the bot
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'us.gcr.io/rusty-244803/prod:latest', '.']
     timeout: 600s
-    
-# Cleanup all prior docker images to save storage space on the server
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['compute', 'ssh', 'rusty-prod', '--zone=us-east1-b', '--command="docker system prune -f -a"']
-    
+
 # Push up the newest version once we are done pruning
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us.gcr.io/rusty-244803/prod:latest']
