@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { CommandInteraction } from 'discord.js';
 import MersenneTwister from 'mersenne-twister';
-import { Command } from '../utilities/command';
+import { Command } from '../../utilities/command';
 
 // TODO: Evaluate the spread of the modifier generation
 // TODO: Improve message formatting

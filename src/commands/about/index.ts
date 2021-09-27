@@ -1,6 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { CommandInteraction } from 'discord.js';
-import { Command } from '../utilities/command';
+import { Command } from '../../utilities/command';
+import { version } from '../../utilities/version';
 
 export default class AboutCommand extends Command {
   async build() {
@@ -10,7 +11,6 @@ export default class AboutCommand extends Command {
   }
 
   async execute(interaction: CommandInteraction) {
-    const version: string = require('../utilities/version');
     interaction.reply(
       `Hi, I'm Rusty, mascot of the Rusty's Bois server! My current version is ${version}!`
     );

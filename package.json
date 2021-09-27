@@ -7,7 +7,7 @@
     "start": "npm run build && node dist/index.js",
     "deploy": "npm run build && gcloud app deploy",
     "dev": "nodemon src/index.ts && npm run copy-files",
-    "build": "npm run validate && genversion src/utilities/version.ts && tsc && npm run copy-files",
+    "build": "npm run validate && genversion --es6 --semi src/utilities/version.ts && tsc && npm run copy-files",
     "copy-files": "copyfiles \"src/assets/*\" \"dist/assets\" --flat",
     "validate": "npm run validate-activity-messages",
     "validate-activity-messages": "node ./scripts/activity-message-validation.js"

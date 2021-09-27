@@ -1,6 +1,6 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { ColorResolvable, CommandInteraction, GuildMember } from 'discord.js';
-import { Command } from '../utilities/command';
+import { Command } from '../../utilities/command';
 
 export default class ColorCommand extends Command {
   async build() {
