@@ -23,9 +23,6 @@ if (!process.env.KEYFILE) {
 if (!process.env.PROJECTID) {
   throw new Error('PROJECTID must be provided');
 }
-if (!process.env.FIRESTORE_URL) {
-  throw new Error('FIRESTORE_URL must be provided');
-}
 
 let runningLocally = false;
 if (process.env.LOCAL) {
