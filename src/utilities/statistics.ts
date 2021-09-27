@@ -26,83 +26,65 @@ export async function processReactionEvent(
     return;
   }
 
-  getChannelFirestoreReferenceFromMessage(firestore, message)
-    .get()
-    .then((doc) => {
-      if (!doc.data()?.meme) {
-        return; // Channel is not enabled for tracking
-      }
+  const channelDocument = await getChannelFirestoreReferenceFromMessage(
+    firestore,
+    message
+  ).get();
 
-      getMemberFirestoreReferenceFromUser(
-        firestore,
-        message.author,
-        guild.id
-      ).set(
+  if (!channelDocument.data()?.meme) {
+    return; // Channel is not enabled for tracking
+  }
+
+  getMemberFirestoreReferenceFromUser(firestore, message.author, guild.id).set(
+    {
+      karma: FieldValue.increment(reactionValue)
+    },
+    { merge: true }
+  );
+
+  const messageRef = getMessageFirestoreReferenceFromMessage(
+    firestore,
+    message
+  );
+  messageRef.set(
+    { reactionCount: FieldValue.increment(reactionValue) },
+    { merge: true }
+  );
+
+  const messageDocumentData = (await messageRef.get()).data();
+  if (!messageDocumentData?.member) {
+    messageRef.set(
+      {
+        member: message.author.id
+      },
+      { merge: true }
+    );
+  }
+  if (
+    !messageDocumentData?.content ||
+    message.cleanContent !== messageDocumentData.content
+  ) {
+    messageRef.set(
+      {
+        content: message.cleanContent
+      },
+      { merge: true }
+    );
+  }
+  const messageAttachment = message.attachments.first();
+  if (messageAttachment) {
+    if (
+      !messageDocumentData?.attachment ||
+      messageAttachment !== messageDocumentData.attachment
+    ) {
+      messageRef.set(
         {
-          karma: FieldValue.increment(reactionValue)
+          attachment: messageAttachment
         },
         { merge: true }
       );
-
-      const messageRef = getMessageFirestoreReferenceFromMessage(
-        firestore,
-        message
-      );
-      messageRef.set(
-        { reactionCount: FieldValue.increment(reactionValue) },
-        { merge: true }
-      );
-
-      messageRef
-        .get()
-        .then((doc) => {
-          const storedData = doc.data();
-          if (!storedData?.member) {
-            messageRef.set(
-              {
-                member: message.author.id
-              },
-              { merge: true }
-            );
-          }
-          if (
-            !storedData?.content ||
-            message.cleanContent !== storedData?.content
-          ) {
-            messageRef.set(
-              {
-                content: message.cleanContent
-              },
-              { merge: true }
-            );
-          }
-          const messageAttachment = message.attachments.first();
-          if (messageAttachment) {
-            if (
-              !storedData?.attachment ||
-              messageAttachment !== storedData?.attachment
-            ) {
-              messageRef.set(
-                {
-                  attachment: messageAttachment
-                },
-                { merge: true }
-              );
-            }
-          }
-        })
-        .catch((err) => {
-          message.channel.send(
-            'Error retrieving message from Firestore (processReactionEvent): ' +
-              err
-          );
-        });
-    })
-    .catch((err) => {
-      message.channel.send(
-        'Error retrieving channel from Firestore (processReactionEvent): ' + err
-      );
-    });
+    }
+  }
 }
 
 export async function processMessageEvent(
