@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { CommandInteraction } from 'discord.js';
+import { CommandInteraction, GuildMember } from 'discord.js';
 import { Command } from '../utilities/command';
 
 export default class SetMemeCommand extends Command {
@@ -19,18 +19,18 @@ export default class SetMemeCommand extends Command {
 
   async execute(interaction: CommandInteraction) {
     const guildId = interaction.guildId!;
-    //const member = interaction.member as GuildMember;
+    const member = interaction.member as GuildMember;
     const channelName = interaction.channel?.toString();
     const channelId = interaction.channelId;
     let meme = interaction.options.getBoolean('value', true);
 
     // Ensures only admins may use this command
-    // if (member.permissions.has('ADMINISTRATOR')) {
-    //   interaction.reply(
-    //     'Insufficient permissions. Only Administrators may use this command.'
-    //   );
-    //   return;
-    // }
+    if (member.permissions.has('ADMINISTRATOR')) {
+      interaction.reply(
+        'Insufficient permissions. Only Administrators may use this command.'
+      );
+      return;
+    }
 
     const docRef = this.firestore
       .collection('guilds')
