@@ -56,8 +56,8 @@ export function getChannelFirestoreReferenceFromMessage(
 }
 
 export function getChannelFirestoreReferenceFromInteraction(
-  interaction: Interaction,
-  firestore: Firestore
+  firestore: Firestore,
+  interaction: Interaction
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   if (!interaction.guildId) {
     throw new Error('Unable to retrieve guildId from interaction');
@@ -126,8 +126,8 @@ export function getMemberFirestoreReferenceFromUser(
 }
 
 export function getMemberFirestoreReferenceFromInteraction(
-  interaction: Interaction,
-  firestore: Firestore
+  firestore: Firestore,
+  interaction: Interaction
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   if (!interaction.guildId) {
     throw new Error('Unable to retrieve guildId from interaction');
