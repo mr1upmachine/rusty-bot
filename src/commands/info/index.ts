@@ -6,7 +6,7 @@ import {
   GuildMember,
   MessageEmbed
 } from 'discord.js';
-import { Command } from '../utilities/command';
+import { Command } from '../../utilities/command';
 
 export default class InfoCommand extends Command {
   async build() {

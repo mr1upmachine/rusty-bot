@@ -81,7 +81,7 @@ client.on('interactionCreate', async (interaction) => {
 
   try {
     const commandDerived: CommandDerived =
-      require(`./commands/${interaction.commandName}`).default; // Loads the command based on file name
+      require(`./commands/${interaction.commandName}/index`).default; // Loads the command based on file name
     const command = new commandDerived(firestore);
     await command.execute(interaction);
   } catch (error) {

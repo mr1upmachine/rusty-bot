@@ -1,6 +1,6 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { CommandInteraction, Guild, GuildMember } from 'discord.js';
-import { Command } from '../utilities/command';
+import { Command } from '../../utilities/command';
 
 export default class ProfileCommand extends Command {
   async build() {

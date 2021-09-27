@@ -10,13 +10,11 @@ export async function deployGlobalCommands(
   token: string
 ): Promise<void> {
   const commands = [];
-  const commandFiles = readdirSync(path.join(__dirname, 'commands')).filter(
-    (file) => file.endsWith('.ts') || file.endsWith('.js')
-  );
+  const commandFiles = readdirSync(path.join(__dirname, 'commands'));
   const rest = new REST({ version: '9' }).setToken(token);
 
   for (const file of commandFiles) {
-    const command = require(path.join(__dirname, 'commands', file));
+    const command = require(path.join(__dirname, 'commands', file, 'index'));
     commands.push(command.data.toJSON());
   }
 
@@ -36,16 +34,15 @@ export async function deployCommands(
   firestore: Firestore
 ): Promise<void> {
   const commands = [];
-  const commandFiles = readdirSync(path.join(__dirname, 'commands')).filter(
-    (file) => file.endsWith('.ts') || file.endsWith('.js')
-  );
+  const commandFiles = readdirSync(path.join(__dirname, 'commands'));
   const rest = new REST({ version: '9' }).setToken(token);
 
   for (const file of commandFiles) {
     const commandDerived: CommandDerived = require(path.join(
       __dirname,
       'commands',
-      file
+      file,
+      'index'
     )).default; // Loads up the command based on file name
     const command = new commandDerived(firestore);
     const slashCommandBuilder = await command.build();

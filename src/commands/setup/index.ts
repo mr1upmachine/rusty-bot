@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { WriteBatch } from '@google-cloud/firestore';
 import { CommandInteraction, Guild, GuildMember } from 'discord.js';
-import { Command } from '../utilities/command';
+import { Command } from '../../utilities/command';
 
 export default class SetupCommand extends Command {
   async build() {
