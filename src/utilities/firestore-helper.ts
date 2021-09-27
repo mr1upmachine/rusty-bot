@@ -2,53 +2,53 @@ import { GuildMember, Interaction, Message, User } from 'discord.js';
 import { Firestore } from '@google-cloud/firestore';
 
 export function getGuildFirestoreReference(
-  guildId: string,
-  firestore: Firestore
+  firestore: Firestore,
+  guildId: string
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   return firestore.collection('guilds').doc(guildId);
 }
 
 export function getGuildFirestoreReferenceFromMessage(
-  message: Message,
-  firestore: Firestore
+  firestore: Firestore,
+  message: Message
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   if (message.guildId) {
-    return getGuildFirestoreReference(message.guildId, firestore);
+    return getGuildFirestoreReference(firestore, message.guildId);
   } else {
     throw new Error('Unable to retrieve guildId from message');
   }
 }
 
 export function getGuildFirestoreReferenceFromInteraction(
-  interaction: Interaction,
-  firestore: Firestore
+  firestore: Firestore,
+  interaction: Interaction
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   if (interaction.guildId) {
-    return getGuildFirestoreReference(interaction.guildId, firestore);
+    return getGuildFirestoreReference(firestore, interaction.guildId);
   } else {
     throw new Error('Unable to retrieve guildId from interaction');
   }
 }
 
 export function getChannelFirestoreReference(
+  firestore: Firestore,
   guildId: string,
-  channelId: string,
-  firestore: Firestore
+  channelId: string
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
-  return getGuildFirestoreReference(guildId, firestore)
+  return getGuildFirestoreReference(firestore, guildId)
     .collection('channels')
     .doc(channelId);
 }
 
 export function getChannelFirestoreReferenceFromMessage(
-  message: Message,
-  firestore: Firestore
+  firestore: Firestore,
+  message: Message
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   if (message.guildId) {
     return getChannelFirestoreReference(
+      firestore,
       message.guildId,
-      message.channelId,
-      firestore
+      message.channelId
     );
   } else {
     throw new Error('Unable to retrieve guildId from message');
@@ -61,9 +61,9 @@ export function getChannelFirestoreReferenceFromInteraction(
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   if (interaction.guildId && interaction.channelId) {
     return getChannelFirestoreReference(
+      firestore,
       interaction.guildId,
-      interaction.channelId,
-      firestore
+      interaction.channelId
     );
   } else {
     throw new Error(
@@ -73,26 +73,26 @@ export function getChannelFirestoreReferenceFromInteraction(
 }
 
 export function getMessageFirestoreReference(
+  firestore: Firestore,
   guildId: string,
   channelId: string,
-  messageId: string,
-  firestore: Firestore
+  messageId: string
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
-  return getChannelFirestoreReference(guildId, channelId, firestore)
+  return getChannelFirestoreReference(firestore, guildId, channelId)
     .collection('messages')
     .doc(messageId);
 }
 
 export function getMessageFirestoreReferenceFromMessage(
-  message: Message,
-  firestore: Firestore
+  firestore: Firestore,
+  message: Message
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   if (message.guildId) {
     return getMessageFirestoreReference(
+      firestore,
       message.guildId,
       message.channelId,
-      message.id,
-      firestore
+      message.id
     );
   } else {
     throw new Error('Unable to retrieve guildId from message');
@@ -100,28 +100,28 @@ export function getMessageFirestoreReferenceFromMessage(
 }
 
 export function getMemberFirestoreReference(
+  firestore: Firestore,
   guildId: string,
-  userId: string,
-  firestore: Firestore
+  userId: string
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
-  return getGuildFirestoreReference(guildId, firestore)
+  return getGuildFirestoreReference(firestore, guildId)
     .collection('members')
     .doc(userId);
 }
 
 export function getMemberFirestoreReferenceFromGuildMember(
-  member: GuildMember,
-  firestore: Firestore
+  firestore: Firestore,
+  member: GuildMember
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
-  return getMemberFirestoreReference(member.guild.id, member.id, firestore);
+  return getMemberFirestoreReference(firestore, member.guild.id, member.id);
 }
 
 export function getMemberFirestoreReferenceFromUser(
+  firestore: Firestore,
   user: User,
-  guildId: string,
-  firestore: Firestore
+  guildId: string
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
-  return getMemberFirestoreReference(guildId, user.id, firestore);
+  return getMemberFirestoreReference(firestore, guildId, user.id);
 }
 
 export function getMemberFirestoreReferenceFromInteraction(
@@ -130,9 +130,9 @@ export function getMemberFirestoreReferenceFromInteraction(
 ): FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData> {
   if (interaction.guildId) {
     return getMemberFirestoreReferenceFromUser(
+      firestore,
       interaction.user,
-      interaction.guildId,
-      firestore
+      interaction.guildId
     );
   } else {
     throw new Error('Unable to retrieve guildId from interaction');
