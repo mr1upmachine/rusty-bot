@@ -26,7 +26,7 @@ export async function processReactionEvent(
     return;
   }
 
-  getChannelFirestoreReferenceFromMessage(message, firestore)
+  getChannelFirestoreReferenceFromMessage(firestore, message)
     .get()
     .then((doc) => {
       if (!doc.data()?.meme) {
@@ -34,9 +34,9 @@ export async function processReactionEvent(
       }
 
       getMemberFirestoreReferenceFromUser(
+        firestore,
         message.author,
-        guild.id,
-        firestore
+        guild.id
       ).set(
         {
           karma: FieldValue.increment(reactionValue)
@@ -45,8 +45,8 @@ export async function processReactionEvent(
       );
 
       const messageRef = getMessageFirestoreReferenceFromMessage(
-        message,
-        firestore
+        firestore,
+        message
       );
       messageRef.set(
         { reactionCount: FieldValue.increment(reactionValue) },
@@ -115,9 +115,9 @@ export async function processMessageEvent(
   }
   if (message.guildId) {
     getMemberFirestoreReferenceFromUser(
+      firestore,
       message.author,
-      message.guildId,
-      firestore
+      message.guildId
     ).set(
       {
         posts: FieldValue.increment(messageValue)
@@ -136,7 +136,7 @@ export async function processMemberEditEvent(
     return;
   }
 
-  getMemberFirestoreReferenceFromGuildMember(newMember, firestore).set(
+  getMemberFirestoreReferenceFromGuildMember(firestore, newMember).set(
     {
       name: newMember.displayName
     },
