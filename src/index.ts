@@ -55,10 +55,7 @@ if (runningLocally) {
     credential: firestoreAdmin.credential.cert(serviceAccount)
   });
 } else {
-  firestoreAdmin.initializeApp({
-    credential: firestoreAdmin.credential.applicationDefault(),
-    databaseURL: process.env.FIRESTORE_URL
-  });
+  firestoreAdmin.initializeApp();
 }
 const firestore = firestoreAdmin.firestore();
 
