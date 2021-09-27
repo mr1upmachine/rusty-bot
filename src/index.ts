@@ -40,7 +40,7 @@ const client = new Client({
     Intents.FLAGS.DIRECT_MESSAGES,
     Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
   ],
-  partials: ['MESSAGE']
+  partials: ['MESSAGE', 'REACTION']
 });
 client.token = process.env.TOKEN;
 
@@ -99,8 +99,8 @@ client.on('messageCreate', async (message) => {
 
   try {
     await processMessageEvent(message, firestore, 1);
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error(error);
   }
 });
 
@@ -127,7 +127,8 @@ client.on('messageReactionAdd', async (messageReaction, user) => {
 
   try {
     await processReactionEvent(message, user, firestore, 1);
-  } catch (e) {
+  } catch (error) {
+    console.error(error);
     return;
   }
 });
@@ -155,7 +156,8 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
 
   try {
     await processReactionEvent(message, user, firestore, -1);
-  } catch (e) {
+  } catch (error) {
+    console.error(error);
     return;
   }
 });
@@ -166,7 +168,8 @@ client.on('guildMemberUpdate', async (oldMember, newMember) => {
       oldMember = await oldMember.fetch();
     }
     processMemberEditEvent(oldMember, newMember, firestore);
-  } catch (e) {
+  } catch (error) {
+    console.error(error);
     return;
   }
 });
