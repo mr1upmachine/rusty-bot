@@ -1,293 +1,145 @@
 import { FieldValue, Firestore } from '@google-cloud/firestore';
+import { GuildMember, Message, User } from 'discord.js';
 import {
-  Client,
-  GuildMember,
-  Message,
-  MessageReaction,
-  User
-} from 'discord.js';
+  getChannelFirestoreReferenceFromMessage,
+  getMemberFirestoreReferenceFromGuildMember,
+  getMemberFirestoreReferenceFromUser,
+  getMessageFirestoreReferenceFromMessage
+} from './firestore-helper';
 
-// TODO Convert file to async await pattern to fix callback hell
-exports.addReaction = async (
-  client: Client,
-  msgReact: MessageReaction,
-  user: User,
-  firestore: Firestore
-) => {
-  const guild = msgReact.message.guild;
-  const msg = msgReact.message;
-  const guildRef = firestore.collection('guilds').doc(guild!.id);
+export async function processReactionEvent(
+  message: Message,
+  reactingUser: User,
+  firestore: Firestore,
+  reactionValue: 1 | -1
+): Promise<void> {
+  const guild = message.guild;
+  const messageAuthor = message.author;
 
-  // Prevent bots from affecting stats
-  if (msg.author!.bot) {
+  if (
+    !message ||
+    !guild ||
+    !messageAuthor ||
+    messageAuthor.bot ||
+    reactingUser === message.author
+  ) {
     return;
   }
 
-  let meme = false;
-  let content = '';
-  let attach = '';
-
-  // get channel collection from firestore
-  guildRef
-    .collection('channels')
-    .doc(msg.channel.id)
+  getChannelFirestoreReferenceFromMessage(message, firestore)
     .get()
     .then((doc) => {
-      if (!doc.exists) {
-        return; // Okay to return, meme channels should be set beforehand
-      } else {
-        if (doc.data()!.meme) {
-          meme = doc.data()!.meme;
-        }
+      if (!doc.data()?.meme) {
+        return; // Channel is not enabled for tracking
+      }
 
-        // prevent users from giving themselves karma, prevent tracking non-meme channels
-        if (user !== msgReact.message.author && meme) {
-          // Add to post reaction count
-          const msgRef = guildRef
-            .collection('channels')
-            .doc(msg.channel.id)
-            .collection('messages')
-            .doc(msg.id);
-          msgRef.set(
-            {
-              reactionCount: FieldValue.increment(1)
-            },
-            { merge: true }
-          );
+      getMemberFirestoreReferenceFromUser(
+        message.author,
+        guild.id,
+        firestore
+      ).set(
+        {
+          karma: FieldValue.increment(reactionValue)
+        },
+        { merge: true }
+      );
 
-          // Add to poster karma
-          const userRef = guildRef.collection('members').doc(msg.member!.id);
-          userRef.set(
-            {
-              karma: FieldValue.increment(1)
-            },
-            { merge: true }
-          );
+      const messageRef = getMessageFirestoreReferenceFromMessage(
+        message,
+        firestore
+      );
+      messageRef.set(
+        { reactionCount: FieldValue.increment(reactionValue) },
+        { merge: true }
+      );
 
-          // Add message content
-          msgRef
-            .get()
-            .then((msgDoc) => {
-              if (msgDoc.data()) {
-                if (msgDoc.data()!.content) {
-                  content = msgDoc.data()!.content;
-                }
-                if (msgDoc.data()!.attachment) {
-                  attach = msgDoc.data()!.attachments;
-                }
-              }
-              // Prevent constant uploading of the same content
-              if (
-                msg.cleanContent !== content ||
-                msg.attachments.first()!.url !== attach
-              ) {
-                if (msg.attachments.first()) {
-                  msgRef.set(
-                    {
-                      attachment: msg.attachments.first()!.url,
-                      content: msg.cleanContent,
-                      member: msg.author!.id
-                    },
-                    { merge: true }
-                  );
-                } else {
-                  msgRef.set(
-                    {
-                      content: msg.cleanContent,
-                      member: msg.author!.id
-                    },
-                    { merge: true }
-                  );
-                }
-              }
-            })
-            .catch((err) => {
-              msg.channel.send(
-                'Error in statistics.addReaction (getMessage): ' + err
+      messageRef
+        .get()
+        .then((doc) => {
+          const storedData = doc.data();
+          if (!storedData?.member) {
+            messageRef.set(
+              {
+                member: message.author.id
+              },
+              { merge: true }
+            );
+          }
+          if (
+            !storedData?.content ||
+            message.cleanContent !== storedData?.content
+          ) {
+            messageRef.set(
+              {
+                content: message.cleanContent
+              },
+              { merge: true }
+            );
+          }
+          const messageAttachment = message.attachments.first();
+          if (messageAttachment) {
+            if (
+              !storedData?.attachment ||
+              messageAttachment !== storedData?.attachment
+            ) {
+              messageRef.set(
+                {
+                  attachment: messageAttachment
+                },
+                { merge: true }
               );
-            });
-        }
-      }
-    })
-    .catch((err) => {
-      msg.channel.send('Error in statistics.addReaction: ' + err);
-    });
-};
-
-exports.removeReaction = async (
-  client: Client,
-  msgReact: MessageReaction,
-  user: User,
-  firestore: Firestore
-) => {
-  const guild = msgReact.message.guild;
-  const msg = msgReact.message;
-  const guildRef = firestore.collection('guilds').doc(guild!.id);
-  let meme = false;
-
-  // Prevent bots from affecting stats
-  if (msg.author!.bot) {
-    return;
-  }
-
-  guildRef
-    .collection('channels')
-    .doc(msg.channel.id)
-    .get()
-    .then((doc) => {
-      if (!doc.exists) {
-        return;
-      } else {
-        if (doc.data()) {
-          if (doc.data()!.meme) {
-            meme = doc.data()!.meme;
+            }
           }
-        }
-
-        if (user !== msgReact.message.author && meme) {
-          // Remove from post count
-          const msgRef = guildRef
-            .collection('channels')
-            .doc(msg.channel.id)
-            .collection('messages')
-            .doc(msg.id);
-
-          msgRef.set(
-            {
-              reactionCount: FieldValue.increment(-1)
-            },
-            { merge: true }
+        })
+        .catch((err) => {
+          message.channel.send(
+            'Error retrieving message from Firestore (processReactionEvent): ' +
+              err
           );
-
-          // Remove from user karma
-          const userRef = guildRef.collection('members').doc(msg.member!.id);
-
-          userRef.set(
-            {
-              karma: FieldValue.increment(-1)
-            },
-            { merge: true }
-          );
-        }
-      }
+        });
     })
     .catch((err) => {
-      msg.channel.send('Error in statistics.removeReaction: ' + err);
+      message.channel.send(
+        'Error retrieving channel from Firestore (processReactionEvent): ' + err
+      );
     });
-};
+}
 
-exports.messageSent = async (
-  client: Client,
-  msg: Message,
-  firestore: Firestore
-) => {
-  const guild = msg.guild;
-  const guildRef = firestore.collection('guilds').doc(guild!.id);
-  const userRef = guildRef.collection('members').doc(msg.member!.id);
-
-  // Prevent bots from affecting stats
-  if (msg.author!.bot) {
+export async function processMessageEvent(
+  message: Message,
+  firestore: Firestore,
+  messageValue: 1 | -1
+) {
+  if (message.author.bot) {
     return;
   }
-
-  userRef.set(
-    {
-      posts: FieldValue.increment(1)
-    },
-    { merge: true }
-  );
-};
-
-exports.messageEdit = async (
-  client: Client,
-  oldMsg: Message,
-  newMsg: Message,
-  firestore: Firestore
-) => {
-  const guild = newMsg.guild;
-  const guildRef = firestore.collection('guilds').doc(guild!.id);
-  let meme = false;
-
-  // Prevent bots from affecting stats
-  if (newMsg.author!.bot) {
-    return;
+  if (message.guildId) {
+    getMemberFirestoreReferenceFromUser(
+      message.author,
+      message.guildId,
+      firestore
+    ).set(
+      {
+        posts: FieldValue.increment(messageValue)
+      },
+      { merge: true }
+    );
   }
+}
 
-  guildRef
-    .collection('channels')
-    .doc(oldMsg.channel.id)
-    .get()
-    .then((doc) => {
-      if (!doc.exists) {
-        return;
-      } else {
-        if (doc.data()!.meme) {
-          meme = doc.data()!.meme;
-        }
-        // if (doc.data()!.content) {
-        //   let content = doc.data()!.content;
-        // }
-        // if (doc.data()!.attachment) {
-        //   let attach = doc.data()!.attachments;
-        // }
-
-        if (meme) {
-          const msgRef = guildRef
-            .collection('channels')
-            .doc(oldMsg.channel.id)
-            .collection('messages')
-            .doc(oldMsg.id);
-          if (newMsg.attachments.first()) {
-            msgRef.set(
-              {
-                attachment: newMsg.attachments.first()!.url,
-                content: newMsg.cleanContent
-              },
-              { merge: true }
-            );
-          } else {
-            msgRef.set(
-              {
-                content: newMsg.cleanContent
-              },
-              { merge: true }
-            );
-          }
-        }
-      }
-    })
-    .catch((err) => {
-      newMsg.channel.send('Error in statistics.messageEdit: ' + err);
-    });
-};
-
-exports.memberEdit = async (
-  client: Client,
+export async function processMemberEditEvent(
   oldMember: GuildMember,
   newMember: GuildMember,
   firestore: Firestore
-) => {
-  // Prevent bots from affecting stats
-  if (newMember.user.bot) {
+) {
+  if (newMember.user.bot || newMember.displayName === oldMember.displayName) {
     return;
   }
 
-  // Return if name/nickname hasn't changed
-  if (newMember.displayName === oldMember.displayName) {
-    return;
-  }
-
-  // Update saved name in firestore
-  const userRef = firestore
-    .collection('guilds')
-    .doc(newMember.guild!.id)
-    .collection('members')
-    .doc(newMember!.id);
-
-  userRef.set(
+  getMemberFirestoreReferenceFromGuildMember(newMember, firestore).set(
     {
       name: newMember.displayName
     },
     { merge: true }
   );
-};
+}

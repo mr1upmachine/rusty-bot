@@ -6,6 +6,11 @@ import * as firestoreAdmin from 'firebase-admin';
 import { deployCommands } from './deploy-commands';
 import { CommandDerived } from './utilities/command';
 import { setRandomActivity } from './utilities/set-random-activity';
+import {
+  processReactionEvent,
+  processMessageEvent,
+  processMemberEditEvent
+} from './utilities/statistics';
 
 // Setup for dotenv
 dotenv.config();
@@ -17,6 +22,9 @@ if (!process.env.KEYFILE) {
 }
 if (!process.env.PROJECTID) {
   throw new Error('PROJECTID must be provided');
+}
+if (!process.env.FIRESTORE_URL) {
+  throw new Error('FIRESTORE_URL must be provided');
 }
 
 let runningLocally = false;
@@ -47,7 +55,10 @@ if (runningLocally) {
     credential: firestoreAdmin.credential.cert(serviceAccount)
   });
 } else {
-  firestoreAdmin.initializeApp();
+  firestoreAdmin.initializeApp({
+    credential: firestoreAdmin.credential.applicationDefault(),
+    databaseURL: process.env.FIRESTORE_URL
+  });
 }
 const firestore = firestoreAdmin.firestore();
 
@@ -76,7 +87,7 @@ client.on('interactionCreate', async (interaction) => {
 
   try {
     const commandDerived: CommandDerived =
-      require(`./commands/${interaction.commandName}`).default; // Loads up the command based on file name
+      require(`./commands/${interaction.commandName}`).default; // Loads the command based on file name
     const command = new commandDerived(firestore);
     await command.execute(interaction);
   } catch (error) {
@@ -86,52 +97,24 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 // discord.js messageCreate event
-client.on('messageCreate', async (msg) => {
-  if (msg.partial) {
-    await msg.fetch();
-  }
-
+client.on('messageCreate', async (message) => {
   // Prevent Rusty from responding to and logging other bots
-  if (msg.author!.bot) {
+  if (message.author.bot) {
     return;
   }
 
   try {
-    const statsFile = require(`./utilities/statistics`);
-    await statsFile.messageSent(client, msg, firestore);
+    await processMessageEvent(message, firestore, 1);
   } catch (e) {
     console.log(e);
   }
 });
 
-// discord.js message edit event
-client.on('messageUpdate', async (oldMsg, newMsg) => {
-  // fetch and cache partial messages
-  if (oldMsg.partial) {
-    await oldMsg.fetch();
-  }
-  if (newMsg.partial) {
-    await newMsg.fetch();
-  }
-
-  // Prevent Rusty from responding to and logging other bots
-  if (newMsg.author!.bot) {
-    return;
-  }
-
-  try {
-    const statsFile = require(`./utilities/statistics`); // Loads the stats file
-    await statsFile.messageEdit(client, oldMsg, newMsg, firestore);
-  } catch (e) {
-    return;
-  }
-});
-
 // discord.js add reaction event
 client.on('messageReactionAdd', async (messageReaction, user) => {
-  // fetch and cache partial messages
-  if (messageReaction.message.partial) {
-    await messageReaction.message.fetch();
+  // fetch and cache partial users
+  if (user.partial) {
+    user = await user.fetch();
   }
 
   // Prevent Rusty from responding to and logging other bots
@@ -139,9 +122,17 @@ client.on('messageReactionAdd', async (messageReaction, user) => {
     return;
   }
 
+  // fetch and cache partial messages
+  if (messageReaction.partial) {
+    messageReaction = await messageReaction.fetch();
+  }
+  let message = messageReaction.message;
+  if (message.partial) {
+    message = await message.fetch();
+  }
+
   try {
-    const statsFile = require(`./utilities/statistics`); // Loads the stats file
-    await statsFile.addReaction(client, messageReaction, user, firestore);
+    await processReactionEvent(message, user, firestore, 1);
   } catch (e) {
     return;
   }
@@ -149,9 +140,9 @@ client.on('messageReactionAdd', async (messageReaction, user) => {
 
 // discord.js remove reaction event
 client.on('messageReactionRemove', async (messageReaction, user) => {
-  // fetch and cache partial messages
-  if (messageReaction.message.partial) {
-    await messageReaction.message.fetch();
+  // fetch and cache partial users
+  if (user.partial) {
+    user = await user.fetch();
   }
 
   // Prevent Rusty from responding to and logging other bots
@@ -159,9 +150,17 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
     return;
   }
 
+  // fetch and cache partial messages
+  if (messageReaction.partial) {
+    messageReaction = await messageReaction.fetch();
+  }
+  let message = messageReaction.message;
+  if (message.partial) {
+    message = await message.fetch();
+  }
+
   try {
-    const statsFile = require(`./utilities/statistics`); // Loads the stats file
-    await statsFile.removeReaction(client, messageReaction, user, firestore);
+    await processReactionEvent(message, user, firestore, -1);
   } catch (e) {
     return;
   }
@@ -169,8 +168,10 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
 
 client.on('guildMemberUpdate', async (oldMember, newMember) => {
   try {
-    const statsFile = require(`./utilities/statistics`); // Loads the stats file
-    await statsFile.memberEdit(client, oldMember, newMember, firestore);
+    if (oldMember.partial) {
+      oldMember = await oldMember.fetch();
+    }
+    processMemberEditEvent(oldMember, newMember, firestore);
   } catch (e) {
     return;
   }
