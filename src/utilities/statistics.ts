@@ -71,7 +71,8 @@ export async function processReactionEvent(
       { merge: true }
     );
   }
-  const messageAttachment = message.attachments.first();
+
+  const messageAttachment = message.attachments.first()?.attachment;
   if (messageAttachment) {
     if (
       !messageDocumentData?.attachment ||
