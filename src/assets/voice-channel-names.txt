@@ -1,0 +1,90 @@
+// Channel groups are separated by blank lines. Rusty will randomly select a group, then randomly select
+// a number of names equal to the number of voice channels registered. The first group will be a miscellaneous
+// group to fill in extra spots when the other groups don't have enough entries.
+
+// Miscellaneous Group
+Egg 🥚
+Egg 2 🥚
+Egg 3 🥚
+Egg 4 🥚
+Egg 5 🥚
+Egg 6 🥚
+Egg 7 🥚
+Egg 8 🥚
+Egg 9 🥚
+
+Bubblegloop Swamp 🐊
+Clanker's Cavern 🐳
+Click Clock Wood 🐛
+Freezeezy Peak ☃️
+Gobi's Valley 🐪
+Gruntilda's Lair 🧙‍♀️
+Grunty's Furnace Fun 🔥
+Mad Monster Mansion 👻
+Mumbo's Mountain 🐜
+Rusty Bucket Bay 🚢
+Spiral Mountain 🏔️
+Treasure Trove Cove 🦀
+
+The Sun ☀️
+Hourglass Twins ⏳
+Timber Hearth 🌲
+Brittle Hollow 🔨
+Giant’s Deep 🌪️
+Dark Bramble 🐟
+The Attlerock 🌔
+Hollow’s Lantern 🌋
+White Hole ⚪
+The Interloper ☄️
+The Quantum Moon 🌚
+Eye of the Universe 👁️
+Sun Station 🪡
+Orbital Probe Cannon 🔫
+White Hole Station 💫
+The Stranger ❓
+
+Colony 9 🏡
+Colony 6 🏗️
+Bionis' Interior 🫁
+Bionis' Shoulder 🪂
+Bionis' Leg 🌾
+Alcamoth 🏙️
+Eryth Sea 🌊
+Ether Mine ⛏️
+Frontier Village 🌳
+High Entia Tomb 🤖
+Makna Forest 🐛
+Prison Island 🚓
+Satorl Marsh 🦎
+Tephra Cave 🕷️
+Valak Mountain 🏂
+
+Crunchy
+Flamin' Hot
+Flamin' Hot Limón
+Xxtra Flamin' Hot
+Cheddar Jalapeno
+Popcorn Cheddar
+Popcorn Cheddar Jalapeno
+Popcorn Flamin' Hot
+Puffs
+Puffs Flamin' Hot
+Bolitas
+Paws
+White Cheddar Bites
+Baked
+Baked Flamin' Hot
+White Cheddar
+Puffs White Cheddar
+Puffs White Cheddar Jalapeno
+Fantastix! Chili Cheese
+Fantastix! Flamin' Hot
+Mac 'n Cheese Cheesy
+Mac 'n Cheese Flamin' Hot
+Mac 'n Cheese Cheddar Jalapeno
+
+Avocado 🥑
+Banana 🍌
+Coconut 🥥
+Date 🌴
+Kiwi 🥝

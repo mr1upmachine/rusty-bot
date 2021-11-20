@@ -17,6 +17,7 @@ import {
 import { useCommand } from './utilities/use-command.js';
 import { coerceBoolean } from './utilities/coerce-boolean.js';
 import { messageReactionEventFactory } from './message-reaction-event-factory.js';
+import { setRandomVoiceChannelNames } from './utilities/set-random-voice-channel-names.js';
 
 // Environment variables
 dotenv.config();
@@ -42,6 +43,7 @@ if (LOCAL) {
 
 // Constants
 const RANDOM_ACTIVITY_CRON = '0 0 0 * * *';
+const RANDOM_VOICE_CHANNEL_NAME_CRON = '0 0 0 * SUN *';
 
 // Setup for discord.js
 const globalClient = new Client({
@@ -93,6 +95,16 @@ globalClient.on('ready', async (client) => {
       setRandomActivity(client);
     });
     activityCronJob.start();
+
+    // setup voice channel names
+    setRandomVoiceChannelNames(client);
+    const voiceChannelNamesCronJob = new CronJob(
+      RANDOM_VOICE_CHANNEL_NAME_CRON,
+      () => {
+        setRandomVoiceChannelNames(client);
+      }
+    );
+    voiceChannelNamesCronJob.start();
   } catch (e: unknown) {
     console.log('Uncaught exception:');
     console.error(e);

@@ -1,6 +1,6 @@
 {
   "name": "rusty-bot",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "A discord bot for idiots",
   "main": "dist/index.js",
   "type": "module",
@@ -11,8 +11,9 @@
     "dev": "nodemon src/index.ts && npm run copy-files",
     "build": "npm run validate && genversion --es6 --semi src/utilities/version.ts && tsc && npm run copy-files",
     "copy-files": "copyfiles \"src/assets/*\" \"dist/assets\" --flat",
-    "validate": "npm run validate-activity-messages",
-    "validate-activity-messages": "node ./scripts/activity-message-validation.js"
+    "validate": "npm run validate-activity-messages && npm run validate-voice-channel-names",
+    "validate-activity-messages": "node ./scripts/activity-message-validation.js",
+    "validate-voice-channel-names": "node ./scripts/voice-channel-name-validation.js"
   },
   "repository": {
     "type": "git",
