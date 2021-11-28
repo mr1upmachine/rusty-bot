@@ -1,6 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { CommandInteraction, Guild, GuildMember } from 'discord.js';
 import { Command } from '../../utilities/command';
+import { formatHexColor } from '../../utilities/hex-color-helper';
 
 export default class ProfileCommand extends Command {
   async build() {
@@ -31,28 +32,16 @@ export default class ProfileCommand extends Command {
       .doc(member.id);
 
     if (color) {
-      const isValidHex = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i.test(color);
-      if (!isValidHex) {
-        throw new Error('Please input a valid hex color code!');
-      }
-
-      let newColor = color;
-      const isShortenedHex = /(^#?[0-9A-F]{3}$)/i.test(color);
-      if (isShortenedHex) {
-        newColor = color.replace(
-          /#?([0-9A-F])([0-9A-F])([0-9A-F])/,
-          '$1$1$2$2$3$3'
-        );
-      }
+      const formattedColor = formatHexColor(color);
 
       userFirestoreRef.set(
         {
-          infoColor: newColor
+          infoColor: formattedColor
         },
         { merge: true }
       );
 
-      interaction.reply(`Color set to ${newColor}!`);
+      interaction.reply(`Color set to ${formattedColor}!`);
     }
 
     // TODO break into separate method
