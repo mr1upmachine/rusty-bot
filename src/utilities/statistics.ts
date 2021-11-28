@@ -26,13 +26,22 @@ export async function processReactionEvent(
     return;
   }
 
-  const channelDocument = await getChannelFirestoreReferenceFromMessage(
+  const channelDocumentRef = getChannelFirestoreReferenceFromMessage(
     firestore,
     message
-  ).get();
+  );
+  const channelDocument = await channelDocumentRef.get();
 
-  if (!channelDocument.data()?.meme) {
-    return; // Channel is not enabled for tracking
+  if (!channelDocument.data()?.karmaTracking) {
+    if (channelDocument.data()?.meme) {
+      // migrate to new field name
+      channelDocumentRef.set(
+        { karmaTracking: true, meme: FirebaseFirestore.FieldValue.delete() },
+        { merge: true }
+      );
+    } else {
+      return; // Channel is not enabled for tracking
+    }
   }
 
   getMemberFirestoreReferenceFromUser(firestore, message.author, guild.id).set(
