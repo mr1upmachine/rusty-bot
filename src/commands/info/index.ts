@@ -111,7 +111,7 @@ export default class InfoCommand extends Command {
         },
         {
           inline: true,
-          name: 'Meme Karma',
+          name: 'Karma',
           value: `${karma}`
         }
       ]
