@@ -9,7 +9,7 @@ export async function scanMembers(
   firestore: FirebaseFirestore.Firestore,
   interaction: CommandInteraction
 ) {
-  //Replying immediately allows command to run for longer than 3 seconds.
+  // Replying immediately allows command to run for longer than 3 seconds.
   await interaction.reply({
     content: 'Beginning user import',
     ephemeral: true

@@ -22,14 +22,14 @@ export async function karma(
 
   if (!karmaValue) {
     const karmaIsEnabled = (await docRef.get()).data()?.karmaTracking;
-    karmaValue = karmaIsEnabled ? false : true;
+    karmaValue = !karmaIsEnabled;
   }
 
   docRef.set({ karmaTracking: karmaValue }, { merge: true });
 
+  const karmaValueText = karmaValue ? 'enabled' : 'disabled';
+
   interaction.editReply(
-    `Karma tracking for ${channelName} has been ${
-      karmaValue ? 'enabled' : 'disabled'
-    }.`
+    `Karma tracking for ${channelName} has been ${karmaValueText}.`
   );
 }
