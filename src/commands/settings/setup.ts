@@ -6,7 +6,7 @@ export async function setup(
   interaction: CommandInteraction
 ) {
   interaction.reply({
-    content: `I haven't been implemented yet! Please use The other settings commands to configure me for your server.`,
+    content: `I haven't been implemented yet! Please use the other settings commands to configure me for your server.`,
     ephemeral: true
   });
 }

@@ -9,7 +9,7 @@ import { setup } from './setup';
 // setup: Once we have more than one setting for a guild, we can use setup as a wizard to guide admins through them
 // scan-members: If/when Rusty gets a website, this command will iterate through all existing users to make sure they have a document in firestore
 
-export default class SetupCommand extends Command {
+export default class SettingsCommand extends Command {
   async build() {
     return new SlashCommandBuilder()
       .setName('settings')
@@ -31,7 +31,7 @@ export default class SetupCommand extends Command {
           )
           .addBooleanOption((option) =>
             option
-              .setName('bool')
+              .setName('value')
               .setDescription('Enable or disable tracking')
               .setRequired(false)
           )
@@ -44,10 +44,9 @@ export default class SetupCommand extends Command {
 
     // Ensures only admins may use this command
     if (!member.permissions.has('ADMINISTRATOR')) {
-      interaction.reply(
-        'Error: insufficient permissions. Only Administrators may use this command.'
+      throw new Error(
+        'Insufficient permissions. Only Administrators may use this command.'
       );
-      return;
     }
 
     switch (subcommand) {
