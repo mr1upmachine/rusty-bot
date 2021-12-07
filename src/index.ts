@@ -86,7 +86,20 @@ client.on('interactionCreate', async (interaction) => {
     await command.execute(interaction);
   } catch (error) {
     console.error(error);
-    await interaction.reply({ content: `ERROR: ${error}`, ephemeral: true });
+
+    let errorMessage = 'ERROR: ';
+
+    if (error instanceof Error) {
+      errorMessage += error.message;
+    } else {
+      errorMessage += error;
+    }
+
+    if (interaction.replied) {
+      await interaction.reply({ content: errorMessage, ephemeral: true });
+    } else {
+      await interaction.followUp({ content: errorMessage, ephemeral: true });
+    }
   }
 });
 
