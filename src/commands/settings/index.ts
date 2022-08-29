@@ -1,5 +1,9 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { CommandInteraction, GuildMember } from 'discord.js';
+import {
+  ChatInputCommandInteraction,
+  GuildMember,
+  PermissionFlagsBits,
+  SlashCommandBuilder
+} from 'discord.js';
 import { Command } from '../../utilities/command';
 import { karma } from './karma';
 import { scanMembers } from './scan-members';
@@ -38,12 +42,12 @@ export default class SettingsCommand extends Command {
       );
   }
 
-  async execute(interaction: CommandInteraction) {
+  async execute(interaction: ChatInputCommandInteraction) {
     const member = interaction.member as GuildMember;
     const subcommand = interaction.options.getSubcommand();
 
     // Ensures only admins may use this command
-    if (!member.permissions.has('ADMINISTRATOR')) {
+    if (!member.permissions.has(PermissionFlagsBits.Administrator)) {
       throw new Error(
         'Insufficient permissions. Only Administrators may use this command.'
       );

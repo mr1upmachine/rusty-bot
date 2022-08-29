@@ -1,5 +1,5 @@
-import { GuildMember, Interaction, Message, User } from 'discord.js';
 import { Firestore } from '@google-cloud/firestore';
+import { GuildMember, Interaction, Message, User } from 'discord.js';
 
 export function getGuildFirestoreReference(
   firestore: Firestore,

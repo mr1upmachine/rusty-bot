@@ -1,5 +1,4 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { CommandInteraction } from 'discord.js';
+import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
 import { Command } from '../../utilities/command';
 
 export default class RollCommand extends Command {
@@ -19,7 +18,7 @@ export default class RollCommand extends Command {
       );
   }
 
-  async execute(interaction: CommandInteraction) {
+  async execute(interaction: ChatInputCommandInteraction) {
     try {
       // Joins args together in case spaces are in the expression
       const expression = interaction.options.getString('expression', true);

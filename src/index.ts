@@ -1,5 +1,5 @@
 import { CronJob } from 'cron';
-import { Client, Intents } from 'discord.js';
+import { Client, IntentsBitField, Partials } from 'discord.js';
 import * as dotenv from 'dotenv';
 import * as firestoreAdmin from 'firebase-admin';
 
@@ -32,15 +32,15 @@ if (process.env.LOCAL) {
 // Setup for discord.js
 const client = new Client({
   intents: [
-    Intents.FLAGS.GUILDS,
-    Intents.FLAGS.GUILD_MEMBERS,
-    Intents.FLAGS.GUILD_MESSAGES,
-    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-    Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,
-    Intents.FLAGS.DIRECT_MESSAGES,
-    Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
+    IntentsBitField.Flags.Guilds,
+    IntentsBitField.Flags.GuildMembers,
+    IntentsBitField.Flags.GuildMessages,
+    IntentsBitField.Flags.GuildMessageReactions,
+    IntentsBitField.Flags.GuildEmojisAndStickers,
+    IntentsBitField.Flags.DirectMessages,
+    IntentsBitField.Flags.DirectMessageReactions
   ],
-  partials: ['MESSAGE', 'REACTION']
+  partials: [Partials.Message, Partials.Reaction]
 });
 client.token = process.env.TOKEN;
 
@@ -77,7 +77,7 @@ client.on('ready', () => {
 
 // listen for discord.js command
 client.on('interactionCreate', async (interaction) => {
-  if (!interaction.isCommand()) return;
+  if (!interaction.isCommand() || !interaction.isChatInputCommand()) return;
 
   try {
     const commandDerived: CommandDerived =

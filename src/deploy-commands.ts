@@ -1,6 +1,6 @@
 import { REST } from '@discordjs/rest';
 import { Firestore } from '@google-cloud/firestore';
-import { Routes } from 'discord-api-types/v9';
+import { Routes } from 'discord-api-types/v10';
 import { readdirSync } from 'fs';
 import * as path from 'path';
 import { CommandDerived } from './utilities/command';
@@ -11,7 +11,7 @@ export async function deployGlobalCommands(
 ): Promise<void> {
   const commands = [];
   const commandFiles = readdirSync(path.join(__dirname, 'commands'));
-  const rest = new REST({ version: '9' }).setToken(token);
+  const rest = new REST({ version: '10' }).setToken(token);
 
   for (const file of commandFiles) {
     const command = require(path.join(__dirname, 'commands', file, 'index'));

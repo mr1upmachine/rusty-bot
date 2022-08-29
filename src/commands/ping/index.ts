@@ -1,5 +1,4 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { CommandInteraction } from 'discord.js';
+import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
 import { Command } from '../../utilities/command';
 
 export default class PingCommand extends Command {
@@ -9,7 +8,7 @@ export default class PingCommand extends Command {
       .setDescription('Replies with Pong!');
   }
 
-  async execute(interaction: CommandInteraction) {
-    return interaction.reply('Pong!');
+  async execute(interaction: ChatInputCommandInteraction) {
+    interaction.reply('Pong!');
   }
 }
