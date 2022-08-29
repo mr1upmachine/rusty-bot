@@ -1,5 +1,9 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { CommandInteraction, Guild, GuildMember } from 'discord.js';
+import {
+  ChatInputCommandInteraction,
+  Guild,
+  GuildMember,
+  SlashCommandBuilder
+} from 'discord.js';
 import { Command } from '../../utilities/command';
 import { formatHexColor } from '../../utilities/hex-color-helper';
 
@@ -18,7 +22,7 @@ export default class ProfileCommand extends Command {
       );
   }
 
-  async execute(interaction: CommandInteraction) {
+  async execute(interaction: ChatInputCommandInteraction) {
     const guild = interaction.guild as Guild;
     const member = interaction.member as GuildMember;
 

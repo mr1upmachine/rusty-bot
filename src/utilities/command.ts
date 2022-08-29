@@ -1,10 +1,10 @@
+import { Firestore } from '@google-cloud/firestore';
 import {
+  ChatInputCommandInteraction,
   SlashCommandBuilder,
   SlashCommandOptionsOnlyBuilder,
   SlashCommandSubcommandsOnlyBuilder
-} from '@discordjs/builders';
-import { Firestore } from '@google-cloud/firestore';
-import { CommandInteraction } from 'discord.js';
+} from 'discord.js';
 
 export type CommandDerived = new (firestore: Firestore) => Command;
 
@@ -17,5 +17,5 @@ export abstract class Command {
     | SlashCommandSubcommandsOnlyBuilder
     | Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>
   >;
-  abstract execute(interaction: CommandInteraction): Promise<void>;
+  abstract execute(interaction: ChatInputCommandInteraction): Promise<void>;
 }

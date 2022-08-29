@@ -1,10 +1,10 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
 import {
   ColorResolvable,
-  CommandInteraction,
+  ChatInputCommandInteraction,
+  EmbedBuilder,
   Guild,
   GuildMember,
-  MessageEmbed
+  SlashCommandBuilder
 } from 'discord.js';
 import { Command } from '../../utilities/command';
 
@@ -18,7 +18,7 @@ export default class InfoCommand extends Command {
       );
   }
 
-  async execute(interaction: CommandInteraction) {
+  async execute(interaction: ChatInputCommandInteraction) {
     const guild = interaction.guild as Guild;
     let member = interaction.member as GuildMember;
     let user = interaction.options.getUser('user');
@@ -71,6 +71,7 @@ export default class InfoCommand extends Command {
         karma,
         color
       );
+
       interaction.reply({
         embeds: [embed]
       });
@@ -87,23 +88,18 @@ export default class InfoCommand extends Command {
     postCount: string | number,
     karma: string | number,
     userColor: ColorResolvable
-  ): MessageEmbed {
-    return new MessageEmbed({
-      title: 'About',
-      description: about,
-      color: userColor,
-      timestamp: new Date(),
-      footer: {
+  ): EmbedBuilder {
+    return new EmbedBuilder()
+      .setTitle('About')
+      .setDescription(about)
+      .setTimestamp(new Date())
+      .setAuthor({ name: userNickname, iconURL: pfp })
+      .setColor(userColor)
+      .setFooter({
         text: 'Use the `profile` command for customization!'
-      },
-      thumbnail: {
-        url: pfp
-      },
-      author: {
-        icon_url: pfp,
-        name: userNickname
-      },
-      fields: [
+      })
+      .setThumbnail(pfp)
+      .addFields([
         {
           inline: true,
           name: 'Post Count',
@@ -114,7 +110,6 @@ export default class InfoCommand extends Command {
           name: 'Karma',
           value: `${karma}`
         }
-      ]
-    });
+      ]);
   }
 }

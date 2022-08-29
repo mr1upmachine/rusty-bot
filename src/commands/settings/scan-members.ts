@@ -1,4 +1,4 @@
-import { CommandInteraction } from 'discord.js';
+import { ChatInputCommandInteraction } from 'discord.js';
 import { WriteBatch } from '@google-cloud/firestore';
 
 // TODO: GDPR/CCPA compliance (applies to entire bot, tbh)
@@ -7,7 +7,7 @@ import { WriteBatch } from '@google-cloud/firestore';
 /** Collects guild member info into batches and processes them into Firebase */
 export async function scanMembers(
   firestore: FirebaseFirestore.Firestore,
-  interaction: CommandInteraction
+  interaction: ChatInputCommandInteraction
 ) {
   // Replying immediately allows command to run for longer than 3 seconds.
   await interaction.reply({

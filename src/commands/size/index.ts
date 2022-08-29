@@ -1,5 +1,4 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { CommandInteraction } from 'discord.js';
+import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
 import MersenneTwister from 'mersenne-twister';
 import { Command } from '../../utilities/command';
 
@@ -19,7 +18,7 @@ export default class SizeCommand extends Command {
       );
   }
 
-  async execute(interaction: CommandInteraction) {
+  async execute(interaction: ChatInputCommandInteraction) {
     const user = interaction.options.getUser('user') ?? interaction.user;
 
     const hash = this.hashCode(user.id);

@@ -1,9 +1,9 @@
-import { CommandInteraction } from 'discord.js';
+import { ChatInputCommandInteraction } from 'discord.js';
 
 /** Enables or disables karma tracking on a channel in Firebase */
 export async function karma(
   firestore: FirebaseFirestore.Firestore,
-  interaction: CommandInteraction
+  interaction: ChatInputCommandInteraction
 ) {
   const guildId = interaction.guildId;
   const channelName = interaction.channel?.toString();
@@ -12,7 +12,9 @@ export async function karma(
 
   await interaction.deferReply({ ephemeral: true });
 
-  if (guildId === null) throw new Error('GuildId cannot be null');
+  if (guildId === null) {
+    throw new Error('GuildId cannot be null');
+  }
 
   const docRef = firestore
     .collection('guilds')

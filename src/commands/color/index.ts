@@ -1,5 +1,9 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { ColorResolvable, CommandInteraction, GuildMember } from 'discord.js';
+import {
+  ColorResolvable,
+  ChatInputCommandInteraction,
+  GuildMember,
+  SlashCommandBuilder
+} from 'discord.js';
 import { Command } from '../../utilities/command';
 import { formatHexColor } from '../../utilities/hex-color-helper';
 
@@ -16,7 +20,7 @@ export default class ColorCommand extends Command {
       );
   }
 
-  async execute(interaction: CommandInteraction) {
+  async execute(interaction: ChatInputCommandInteraction) {
     const roleName = `USER-${interaction.member!.user.id}`;
     const myRole = interaction.guild!.roles.cache.find(
       (role: { name: string }) => role.name === roleName
