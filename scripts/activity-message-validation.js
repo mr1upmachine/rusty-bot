@@ -1,38 +1,63 @@
 const { readFileSync } = require('fs');
 const path = require('path');
 
+/**
+ * Relative file path to parse.
+ */
+const FILE_PATH = '../src/assets/activity-messages.txt';
+/**
+ * List of filter conditions to vlidate when parsing the file. If the result
+ * is false, it will remove the line.
+ *
+ * @type {readonly [(str: string) => boolean]}
+ */
+const FILTERS = [(str) => !str.startsWith('//'), (str) => str.trim() !== ''];
+/**
+ * List of activity type prefixes to validate.
+ *
+ * @type {readonly string[]}
+ */
 const ACTIVITY_TYPES = ['Playing', 'Listening to', 'Watching', 'Competing in'];
+/**
+ * List of validation functions to run against all lines in the file. If the
+ * result is false, it will throw an error.
+ *
+ * @type {readonly [(str: string) => boolean]}
+ */
+const VALIDATORS = [
+  (str) => str.length < 100,
+  (str) =>
+    ACTIVITY_TYPES.some((activityType) => str.startsWith(`${activityType} `))
+];
 
-const messages = readFileSync(
-  path.join(__dirname, '../src/assets/activity-messages.txt')
-)
+/**
+ * Get all messages from the file path & filter unnecessary ones.
+ *
+ * @type {string[]}
+ */
+const messages = readFileSync(path.join(__dirname, FILE_PATH))
   .toString()
   .split('\n')
-  .filter((message) => !message.startsWith('//'))
-  .filter((message) => message.trim() !== '');
+  .filter((message) => FILTERS.every((filter) => filter(message)));
 
-for (const message of messages) {
-  if (message.startsWith('//')) {
-    continue;
-  }
+/**
+ * Gets list of errors based on validators.
+ *
+ * @type {string[]}
+ */
+const errors = messages.reduce(
+  (errorList, message) =>
+    VALIDATORS.every((validator) => validator(message))
+      ? errorList
+      : [...errorList, `"${message}" is not in a valid format.`],
+  []
+);
 
-  let valid = false;
-
-  for (const activityType of ACTIVITY_TYPES) {
-    const formattedActivityType = `${activityType} `;
-    valid =
-      message.startsWith(formattedActivityType) &&
-      formattedActivityType.length <= 100;
-    if (valid) {
-      break;
-    }
-  }
-
-  if (!valid) {
-    const typeListStr = ACTIVITY_TYPES.map((type) => `"${type}"`).join(', ');
-    console.error(
-      `ERROR: "${message}" is not in a valid format. All messages must start with ${typeListStr} and be less then 100 characters`
-    );
-    process.exitCode = 1;
-  }
+// If no errors, exit successfully.
+if (errors.length === 0) {
+  process.exit(0);
 }
+
+// Log all errors and exit unsuccessfully.
+errors.forEach((e) => console.error(e));
+process.exit(1);
