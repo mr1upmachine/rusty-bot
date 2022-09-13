@@ -1,23 +1,47 @@
-import { ActivityType, Client } from 'discord.js';
-import { readFileSync } from 'fs';
 import * as path from 'path';
+import * as url from 'url';
+import { ActivityType } from 'discord.js';
+import type { Client } from 'discord.js';
+import { readFileSync } from 'fs';
 
 type SupportedActivityType =
-  | ActivityType.Playing
-  | ActivityType.Watching
+  | ActivityType.Competing
   | ActivityType.Listening
-  | ActivityType.Competing;
+  | ActivityType.Playing
+  | ActivityType.Watching;
 
-const ACTIVITY_TYPE_TEXT_MAP: { [key: string]: SupportedActivityType } = {
-  'Playing': ActivityType.Playing,
-  'Watching': ActivityType.Watching,
-  'Listening to': ActivityType.Listening,
-  'Competing in': ActivityType.Competing
-};
+enum ActivityTypeText {
+  Competing = 'Competing in',
+  Listening = 'Listening to',
+  Playing = 'Playing',
+  Watching = 'Watching'
+}
 
-export function setRandomActivity(client: Client): void {
+const ACTIVITY_TYPE_TEXT_MAP: readonly [
+  ActivityTypeText,
+  SupportedActivityType
+][] = [
+  [ActivityTypeText.Competing, ActivityType.Competing],
+  [ActivityTypeText.Listening, ActivityType.Listening],
+  [ActivityTypeText.Playing, ActivityType.Playing],
+  [ActivityTypeText.Watching, ActivityType.Watching]
+];
+
+/**
+ * Current directory
+ */
+const CURRENT_DIR = url.fileURLToPath(new URL('.', import.meta.url));
+
+export function setRandomActivity({ user }: Client): void {
+  if (!user) {
+    throw new Error('Client user does not exist on client.');
+  }
+
+  // TODO Do this step at build time instead of runtime
+  // Perhaps a script that converts it to a json format and is imported?
+  // TODO port generic filter functionality from validator to here
   const messages = readFileSync(
-    path.join(__dirname, '../assets/activity-messages.txt')
+    path.join(CURRENT_DIR, '../assets/activity-messages.txt')
   )
     .toString()
     .split('\n')
@@ -27,22 +51,22 @@ export function setRandomActivity(client: Client): void {
   const randomIndex = Math.floor(Math.random() * messages.length);
   const randomMessage = messages[randomIndex];
 
-  let activity: string | undefined;
-  let activityType: SupportedActivityType | undefined;
-  for (const [text, type] of Object.entries(ACTIVITY_TYPE_TEXT_MAP)) {
-    const formattedText = `${text} `;
-    if (randomMessage.startsWith(formattedText)) {
-      activity = randomMessage.substring(formattedText.length);
-      activityType = type;
-      break;
-    }
-  }
+  const [activityTypeText, activityType]: [
+    ActivityTypeText | null,
+    SupportedActivityType | null
+  ] = ACTIVITY_TYPE_TEXT_MAP.find(([text]) =>
+    randomMessage.startsWith(text)
+  ) ?? [null, null];
 
-  if (!activity || !activityType) {
+  if (!activityTypeText || !activityType) {
     throw new Error(
-      'Somehow activity or activityType does not exist. This should not happen.'
+      'Somehow activityTypeText or activityType does not exist. This should not happen.'
     );
   }
 
-  client.user!.setActivity(activity, { type: activityType });
+  const formattedRandomMessage = randomMessage.substring(
+    activityTypeText.length + 1
+  );
+
+  user.setActivity(formattedRandomMessage, { type: activityType });
 }

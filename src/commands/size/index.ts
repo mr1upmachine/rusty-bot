@@ -1,6 +1,11 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
+import type { ChatInputCommandInteraction } from 'discord.js';
 import MersenneTwister from 'mersenne-twister';
-import { Command } from '../../utilities/command';
+
+import type {
+  CommandBuilder,
+  CommandBuilderOutput
+} from '../../types/command-builder.js';
+import { Command } from '../../types/command.js';
 
 // TODO: Evaluate the spread of the modifier generation
 // TODO: Improve message formatting
@@ -8,23 +13,23 @@ import { Command } from '../../utilities/command';
 // TODO: Allow people to regenerate their dong on occasion (need to redesign how hash works)
 // TODO: Add gifs maybe?
 
-export default class SizeCommand extends Command {
-  async build() {
-    return new SlashCommandBuilder()
-      .setName('size')
-      .setDescription('Measure the size of your dong!')
-      .addUserOption((option) =>
-        option.setName('user').setDescription('User to get size of')
-      );
+export class SizeCommand extends Command {
+  public readonly name = 'size';
+  public readonly description = 'Measure the size of your dong!';
+
+  override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
+    return commandBuilder.addUserOption((option) =>
+      option.setName('user').setDescription('User to get size of')
+    );
   }
 
-  async execute(interaction: ChatInputCommandInteraction) {
+  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
     const user = interaction.options.getUser('user') ?? interaction.user;
 
-    const hash = this.hashCode(user.id);
+    const hash = this._hashCode(user.id);
     const displayId = /^\d+$/.test(user.id) ? `<@!${user.id}>` : user.id; // Adds mention characters
     const generator = new MersenneTwister(hash);
-    const modifier = this.determineSize(hash);
+    const modifier = this._determineSize(hash);
     let size = 0;
     let message = '';
 
@@ -35,7 +40,7 @@ export default class SizeCommand extends Command {
         break;
       case 'normal':
         size = generator.random() * 3 + 3;
-        message += `Hey ${displayId} it\'s not the size of the wave, it\'s the motion of the ocean.`;
+        message += `Hey ${displayId} it's not the size of the wave, it's the motion of the ocean.`;
         break;
       case 'micro':
         size = generator.random() * 3;
@@ -47,10 +52,10 @@ export default class SizeCommand extends Command {
     const donger = `8${'='.repeat(Math.floor(size))}D`;
 
     message += `\nEveryone look at ${displayId}'s dong: ${donger}`;
-    interaction.reply(message);
+    await interaction.reply(message);
   }
 
-  private hashCode(x: string): number {
+  private _hashCode(x: string): number {
     let hash = 0;
     if (x.length === 0) {
       return hash;
@@ -64,14 +69,14 @@ export default class SizeCommand extends Command {
     return hash;
   }
 
-  private determineSize(hash: number): 'micro' | 'magnum' | 'normal' {
+  private _determineSize(hash: number): 'magnum' | 'micro' | 'normal' {
     const modulo = Math.abs(hash) % 100;
     if (modulo < 10) {
       return 'micro';
     } else if (modulo > 85) {
       return 'magnum';
-    } else {
-      return 'normal';
     }
+
+    return 'normal';
   }
 }

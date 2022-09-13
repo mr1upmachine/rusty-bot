@@ -1,7 +1,7 @@
 export function formatHexColor(color: string): string {
   let formattedColor = color.trim().toUpperCase();
 
-  if (!/^#/.test(formattedColor)) {
+  if (!formattedColor.startsWith('#')) {
     formattedColor = '#' + formattedColor;
   }
 
