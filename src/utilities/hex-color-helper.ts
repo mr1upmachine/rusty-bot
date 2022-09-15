@@ -1,13 +1,11 @@
-export function formatHexColor(color: string): string {
+import { InvalidColorStringError } from '../errors/rusty-bot-errors.js';
+import type { HexColor } from '../types/hex-color.js';
+
+export function formatHexColor(color: string): HexColor {
   let formattedColor = color.trim().toUpperCase();
 
   if (!formattedColor.startsWith('#')) {
     formattedColor = '#' + formattedColor;
-  }
-
-  const isValidHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(formattedColor);
-  if (!isValidHex) {
-    throw new Error('Please input a valid hex color code!');
   }
 
   const isShortenedHex = /(^#?[0-9A-F]{3}$)/i.test(formattedColor);
@@ -17,5 +15,14 @@ export function formatHexColor(color: string): string {
       '#$1$1$2$2$3$3'
     );
   }
+
+  if (!isValidHex(formattedColor)) {
+    throw new InvalidColorStringError('Please input a valid hex color code!');
+  }
+
   return formattedColor;
+}
+
+function isValidHex(color: string): color is HexColor {
+  return /^#[0-9A-F]{6}$/i.test(color);
 }
