@@ -10,6 +10,10 @@ import type {
   CommandBuilder,
   CommandBuilderOutput
 } from '../../types/command-builder.js';
+import {
+  InvalidColorStringError,
+  RustyBotInvalidArgumentError
+} from '../../errors/rusty-bot-errors.js';
 
 export class ColorCommand extends Command {
   public readonly name = 'color';
@@ -30,10 +34,12 @@ export class ColorCommand extends Command {
       (role: { name: string }) => role.name === roleName
     );
     const color = interaction.options.getString('hex', true).toUpperCase();
-    const formattedColor = formatHexColor(color);
 
-    if (!myRole) {
-      try {
+    try {
+      const formattedColor = formatHexColor(color);
+
+      let message: string;
+      if (!myRole) {
         const createdRole = await interaction.guild!.roles.create({
           // Creates new role with user selected color
           color: formattedColor as ColorResolvable,
@@ -43,18 +49,30 @@ export class ColorCommand extends Command {
         const member = interaction.member as GuildMember;
         await member.roles.add(createdRole); // Assigns newly created role to user
 
-        await interaction.reply(`Role created with color ${formattedColor}`);
-      } catch (e: unknown) {
-        await interaction.reply('Error creating role.');
-        // eslint-disable-next-line @typescript-eslint/no-throw-literal
-        throw e;
+        message = `Role created with color ${formattedColor}`;
+      } else {
+        // Updates existing role with new color
+        await myRole.edit({
+          color: formattedColor as ColorResolvable
+        });
+
+        message = `Color changed to ${formattedColor}`;
       }
-    } else {
-      // Updates existing role with new color
-      await myRole.edit({
-        color: formattedColor as ColorResolvable
+
+      // Inform user of success
+      await interaction.reply({
+        content: message,
+        ephemeral: true
       });
-      await interaction.reply(`Color changed to ${formattedColor}`);
+    } catch (e: unknown) {
+      if (e instanceof InvalidColorStringError) {
+        throw new RustyBotInvalidArgumentError(
+          'hex',
+          'Argument format is invalid'
+        );
+      }
+
+      throw e;
     }
   }
 }

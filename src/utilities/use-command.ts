@@ -2,6 +2,7 @@ import { COMMANDS } from '../commands/index.js';
 import type { Command } from '../types/command.js';
 import type { CommandConstructorParameters } from '../types/command-constructor-parameters.js';
 import type { CommandDerived } from '../types/command-derived.js';
+import { RustyBotCommandError } from '../errors/rusty-bot-errors.js';
 
 export function useCommand(
   commandOrCommandName: CommandDerived | string,
@@ -13,7 +14,10 @@ export function useCommand(
       : commandOrCommandName;
 
   if (!commandDerived) {
-    throw new Error(`Command does not exist`);
+    throw new RustyBotCommandError(
+      'Uh oh, something went very wrong. Contact an admin.',
+      `useCommand called with ${commandOrCommandName as string}`
+    );
   }
 
   return new commandDerived(...params);
