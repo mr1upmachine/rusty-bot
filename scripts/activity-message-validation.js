@@ -16,7 +16,7 @@ const FILE_PATH = '../src/assets/activity-messages.txt';
  * List of filter conditions to vlidate when parsing the file. If the result
  * is false, it will remove the line.
  *
- * @type {readonly [(str: string) => boolean]}
+ * @type {readonly ((str: string) => boolean)[]}
  */
 const FILTERS = [(str) => !str.startsWith('//'), (str) => str.trim() !== ''];
 
@@ -31,7 +31,7 @@ const ACTIVITY_TYPES = ['Playing', 'Listening to', 'Watching', 'Competing in'];
  * List of validation functions to run against all lines in the file. If the
  * result is false, it will throw an error.
  *
- * @type {readonly [(str: string) => boolean]}
+ * @type {readonly ((str: string) => boolean)[]}
  */
 const VALIDATORS = [
   (str) => str.length < 100,

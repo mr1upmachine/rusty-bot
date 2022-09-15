@@ -3,35 +3,26 @@ import type { Firestore } from '@google-cloud/firestore';
 import type { GuildMember, Message, User } from 'discord.js';
 
 import {
-  getChannelFirestoreReferenceFromMessage,
-  getMemberFirestoreReferenceFromGuildMember,
-  getMemberFirestoreReferenceFromUser,
-  getMessageFirestoreReferenceFromMessage
+  getGuildFirestoreReference,
+  getMemberFirestoreReference,
+  getMessageFirestoreReference
 } from './firestore-helper.js';
 
 export async function processReactionEvent(
-  message: Message,
+  message: Message<true>,
   reactingUser: User,
   firestore: Firestore,
   reactionValue: 1 | -1
 ): Promise<void> {
-  const guild = message.guild;
-  const messageAuthor = message.author;
+  const { member: cachedMember, author, guild } = message;
+  const member = cachedMember ?? (await guild.members.fetch({ user: author }));
 
-  if (
-    !message ||
-    !guild ||
-    !messageAuthor ||
-    messageAuthor.bot ||
-    reactingUser === message.author
-  ) {
+  // Toss reaction if by the author or from a bot
+  if (member.user.bot || member.user === reactingUser) {
     return;
   }
 
-  const channelDocumentRef = getChannelFirestoreReferenceFromMessage(
-    firestore,
-    message
-  );
+  const channelDocumentRef = getGuildFirestoreReference(firestore, guild);
   const channelDocument = await channelDocumentRef.get();
 
   if (!channelDocument.data()?.karmaTracking) {
@@ -46,21 +37,14 @@ export async function processReactionEvent(
     }
   }
 
-  await getMemberFirestoreReferenceFromUser(
-    firestore,
-    message.author,
-    guild.id
-  ).set(
+  await getMemberFirestoreReference(firestore, member).set(
     {
       karma: FieldValue.increment(reactionValue)
     },
     { merge: true }
   );
 
-  const messageRef = getMessageFirestoreReferenceFromMessage(
-    firestore,
-    message
-  );
+  const messageRef = getMessageFirestoreReference(firestore, message);
   await messageRef.set(
     { reactionCount: FieldValue.increment(reactionValue) },
     { merge: true }
@@ -70,7 +54,7 @@ export async function processReactionEvent(
   if (!messageDocumentData?.member) {
     await messageRef.set(
       {
-        member: message.author.id
+        member: member.id
       },
       { merge: true }
     );
@@ -104,25 +88,19 @@ export async function processReactionEvent(
 }
 
 export async function processMessageEvent(
-  message: Message,
+  message: Message<true>,
   firestore: Firestore,
   messageValue: 1 | -1
 ): Promise<void> {
-  if (message.author.bot) {
-    return;
-  }
-  if (message.guildId) {
-    await getMemberFirestoreReferenceFromUser(
-      firestore,
-      message.author,
-      message.guildId
-    ).set(
-      {
-        posts: FieldValue.increment(messageValue)
-      },
-      { merge: true }
-    );
-  }
+  const { member: cachedMember, author, guild } = message;
+  const member = cachedMember ?? (await guild.members.fetch({ user: author }));
+
+  await getMemberFirestoreReference(firestore, member).set(
+    {
+      posts: FieldValue.increment(messageValue)
+    },
+    { merge: true }
+  );
 }
 
 export async function processMemberEditEvent(
@@ -134,7 +112,7 @@ export async function processMemberEditEvent(
     return;
   }
 
-  await getMemberFirestoreReferenceFromGuildMember(firestore, newMember).set(
+  await getMemberFirestoreReference(firestore, newMember).set(
     {
       name: newMember.displayName
     },

@@ -1,75 +1,94 @@
-import type { ChatInputCommandInteraction, GuildMember } from 'discord.js';
+import type { ChatInputCommandInteraction, ColorResolvable } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 
 import { Command } from '../../types/command.js';
-import { formatHexColor } from '../../utilities/hex-color-helper.js';
 import type {
   CommandBuilder,
   CommandBuilderOutput
 } from '../../types/command-builder.js';
-
-const MAX_ABOUT_LENGTH = 2048;
+import { getMemberFirestoreReference } from '../../utilities/firestore-helper.js';
 
 export class ProfileCommand extends Command {
   public readonly name = 'profile';
-  public readonly description = 'Customize your user card!';
+  public readonly description = 'Displays information about a user.';
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
-    return commandBuilder
-      .addStringOption((option) =>
-        option
-          .setName('color')
-          .setDescription('Hex color code on your user profile')
-      )
-      .addStringOption((option) =>
-        option.setName('about').setDescription('Text on your user profile')
-      );
+    return commandBuilder.addUserOption((option) =>
+      option.setName('user').setDescription('User to display info for')
+    );
   }
 
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+    await interaction.deferReply();
+
+    const user = interaction.options.getUser('user') ?? interaction.user;
+
     const guild = interaction.guild!;
-    const member = interaction.member as GuildMember;
+    const member = guild.members.cache.get(user.id)!;
 
-    const color = interaction.options.getString('color');
-    const about = interaction.options.getString('about');
+    const profilePictureUrl = user.displayAvatarURL();
+    const memberNickname = member.nickname ?? member.user.username;
+    const userFirestoreRef = getMemberFirestoreReference(
+      this.firestore,
+      member
+    );
 
-    const userFirestoreRef = this.firestore
-      .collection('guilds')
-      .doc(guild.id)
-      .collection('members')
-      .doc(member.id);
+    let about =
+      'This is a default about section! Use the profile command to edit it!';
+    let postCount = 0;
+    let karma = 0;
+    let color: ColorResolvable = '#1B9403';
 
-    if (color) {
-      const formattedColor = formatHexColor(color);
+    try {
+      const doc = await userFirestoreRef.get();
 
-      await userFirestoreRef.set(
-        {
-          infoColor: formattedColor
-        },
-        { merge: true }
-      );
+      if (!doc.exists) {
+        await interaction.reply('Error retrieving user!');
+        return;
+      }
 
-      await interaction.reply(`Color set to ${formattedColor}!`);
-    }
+      if (doc.data()?.about) {
+        about = doc.data()!.about;
+      }
+      if (doc.data()?.infoColor) {
+        color = doc.data()!.infoColor as ColorResolvable;
+      }
+      if (doc.data()?.posts || doc.data()?.posts === 0) {
+        postCount = doc.data()!.posts;
+      }
+      if (doc.data()?.karma || doc.data()?.karma === 0) {
+        karma = doc.data()!.karma;
+      }
 
-    // TODO break into separate method
-    if (about === null) {
-      await interaction.reply('Nothing entered.');
-      return;
-    }
+      const embed = new EmbedBuilder()
+        .setTitle('About')
+        .setDescription(about)
+        .setTimestamp(new Date())
+        .setAuthor({ name: memberNickname, iconURL: profilePictureUrl })
+        .setColor(color)
+        .setFooter({
+          text: 'Use the `profile` command for customization!'
+        })
+        .setThumbnail(profilePictureUrl)
+        .addFields([
+          {
+            inline: true,
+            name: 'Post Count',
+            value: `${postCount}`
+          },
+          {
+            inline: true,
+            name: 'Karma',
+            value: `${karma}`
+          }
+        ]);
 
-    if (about.length > MAX_ABOUT_LENGTH) {
-      await interaction.reply(
-        'About sections can only be up to 2048 characters in length!'
-      );
-      return;
-    }
-
-    await userFirestoreRef.set({ about }, { merge: true });
-
-    if (about) {
-      await interaction.reply('About set!');
-    } else {
-      await interaction.reply('About cleared!');
+      await interaction.editReply({
+        embeds: [embed]
+      });
+    } catch (e: unknown) {
+      await interaction.editReply('Error retrieving user.');
+      throw e;
     }
   }
 }

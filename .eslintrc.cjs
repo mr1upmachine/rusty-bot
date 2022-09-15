@@ -39,6 +39,8 @@ module.exports = {
   ],
   ignorePatterns: ['.eslintrc.cjs', 'dist/**/*'],
   rules: {
+    '@typescript-eslint/consistent-type-exports': 'error',
+    '@typescript-eslint/consistent-type-imports': 'error',
     'prettier/prettier': 'error'
   }
 };
