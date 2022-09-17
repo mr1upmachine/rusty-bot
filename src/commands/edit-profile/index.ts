@@ -15,7 +15,7 @@ import { getMemberFirestoreReference } from '../../utilities/firestore-helper.js
 const MAX_ABOUT_LENGTH = 2048;
 
 export class EditProfileCommand extends Command {
-  public readonly name = 'editprofile';
+  public readonly name = 'edit-profile';
   public readonly description = 'Customize your user card!';
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {

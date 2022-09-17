@@ -2,23 +2,11 @@ import { readFileSync } from 'fs';
 import * as path from 'path';
 import * as url from 'url';
 
-/**
- * Current directory
- */
+/** Current directory */
 const CURRENT_DIR = url.fileURLToPath(new URL('.', import.meta.url));
 
-/**
- * Relative file path to parse.
- */
-const FILE_PATH = '../src/assets/activity-messages.txt';
-
-/**
- * List of filter conditions to vlidate when parsing the file. If the result
- * is false, it will remove the line.
- *
- * @type {readonly ((str: string) => boolean)[]}
- */
-const FILTERS = [(str) => !str.startsWith('//'), (str) => str.trim() !== ''];
+/** Relative file path to parse. */
+const FILE_PATH = '../lists/activity-messages.txt';
 
 /**
  * List of activity type prefixes to validate.
@@ -42,19 +30,21 @@ const VALIDATORS = [
 /**
  * Get all messages from the file path & filter unnecessary ones.
  *
- * @type {string[]}
+ * @type {readonly string[]}
  */
-const messages = readFileSync(path.join(CURRENT_DIR, FILE_PATH))
+const ACTIVITY_MESSAGES = readFileSync(path.join(CURRENT_DIR, FILE_PATH))
   .toString()
   .split('\n')
-  .filter((message) => FILTERS.every((filter) => filter(message)));
+  .map((message) => message.trim())
+  .filter((message) => !message.startsWith('//'))
+  .filter((message) => message);
 
 /**
  * Gets list of errors based on validators.
  *
- * @type {string[]}
+ * @type {readonly string[]}
  */
-const errors = messages.reduce(
+const errors = ACTIVITY_MESSAGES.reduce(
   (errorList, message) =>
     VALIDATORS.every((validator) => validator(message))
       ? errorList
