@@ -1,17 +1,20 @@
-import {
-  ChatInputCommandInteraction,
-  Guild,
-  GuildMember,
-  SlashCommandBuilder
-} from 'discord.js';
-import { Command } from '../../utilities/command';
-import { formatHexColor } from '../../utilities/hex-color-helper';
+import type { ChatInputCommandInteraction, GuildMember } from 'discord.js';
 
-export default class ProfileCommand extends Command {
-  async build() {
-    return new SlashCommandBuilder()
-      .setName('profile')
-      .setDescription('Customize your user card!')
+import { Command } from '../../types/command.js';
+import { formatHexColor } from '../../utilities/hex-color-helper.js';
+import type {
+  CommandBuilder,
+  CommandBuilderOutput
+} from '../../types/command-builder.js';
+
+const MAX_ABOUT_LENGTH = 2048;
+
+export class ProfileCommand extends Command {
+  public readonly name = 'profile';
+  public readonly description = 'Customize your user card!';
+
+  override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
+    return commandBuilder
       .addStringOption((option) =>
         option
           .setName('color')
@@ -22,8 +25,8 @@ export default class ProfileCommand extends Command {
       );
   }
 
-  async execute(interaction: ChatInputCommandInteraction) {
-    const guild = interaction.guild as Guild;
+  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+    const guild = interaction.guild!;
     const member = interaction.member as GuildMember;
 
     const color = interaction.options.getString('color');
@@ -38,32 +41,35 @@ export default class ProfileCommand extends Command {
     if (color) {
       const formattedColor = formatHexColor(color);
 
-      userFirestoreRef.set(
+      await userFirestoreRef.set(
         {
           infoColor: formattedColor
         },
         { merge: true }
       );
 
-      interaction.reply(`Color set to ${formattedColor}!`);
+      await interaction.reply(`Color set to ${formattedColor}!`);
     }
 
     // TODO break into separate method
-    if (about !== null && about !== undefined) {
-      if (about.length > 2048) {
-        interaction.reply(
-          'About sections can only be up to 2048 characters in length!'
-        );
-        return;
-      }
+    if (about === null) {
+      await interaction.reply('Nothing entered.');
+      return;
+    }
 
-      userFirestoreRef.set({ about }, { merge: true });
+    if (about.length > MAX_ABOUT_LENGTH) {
+      await interaction.reply(
+        'About sections can only be up to 2048 characters in length!'
+      );
+      return;
+    }
 
-      if (about) {
-        interaction.reply('About set!');
-      } else {
-        interaction.reply('About cleared!');
-      }
+    await userFirestoreRef.set({ about }, { merge: true });
+
+    if (about) {
+      await interaction.reply('About set!');
+    } else {
+      await interaction.reply('About cleared!');
     }
   }
 }

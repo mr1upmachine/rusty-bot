@@ -1,33 +1,43 @@
 import { CronJob } from 'cron';
 import { Client, IntentsBitField, Partials } from 'discord.js';
 import * as dotenv from 'dotenv';
-import * as firestoreAdmin from 'firebase-admin';
+import FirebaseAdmin from 'firebase-admin';
+import type { AppOptions as FirebaseAdminAppOptions } from 'firebase-admin';
 
-import { deployCommands } from './deploy-commands';
-import { CommandDerived } from './utilities/command';
-import { setRandomActivity } from './utilities/set-random-activity';
+import { deployCommands } from './deploy-commands.js';
+import { setRandomActivity } from './utilities/set-random-activity.js';
 import {
-  processReactionEvent,
+  processMemberEditEvent,
   processMessageEvent,
-  processMemberEditEvent
-} from './utilities/statistics';
+  processReactionEvent
+} from './utilities/statistics.js';
+import { useCommand } from './utilities/use-command.js';
+import { coerceBoolean } from './utilities/coerce-boolean.js';
 
-// Setup for dotenv
+// Environment variables
 dotenv.config();
-if (!process.env.TOKEN) {
-  throw new Error('TOKEN must be provided');
+const { DISCORD_API_TOKEN, GPC_CLIENT_EMAIL, GPC_PRIVATE_KEY, GPC_PROJECT_ID } =
+  process.env;
+const LOCAL = coerceBoolean(process.env.LOCAL);
+
+// Verify environment variables
+if (!DISCORD_API_TOKEN) {
+  throw new Error('DISCORD_API_TOKEN must be provided');
 }
-if (!process.env.KEYFILE) {
-  throw new Error('KEYFILE must be provided');
-}
-if (!process.env.PROJECTID) {
-  throw new Error('PROJECTID must be provided');
+if (LOCAL) {
+  if (!GPC_CLIENT_EMAIL) {
+    throw new Error('GPC_CLIENT_EMAIL must be provided');
+  }
+  if (!GPC_PRIVATE_KEY) {
+    throw new Error('GPC_PRIVATE_KEY must be provided');
+  }
+  if (!GPC_PROJECT_ID) {
+    throw new Error('GPC_PROJECT_ID must be provided');
+  }
 }
 
-let runningLocally = false;
-if (process.env.LOCAL) {
-  runningLocally = true;
-}
+// Constants
+const RANDOM_ACTIVITY_CRON = '0 0 0 * * *';
 
 // Setup for discord.js
 const client = new Client({
@@ -42,34 +52,39 @@ const client = new Client({
   ],
   partials: [Partials.Message, Partials.Reaction]
 });
-client.token = process.env.TOKEN;
+client.token = DISCORD_API_TOKEN;
 
 // Setup for GCP
-if (runningLocally) {
-  const serviceAccount = require('../rustykey.json');
-
-  firestoreAdmin.initializeApp({
-    credential: firestoreAdmin.credential.cert(serviceAccount)
-  });
-} else {
-  firestoreAdmin.initializeApp();
+let gcpAppOptions: FirebaseAdminAppOptions | undefined;
+if (LOCAL && GPC_PROJECT_ID && GPC_PRIVATE_KEY && GPC_CLIENT_EMAIL) {
+  const gpcServiceAccount = {
+    projectId: GPC_PROJECT_ID,
+    privateKey: GPC_PRIVATE_KEY,
+    clientEmail: GPC_CLIENT_EMAIL
+  };
+  const gcpCredential = FirebaseAdmin.credential.cert(gpcServiceAccount);
+  gcpAppOptions = {
+    credential: gcpCredential
+  };
 }
-const firestore = firestoreAdmin.firestore();
+FirebaseAdmin.initializeApp(gcpAppOptions);
+const firestore = FirebaseAdmin.firestore();
 
-client.on('ready', () => {
-  // setup discord.js commands
+// discord.js on initialization
+client.on('ready', async () => {
+  // refresh discord.js commands
   for (const [guildId] of client.guilds.cache) {
     if (!client.user) {
       console.error(client.user);
       continue;
     }
 
-    deployCommands(client.user.id, guildId, process.env.TOKEN!, firestore);
+    await deployCommands(client.user.id, guildId, DISCORD_API_TOKEN, firestore);
   }
 
   // setup activity status cycle
   setRandomActivity(client);
-  const activityCronJob = new CronJob('0 0 0 * * *', () => {
+  const activityCronJob = new CronJob(RANDOM_ACTIVITY_CRON, () => {
     setRandomActivity(client);
   });
   activityCronJob.start();
@@ -80,19 +95,18 @@ client.on('interactionCreate', async (interaction) => {
   if (!interaction.isCommand() || !interaction.isChatInputCommand()) return;
 
   try {
-    const commandDerived: CommandDerived =
-      require(`./commands/${interaction.commandName}/index`).default; // Loads the command based on file name
-    const command = new commandDerived(firestore);
+    const command = useCommand(interaction.commandName, [firestore]);
     await command.execute(interaction);
-  } catch (error) {
-    console.error(error);
+  } catch (e: unknown) {
+    // TODO Completely redo how we handle errors
+    console.error(e);
 
     let errorMessage = 'ERROR: ';
 
-    if (error instanceof Error) {
-      errorMessage += error.message;
+    if (e instanceof Error) {
+      errorMessage += e.message;
     } else {
-      errorMessage += error;
+      errorMessage += e;
     }
 
     if (interaction.replied) {
@@ -112,8 +126,8 @@ client.on('messageCreate', async (message) => {
 
   try {
     await processMessageEvent(message, firestore, 1);
-  } catch (error) {
-    console.error(error);
+  } catch (e: unknown) {
+    console.error(e);
   }
 });
 
@@ -140,9 +154,8 @@ client.on('messageReactionAdd', async (messageReaction, user) => {
 
   try {
     await processReactionEvent(message, user, firestore, 1);
-  } catch (error) {
-    console.error(error);
-    return;
+  } catch (e: unknown) {
+    console.error(e);
   }
 });
 
@@ -169,9 +182,8 @@ client.on('messageReactionRemove', async (messageReaction, user) => {
 
   try {
     await processReactionEvent(message, user, firestore, -1);
-  } catch (error) {
-    console.error(error);
-    return;
+  } catch (e: unknown) {
+    console.error(e);
   }
 });
 
@@ -180,14 +192,12 @@ client.on('guildMemberUpdate', async (oldMember, newMember) => {
     if (oldMember.partial) {
       oldMember = await oldMember.fetch();
     }
-    processMemberEditEvent(oldMember, newMember, firestore);
-  } catch (error) {
-    console.error(error);
-    return;
+    await processMemberEditEvent(oldMember, newMember, firestore);
+  } catch (e: unknown) {
+    console.error(e);
   }
 });
 
 // Login to discord and notify when completed.
-client.login().then(() => {
-  console.log('All done!');
-});
+await client.login();
+console.log('All done!');

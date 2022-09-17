@@ -1,11 +1,13 @@
-import { FieldValue, Firestore } from '@google-cloud/firestore';
-import { GuildMember, Message, User } from 'discord.js';
+import { FieldValue } from '@google-cloud/firestore';
+import type { Firestore } from '@google-cloud/firestore';
+import type { GuildMember, Message, User } from 'discord.js';
+
 import {
   getChannelFirestoreReferenceFromMessage,
   getMemberFirestoreReferenceFromGuildMember,
   getMemberFirestoreReferenceFromUser,
   getMessageFirestoreReferenceFromMessage
-} from './firestore-helper';
+} from './firestore-helper.js';
 
 export async function processReactionEvent(
   message: Message,
@@ -35,7 +37,7 @@ export async function processReactionEvent(
   if (!channelDocument.data()?.karmaTracking) {
     if (channelDocument.data()?.meme) {
       // migrate to new field name
-      channelDocumentRef.set(
+      await channelDocumentRef.set(
         { karmaTracking: true, meme: FirebaseFirestore.FieldValue.delete() },
         { merge: true }
       );
@@ -44,7 +46,11 @@ export async function processReactionEvent(
     }
   }
 
-  getMemberFirestoreReferenceFromUser(firestore, message.author, guild.id).set(
+  await getMemberFirestoreReferenceFromUser(
+    firestore,
+    message.author,
+    guild.id
+  ).set(
     {
       karma: FieldValue.increment(reactionValue)
     },
@@ -55,14 +61,14 @@ export async function processReactionEvent(
     firestore,
     message
   );
-  messageRef.set(
+  await messageRef.set(
     { reactionCount: FieldValue.increment(reactionValue) },
     { merge: true }
   );
 
   const messageDocumentData = (await messageRef.get()).data();
   if (!messageDocumentData?.member) {
-    messageRef.set(
+    await messageRef.set(
       {
         member: message.author.id
       },
@@ -73,7 +79,7 @@ export async function processReactionEvent(
     !messageDocumentData?.content ||
     message.cleanContent !== messageDocumentData.content
   ) {
-    messageRef.set(
+    await messageRef.set(
       {
         content: message.cleanContent
       },
@@ -87,7 +93,7 @@ export async function processReactionEvent(
       !messageDocumentData?.attachment ||
       messageAttachment !== messageDocumentData.attachment
     ) {
-      messageRef.set(
+      await messageRef.set(
         {
           attachment: messageAttachment
         },
@@ -101,12 +107,12 @@ export async function processMessageEvent(
   message: Message,
   firestore: Firestore,
   messageValue: 1 | -1
-) {
+): Promise<void> {
   if (message.author.bot) {
     return;
   }
   if (message.guildId) {
-    getMemberFirestoreReferenceFromUser(
+    await getMemberFirestoreReferenceFromUser(
       firestore,
       message.author,
       message.guildId
@@ -123,12 +129,12 @@ export async function processMemberEditEvent(
   oldMember: GuildMember,
   newMember: GuildMember,
   firestore: Firestore
-) {
+): Promise<void> {
   if (newMember.user.bot || newMember.displayName === oldMember.displayName) {
     return;
   }
 
-  getMemberFirestoreReferenceFromGuildMember(firestore, newMember).set(
+  await getMemberFirestoreReferenceFromGuildMember(firestore, newMember).set(
     {
       name: newMember.displayName
     },

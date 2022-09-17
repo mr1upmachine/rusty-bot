@@ -2,12 +2,14 @@
 
 A Discord bot created in Typescript with Discord.js for use in the Rusty's Bois server.
 
-### Requirements
+## Requirements
 
 Requres a GCP firestore instance.
 
-Requres a user created file at root named `.env` with three variables:
+### Environment Variables
 
-- `TOKEN=` The bot secret token from your Discord Developer Portal
-- `KEYFILE=` The name (with .json extension) of your GCP service account key file.
-- `PROJECTID=` The ID of your GCP project
+- `DISCORD_API_TOKEN`: The bot secret token from your Discord Developer Portal
+- `GPC_CLIENT_EMAIL`: (Optional) The client email for the GPC project associated with the discord bot
+- `GPC_PRIVATE_KEY`: (Optional) The private key for the GPC project associated with the discord bot
+- `GPC_PROJECT_ID`: (Optional) The ID of your GCP project
+- `LOCAL`: (Default `false`) Whether or not you are running this locally

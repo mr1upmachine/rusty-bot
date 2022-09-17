@@ -1,10 +1,17 @@
-const { readFileSync } = require('fs');
-const path = require('path');
+import { readFileSync } from 'fs';
+import * as path from 'path';
+import * as url from 'url';
+
+/**
+ * Current directory
+ */
+const CURRENT_DIR = url.fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Relative file path to parse.
  */
 const FILE_PATH = '../src/assets/activity-messages.txt';
+
 /**
  * List of filter conditions to vlidate when parsing the file. If the result
  * is false, it will remove the line.
@@ -12,12 +19,14 @@ const FILE_PATH = '../src/assets/activity-messages.txt';
  * @type {readonly [(str: string) => boolean]}
  */
 const FILTERS = [(str) => !str.startsWith('//'), (str) => str.trim() !== ''];
+
 /**
  * List of activity type prefixes to validate.
  *
  * @type {readonly string[]}
  */
 const ACTIVITY_TYPES = ['Playing', 'Listening to', 'Watching', 'Competing in'];
+
 /**
  * List of validation functions to run against all lines in the file. If the
  * result is false, it will throw an error.
@@ -35,7 +44,7 @@ const VALIDATORS = [
  *
  * @type {string[]}
  */
-const messages = readFileSync(path.join(__dirname, FILE_PATH))
+const messages = readFileSync(path.join(CURRENT_DIR, FILE_PATH))
   .toString()
   .split('\n')
   .filter((message) => FILTERS.every((filter) => filter(message)));
