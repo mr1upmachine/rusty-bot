@@ -17,6 +17,9 @@ import {
 import { useCommand } from './utilities/use-command.js';
 import { coerceBoolean } from './utilities/coerce-boolean.js';
 import { messageReactionEventFactory } from './message-reaction-event-factory.js';
+import { getGuildFirestoreReference } from './utilities/firestore-helper.js';
+import { RANDOM_ACTIVITY_CRON } from './utilities/constants.js';
+import { enableRandomVoiceChannelNames } from './utilities/enable-random-voice-channel-names.js';
 
 // Environment variables
 dotenv.config();
@@ -40,8 +43,10 @@ if (LOCAL) {
   }
 }
 
-// Constants
-const RANDOM_ACTIVITY_CRON = '0 0 0 * * *';
+// Define global state
+// TODO define a global state manager that all resources can pull from
+//      short term storage, long term lives in database still. possibly
+//      move all database interaction to that level too
 
 // Setup for discord.js
 const globalClient = new Client({
@@ -74,6 +79,8 @@ if (LOCAL && GPC_PROJECT_ID && GPC_PRIVATE_KEY && GPC_CLIENT_EMAIL) {
 FirebaseAdmin.initializeApp(gcpAppOptions);
 const firestore = FirebaseAdmin.firestore();
 
+// TODO move all events into their own files
+
 // discord.js on initialization
 globalClient.on('ready', async (client) => {
   try {
@@ -88,11 +95,26 @@ globalClient.on('ready', async (client) => {
     }
 
     // setup activity status cycle
-    setRandomActivity(client);
+    await setRandomActivity(client.user);
     const activityCronJob = new CronJob(RANDOM_ACTIVITY_CRON, () => {
-      setRandomActivity(client);
+      void setRandomActivity(client.user);
     });
     activityCronJob.start();
+
+    // setup random voice channel names
+    for (const [, guild] of client.guilds.cache) {
+      const docRef = getGuildFirestoreReference(firestore, guild);
+      const docSnapshot = await docRef.get();
+      const configValue =
+        (docSnapshot.data()?.enableVoiceChannelNames as boolean | undefined) ??
+        null;
+
+      if (!configValue) {
+        continue;
+      }
+
+      enableRandomVoiceChannelNames(guild);
+    }
   } catch (e: unknown) {
     console.log('Uncaught exception:');
     console.error(e);

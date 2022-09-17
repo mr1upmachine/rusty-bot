@@ -1,6 +1,6 @@
 {
   "name": "rusty-bot",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "A discord bot for idiots",
   "main": "dist/index.js",
   "type": "module",
@@ -9,10 +9,14 @@
     "lint": "eslint .",
     "deploy": "npm run build && gcloud app deploy",
     "dev": "nodemon src/index.ts && npm run copy-files",
-    "build": "npm run validate && genversion --es6 --semi src/utilities/version.ts && tsc && npm run copy-files",
-    "copy-files": "copyfiles \"src/assets/*\" \"dist/assets\" --flat",
-    "validate": "npm run validate-activity-messages",
-    "validate-activity-messages": "node ./scripts/activity-message-validation.js"
+    "build": "npm run copy-files && npm run generate && tsc",
+    "copy-files": "copyfiles \"package.json\" \"dist/assets\" --flat",
+    "generate": "npm run generate-activity-messages-json && npm run generate-voice-channel-names-json",
+    "generate-activity-messages-json": "node ./scripts/generate-activity-messages-json.js",
+    "generate-voice-channel-names-json": "node ./scripts/generate-voice-channel-names-json.js",
+    "validate": "npm run validate-activity-messages && npm run validate-voice-channel-names",
+    "validate-activity-messages": "node ./scripts/validate-activity-messages.js",
+    "validate-voice-channel-names": "node ./scripts/validate-voice-channel-names.js"
   },
   "repository": {
     "type": "git",
@@ -59,7 +63,6 @@
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-prettier": "^4.2.1",
     "firebase-admin": "^11.0.1",
-    "genversion": "^3.1.1",
     "nodemon": "2.0.19",
     "prettier": "2.7.1",
     "ts-node": "10.9.1",
