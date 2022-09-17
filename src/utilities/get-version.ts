@@ -6,6 +6,6 @@ export async function getVersion(): Promise<string> {
       assert: {
         type: 'json'
       }
-    }) as Promise<{ version: string }>
-  ).then((m) => m.version);
+    }) as Promise<{ default: { version: string } }>
+  ).then((m) => m.default.version);
 }
