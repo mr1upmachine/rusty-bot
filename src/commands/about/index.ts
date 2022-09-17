@@ -10,7 +10,7 @@ export class AboutCommand extends Command {
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
     const version = await getVersion();
     await interaction.reply(
-      `Hi, I'm Rusty, mascot of the Rusty's Bois server! My current version is ${version}!`
+      `Hi, I'm Rusty, mascot of the Rusty's Bois server! My current version is \`${version}\`!`
     );
   }
 }
