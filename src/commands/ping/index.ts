@@ -1,14 +1,12 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
-import { Command } from '../../utilities/command';
+import type { ChatInputCommandInteraction } from 'discord.js';
 
-export default class PingCommand extends Command {
-  async build() {
-    return new SlashCommandBuilder()
-      .setName('ping')
-      .setDescription('Replies with Pong!');
-  }
+import { Command } from '../../types/command.js';
 
-  async execute(interaction: ChatInputCommandInteraction) {
-    interaction.reply('Pong!');
+export class PingCommand extends Command {
+  public readonly name = 'ping';
+  public readonly description = 'Replies with Pong!';
+
+  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+    await interaction.reply('Pong!');
   }
 }

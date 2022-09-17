@@ -1,10 +1,10 @@
-import { ChatInputCommandInteraction } from 'discord.js';
+import type { ChatInputCommandInteraction } from 'discord.js';
 
 /** Enables or disables karma tracking on a channel in Firebase */
 export async function karma(
   firestore: FirebaseFirestore.Firestore,
   interaction: ChatInputCommandInteraction
-) {
+): Promise<void> {
   const guildId = interaction.guildId;
   const channelName = interaction.channel?.toString();
   const channelId = interaction.channelId;
@@ -27,11 +27,11 @@ export async function karma(
     karmaValue = !karmaIsEnabled;
   }
 
-  docRef.set({ karmaTracking: karmaValue }, { merge: true });
+  await docRef.set({ karmaTracking: karmaValue }, { merge: true });
 
   const karmaValueText = karmaValue ? 'enabled' : 'disabled';
 
-  interaction.editReply(
+  await interaction.editReply(
     `Karma tracking for ${channelName} has been ${karmaValueText}.`
   );
 }

@@ -1,5 +1,5 @@
-import { ChatInputCommandInteraction } from 'discord.js';
-import { WriteBatch } from '@google-cloud/firestore';
+import type { ChatInputCommandInteraction } from 'discord.js';
+import type { WriteBatch } from '@google-cloud/firestore';
 
 // TODO: GDPR/CCPA compliance (applies to entire bot, tbh)
 // TODO: Could use cleanup, intentionally leaving until theres a usecase for this
@@ -8,7 +8,7 @@ import { WriteBatch } from '@google-cloud/firestore';
 export async function scanMembers(
   firestore: FirebaseFirestore.Firestore,
   interaction: ChatInputCommandInteraction
-) {
+): Promise<void> {
   // Replying immediately allows command to run for longer than 3 seconds.
   await interaction.reply({
     content: 'Beginning user import',
@@ -68,11 +68,11 @@ export async function scanMembers(
         }
         batchCount++;
       })
-      .catch((err) => {
+      .catch((e: unknown) => {
         interaction.followUp(
           `Batch ${batchCount} has encountered an error. See console for more details.`
         );
-        console.log(err);
+        console.log(e);
         batchCount++;
       });
   }

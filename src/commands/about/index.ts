@@ -1,16 +1,14 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
-import { Command } from '../../utilities/command';
-import { version } from '../../utilities/version';
+import type { ChatInputCommandInteraction } from 'discord.js';
 
-export default class AboutCommand extends Command {
-  async build() {
-    return new SlashCommandBuilder()
-      .setName('about')
-      .setDescription('Displays version information');
-  }
+import { Command } from '../../types/command.js';
+import { version } from '../../utilities/version.js';
 
-  async execute(interaction: ChatInputCommandInteraction) {
-    interaction.reply(
+export class AboutCommand extends Command {
+  public readonly name = 'about';
+  public readonly description = 'Displays version information';
+
+  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+    await interaction.reply(
       `Hi, I'm Rusty, mascot of the Rusty's Bois server! My current version is ${version}!`
     );
   }

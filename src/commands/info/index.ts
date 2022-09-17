@@ -1,25 +1,28 @@
-import {
-  ColorResolvable,
+import type {
   ChatInputCommandInteraction,
-  EmbedBuilder,
-  Guild,
-  GuildMember,
-  SlashCommandBuilder
+  ColorResolvable,
+  GuildMember
 } from 'discord.js';
-import { Command } from '../../utilities/command';
+import { EmbedBuilder } from 'discord.js';
 
-export default class InfoCommand extends Command {
-  async build() {
-    return new SlashCommandBuilder()
-      .setName('info')
-      .setDescription('Displays information about a user.')
-      .addUserOption((option) =>
-        option.setName('user').setDescription('User to display info for')
-      );
+import { Command } from '../../types/command.js';
+import type {
+  CommandBuilder,
+  CommandBuilderOutput
+} from '../../types/command-builder.js';
+
+export class InfoCommand extends Command {
+  public readonly name = 'info';
+  public readonly description = 'Displays information about a user.';
+
+  override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
+    return commandBuilder.addUserOption((option) =>
+      option.setName('user').setDescription('User to display info for')
+    );
   }
 
-  async execute(interaction: ChatInputCommandInteraction) {
-    const guild = interaction.guild as Guild;
+  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+    const guild = interaction.guild!;
     let member = interaction.member as GuildMember;
     let user = interaction.options.getUser('user');
 
@@ -29,7 +32,7 @@ export default class InfoCommand extends Command {
     }
 
     const profilePictureUrl = user.displayAvatarURL();
-    const memberNickname = member.nickname || member.user.username;
+    const memberNickname = member.nickname ?? member.user.username;
     const userFirestoreRef = this.firestore
       .collection('guilds')
       .doc(guild.id)
@@ -46,7 +49,7 @@ export default class InfoCommand extends Command {
       const doc = await userFirestoreRef.get();
 
       if (!doc.exists) {
-        interaction.reply('Error retrieving user!');
+        await interaction.reply('Error retrieving user!');
         return;
       }
 
@@ -63,53 +66,35 @@ export default class InfoCommand extends Command {
         karma = doc.data()!.karma;
       }
 
-      const embed = this.embedBuilder(
-        profilePictureUrl,
-        memberNickname,
-        about,
-        postCount,
-        karma,
-        color
-      );
+      const embed = new EmbedBuilder()
+        .setTitle('About')
+        .setDescription(about)
+        .setTimestamp(new Date())
+        .setAuthor({ name: memberNickname, iconURL: profilePictureUrl })
+        .setColor(color)
+        .setFooter({
+          text: 'Use the `profile` command for customization!'
+        })
+        .setThumbnail(profilePictureUrl)
+        .addFields([
+          {
+            inline: true,
+            name: 'Post Count',
+            value: `${postCount}`
+          },
+          {
+            inline: true,
+            name: 'Karma',
+            value: `${karma}`
+          }
+        ]);
 
-      interaction.reply({
+      await interaction.reply({
         embeds: [embed]
       });
-    } catch (err) {
-      interaction.reply('Error retrieving user.');
-      throw err;
+    } catch (e: unknown) {
+      await interaction.reply('Error retrieving user.');
+      throw e;
     }
-  }
-
-  private embedBuilder(
-    pfp: string,
-    userNickname: string,
-    about: string,
-    postCount: string | number,
-    karma: string | number,
-    userColor: ColorResolvable
-  ): EmbedBuilder {
-    return new EmbedBuilder()
-      .setTitle('About')
-      .setDescription(about)
-      .setTimestamp(new Date())
-      .setAuthor({ name: userNickname, iconURL: pfp })
-      .setColor(userColor)
-      .setFooter({
-        text: 'Use the `profile` command for customization!'
-      })
-      .setThumbnail(pfp)
-      .addFields([
-        {
-          inline: true,
-          name: 'Post Count',
-          value: `${postCount}`
-        },
-        {
-          inline: true,
-          name: 'Karma',
-          value: `${karma}`
-        }
-      ]);
   }
 }
