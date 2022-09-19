@@ -7,7 +7,7 @@ export class MissingEnvironmentVariableError extends Error {
 
 export class InvalidColorStringError extends Error {
   constructor(colorString: string) {
-    super(`${colorString} is invalid`);
+    super(`${colorString} is not a valid hex color code!`);
     this.name = 'InvalidColorStringError';
   }
 }

@@ -5,7 +5,10 @@ import type {
 } from 'discord.js';
 
 import { Command } from '../../types/command.js';
-import { formatHexColor } from '../../utilities/hex-color-helper.js';
+import {
+  formatHexColor,
+  validateHexColorContrast
+} from '../../utilities/hex-color-helper.js';
 import type {
   CommandBuilder,
   CommandBuilderOutput
@@ -37,6 +40,13 @@ export class ColorCommand extends Command {
 
     try {
       const formattedColor = formatHexColor(color);
+
+      if (!validateHexColorContrast(formattedColor)) {
+        throw new RustyBotInvalidArgumentError(
+          'hex',
+          "Provided color code is not readable on one of Discord's themes"
+        );
+      }
 
       let message: string;
       if (!myRole) {
