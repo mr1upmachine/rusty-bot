@@ -85,3 +85,2394 @@ Coconut 🥥
 Date 🌴
 Kiwi 🥝
 Pineapple 🍍
+
+// @title Halo: Combat Evolved Maps
+// @author Nick Main
+Battle Creek
+Blood Gulch
+Boarding Action
+Chill Out
+Chiron TL-34
+Damnation
+Danger Canyon
+Death Island
+Derelict
+Gephyrophobia
+Hang 'Em High
+Ice Fields
+Infinity
+Longest
+Prisoner
+Rat Race
+Sidewinder
+Timberland
+Wizard
+
+// @title AWS Services
+// @author Nick Main
+Elastic Compute Cloud
+Relational Database Services
+Simple Storage Service
+Lambda
+CloudFront
+Glacier
+Simple Notification Service
+Elastic Block Store
+Virtual Private Cloud
+Kinesis
+Identity and Access Management
+Simple Queue Service
+Elastic Beanstalk
+Redshift
+Lightsail
+Elastic File System
+CloudSwatch
+Cognito
+
+// @title Databases
+// @author Nick Main
+PostgreSQL
+MySQL
+Microsoft SQL Server
+MongoDB
+Redis
+Elasticsearch
+Microsoft Access
+SQLite
+Cassandra
+MariaDB
+DynamoDB
+Firebase
+
+// @title F1 Teams
+// @author Ty Simpson
+Red Bull
+Ferrari
+Mercedes
+Alpine
+McLaren
+Alfa Romeo
+Haas
+AlphaTauri
+Aston Martin
+Williams
+
+// @title Fantasy Places
+// @author Adams880
+Kaer Morhen
+Hyrule
+Urithiru
+Savathûn's Throne World
+The Tower
+The White Tower
+Tar Valon
+Scadriel
+Elendel
+Roshar
+Middle-Earth
+Gondor
+Mordor
+Minas Tirith
+Punk Hazard
+Impel Down
+Arrakis
+Janloon
+Elmo's World
+Ravnica
+Mos Eisley
+Hoth
+Midgar
+Valhalla
+Rapture
+
+// @title Power 9
+// @author Adams880
+Ancestral Recall
+Black Lotus
+Mox Emerald
+Mox Jet
+Mox Ruby
+Mox Pearl
+Mox Sapphire
+Timetwister
+Time Walk
+
+// @title Mobile Suits/Armors in the original Gundam
+// @author Ty Simpson
+Gundam
+Guncannon
+Guntank
+GM
+Zaku I
+Zaku II
+Gouf
+Dom
+Rock Dom
+Gelgoog
+Gogg
+Acguy
+Z'Gok
+Zock
+Zeong
+Gyan
+Zakrello
+Bigro
+Big Zam
+Grublo
+Braw Bro
+Elmeth
+Adzam
+
+// @title Kingdom Hearts Worlds
+// @author JazzyPenguin
+Disney Castle
+Disney Town
+Timeless River
+Dwarf Woodlands
+Monstro
+Mysterious Tower
+Castle of Dreams
+Wonderland
+Neverland
+Enchanted Dominion
+100 Acre Wood
+Space Paranoids
+Atlantica
+Beast's Castle
+Agrabah
+Halloween Town
+Pride Lands
+Olympus Coliseum
+The Land of Dragons
+Deep Jungle
+Deep Space
+Port Royal
+Destiny Islands
+Traverse Town
+Radiant Garden
+Hollow Bastian
+End of the World
+Land of Departure
+Castle Oblivion
+Twilight Town
+The World That Never Was
+Keyblade Graveyard
+Arendelle
+Quadratum
+Kingdom of Corona
+San Fransokyo
+Scala ad Caelum
+The Final World
+Toy Box
+Monstropolis
+
+// @title Disney Parks
+// @author Nick Main
+Magic Kingdom
+EPCOT
+HollyWood Studios
+Animal Kingdom
+Disneyland
+Disney California Adventure
+Walt Disney Studios
+Disney Springs
+Typhoon Lagoon
+
+// @title Mythical/Fantasy Weapons
+// @author Adams880
+Master Sword
+Keyblade
+Excalibur
+Sting
+Andúril
+Gram
+Næġling
+Harpe
+Kusanagi-no-Tsurugi
+Energy Sword
+Hidden Blade
+Blades of Chaos
+BFG 9000
+Dagger of Time
+Buster Sword
+Shovel Blade
+F.L.U.D.D
+Mjölnir
+Brisingr
+Vorpal Sword
+Tyrfing
+
+// @title Little Trees Fragrances
+// @author Ty Simpson
+America
+Bayside Breeze
+Black Ice
+Blackberry Clove
+Bubble Gum
+Caribbean Colada
+Celebrate!
+Cherry Blast
+Cherry Blossom Honey
+Cinnamon Apple
+Coconut
+Cotton Candy
+Daisy Fields
+Dragon Fruit
+Fresh Shave
+Gold
+Golden Vanilla
+Green Apple
+Jasmin
+Lavender
+Leather
+Morning Fresh
+Moroccan Mint Tea
+New Car Scent
+No Smoking
+Odor Eliminator
+Peachy Peach
+Piña Colada
+Pure Steel
+Rainforest Mist
+Rainshine
+Rose Thorn
+Royal Pine
+Sliced
+Strawberry
+Summer Linen
+Sunset Beach
+Supernova
+True North
+Vanillaroma
+Watermelon
+Wild Cherry
+Wild Hemp
+
+// @title Microsoft-Office365 Products
+// @author JazzyPenguin
+Outlook
+Teams
+Word
+Excel
+PowerPoint
+Visio
+Access
+SharePoint
+Power Apps
+Power Automate
+Power BI
+Project
+Stream
+Sway
+To Do
+Delve
+Forms
+OneDrive
+OneNote
+Yammer
+Whiteboard
+Dynamics
+
+// @title Drinks 🍸
+// @author Ragan
+Vodka
+Tequila
+Gin
+Rum
+Whiskey
+Brandy
+Sake
+Champagne
+Scotch
+Bourbon
+Rye
+Moonshine
+
+// @title Android Version Code Names
+// @author Wichael Milliams
+Cupcake
+Donut
+Éclair
+Froyo
+Gingerbread
+Honeycomb
+Ice Cream Sandwich
+Jelly Bean
+KitKat
+Lollipop
+Marshmallow
+Nougat
+Oreo
+Pie
+
+// @title Shrek Characters
+// @author Nick Main
+Shrek
+Fiona
+Donkey
+Lord Farquaad
+Gingerbread Man
+Blind Mouse #3
+Dragon
+Puss In Boots
+Fairy Godmother
+
+// @title Yugioh Cards
+// @author Tyler Hocker
+Nibiru, The Primal Being
+Dark Ruler No More
+Pot of Greed
+Graceful Charity
+Ultimate Sacrifice
+Forbidden Droplet
+Pot of Prosperity
+Dark Magician
+Blue-Eyes White Dragon
+Red-Eyes Black Dragon
+Call of the Haunted
+Premature Burial
+Monster Reborn
+Blackwing - Gofu The Vague Shadow
+Maxx "C"
+Chicken Game
+Satellarknight Trivver
+Delinquent Duo
+Giant Trunade
+Heavy Storm
+Painful Choice
+Forceful Century
+Madolche Hootcake
+Ash Blossom & Joyous Spring
+Imperial Order
+Mirror Force
+Horn of the Unicorn
+
+// @title Animal Crossing NPCs
+// @author Chris
+Tom Nook 🦝
+Blathers 🦉
+Isabelle 🔔
+Timmy & Tommy 🍂 💰
+Sable & Mable 🦔 🪡
+Label 🧥🏷️
+Kicks 🦨
+Leif 🦥
+Tortimer 🐢
+Mr Resetti ⛏️
+Harriet ✂️
+Harvey 🐶
+Gulliver 🏖️
+Gracie 🦒
+Daisy Mae 📉 📈
+Flick 🦎
+K.K. Slider 🎸
+Brewster ☕
+C.J. 🦫
+Kapp'n 🚤
+Katrina 🔮
+Jingle 🎄
+Jack 🎃
+Lloid 🏗️
+Lottie 🦦
+Luna 🛌
+Pascal 🐚
+Redd 🦊
+Digby 🏡
+Saharah 🐫
+Orville & Wilbur 🦤✈️
+Cyrus & Reese 🛋️🦙
+Wisp 👻
+Zipper T. Bunny 🐰
+Celeste 🌠
+
+// @title Alphabet
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
+// @title Harry Styles Songs
+// @author Savvy_Flowers
+Meet Me in the Hallway
+Sign of the Times
+Carolina
+Two Ghosts
+Sweet Creature
+Only Angel
+Kiwi
+Ever Since New York
+Woman
+From the Dining Table
+Golden
+Watermelon Sugar
+Adore You
+Lights Up
+Cherry
+Falling
+To Be So Lonely
+She
+Sunflower, Vol. 6
+Canyon Moon
+Treat People With Kindness
+Fine Line
+Music For a Sushi Restaurant
+Late Night Talking
+Grapejuice
+As It Was
+Daylight
+Little Freak
+Matilda
+Cinema
+Daydreaming
+Keep Driving
+Satellite
+Boyfriends
+Love Of My Life
+
+// @title Great Pet Names
+Simon
+Garf(olomew)
+Kricket
+Gilly
+Storm
+Jax(imus)
+Figment
+Noodles
+Kenta
+Luca
+Ava
+Xiggy
+Dublin
+Rosy
+Cheerio
+
+// @title Billy Hatcher
+Billy Hatcher 🐣
+Billy Hatcher 🐤
+Billy Hatcher 🐥
+Billy Hatcher 🐔
+Billy Hatcher 🥚
+Billy Hatcher 🍗
+Billy Hatcher 👦
+
+// @title songs without videos without videos without songs by BDG
+// @author Ty Simpson
+siblings
+saturday shorts
+shingle jingle
+alone in my apartment
+it's time to get good at darts
+building your online brand
+have you seen my laptop?
+high intensity biking
+high intensity biking v2
+pause screen
+that feeling when you bite into a pickle and it's a little squishier than you expected
+we like watching birds
+the rollerblader's world is limitless
+i'm not superstitious but i am afraid to prune my money tree
+38 dance moves to try at the club
+this song is not a metaphor
+i wish that i could wear hats
+
+// @title Things you can do to a Bop it
+// @author Wichael Milliams
+Bop it
+Twist it
+Pull it
+Shout it
+Flick it
+Spin it
+Shake it
+
+// @title Songs from the album The Sunset Tree
+// @author Ty Simpson
+You or Your Memory
+Broom People
+This Year
+Dilaudid
+Dance Music
+Dinu Lipatti's Bones
+Up the Wolves
+Lion's Teeth
+Hast Thou Considered The Tetrapod
+Magpie
+Song for Dennis Brown
+Love Love Love
+Pale Green Things
+
+// @title Within The Wires Season 1 Episode Titles
+// @author Ty Simpson
+Stress, Shoulders
+Anxiety, Stomach
+Insomnia, Feet
+Sadness, Lungs
+Focus, Nose
+for Oleta
+Doubt, Head
+Awareness, Eyes
+Loss, Hands
+Horopito
+
+// @title Cytoplasmic organelles
+Mitochondrion
+Ribosome
+Endoplasmic Reticulum
+Golgi Apparatus
+Lysosome
+Peroxisome
+Sphaerosome
+Microtubule
+Microfilament
+Centrosome
+Cytoplasmic Vacuole
+Basal Granule
+Kinetosome
+Cilia
+Flagella
+Tonofibril
+Plastid
+
+// @title Annoying things to say to your opponent during a MTG game
+// @author Wichael Milliams
+Cards in hand?
+Life Total?
+What phase are we in?
+Judge?
+I prefer the promo art
+Mine is near mint
+In response...
+I hold priority
+
+// @title Toontown Speedchat Phrases From the "Stinky" Category
+Hey!
+You stink!
+Stop that!
+Please go away!
+Don't be mean!
+That wasn't nice!
+That's not very Toony!
+
+// @title Bridget Nicknames (from Guilty Gear)
+// @author Snate
+Brisket
+Biscuit
+Baguette
+Budget
+Basket
+Bracket
+Bucket
+
+// @title Funny hand emojis
+// @author Wichael Milliams
+:clap:
+:left_facing_fist:
+:pinching_hand:
+:pinched_fingers:
+:love_you_gesture:
+:right_facing_fist:
+:point_down:
+:ok_hand:
+
+// @title Homestar Runner Characters
+// @author Ty Simpson
+Homestar Runner
+Strong Bad
+The Cheat
+Strong Mad
+Strong Sad
+Pom Pom
+Marzipan
+Coach Z
+Bubs
+The King of Town
+The Poopsmith
+Homsar
+Marshie
+Nibbles
+Belinda
+Carol
+Charlemagne
+Credenza
+The Denzel
+F-Sack
+Frank Bennedetto
+Jibblies Painting
+Humidibot
+Large Bean
+The Paper
+Santaman
+Tony Stony
+Biscuitdoughhandsman
+The Goblin
+Mr. Poofers
+Old Man Rootbeer
+Peacey P
+Senor Cardgage
+Tenerence Love
+Trogdor
+The Thnikkaman
+Onion Bubs
+Cheerleader
+So and So
+What's Her Face
+The Ugly One
+Tompkins
+Sci-Fi Greg
+DnD Greg
+Open Source Greg
+Japanese Culture Greg
+Crack Stuntman
+Eh! Steve!
+Li'l Brudder
+Gunhaver
+Reynold
+Fightgar
+Crackotage
+Silent Rip
+Firebert
+Flashfight
+Ripberger
+Foxface
+Agent Chimendez
+
+// @title DnD Alignments
+Lawful Good
+Lawful Neutral
+Lawful Evil
+Lawful Sexy
+Neutral Good
+True Neutral
+Neutral Evil
+Neutral Sexy
+Chaotic Good
+Chaotic Neutral
+Chaotic Evil
+Chaotic Sexy
+
+// @title Banjo-Tooie Locations
+// @author Sean Hale
+Isle o' Hags
+Mayahem Temple
+Glitter Gulch Mine
+Witchyworld
+Jolly Roger's Lagoon
+Terrydactyland
+Grunty Industries
+Hailfire Peaks
+Cloud Cuckooland
+Cauldron Keep
+
+// @title Super Mario 64 Stages
+// @author Sean Hale
+Bob-omb Battlefield
+Whomp's Fortress
+Jolly Roger Bay
+Cool, Cool Mountain
+Big Boo's Haunt
+Hazy Maze Cave
+Lethal Lava Land
+Shifting Sand Land
+Dire, Dire Docks
+Snowman's Land
+Wet-Dry World
+Tall, Tall Mountain
+Tiny, Huge Island
+Tick Tock Clock
+Rainbow Ride
+
+// @title Super Mario Sunshine Locations
+// @author Sean Hale
+Delfino Airstrip
+Delfino Plaza
+Bianco Hills
+Ricco Harbor
+Gelato Beach
+Pinna Park
+Sirena Beach
+Noki Bay
+Pianta Village
+Corona Mountain
+
+// @title Super Mario Galaxy Locations
+// @author Sean Hale
+Good Egg Galaxy
+Honeyhive Galaxy
+Loopdeeloop Galaxy
+Flipswitch Galaxy
+Space Junk Galaxy
+Battlerock Galaxy
+Rolling Green Galaxy
+Hurry-Scurry Galaxy
+Beach Bowl Galaxy
+Ghostly Galaxy
+Bubble Breeze Galaxy
+Buoy Base Galaxy
+Gusty Garden Galaxy
+Freezeflame Galaxy
+Dusty Dune Galaxy
+Honeyclimb Galaxy
+Gold Leaf Galaxy
+Sea Slide Galaxy
+Toy Time Galaxy
+Bonefin Galaxy
+Gateway Galaxy
+Deep Dark Galaxy
+Dreadnought Galaxy
+Melty Molten Galaxy
+Matter Splatter Galaxy
+Sweet Sweet Galaxy
+Sling Pod Galaxy
+Drip Drop Galaxy
+Bigmouth Galaxy
+Sand Spiral Galaxy
+Boo's Boneyard Galaxy
+Snow Cap Galaxy
+Rolling Gizmo Galaxy
+Loopdeeswoop Galaxy
+Bubble Blast Galaxy
+Grand Finale Galaxy
+Center of the Universe
+
+// @title Super Mario Galaxy 2 Locations
+// @author Sean Hale
+Sky Station Galaxy
+Yoshi Star Galaxy
+Spin-Dig Galaxy
+Fluffy Bluff Galaxy
+Flip-Swap Galaxy
+Rightside Down Galaxy
+Puzzle Plank Galaxy
+Hightail Falls Galaxy
+Boulder Bowl Galaxy
+Cosmic Cove Galaxy
+Wild Glide Galaxy
+Honeybloom Galaxy
+Tall Trunk Galaxy
+Cloudy Court Galaxy
+Haunty Halls Galaxy
+Freezy Flake Galaxy
+Rolling Masterpiece Galaxy
+Beat Block Galaxy
+Supermassive Galaxy
+Flipsville Galaxy
+Starshine Beach Galaxy
+Chompworks Galaxy
+Sweet Mystery Galaxy
+Honeyhop Galaxy
+Space Storm Galaxy
+Slipsand Galaxy
+Shiverburn Galaxy
+Boo Moon Galaxy
+Upside Dizzy Galaxy
+Fleet Glide Galaxy
+Melty Monster Galaxy
+Clockwork Ruins Galaxy
+Throwback Galaxy
+Battle Belt Galaxy
+Flash Black Galaxy
+Slimy Spring Galaxy
+Mario Squared Galaxy
+Rolling Coaster Galaxy
+Twisty Trials Galaxy
+Stone Cyclone Galaxy
+Boss Blitz Galaxy
+Flip-Out Galaxy
+Grandmaster Galaxy
+
+// @title Super Mario Odyssey Locations
+// @author Sean Hale
+Mushroom Kingdom
+Cap Kingdom
+Cascade Kingdom
+Sand Kingdom
+Wooded Kingdom
+Lake Kingdom
+Cloud Kingdom
+Lost Kingdom
+Metro Kingdom
+Seaside Kingdom
+Snow Kingdom
+Luncheon Kingdom
+Ruined Kingdom
+Bowser's Kingdom
+Moon Kingdom
+Dark Side
+Darker Side
+
+// @title Super Mario World Levels
+// @author Sean Hale
+Yoshi's Island
+Donut Plains
+Vanilla Dome
+Twin Bridges
+Forest of Illusion
+Chocolate Island
+Valley of Bowser
+Star World
+Special Zone
+
+// @title Donkey Kong Country Locations
+// @author Sean Hale
+Kongo Jungle
+Monkey Mines
+Vine Valley
+Gorilla Glacier
+Kremkroc Industries, Inc.
+Chimp Caverns
+Gang-Plank Galleon
+
+// @title Donkey Kong Country 2 Locations
+// @author Sean Hale
+Crocodile Cauldron
+Krem Quay
+Krazy Kremland
+Gloomy Gulch
+K. Rool's Keep
+The Flying Krock
+Lost World
+
+// @title Donkey Kong Country 3 Locations
+// @author Sean Hale
+Lake Orangatanga
+Kremwood Forest
+Cotton Top Cove
+Mekanos
+K3
+Razor Ridge
+Pacifica
+Kaos Kore
+Krematoa
+
+// @title Yoshi's Crafted World Locations
+// @author Sean Hale
+Sunshine Station
+Yarrctopus Docks
+Go-Go Land
+Big Paper Peak
+Origami Gardens
+Dino Desert
+Pastel Pathway
+Sky-High Heights
+Acorn Forest
+Ninjarama
+Cardstock Carnival
+Chilly-Hot Isles
+Rumble Jungle
+Outer Orbit
+Cheery Valley
+Shadowville
+Hidden Hills
+
+// @title Paper Mario Locations
+// @author Sean Hale
+Mario's House
+Toad Town
+Goomba Village
+Koopa Village
+Dry Dry Outpost
+Boo's Mansion
+Yoshi's Village
+Shiver City
+Starborn Valley
+Star Haven
+Goomba Road
+Shooting Star Summit
+Pleasant Path
+Mt. Rugged
+Dry Dry Desert
+Forever Forest
+Gusty Gulch
+Lavalava Island
+Flower Fields
+Toad Town Tunnels
+Shiver Region
+Star Way
+Peach's Castle
+Koopa Bros. Fortress
+Dry Dry Ruins
+Tubba Blubba's Castle
+Windy Mill
+Shy Guy's Toy Box
+Mt. Lavalava
+Cloudy Climb
+Crystal Palace
+Bowser's Castle
+
+// @title Mario Star Spirits
+// @author Sean Hale
+Eldstar
+Mamar
+Skolar
+Muskular
+Misstar
+Klevar
+Kalmar
+
+// @title Kirby: Nightmare in Dream Land Levels
+// @author Sean Hale
+Vegetable Valley
+Ice Cream Island
+Butter Building
+Grape Garden
+Yogurt Yard
+Orange Ocean
+Rainbow Resort
+The Fountain of Dreams
+
+// @title Kirby's Pinball Land Levels
+// @author Sean Hale
+Wispy-Woods Land
+Kracko Land
+Poppy Brothers' Land
+
+// @title Kirby Super Star Levels
+// @author Sean Hale
+Spring Breeze
+Dyna Blade
+Gourmet Race
+The Great Cave Offensive
+Revenge of Meta Knight
+Milky Way Wishes
+Revenge of the King
+
+// @title Kirby 64 Levels
+// @author Sean Hale
+Pop Star
+Rock Star
+Aqua Star
+Neo Star
+Shiver Star
+Ripple Star
+Dark Star
+
+// @title Kirby & the Amazing Mirror Levels
+// @author Sean Hale
+Rainbow Route
+Moonlight Mansion
+Cabbage Cavern
+Mustard Mountain
+Carrot Castle
+Olive Ocean
+Peppermint Palace
+Radish Ruins
+Candy Constellation
+The Mirror
+
+// @title Kirby Canvas Curse Levels
+// @author Sean Hale
+Reddy Land
+Arange Gorge
+Iello Adventure
+Neo Greo
+Bloo Hills
+Omarine Zone
+Wonder Lilane
+The World of Drawcia
+
+// @title Kirby Squeak Squad Levels
+// @author Sean Hale
+Prism Plains
+Nature Notch
+Cushy Cloud
+Jam Jungle
+Vocal Volcano
+Ice Island
+Secret Sea
+Gamble Galaxy
+
+// @title Kirby Mass Attack Levels
+// @author Sean Hale
+Green Grounds
+Sandy Canyon
+Dedede Resort
+Volcano Valley
+Necro Nebula
+
+// @title Kirby Return to Dreamland Levels
+// @author Sean Hale
+Cookie Country
+Raisin Ruins
+Onion Ocean
+White Wafers
+Nutty Noon
+Egg Engines
+Dangerous Dinner
+Another Dimension
+
+// @title Kirby Triple Deluxe Levels
+// @author Sean Hale
+Fine Fields
+Lollipop Land
+Old Odyssey
+Wild World
+Endless Explosions
+Royal Road
+Eternal Dreamland
+
+// @title Kirby and the Rainbow Curse Levels
+// @author Sean Hale
+Green Valley
+Yellow Dunes
+Indigo Ocean
+Blue Sky Palace
+Orange Woodland
+Red Volcano
+Purple Fortress
+
+// @title Kirby Planet Robobot Levels
+// @author Sean Hale
+Patched Plains
+Resolution Road
+Overload Ocean
+Gigabyte Grounds
+Rhythm Route
+Access Ark
+Mind in the Program
+
+// @title Kirby and the Forgotten Land Levels
+// @author Sean Hale
+Natural Plains
+Everbay Coast
+Wondaria Remains
+Winter Horns
+Originull Wasteland
+Redgar Forbidden Lands
+Lab Discovera
+Isolated Isles
+
+// @title The Legend of Zelda Items
+// @author Sean Hale
+Blue Ring
+Red Ring
+Wooden Sword
+White Sword
+Magical Sword
+Small Shield
+Magical Shield
+Boomerang
+Magical Boomerang
+Bomb
+Book of Magic
+Magical Rod
+Arrow
+Silver Arrow
+Bow
+Raft
+Stepladder
+Heart Container
+Blue Candle
+Red Candle
+Recorder
+Power Bracelet
+Magical Key
+Food
+Life Potion
+Red Water of Life
+
+// @title Zelda II: The Adventure of Link Items
+// @author Sean Hale
+Heart Container
+Magic Container
+1-up Doll
+Candle
+Hammer
+Handy Glove
+Raft
+Boots
+Flute
+Magical Key
+Cross
+Trophy
+Water of Life
+
+// @title The Legend of Zelda: A Link to the Past Items
+// @author Sean Hale
+Fighter's Sword
+Master Sword
+Tempered Sword
+Golden Sword
+Fighter's Shield
+Red Shield
+Mirror Shield
+Magic Hammer
+Pendant of Courage
+Pendant of Wisdom
+Pendant of Power
+Zora's Flippers
+Bomb
+Super Bomb
+Bow
+Bottle
+Quake Medallion
+Ether Medallion
+Bombos Medallion
+Bug-Catching Net
+Piece of Heart
+Cane of Somaria
+Cane of Byrna
+Power Glove
+Titan's Mitt
+Heart Container
+Magic Cape
+Boomerang
+Magical Boomerang
+Book of Mudora
+Hookshot
+Fire Rod
+Ice Rod
+Pegasus Boots
+Magic Mirror
+
+// @title The Legend of Zelda: Link's Awakening Items
+// @author Sean Hale
+Sword
+Koholint Sword
+Standard Shield
+Mirror Shield
+Roc's Feather
+Power Bracelet
+Pegasus Boots
+Hookshot
+Power Bracelet L-2
+Magic Powder
+Fire Rod
+Bow
+Shovel
+Boomerang
+Flippers
+Magic Potion
+
+// @title The Legend of Zelda: Ocarina of Time Items
+// @author Sean Hale
+Kokiri Sword
+Master Sword
+Giant's Knife
+Biggoron's Sword
+Deku Shield
+Hylian Shield
+Mirror Shield
+Kokiri Tunic
+Zora Tunic
+Goron Tunic
+Fairy Ocarina
+Ocarina of Time
+Silver Scale
+Golden Scale
+Deku Seed
+Deku Seeds Bullet Bag
+Fairy Slingshot
+Fairy Bow
+Quiver
+Bomb
+Bomb Bag
+Goron's Bracelet
+Silver Gauntlets
+Golden Gauntlets
+Din's Fire
+Farore's Wind
+Nayru's Love
+Boomerang
+Hookshot
+Longshot
+Megaton Hammer
+Kokiri Boots
+Iron Boots
+Hover Boots
+Heart Container
+Piece of Heart
+Gold Skulltula Tokens
+Odd Mushroom
+Odd Potion
+Poacher's Saw
+World's Finest Eye Drops
+Eyeball Frog
+Bottle
+Red Potion
+Green Potion
+Blue Potion
+Fairy
+Keaton Mask
+Goron Mask
+Zora Mask
+Gerudo Mask
+Mask of Truth
+Deku Nuts
+Deku Sticks
+Spiritual Stones
+Fire Arrow
+Ice Arrow
+Light Arrow
+Lens of Truth
+
+// @title The Legend of Zelda: Majora's Mask Items
+// @author Sean Hale
+Kokiri Sword
+Razor Sword
+Gilded Sword
+Great Fairy's Sword
+Hero's Shield
+Mirror Shield
+Bombers' Notebook
+Deku Nuts
+Deku Sticks
+Hookshot
+Hero's Bow
+Arrow
+Fire Arrow
+Ice Arrow
+Light Arrow
+Bomb
+Bomb Bag
+Postman's Hat
+Keaton Mask
+Blast Mask
+Great Fairy's Mask
+Giant's Mask
+Romani's Mask
+Bunny Hood
+Bremen Mask
+Garo's Mask
+Gibdo Mask
+Captain's Hat
+Don Gero's Mask
+Deku Mask
+Goron Mask
+Zora Mask
+Fierce Deity's Mask
+Kafei's Mask
+Couple's Mask
+All-Night Mask
+Mask of Scents
+Circus Leader's Mask
+
+// @title The Legend of Zelda: Oracle of Ages Items
+// @author Sean Hale
+Wooden Sword
+Noble Sword
+Master Sword
+Biggoron's Sword
+Wooden Shield
+Iron Shield
+Mirror Shield
+Gasha Seed
+Seed Rings
+Seed Satchel
+Ember Seed
+Scent Seed
+Gale Seed
+Pegasus Seed
+Mystery Seed
+Harp of Ages
+Shovel
+Bomb
+Bombchu
+Strange Flute
+Ricky's Flute
+Moosh's Flute
+Dimitri's Flute
+Power Bracelet
+Roc's Feather
+Zora's Flippers
+Raft
+Seed Shooter
+Switch Hook
+Cane of Somaria
+Mermaid Suit
+Boomerang
+Long Hook
+Power Glove
+Magic Potion
+
+// @title The Legend of Zelda: Oracle of Seasons Items
+// @author Sean Hale
+Wooden Sword
+Noble Sword
+Master Sword
+Biggoron's Sword
+Wooden Shield
+Iron Shield
+Mirror Shield
+Zora's Flippers
+Gasha Seed
+Strange Flute
+Dimitri's Flute
+Ricky's Flute
+Moosh's Flute
+Rod of Seasons
+Seed Satchel
+Ember Seed
+Scent Seed
+Gale Seed
+Pegasus Seed
+Mystery Seed
+Seed Rings
+Bombs
+Bombchu
+Boomerang
+Shovel
+Power Bracelet
+Roc's Feather
+Slingshot
+Hyper Slingshot
+Magnetic Gloves
+Magical Boomerang
+Roc's Cape
+Magic Potion
+
+// @title The Legend of Zelda: Four Swords Items
+// @author Sean Hale
+Four Sword
+Bomb
+Roc's Cape
+Bow
+Gnat Hat
+Pegasus Boots
+Boomerang
+Shield
+Bow-Wow
+
+// @title The Legend of Zelda: The Wind Waker Items
+// @author Sean Hale
+Hero's Sword
+Master Sword
+Hero's Shield
+Mirror Shield
+Power Bracelets
+Hero's Charm
+Bombs
+Boomerang
+Hero's Bow
+Deku Leaf
+Hookshot
+Skull Hammer
+Bottle
+Wind Waker
+Sail
+Telescope
+Grappling Hook
+Magic Armor
+Tingle Tuner
+Picto Box
+Deluxe Picto Box
+Iron Boots
+
+// @title The Legend of Zelda: Four Swords Adventures Items
+// @author Sean Hale
+Four Sword
+Pegasus Boots
+Roc's Feather
+Bow and Arrows
+Bombs
+Boomerang
+Fire Rod
+Moon Pearl
+Magic Hammer
+
+// @title The Legend of Zelda: The Minish Cap Items
+// @author Sean Hale
+Smith's Sword
+Picori Sword
+Small Shield
+Mirror Shield
+Bow
+Light Arrows
+Bombs
+Remote Bombs
+Boomerang
+Magical Boomerang
+Gust Jar
+Cane of Pacci
+Mole Mitts
+Flame Lantern
+Roc's Cape
+Ocarina of Wind
+Pegasus Boots
+Bottle
+Grip Ring
+Power Bracelets
+Flippers
+
+// @title The Legend of Zelda: Twilight Princess Items
+// @author Sean Hale
+Wooden Sword
+Ordon Sword
+Master Sword
+Ordon Shield
+Wooden Shield
+Hylian Shield
+Hawkeye
+Gale Boomerang
+Hero's Bow
+Clawshot
+Double Clawshots
+Spinner
+Ball and Chain
+Dominion Rod
+Fishing Rod
+Slingshot
+Iron Boots
+Bombs
+Water Bombs
+Bomblings
+Bottle
+Horse Call
+
+// @title The Legend of Zelda: Phantom Hourglass Items
+// @author Sean Hale
+Oshus's Sword
+Wooden Shield
+Phantom Sword
+Phantom Hourglass
+Boomerang
+Bomb
+Bow and Arrow
+Grappling Hook
+Bombchu
+Hammer
+Shovel
+Pure Metals
+Aquanine
+Crimsonine
+Azurine
+Fishing Rod
+Regal Necklace
+
+// @title The Legend of Zelda: Spirit Tracks Items
+// @author Sean Hale
+Recruit's Sword
+Lokomo Sword
+Lokomo Song
+Spirit Flute
+Whirlwind
+Boomerang
+Whip
+Bow
+Quiver
+Sand Wand
+Bombs
+Bomb Bag
+Tears of Light
+Bow of Light
+Compass of Light
+Stamp Book
+Shield
+Shield of Antiquity
+Recruit Uniform
+Engineer's Clothes
+Engineer Certificate
+
+// @title The Legend of Zelda: Skyward Sword Items
+// @author Sean Hale
+Practice Sword
+Sailcloth
+Adventure Pouch
+Goddess Sword
+Wooden Shield
+Banded Shield
+Braced Shield
+Divine Shield
+Fortified Shield
+Goddess Shield
+Hylian Shield
+Iron Shield
+Reinforced Shield
+Sacred Shield
+Slingshot
+Scattershot
+Bug-Catching Net
+Big Bug Net
+Beetle
+Hook Beetle
+Quick Beetle
+Tough Beetle
+Digging Mitts
+Bombs
+Bomb Bag
+Gust Bellows
+Goddess's Harp
+Water Dragon's Scale
+Whip
+Bow
+Iron Bow
+Sacred Bow
+Quiver
+Fireshield Earrings
+Mogma Mitts
+Double Clawshots
+Bottle
+
+// @title The Legend of Zelda: A Link Between Worlds Items
+// @author Sean Hale
+Forgotten Sword
+Master Sword
+Master Sword Lv2
+Master Sword Lv3
+Shield
+Hylian Shield
+Green Tunic
+Blue Mail
+Red Mail
+Stamina Scroll
+Pegasus Boots
+Power Glove
+Titan's Mitt
+Bell
+Lost Maiamai
+Master Ore
+Bow
+Nice Bow
+Tornado Rod
+Nice Tornado Rod
+Hammer
+Nice Hammer
+Bombs
+Nice Bombs
+Hookshot
+Nice Hookshot
+Sand Rod
+Nice Sand Rod
+Fire Rod
+Nice Fire Rod
+Ice Rod
+Nice Ice Rod
+Boomerang
+Nice Boomerang
+Lamp
+Super Lamp
+Bug-Catching Net
+Super Net
+Scoot Fruit
+Foul Fruit
+Bottle
+
+// @title The Legend of Zelda: Breath of the Wild Runes
+// @author Sean Hale
+Magnesis
+Remote Bomb
+Stasis
+Cryonis
+Camera
+Master Cycle Zero
+
+// @title The Legend of Zelda: Breath of the Wild Enemies
+// @author Sean Hale
+Bokoblin
+Moblin
+Lizalfo
+Stal
+Cursed
+Chuchu
+Keese
+Octorok
+Wizzrobe
+Pebblit
+Lynel
+Guardian
+Yiga
+Talus
+Hinox
+Molduga
+
+// @title The Legend of Zelda: Breath of the Wild Locations
+// @author Sean Hale
+Abandoned North Mine
+Afromsia Coast
+Akkala
+Akkala Ancient Tech Lab
+Akkala Bridge Ruins
+Akkala Citadel Ruins
+Akkala Falls
+Akkala Highlands
+Akkala Parade Ground Ruins
+Akkala Sea
+Akkala Span
+Akkala Tower
+Akkala Wilds
+Aldor Foothills
+Ancient Columns
+Angel Peak
+Ankel Island
+Ankel Island
+Applean Forest
+Aris Beach
+Ash Swamp
+Bank of Wishes
+Barula Plain
+Batrea Lake
+Big Twin Bridge
+Biron Snowshelf
+Blatchery Plain
+Bloodleaf Lake
+Boné Pond
+Bonooru's Stand
+Bottomless Bog
+Breach of Demise
+Breman Peak
+Bridge of Eldin
+Bridge of Hylia
+Broca Island
+Brynna Plain
+Bubinga Forest
+Camphor Pond
+Central Hyrule
+Central Tower
+Cephla Lake
+Cliffs of Quince
+Cliffs of Ruvara
+Coldsnap Hollow
+Cora Lake
+Corvash Peak
+Crenel Hills
+Cuho Mountain
+Damel Forest
+Darb Pond
+Darunia Lake
+Darybon Plains
+Davdi Island
+Death Caldera
+Death Mountain
+Deep Akkala
+Deepback Bay
+Deplian Badlands
+Deya Lake
+Deya Village Ruins
+Divine Beast Vah Medoh
+Divine Beast Vah Rudania
+Dracozu Lake
+Dracozu River
+Dragon Bone Mire
+Drenan Highlands
+Dronoc's Pass
+Dueling Peaks
+Dueling Peaks Stable
+Dueling Peaks Tower
+Eagus Bridge
+East Akkala Beach
+East Akkala Plains
+East Akkala Stable
+East Deplian Badlands
+East Gerudo Mesa
+East Gut Check Rock
+East Necluda
+East Post Ruins
+East Reservoir Lake
+Eastern Abbey
+Ebon Mountain
+Eldin
+Eldin Canyon
+Eldin Great Skeleton
+Eldin Mountains
+Eldin Tower
+Eldin's Flank
+Elma Knolls
+Faron
+Faron Grasslands
+Faron Sea
+Faron Tower
+Faron Woods
+Farosh Hills
+Finra Woods
+Fir River
+Firly Plateau
+Firly Pond
+Floret Sandbar
+Floria Bridge
+Floria Falls
+Foothill Stable
+Forest of Spirits
+Forest of Time
+Forgotten Temple
+Fort Hateno
+Fural Plain
+Fural Plains
+Gatepost Town Ruins
+Gero Pond
+Gerudo
+Gerudo Canyon
+Gerudo Desert
+Gerudo Desert Gateway
+Gerudo Highlands
+Gerudo Summit
+Gerudo Tower
+Gerudo Town
+Ginner Woods
+Gleeok Bridge
+Golow River
+Goponga Island
+Goponga Village Ruins
+Gorko Lake
+Gorko Tunnel
+Goro Cove
+Goron City
+Goron Hot Springs
+Goronbi Lake
+Goronbi River
+Gortram Cliff
+Great Cliffs
+Great Fairy Fountain
+Great Hyrule Forest
+Great Plateau
+Great Plateau Tower
+Great Zora Bridge
+Guchini Plain
+Guchini Plain Barrows
+Gut Check Rock
+Haran Lake
+Harfin Valley
+Harker Lake
+Hateno Tower
+Hateno Village
+Hebra
+Hebra East Summit
+Hebra Falls
+Hebra Great Skeleton
+Hebra Headspring
+Hebra Mountains
+Hebra North Crest
+Hebra North Summit
+Hebra Peak
+Hebra Plunge
+Hebra South Summit
+Hebra Tower
+Hebra Tundra
+Hebra West Summit
+Hemaar's Descent
+Herin Lake
+Hickaly Woods
+Highland Stable
+Hills of Baumer
+Hopper Pond
+Horwell Bridge
+Hylia Island
+Hylia River
+Hyrule Castle
+Hyrule Castle Town Ruins
+Hyrule Field
+Hyrule Post Ruins
+Hyrule Ridge
+Ibara Butte
+Icefall Foothills
+Inogo Bridge
+Irch Plain
+Isle of Rabac
+Ja'Abu Ridge
+Kaepora Pass
+Kakariko Bridge
+Kakariko Village
+Kanalet Ridge
+Keelay Plain
+Kincean Island
+Kitano Bay
+Knuckel Island
+Kolami Bridge
+Komo Shoreline
+Kopeeki Drifts
+Korok Forest
+Koukot Plateau
+Lake Akkala
+Lake Darman
+Lake Ferona
+Lake Hylia
+Lake Illumeni
+Lake Intenoch
+Lake Jarrah
+Lake Kilsie
+Lake Mekar
+Lake of the Horse God
+Lake Saria
+Lake Siela
+Lake Sumac
+Lake Totori
+Lake Tower
+Lakeside Stable
+Lanayru
+Lanayru Bay
+Lanayru Bluff
+Lanayru Great Spring
+Lanayru Heights
+Lanayru Range
+Lanayru Road
+Lanayru Road - East Gate
+Lanayru Road - West Gate
+Lanayru Sea
+Lanayru Tower
+Lanayru Wetlands
+Lantern Lake
+Laparoh Mesa
+Laverra Beach
+Linebeck Island
+Lomei Labyrinth Island
+Loshlo Harbor
+Lost Woods
+Lulu Lake
+Lurelin Village
+Luto's Crossing
+Mable Ridge
+Madorna Mountain
+Malin Bay
+Mapla Point
+Marblod Plain
+Maritta Exchange Ruins
+Maw of Death Mountain
+Meadela's Mantle
+Medingo Pool
+Mekar Island
+Menoat River
+Mercay Island
+Midla Woods
+Mido Swamp
+Mikau Lake
+Military Training Camp
+Minshi Woods
+Molida Island
+Mount Daphnes
+Mount Drena
+Mount Floria
+Mount Hylia
+Mount Lanayru
+Mount Nabooru
+Mount Rozudo
+Mystathi's Shelf
+N. Tabantha Snowfield
+Nabi Lake
+Nautelle Wetlands
+Naydra Snowfield
+Necluda
+Necluda Sea
+Nephra Hill
+Nero Hill
+Nette Plateau
+Nirvata Lake
+North Akkala Beach
+North Akkala Foothill
+North Akkala Valley
+North Dragon's Exile
+North Lomei Labyrinth
+Oakle's Navel
+Ordorac Quarry
+Oseira Plains
+Outpost Ruins
+Outskirt Stable
+Owlan Bridge
+Pagos Woods
+Palu Wasteland
+Papetto Grove
+Parache Plains
+Passer Hill
+Phalian Highlands
+Pico Pond
+Pikida Stonegrove
+Pillars of Levia
+Piper Ridge
+Ploymus Mountain
+Popla Foothills
+Proxim Bridge
+Puffer Beach
+Purifier Lake
+Quarry Ruins
+Quatta's Shelf
+Ralis Pond
+Rassla Lake
+Rauru Hillside
+Rayne Highlands
+Retsam Forest
+Ridgeland Tower
+Riola Spring
+Risoka Snowfield
+Rist Peninsula
+Rito Stable
+Rito Village
+River of the Dead
+Riverside Stable
+Robred Dropoff
+Rok Woods
+Rospro Pass
+Rowan Plain
+Rutala Dam
+Rutala River
+Rutimala Hill
+Ruto Lake
+Ruto Mountain
+Ruto Precipice
+S. Tabantha Snowfield
+Sacred Ground Ruins
+Safula Hill
+Sahasra Slope
+Salari Hill
+Samasa Plain
+Sapphia's Table
+Sarjon Woods
+Scout's Hill
+Selmie's Spot
+Serenne Stable
+Shadow Pass
+Shatterback Point
+Shrine of Resurrection
+Skull Lake
+Snowfield Stable
+Solewood Range
+South Akkala Plains
+South Akkala Stable
+South Lake Akkala
+South Nabi Lake
+Southern Mine
+Spool Bight
+Spring of Courage
+Spring of Power
+Spring of Wisdom
+Squabble River
+Stairy Plateau
+Statue of the Eighth Heroine
+Stolock Bridge
+Strock Lake
+Sturnida Basin
+Sturnida Secret Hot Spring
+Taafei Hill
+Tabahl Woods
+Tabantha Bridge Stable
+Tabantha Frontier
+Tabantha Great Bridge
+Tabantha Hills
+Tabantha Tower
+Tabantha Tundra
+Tabantha Village Ruins
+Tal Tal Peak
+Talonto Peak
+Tama Pond
+Tanagar Canyon
+Tanagar Canyon Course
+Tarrey Town
+Tempest Gulch
+Temple of Time
+Tenoko Island
+Ternio Trail
+Thims Bridge
+Thundra Plateau
+Thyphlo Ruins
+Tingel Island
+Tobio's Hollow
+Torin Wetland
+Toto Lake
+Trilby Plain
+Trilby Valley
+Trotter's Downfall
+Tumlea Heights
+Ukuku Plains
+Ulri Mountain
+Ulria Grotto
+Upland Lindor
+Upland Zorana
+Vah Ruta
+Vatorsa Snowfield
+Veiled Falls
+Walnot Mountain
+Warbler's Nest
+Wasteland Tower
+West Deplian Badlands
+West Nabi Lake
+West Necluda
+Wetland Stable
+Woodcutter's Cabin
+Woodland Stable
+Woodland Tower
+Yarna Valley
+Zelo Pond
+Zirco Mesa
+Zodobon Highlands
+Zokassa Ridge
+Zonai Ruins
+Zora River
+Zora's Domain
+
+// @title The Legend of Zelda: Breath of the Wild Shrines
+// @author Sean Hale
+Akh Va'quot Shrine
+Bareeda Naag Shrine
+Bosh Kala Shrine
+Chaas Qeta Shrine
+Daag Chokah Shrine
+Dagah Keek Shrine
+Dah Hesho Shrine
+Dah Kaso Shrine
+Daka Tuss Shrine
+Dako Tah Shrine
+Daqa Koh Shrine
+Daqo Chisay Shrine
+Dila Maag Shrine
+Dow Na'eh Shrine
+Dunba Taag Shrine
+Gee Ha'rah Shrine
+Goma Asaagh Shrine
+Gorae Torr Shrine
+Ha Dahamar Shrine
+Hawa Koth Shrine
+Hia Miu Shrine
+Hila Rao Shrine
+Ishto Soh Shrine
+Ja Baij Shrine
+Jee Noh Shrine
+Jitan Sa'mi Shrine
+Joloo Nah Shrine
+Ka'o Makagh Shrine
+Kaam Ya'tak Shrine
+Kah Mael Shrine
+Kah Okeo Shrine
+Kah Yah Shrine
+Kam Urog Shrine
+Katah Chuki Shrine
+Katosa Aug Shrine
+Kay Noh Shrine
+Kaya Wan Shrine
+Kayra Mah Shrine
+Ke'nai Shakah Shrine
+Keeha Yoog Shrine
+Keh Namut Shrine
+Kema Kosassa Shrine
+Kema Zoos Shrine
+Keo Ruug Shrine
+Ketoh Wawai Shrine
+Korgu Chideh Shrine
+Korsh O'hu Shrine
+Kuh Takkar Shrine
+Kuhn Sidajj Shrine
+Lakna Rokee Shrine
+Lanno Kooh Shrine
+Maag Halan Shrine
+Maag No'rah Shrine
+Maka Rah Shrine
+Mezza Lo Shrine
+Mijah Rokee Shrine
+Mirro Shaz Shrine
+Misae Suma Shrine
+Mo'a Keet Shrine
+Mogg Latan Shrine
+Monya Toma Shrine
+Mozo Shenno Shrine
+Muwo Jeem Shrine
+Myahm Agana Shrine
+Namika Ozz Shrine
+Ne'ez Yohma Shrine
+Noya Neha Shrine
+Oman Au Shrine
+Owa Daim Shrine
+Pumaag Nitae Shrine
+Qaza Tokki Shrine
+Qua Raym Shrine
+Qukah Nata Shrine
+Raqa Zunzo Shrine
+Ree Dahee Shrine
+Rin Oyaa Shrine
+Ritaag Zumo Shrine
+Rok Uwog Shrine
+Rona Kachta Shrine
+Rota Ooh Shrine
+Rucco Maag Shrine
+Saas Ko'sah Shrine
+Sah Dahaj Shrine
+Sasa Kai Shrine
+Sha Gehma Shrine
+Sha Warvo Shrine
+Shada Naw Shrine
+Shae Katha Shrine
+Shae Loya Shrine
+Shae Mo'sah Shrine
+Shai Utoh Shrine
+Shai Yota Shrine
+Shee Vaneer Shrine
+Shee Venath Shrine
+Sheem Dagoze Shrine
+Sheh Rata Shrine
+Sho Dantu Shrine
+Shoda Sah Shrine
+Shoqa Tatone Shrine
+Shora Hah Shrine
+Soh Kofi Shrine
+Suma Sahma Shrine
+Ta'loh Naeg Shrine
+Tah Muhl Shrine
+Tahno O'ah Shrine
+Tawa Jinn Shrine
+Tena Ko'sah Shrine
+Tho Kayu Shrine
+To Quomo Shrine
+Toh Yahsa Shrine
+Toto Sah Shrine
+Tu Ka'loh Shrine
+Tutsuwa Nima Shrine
+Voo Lota Shrine
+Wahgo Katta Shrine
+Ya Naga Shrine
+Yah Rin Shrine
+Zalta Wa Shrine
+Ze Kasho Shrine
+Zuna Kai Shrine
+
+// @title My Passwords
+// @author Nick Main
+June14th$1987
+MyPass!@34
+MommasBigBoi123!
+GokuLover123
+NeverForget9!11!
+passwrd
+FuzzyDice&69
+Y&FH@#34dHDE/
+
+// @title Stuff CoD players say
+// @author Ty Simpson
+Deady
+Cracked
+Ego Chal
+Heady
+Lost Full
+Regained
+Twisted
+Tippable
+Chalked
+Skrrrt
+Gunny
+Turned On
+Fugaze
+Absolute
+Beamed
+Cooked
+Costed
+Snaked
+Fried
+Burger
+No Shot
+Mixy
+Creddy
+
+// @title Counter Strike Dust 2 map callouts
+// @author Wichael Milliams
+CT Spawn
+T Spawn
+Mid Doors
+Long Doors
+Palm
+Goose
+Barrels
+Pit
+B Car
+Top Mid
+Xbox
+Lower Tunnels
+Big Box
+Elevator
+
+// @title Random shit that people have said to me in public
+// @author Wichael Milliams
+Do you play football?
+Do you play basketball?
+Holy shit you have big calves
+How's the weather up there?
+Wow, you're tall
+Are those tattoo's real?
+Can you help me grab that?
+How tall are you?
+
+// @title Parts of Alphonse Elric
+// @author Wichael Milliams
+Chest piece
+Helmet
+Spiky shoulder bits
+Pointy chest part
+Arms
+Legs
+Long feather thing
+Loin cloth
+Blood seal
+
+// @title Things you shouldn't sniff
+// @author Wichael Milliams
+Paint
+Sharpies
+Someone else's finger
+Gasoline
+Glue
+Lighter Fluid
+Shoe Polish
+Whipped cream can gas
+
+// @title JavaScript "Frameworks"
+// @author Nick Main
+Angular
+jQuery
+React
+Ember.js
+Node.js
+Vue.js
+D3.js
+Three.js
+Velocity.js
+Redux
+Backbone.js
+Elavator.js
+Next.js
+Remix
+Express
+Nest
+SailsJS
+egg
+Restify
+
+// @title Bands That Ty Made Me Listen To In The Car
+Underoath
+Deathcab For Cutie
+Area 11
+Billy Talent
+His Dad
+The Protomen
+Kero Kero Bonito
+RichaadEB
+Foo Fighters
+The Black Keys
+Adriana Figueroa
+Green Day
+Anberlin
+Norma Jean
+Animals As Leaders
+Hot Dad
+Flyleaf
+Run The Jewels
+They Might Be Giants
+Thank You Scientist
+Avenged Sevenfold
+The Mountain Goats
+Ninja Sex Party
+
+// @title Bands That I Made Ty Listen To In The Car
+Blink-182
+Just Way Too Much Blink-182
+The Offspring
+Falling In Reverse IRONICALLY
+Sum 41
+Maroon 5
+Mayday Parade
+A Day To Remember
+The Cab
+All Time Low
+Anarbor
+The Living Tombstone
+Rise Against
+P!ATD
+A Fuckton of MonsterCat
+Three Days Grace
+Fall Out Boy
+Imagine Dragons
+Breaking Benjamin
+Caravan Palace
+Despacito
+
+// @title States that I don't know the capital of off the top of my head
+// @author Tyler Hocker
+Alabama
+Alaska
+Arizona
+Arkansas
+Colorado
+Connecticut
+Delaware
+Florida
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Texas
+Utah
+Vermont
+Virginia
+West Virginia
+Wisconsin
+Wyoming
+
+// @title Things my dog Kenta barks at
+Upstairs neighbors
+People outside our door
+Dogs on walks
+Dogs he sees
+Dogs he hears
+Any container
+My room closet
+My Blow Dryer
+Bananas
+
+// @title Where my cat Garf looks
+Up 
+Down
+Side 
+2 Side
+Into The Distance
+Unknowable Void
+Emptiness
+The Nothing That Awaits Us
+Sort of Forward But Not Really
+Upwards At A Slight Angle
+Into The Depths Of The Earth
+Triangulated Position Of Food
+Hand What Pet Him
+Amiibo
+Small Thing On Desk
+The Far Reaches of Space
+
+// @title Popular manga you should read
+// @author Tyler Hocker
+One Piece
+Kaguya-Sama Love is War
+Sakamoto Days
+Black Clover
+JoJo
+Spy x Family
+Blue Box
+JuJutsu Kaisen
+Chainsaw Man
+One Punch Man
