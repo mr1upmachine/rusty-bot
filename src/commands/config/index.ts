@@ -1,7 +1,4 @@
-import type {
-  ChatInputCommandInteraction,
-  GuildTextBasedChannel
-} from 'discord.js';
+import type { ChatInputCommandInteraction } from 'discord.js';
 import { PermissionFlagsBits, ChannelType } from 'discord.js';
 
 import { Command } from '../../types/command.js';
@@ -9,10 +6,12 @@ import type {
   CommandBuilder,
   CommandBuilderOutput
 } from '../../types/command-builder.js';
-import { setRandomVoiceChannelNamesConfig } from './set-random-voice-channel-names-config.js';
-import { setKarmaTrackingConfig } from './set-karma-tracking-config.js';
+import { karmaTrackingSubcommand } from './subcommands/karma-tracking/index.js';
+import { randomVoiceChannelNamesSubcommand } from './subcommands/random-voice-channel-names/index.js';
+import { RandomVoiceChannelNamesSubcommand } from './subcommands/random-voice-channel-names/types.js';
+import { KarmaTrackingSubcommand } from './subcommands/karma-tracking/types.js';
 
-enum ConfigSubcommand {
+enum ConfigSubcommandGroup {
   KarmaTracking = 'karma-tracking',
   RandomVoiceChannelNames = 'random-voice-channel-names'
 }
@@ -28,37 +27,69 @@ export class ConfigCommand extends Command {
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
     return commandBuilder
       .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
-      .addSubcommand((subcommand) =>
-        subcommand
-          .setName(ConfigSubcommand.KarmaTracking)
-          .setDescription(
-            'Set which channels have message reactions tracked for karma'
-          )
-          .addChannelOption((option) =>
-            option
-              .setName('channel')
-              .setDescription('The channel to modify')
-              .setRequired(true)
-              .addChannelTypes(ChannelType.GuildText)
-          )
-          .addBooleanOption((option) =>
-            option
-              .setName('value')
-              .setDescription('Enable or disable karma tracking')
-              .setRequired(true)
+      .addSubcommandGroup((subcommandGroup) =>
+        subcommandGroup
+          .setName(ConfigSubcommandGroup.KarmaTracking)
+          .setDescription('Config for the karma tracking feature')
+          .addSubcommand((subcommand) =>
+            subcommand
+              .setName(KarmaTrackingSubcommand.Channel)
+              .setDescription(
+                'Set which specific channels have message reactions tracked for karma'
+              )
+              .addChannelOption((option) =>
+                option
+                  .setName('channel')
+                  .setDescription('The channel to modify')
+                  .setRequired(true)
+                  .addChannelTypes(ChannelType.GuildText)
+              )
+              .addBooleanOption((option) =>
+                option
+                  .setName('value')
+                  .setDescription('Enable or disable karma tracking')
+                  .setRequired(true)
+              )
           )
       )
-      .addSubcommand((subcommand) =>
-        subcommand
-          .setName(ConfigSubcommand.RandomVoiceChannelNames)
-          .setDescription(
-            'Enables the voice channels to cycle through random names'
+      .addSubcommandGroup((subcommandGroup) =>
+        subcommandGroup
+          .setName(ConfigSubcommandGroup.RandomVoiceChannelNames)
+          .setDescription('Config for the random voice channel name feature')
+          .addSubcommand((subcommand) =>
+            subcommand
+              .setName(RandomVoiceChannelNamesSubcommand.Channel)
+              .setDescription(
+                'Set which specific voice channels will have random names'
+              )
+              .addChannelOption((option) =>
+                option
+                  .setName('channel')
+                  .setDescription('The channel to modify')
+                  .setRequired(true)
+                  .addChannelTypes(ChannelType.GuildVoice)
+              )
+              .addBooleanOption((option) =>
+                option
+                  .setName('value')
+                  .setDescription(
+                    'Enable or disable random voice channel names'
+                  )
+                  .setRequired(true)
+              )
           )
-          .addBooleanOption((option) =>
-            option
-              .setName('value')
-              .setDescription('Enable or disable channel name cycling')
-              .setRequired(true)
+          .addSubcommand((subcommand) =>
+            subcommand
+              .setName(RandomVoiceChannelNamesSubcommand.Enabled)
+              .setDescription(
+                'Enables the voice channels to cycle through random names'
+              )
+              .addBooleanOption((option) =>
+                option
+                  .setName('value')
+                  .setDescription('Enable or disable channel name cycling')
+                  .setRequired(true)
+              )
           )
       );
   }
@@ -68,29 +99,23 @@ export class ConfigCommand extends Command {
       return;
     }
 
-    const subcommandName =
-      interaction.options.getSubcommand() as ConfigSubcommand;
+    const subcommandGroupName = interaction.options.getSubcommandGroup(
+      true
+    ) as ConfigSubcommandGroup;
 
     await interaction.deferReply({ ephemeral: true });
 
     let response = '';
-    switch (subcommandName) {
-      case ConfigSubcommand.RandomVoiceChannelNames: {
-        const value = interaction.options.getBoolean('value', true);
-        response = await setRandomVoiceChannelNamesConfig(
-          this.firestore,
-          interaction.guild!,
-          value
-        );
+    switch (subcommandGroupName) {
+      case ConfigSubcommandGroup.KarmaTracking: {
+        response = await karmaTrackingSubcommand(this.firestore, interaction);
         break;
       }
-      case ConfigSubcommand.KarmaTracking: {
-        const value = interaction.options.getBoolean('value', true);
-        const channel = interaction.options.getChannel(
-          'channel',
-          true
-        ) as GuildTextBasedChannel;
-        response = await setKarmaTrackingConfig(this.firestore, channel, value);
+      case ConfigSubcommandGroup.RandomVoiceChannelNames: {
+        response = await randomVoiceChannelNamesSubcommand(
+          this.firestore,
+          interaction
+        );
         break;
       }
     }

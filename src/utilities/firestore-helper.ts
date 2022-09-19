@@ -3,6 +3,7 @@ import type {
   Guild,
   GuildMember,
   GuildTextBasedChannel,
+  VoiceBasedChannel,
   Message
 } from 'discord.js';
 
@@ -15,7 +16,7 @@ export function getGuildFirestoreReference(
 
 export function getChannelFirestoreReference(
   firestore: Firestore,
-  channel: GuildTextBasedChannel
+  channel: GuildTextBasedChannel | VoiceBasedChannel
 ): DocumentReference {
   return getGuildFirestoreReference(firestore, channel.guild)
     .collection('channels')
