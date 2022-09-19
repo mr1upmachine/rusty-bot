@@ -6,7 +6,7 @@ interface VoiceChannelNameJSON {
 
 interface VoiceChannelNameGroup {
   title?: string;
-  author?: string;
+  authors?: string[];
   shuffle?: boolean;
   names: readonly string[];
 }
@@ -51,9 +51,7 @@ function isValidVoiceChannelNamesStructure(
       isArray(group.names) &&
       group.names.every((name) => typeof name === 'string') &&
       (hasProperty(group, 'title') ? typeof group.title === 'string' : true) &&
-      (hasProperty(group, 'author')
-        ? typeof group.author === 'string'
-        : true) &&
+      (hasProperty(group, 'authors') ? isArray(group.authors) : true) &&
       (hasProperty(group, 'shuffle')
         ? typeof group.shuffle === 'boolean'
         : true)

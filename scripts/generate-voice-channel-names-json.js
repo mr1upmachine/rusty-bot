@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import * as path from 'path';
 import * as url from 'url';
 
-/** @typedef {{ title?: string; author?: string; names: string[]; }} VoiceChannelNameGroup */
+/** @typedef {{ title?: string; authors?: string[]; names: string[]; }} VoiceChannelNameGroup */
 
 /**
  * Breaks one array into two based on a condition
@@ -75,13 +75,12 @@ const FORMATTED_GROUPS = GROUPS.map((group) => {
     ?.substring(TITLE_TAG.length)
     .trim();
 
-  // get author if it exists
-  const author = meta
-    .find((str) => str.startsWith(AUTHOR_TAG))
-    ?.substring(AUTHOR_TAG.length)
-    .trim();
+  // get authors if it exists
+  const authors = meta
+    .filter((str) => str.startsWith(AUTHOR_TAG))
+    .map((str) => str.substring(AUTHOR_TAG.length).trim());
 
-  return { title, author, names };
+  return { title, authors, names };
 });
 
 /** @type {string} */
