@@ -6,7 +6,7 @@ import { EditProfileCommand } from './edit-profile/index.js';
 import { PingCommand } from './ping/index.js';
 import { ProfileCommand } from './profile/index.js';
 import { RollCommand } from './roll/index.js';
-import { SetRandomVoiceChannelNamesCommand } from './set-random-voice-channel-names/index.js';
+import { ShuffleVoiceChannelNamesCommand } from './shuffle-voice-channel-names/index.js';
 import { SizeCommand } from './size/index.js';
 
 // TODO go back to dynamic commands with new `import()` syntax
@@ -18,6 +18,6 @@ export const COMMANDS: readonly CommandDerived[] = [
   PingCommand,
   ProfileCommand,
   RollCommand,
-  SetRandomVoiceChannelNamesCommand,
+  ShuffleVoiceChannelNamesCommand,
   SizeCommand
 ];

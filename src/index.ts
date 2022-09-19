@@ -113,7 +113,7 @@ globalClient.on('ready', async (client) => {
         continue;
       }
 
-      enableRandomVoiceChannelNames(guild);
+      enableRandomVoiceChannelNames(firestore, guild);
     }
   } catch (e: unknown) {
     console.log('Uncaught exception:');
