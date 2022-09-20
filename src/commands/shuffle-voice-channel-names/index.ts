@@ -19,7 +19,7 @@ export class ShuffleVoiceChannelNamesCommand extends Command {
   }
 
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
-    await interaction.deferReply();
+    await interaction.deferReply({ ephemeral: true });
 
     await setRandomVoiceChannelNames(this.firestore, interaction.guild!);
 

@@ -38,7 +38,7 @@ export class EditProfileCommand extends Command {
 
     const responseMessages: string[] = [];
 
-    await interaction.deferReply();
+    await interaction.deferReply({ ephemeral: true });
 
     try {
       const userFirestoreRef = getMemberFirestoreReference(

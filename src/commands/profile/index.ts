@@ -43,7 +43,7 @@ export class ProfileCommand extends Command {
       const doc = await userFirestoreRef.get();
 
       if (!doc.exists) {
-        await interaction.reply('Error retrieving user!');
+        await interaction.editReply('Error retrieving user!');
         return;
       }
 
