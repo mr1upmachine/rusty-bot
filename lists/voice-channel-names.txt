@@ -2,6 +2,26 @@
 // a number of names equal to the number of voice channels registered.
 // Names must be less then 100 characters & can contain emojis. Names are recommended to be 20 or less characters.
 
+// @title Elden Ring Locations
+// @author Chris
+Limgrave
+Weeping Peninsula
+Liurnia
+Caelid
+Altus Plateau
+Dragonbarrow
+Mt. Gelmir
+Leyndell
+Mountaintops of the Giants
+Crumbling Farum Azula
+Consecrated Snowfield
+The Haligtree
+Nokron
+Nokstella
+Deeproot Depths
+Mohgwyn Palace
+Roundtable Hold
+
 // @title Banjo-Kazooie Levels
 // @author Sean Hale
 Bubblegloop Swamp 🐊
