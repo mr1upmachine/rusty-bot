@@ -1,17 +1,17 @@
-import type { Firestore } from '@google-cloud/firestore';
 import type { GuildTextBasedChannel } from 'discord.js';
 
-import { getChannelFirestoreReference } from '../../../../utilities/firestore-helper.js';
+import { useGuildChannelsRepository } from '../../../../db/use-guild-channels-repository.js';
 
 /** Enables or disables karma tracking on a channel in Firebase */
 export async function setKarmaTrackingConfig(
-  firestore: Firestore,
   channel: GuildTextBasedChannel,
-  value: boolean | null
+  value: boolean
 ): Promise<string> {
+  // Get dependencies
+  const guildChannelsRepository = useGuildChannelsRepository(channel.guild.id);
+
   // Set value in database
-  const docRef = getChannelFirestoreReference(firestore, channel);
-  await docRef.set({ karmaTracking: value }, { merge: true });
+  await guildChannelsRepository.save(channel.id, { karmaTracking: value });
 
   // Build response text
   const valueText = value ? 'enabled' : 'disabled';

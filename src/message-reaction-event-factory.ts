@@ -5,7 +5,6 @@ import type {
   PartialUser,
   User
 } from 'discord.js';
-import type { Firestore } from '@google-cloud/firestore';
 
 import { processReactionEvent } from './utilities/statistics.js';
 
@@ -14,13 +13,9 @@ type MessageReactionEvent = (
   user: User | PartialUser
 ) => Awaitable<void>;
 
-type MessageReactionEventFactory = (
-  firestore: Firestore,
-  modifier: 1 | -1
-) => MessageReactionEvent;
+type MessageReactionEventFactory = (modifier: 1 | -1) => MessageReactionEvent;
 
 export const messageReactionEventFactory: MessageReactionEventFactory = (
-  firestore: Firestore,
   modifier: 1 | -1
 ) => {
   return async (partialMessageReaction, partialUser) => {
@@ -48,7 +43,7 @@ export const messageReactionEventFactory: MessageReactionEventFactory = (
         return;
       }
 
-      await processReactionEvent(message, user, firestore, modifier);
+      await processReactionEvent(message, user, modifier);
     } catch (e: unknown) {
       console.log('Uncaught exception:');
       console.error(e);

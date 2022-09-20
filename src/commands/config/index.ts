@@ -18,7 +18,7 @@ enum ConfigSubcommandGroup {
 
 // TODO: Not implemented subcommands:
 // setup: Once we have more than one config for a guild, we can use setup as a wizard to guide admins through them
-// scan-members: If/when Rusty gets a website, this command will iterate through all existing users to make sure they have a document in firestore
+// scan-members: If/when Rusty gets a website, this command will iterate through all existing users to make sure they have an entry in the db
 
 export class ConfigCommand extends Command {
   public readonly name = 'config';
@@ -108,14 +108,11 @@ export class ConfigCommand extends Command {
     let response = '';
     switch (subcommandGroupName) {
       case ConfigSubcommandGroup.KarmaTracking: {
-        response = await karmaTrackingSubcommand(this.firestore, interaction);
+        response = await karmaTrackingSubcommand(interaction);
         break;
       }
       case ConfigSubcommandGroup.RandomVoiceChannelNames: {
-        response = await randomVoiceChannelNamesSubcommand(
-          this.firestore,
-          interaction
-        );
+        response = await randomVoiceChannelNamesSubcommand(interaction);
         break;
       }
     }

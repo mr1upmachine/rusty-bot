@@ -1,7 +1,7 @@
-export class MissingEnvironmentVariableError extends Error {
-  constructor(variableName: string) {
-    super(`${variableName} must be provided`);
-    this.name = 'MissingEnvironmentVariableError';
+export class DatabaseConnectionNotEstablishedError extends Error {
+  constructor() {
+    super("You're attempting to use the database before it has been created.");
+    this.name = 'DatabaseConnectionNotEstablishedError';
   }
 }
 
@@ -9,6 +9,13 @@ export class InvalidColorStringError extends Error {
   constructor(colorString: string) {
     super(`${colorString} is not a valid hex color code!`);
     this.name = 'InvalidColorStringError';
+  }
+}
+
+export class MissingEnvironmentVariableError extends Error {
+  constructor(variableName: string) {
+    super(`${variableName} must be provided`);
+    this.name = 'MissingEnvironmentVariableError';
   }
 }
 

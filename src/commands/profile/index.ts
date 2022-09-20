@@ -6,7 +6,11 @@ import type {
   CommandBuilder,
   CommandBuilderOutput
 } from '../../types/command-builder.js';
-import { getMemberFirestoreReference } from '../../utilities/firestore-helper.js';
+import { useGuildMembersRepository } from '../../db/use-guild-members-repository.js';
+
+const DEFAULT_ABOUT_TEXT =
+  'This is a default about section! Use the profile command to edit it!';
+const DEFAULT_PROFILE_COLOR = '#1B9403';
 
 export class ProfileCommand extends Command {
   public readonly name = 'profile';
@@ -21,74 +25,58 @@ export class ProfileCommand extends Command {
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
     await interaction.deferReply();
 
+    const guild = interaction.guild!;
+
+    // Get dependencies
+    const guildMembersRepository = useGuildMembersRepository(guild.id);
+
+    // Get options
     const user = interaction.options.getUser('user') ?? interaction.user;
 
-    const guild = interaction.guild!;
     const member = guild.members.cache.get(user.id)!;
 
     const profilePictureUrl = user.displayAvatarURL();
     const memberNickname = member.nickname ?? member.user.username;
-    const userFirestoreRef = getMemberFirestoreReference(
-      this.firestore,
-      member
-    );
 
-    let about =
-      'This is a default about section! Use the profile command to edit it!';
-    let postCount = 0;
-    let karma = 0;
-    let color: ColorResolvable = '#1B9403';
-
-    try {
-      const doc = await userFirestoreRef.get();
-
-      if (!doc.exists) {
-        await interaction.editReply('Error retrieving user!');
-        return;
-      }
-
-      if (doc.data()?.about) {
-        about = doc.data()!.about;
-      }
-      if (doc.data()?.infoColor) {
-        color = doc.data()!.infoColor as ColorResolvable;
-      }
-      if (doc.data()?.posts || doc.data()?.posts === 0) {
-        postCount = doc.data()!.posts;
-      }
-      if (doc.data()?.karma || doc.data()?.karma === 0) {
-        karma = doc.data()!.karma;
-      }
-
-      const embed = new EmbedBuilder()
-        .setTitle('About')
-        .setDescription(about)
-        .setTimestamp(new Date())
-        .setAuthor({ name: memberNickname, iconURL: profilePictureUrl })
-        .setColor(color)
-        .setFooter({
-          text: 'Use the `profile` command for customization!'
-        })
-        .setThumbnail(profilePictureUrl)
-        .addFields([
-          {
-            inline: true,
-            name: 'Post Count',
-            value: `${postCount}`
-          },
-          {
-            inline: true,
-            name: 'Karma',
-            value: `${karma}`
-          }
-        ]);
-
-      await interaction.editReply({
-        embeds: [embed]
-      });
-    } catch (e: unknown) {
-      await interaction.editReply('Error retrieving user.');
-      throw e;
+    // Get member object from db
+    const dbMember = await guildMembersRepository.findById(member.id);
+    if (!dbMember) {
+      await interaction.editReply('No user found!');
+      return;
     }
+
+    const about = dbMember.about ?? DEFAULT_ABOUT_TEXT;
+    const color: ColorResolvable =
+      (dbMember.infoColor as ColorResolvable | undefined) ??
+      DEFAULT_PROFILE_COLOR;
+    const postCount = dbMember.posts ?? 0;
+    const karma = dbMember.karma ?? 0;
+
+    const embed = new EmbedBuilder()
+      .setTitle('About')
+      .setDescription(about)
+      .setTimestamp(new Date())
+      .setAuthor({ name: memberNickname, iconURL: profilePictureUrl })
+      .setColor(color)
+      .setFooter({
+        text: 'Use the `profile` command for customization!'
+      })
+      .setThumbnail(profilePictureUrl)
+      .addFields([
+        {
+          inline: true,
+          name: 'Post Count',
+          value: `${postCount}`
+        },
+        {
+          inline: true,
+          name: 'Karma',
+          value: `${karma}`
+        }
+      ]);
+
+    await interaction.editReply({
+      embeds: [embed]
+    });
   }
 }
