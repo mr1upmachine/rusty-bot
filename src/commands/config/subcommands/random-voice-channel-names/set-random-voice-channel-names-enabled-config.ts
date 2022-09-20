@@ -1,22 +1,22 @@
-import type { Firestore } from '@google-cloud/firestore';
 import type { Guild } from 'discord.js';
 
+import { useGuildsRepository } from '../../../../db/use-guilds-repository.js';
 import { disableRandomVoiceChannelNames } from '../../../../utilities/disable-random-voice-channel-names.js';
 import { enableRandomVoiceChannelNames } from '../../../../utilities/enable-random-voice-channel-names.js';
-import { getGuildFirestoreReference } from '../../../../utilities/firestore-helper.js';
 
 export async function setRandomVoiceChannelNamesEnabledConfig(
-  firestore: Firestore,
   guild: Guild,
-  value: boolean | null
+  value: boolean
 ): Promise<string> {
-  // Set value in database
-  const docRef = getGuildFirestoreReference(firestore, guild);
-  await docRef.set({ randomVoiceChannelNames: value }, { merge: true });
+  // Get dependencies
+  const guildsRepository = useGuildsRepository();
+
+  // Save config to the db
+  await guildsRepository.save(guild.id, { randomVoiceChannelNames: value });
 
   // Enable / disable feature
   if (value) {
-    enableRandomVoiceChannelNames(firestore, guild);
+    enableRandomVoiceChannelNames(guild);
   } else {
     disableRandomVoiceChannelNames(guild);
   }

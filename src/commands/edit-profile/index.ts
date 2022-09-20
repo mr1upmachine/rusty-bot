@@ -10,7 +10,8 @@ import {
   InvalidColorStringError,
   RustyBotInvalidArgumentError
 } from '../../errors/rusty-bot-errors.js';
-import { getMemberFirestoreReference } from '../../utilities/firestore-helper.js';
+import { useGuildMembersRepository } from '../../db/use-guild-members-repository.js';
+import type { DBGuildMember } from '../../db/types.js';
 
 const MAX_ABOUT_LENGTH = 2048;
 
@@ -31,22 +32,22 @@ export class EditProfileCommand extends Command {
   }
 
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
-    const member = interaction.member as GuildMember;
-
-    const color = interaction.options.getString('color');
-    const about = interaction.options.getString('about');
-
-    const responseMessages: string[] = [];
-
-    await interaction.deferReply({ ephemeral: true });
-
     try {
-      const userFirestoreRef = getMemberFirestoreReference(
-        this.firestore,
-        member
-      );
+      const guildId = interaction.guild!.id;
+      const member = interaction.member as GuildMember;
 
-      if (about !== null) {
+      // Get dependencies
+      const guildMembersRepository = useGuildMembersRepository(guildId);
+
+      const color = interaction.options.getString('color') ?? undefined;
+      const about = interaction.options.getString('about') ?? undefined;
+
+      const responseMessages: string[] = [];
+      let newData: Partial<DBGuildMember> = {};
+
+      await interaction.deferReply({ ephemeral: true });
+
+      if (about !== undefined) {
         if (about.length > MAX_ABOUT_LENGTH) {
           throw new RustyBotInvalidArgumentError(
             'about',
@@ -54,23 +55,21 @@ export class EditProfileCommand extends Command {
           );
         }
 
-        await userFirestoreRef.set({ about }, { merge: true });
+        newData = { ...newData, about };
 
         responseMessages.push(about ? 'About set!' : 'About cleared!');
       }
 
-      if (color !== null) {
+      if (color !== undefined) {
         const formattedColor = formatHexColor(color);
 
-        await userFirestoreRef.set(
-          {
-            infoColor: formattedColor
-          },
-          { merge: true }
-        );
+        newData = { ...newData, infoColor: formattedColor };
 
         responseMessages.push(`Color set to ${formattedColor}!`);
       }
+
+      // Update db with new data
+      await guildMembersRepository.save(member.id, newData);
 
       const formattedMessage = responseMessages.length
         ? responseMessages.join('\n')
