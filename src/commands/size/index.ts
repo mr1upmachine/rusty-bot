@@ -13,8 +13,7 @@ import { Command } from '../../types/command.js';
 // TODO: Allow people to regenerate their dong on occasion (need to redesign how hash works)
 // TODO: Add gifs maybe?
 
-export class SizeCommand extends Command {
-  public readonly name = 'size';
+class SizeCommand extends Command {
   public readonly description = 'Measure the size of your dong!';
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
@@ -80,3 +79,5 @@ export class SizeCommand extends Command {
     return 'normal';
   }
 }
+
+export default SizeCommand;

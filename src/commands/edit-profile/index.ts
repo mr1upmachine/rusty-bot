@@ -15,8 +15,7 @@ import type { DBGuildMember } from '../../db/types.js';
 
 const MAX_ABOUT_LENGTH = 2048;
 
-export class EditProfileCommand extends Command {
-  public readonly name = 'edit-profile';
+class EditProfileCommand extends Command {
   public readonly description = 'Customize your user card!';
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
@@ -87,3 +86,5 @@ export class EditProfileCommand extends Command {
     }
   }
 }
+
+export default EditProfileCommand;

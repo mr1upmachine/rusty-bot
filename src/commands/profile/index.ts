@@ -12,8 +12,7 @@ const DEFAULT_ABOUT_TEXT =
   'This is a default about section! Use the profile command to edit it!';
 const DEFAULT_PROFILE_COLOR = '#1B9403';
 
-export class ProfileCommand extends Command {
-  public readonly name = 'profile';
+class ProfileCommand extends Command {
   public readonly description = 'Displays information about a user.';
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
@@ -80,3 +79,5 @@ export class ProfileCommand extends Command {
     });
   }
 }
+
+export default ProfileCommand;

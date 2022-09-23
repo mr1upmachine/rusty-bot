@@ -5,7 +5,7 @@ import type { CommandJSON } from '../types/command-json.js';
 
 export function buildCommand(command: Command): CommandJSON {
   const commandBuilder = new SlashCommandBuilder()
-    .setName(command.name)
+    .setName(command.commandName)
     .setDescription(command.description);
   const modifiedCommandBuilder = command.build(commandBuilder);
   return modifiedCommandBuilder.toJSON();

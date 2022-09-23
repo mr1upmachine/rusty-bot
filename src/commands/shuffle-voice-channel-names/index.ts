@@ -8,8 +8,7 @@ import type {
 import { Command } from '../../types/command.js';
 import { setRandomVoiceChannelNames } from '../../utilities/set-random-voice-channel-names.js';
 
-export class ShuffleVoiceChannelNamesCommand extends Command {
-  public readonly name = 'shuffle-voice-channel-names';
+class ShuffleVoiceChannelNamesCommand extends Command {
   public readonly description = 'Sets all voice channel names to random ones';
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
@@ -26,3 +25,5 @@ export class ShuffleVoiceChannelNamesCommand extends Command {
     await interaction.editReply('Voice channel names shuffled');
   }
 }
+
+export default ShuffleVoiceChannelNamesCommand;

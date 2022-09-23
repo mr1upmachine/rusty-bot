@@ -1,5 +1,8 @@
 import type { ActivityType } from 'discord.js';
 
+import { hasProperty } from './has-property.js';
+import { isArray } from './is-array.js';
+
 type SupportedActivityType =
   | ActivityType.Competing
   | ActivityType.Listening
@@ -51,15 +54,4 @@ function isValidActivityMessageStructure(
       typeof value[0] === 'number' &&
       typeof value[1] === 'string'
   );
-}
-
-function hasProperty<T extends object, K extends string>(
-  obj: T,
-  key: K
-): obj is T & Record<K, unknown> {
-  return key in obj;
-}
-
-function isArray(x: unknown): x is unknown[] {
-  return Array.isArray(x);
 }

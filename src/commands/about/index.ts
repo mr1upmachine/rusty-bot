@@ -3,8 +3,7 @@ import type { ChatInputCommandInteraction } from 'discord.js';
 import { Command } from '../../types/command.js';
 import { getVersion } from '../../utilities/get-version.js';
 
-export class AboutCommand extends Command {
-  public readonly name = 'about';
+class AboutCommand extends Command {
   public readonly description = 'Displays version information';
 
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
@@ -14,3 +13,5 @@ export class AboutCommand extends Command {
     );
   }
 }
+
+export default AboutCommand;
