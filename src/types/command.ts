@@ -6,8 +6,9 @@ import type {
 } from './command-builder.js';
 
 export abstract class Command {
-  public abstract readonly name: string;
   public abstract readonly description: string;
+
+  constructor(public readonly commandName: string) {}
 
   /** Constructs the slash command to be registered */
   build(commandBuilder: CommandBuilder): CommandBuilderOutput {

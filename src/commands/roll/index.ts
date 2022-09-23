@@ -10,8 +10,7 @@ import type {
   CommandBuilderOutput
 } from '../../types/command-builder';
 
-export class RollCommand extends Command {
-  public readonly name = 'roll';
+class RollCommand extends Command {
   public readonly description =
     'Roll some dice! Input a dice equation and receive a result.';
 
@@ -44,3 +43,5 @@ export class RollCommand extends Command {
     }
   }
 }
+
+export default RollCommand;

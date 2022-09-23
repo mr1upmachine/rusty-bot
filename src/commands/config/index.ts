@@ -20,8 +20,7 @@ enum ConfigSubcommandGroup {
 // setup: Once we have more than one config for a guild, we can use setup as a wizard to guide admins through them
 // scan-members: If/when Rusty gets a website, this command will iterate through all existing users to make sure they have an entry in the db
 
-export class ConfigCommand extends Command {
-  public readonly name = 'config';
+class ConfigCommand extends Command {
   public readonly description = 'Configuration settings on a per guild basis';
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
@@ -120,3 +119,5 @@ export class ConfigCommand extends Command {
     await interaction.editReply(response);
   }
 }
+
+export default ConfigCommand;

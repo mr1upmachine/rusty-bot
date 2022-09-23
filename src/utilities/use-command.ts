@@ -1,22 +1,30 @@
-import { COMMANDS } from '../commands/index.js';
-import type { Command } from '../types/command.js';
-import type { CommandDerived } from '../types/command-derived.js';
 import { RustyBotCommandError } from '../errors/rusty-bot-errors.js';
+import type { CommandDerived } from '../types/command-derived.js';
+import type { Command } from '../types/command.js';
 
-export function useCommand(
-  commandOrCommandName: CommandDerived | string
-): Command {
-  const commandDerived =
-    typeof commandOrCommandName === 'string'
-      ? COMMANDS.find((cmd) => new cmd().name === commandOrCommandName)
-      : commandOrCommandName;
+const registeredCommands = new Map<string, CommandDerived>();
 
-  if (!commandDerived) {
+export function registerCommand(name: string, command: CommandDerived): void {
+  registeredCommands.set(name, command);
+}
+
+export function useCommand(commandName: string): Command {
+  const command = registeredCommands.get(commandName);
+
+  if (!command) {
     throw new RustyBotCommandError(
       'Uh oh, something went very wrong. Contact an admin.',
-      `useCommand called with ${commandOrCommandName as string}`
+      `useCommand called with ${commandName}`
     );
   }
 
-  return new commandDerived();
+  const resolvedCommand = new command(commandName);
+
+  return resolvedCommand;
+}
+
+export function useCommands(): Command[] {
+  return Array.from(registeredCommands.entries()).map(
+    ([cmdName, cmd]) => new cmd(cmdName)
+  );
 }

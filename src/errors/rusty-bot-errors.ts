@@ -5,6 +5,13 @@ export class DatabaseConnectionNotEstablishedError extends Error {
   }
 }
 
+export class InvalidClientEventError extends Error {
+  constructor(eventName: string) {
+    super(`${eventName} is not one of the discord ClientEvents`);
+    this.name = 'InvalidClientEventError';
+  }
+}
+
 export class InvalidColorStringError extends Error {
   constructor(colorString: string) {
     super(`${colorString} is not a valid hex color code!`);

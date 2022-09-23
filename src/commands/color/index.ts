@@ -19,7 +19,6 @@ import {
 } from '../../errors/rusty-bot-errors.js';
 
 export class ColorCommand extends Command {
-  public readonly name = 'color';
   public readonly description = "Changes the color of the user's name.";
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
@@ -86,3 +85,5 @@ export class ColorCommand extends Command {
     }
   }
 }
+
+export default ColorCommand;

@@ -1,3 +1,6 @@
+import { hasProperty } from './has-property.js';
+import { isArray } from './is-array.js';
+
 const FILE_PATH = '../assets/voice-channel-names.json';
 
 interface VoiceChannelNameJSON {
@@ -58,15 +61,4 @@ function isValidVoiceChannelNamesStructure(
   );
 
   return namesPropValid;
-}
-
-function hasProperty<T extends object, K extends string>(
-  obj: T,
-  key: K
-): obj is T & Record<K, unknown> {
-  return key in obj;
-}
-
-function isArray(x: unknown): x is unknown[] {
-  return Array.isArray(x);
 }
