@@ -1,17 +1,13 @@
 import type { ChatInputCommandInteraction } from 'discord.js';
 
+import { RustyBotInvalidArgumentError } from '../../errors/rusty-bot-errors.js';
+import type { DBGuildMember } from '../../db/types.js';
+import { useGuildMembersRepository } from '../../db/use-guild-members-repository.js';
 import { Command } from '../../types/command.js';
-import { formatHexColor } from '../../utilities/hex-color-helper.js';
 import type {
   CommandBuilder,
   CommandBuilderOutput
 } from '../../types/command-builder.js';
-import {
-  InvalidColorStringError,
-  RustyBotInvalidArgumentError
-} from '../../errors/rusty-bot-errors.js';
-import { useGuildMembersRepository } from '../../db/use-guild-members-repository.js';
-import type { DBGuildMember } from '../../db/types.js';
 
 const MAX_ABOUT_LENGTH = 2048;
 
@@ -19,73 +15,50 @@ class EditProfileCommand extends Command {
   public readonly description = 'Customize your user card!';
 
   override build(commandBuilder: CommandBuilder): CommandBuilderOutput {
-    return commandBuilder
-      .addStringOption((option) =>
-        option.setName('about').setDescription('Text on your user profile')
-      )
-      .addStringOption((option) =>
-        option
-          .setName('color')
-          .setDescription('Hex color code on your user profile')
-      );
+    return commandBuilder.addStringOption((option) =>
+      option.setName('aboutText').setDescription('Text on your user profile')
+    );
   }
 
   async execute(
     interaction: ChatInputCommandInteraction<'cached'>
   ): Promise<void> {
-    try {
-      const guildId = interaction.guild.id;
-      const member = interaction.member;
+    await interaction.deferReply({ ephemeral: true });
 
-      // Get dependencies
-      const guildMembersRepository = useGuildMembersRepository(guildId);
+    const guild = interaction.guild;
+    const member = interaction.member;
 
-      const color = interaction.options.getString('color') ?? undefined;
-      const about = interaction.options.getString('about') ?? undefined;
+    // Get dependencies
+    const guildMembersRepository = useGuildMembersRepository(guild.id);
 
-      const responseMessages: string[] = [];
-      let newData: Partial<DBGuildMember> = {};
+    // Get arguments
+    const aboutText = interaction.options.getString('aboutText') ?? undefined;
 
-      await interaction.deferReply({ ephemeral: true });
+    // Setup accumulators
+    let newData: Partial<DBGuildMember> = {};
+    const responseMessages: string[] = [];
 
-      if (about !== undefined) {
-        if (about.length > MAX_ABOUT_LENGTH) {
-          throw new RustyBotInvalidArgumentError(
-            'about',
-            `About sections can only be up to ${MAX_ABOUT_LENGTH} characters in length!`
-          );
-        }
-
-        newData = { ...newData, about };
-
-        responseMessages.push(about ? 'About set!' : 'About cleared!');
-      }
-
-      if (color !== undefined) {
-        const formattedColor = formatHexColor(color);
-
-        newData = { ...newData, infoColor: formattedColor };
-
-        responseMessages.push(`Color set to ${formattedColor}!`);
-      }
-
-      // Update db with new data
-      await guildMembersRepository.save(member.id, newData);
-
-      const formattedMessage = responseMessages.length
-        ? responseMessages.join('\n')
-        : 'Nothing changed.';
-      await interaction.editReply(formattedMessage);
-    } catch (e: unknown) {
-      if (e instanceof InvalidColorStringError) {
+    // Build & validate aboutText
+    if (aboutText !== undefined) {
+      if (aboutText.length > MAX_ABOUT_LENGTH) {
         throw new RustyBotInvalidArgumentError(
-          'color',
-          'Argument format is invalid'
+          'aboutText',
+          `About sections can only be up to ${MAX_ABOUT_LENGTH} characters in length!`
         );
       }
 
-      throw e;
+      newData = { ...newData, aboutText };
+      responseMessages.push(aboutText ? 'About set!' : 'About cleared!');
     }
+
+    // Update db with new data
+    await guildMembersRepository.save(member.id, newData);
+
+    // Respond to user
+    const formattedMessage = responseMessages.length
+      ? responseMessages.join('\n')
+      : 'Nothing changed.';
+    await interaction.editReply(formattedMessage);
   }
 }
 
