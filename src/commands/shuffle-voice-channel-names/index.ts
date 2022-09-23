@@ -1,11 +1,15 @@
-import type { ChatInputCommandInteraction } from 'discord.js';
+import type {
+  ChatInputCommandInteraction,
+  VoiceBasedChannel
+} from 'discord.js';
 import { PermissionFlagsBits } from 'discord.js';
 
+import { useGuildChannelsRepository } from '../../db/use-guild-channels-repository.js';
+import { Command } from '../../types/command.js';
 import type {
   CommandBuilder,
   CommandBuilderOutput
 } from '../../types/command-builder.js';
-import { Command } from '../../types/command.js';
 import { setRandomVoiceChannelNames } from '../../utilities/set-random-voice-channel-names.js';
 
 class ShuffleVoiceChannelNamesCommand extends Command {
@@ -20,8 +24,30 @@ class ShuffleVoiceChannelNamesCommand extends Command {
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
     await interaction.deferReply({ ephemeral: true });
 
-    await setRandomVoiceChannelNames(interaction.guild!);
+    const guild = interaction.guild!;
 
+    // Get dependencies
+    const guildChannelsRepository = useGuildChannelsRepository(guild.id);
+
+    // Fetch all enabled channels
+    const dbEnabledChannels =
+      await guildChannelsRepository.findByRandomVoiceChannelNames(true);
+    const dbEnabledChannelIds = dbEnabledChannels.map(({ id }) => id);
+
+    // Map dbChannels to discord channels
+    const channels = Array.from(
+      guild.channels.cache
+        .filter((channel): channel is VoiceBasedChannel =>
+          channel.isVoiceBased()
+        )
+        .filter((channel) => dbEnabledChannelIds.includes(channel.id))
+        .values()
+    );
+
+    // Update channel names
+    await setRandomVoiceChannelNames(channels);
+
+    // Respond to user
     await interaction.editReply('Voice channel names shuffled');
   }
 }

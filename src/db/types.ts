@@ -7,7 +7,7 @@ export interface BaseModel {
 export type DBRoot = BaseModel;
 
 export interface DBGuild extends BaseModel {
-  readonly randomVoiceChannelNames?: boolean;
+  readonly randomVoiceChannelNamesFrequency?: string;
 }
 
 export interface DBGuildChannel extends BaseModel {

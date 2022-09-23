@@ -72,4 +72,4 @@ export const CLIENT_EVENT_TYPES: readonly (keyof ClientEvents)[] = [
 
 export const RANDOM_ACTIVITY_CRON = '0 0 0 * * *';
 
-export const RANDOM_VOICE_CHANNEL_NAME_CRON = '0 0 0 * SUN *';
+export const DEFAULT_RANDOM_VOICE_CHANNEL_NAMES_CRON = '0 0 0 * * *';

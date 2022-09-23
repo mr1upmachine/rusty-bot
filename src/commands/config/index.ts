@@ -8,7 +8,10 @@ import type {
 } from '../../types/command-builder.js';
 import { karmaTrackingSubcommand } from './subcommands/karma-tracking/index.js';
 import { randomVoiceChannelNamesSubcommand } from './subcommands/random-voice-channel-names/index.js';
-import { RandomVoiceChannelNamesSubcommand } from './subcommands/random-voice-channel-names/types.js';
+import {
+  RandomVoiceChannelNamesSubcommand,
+  RANDOM_VOICE_CHANNEL_NAMES_FREQUENCY_CHOICES
+} from './subcommands/random-voice-channel-names/constants.js';
 import { KarmaTrackingSubcommand } from './subcommands/karma-tracking/types.js';
 
 enum ConfigSubcommandGroup {
@@ -79,15 +82,16 @@ class ConfigCommand extends Command {
           )
           .addSubcommand((subcommand) =>
             subcommand
-              .setName(RandomVoiceChannelNamesSubcommand.Enabled)
+              .setName(RandomVoiceChannelNamesSubcommand.Frequency)
               .setDescription(
-                'Enables the voice channels to cycle through random names'
+                'Set how often the vioce channel names will update'
               )
-              .addBooleanOption((option) =>
+              .addStringOption((option) =>
                 option
                   .setName('value')
-                  .setDescription('Enable or disable channel name cycling')
+                  .setDescription('How often the channel names will update')
                   .setRequired(true)
+                  .addChoices(...RANDOM_VOICE_CHANNEL_NAMES_FREQUENCY_CHOICES)
               )
           )
       );
