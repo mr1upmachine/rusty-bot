@@ -1,6 +1,11 @@
 // Channel groups are separated by blank lines. Rusty will randomly select a group, then randomly select
 // a number of names equal to the number of voice channels registered.
-// Names must be less then 100 characters & can contain emojis. Names are recommended to be 20 or less characters.
+
+// Rules:
+// - Names must be less then 100 characters. Names are recommended to be 20 or less characters.
+// - No inside jokes (for now)
+// - Nothing gross, sexual, or offensive
+// - No names of specific real life individuals (bands / groups / fictional characters are fine)
 
 // @title Elden Ring Locations
 // @author Chris
@@ -96,15 +101,6 @@ Puffs White Cheddar
 Puffs White Cheddar Jalapeno
 Fantastix! Chili Cheese
 Fantastix! Flamin' Hot
-
-// @title Food
-// @author Sean Hale
-Avocado 🥑
-Banana 🍌
-Coconut 🥥
-Date 🌴
-Kiwi 🥝
-Pineapple 🍍
 
 // @title Halo: Combat Evolved Maps
 // @author Nick Main
@@ -1735,7 +1731,6 @@ Aldor Foothills
 Ancient Columns
 Angel Peak
 Ankel Island
-Ankel Island
 Applean Forest
 Aris Beach
 Ash Swamp
@@ -2496,3 +2491,9832 @@ Blue Box
 JuJutsu Kaisen
 Chainsaw Man
 One Punch Man
+
+// @title Planets in our solar system
+// @author Sean Hale
+Mercury
+Venus
+Earth
+Mars
+Jupiter
+Saturn
+Uranus
+Neptune
+Pluto
+
+// @title Sonic the Hedgehog Locations
+// @author Sean Hale
+Green Hill Zone
+Marble Zone
+Spring Yard Zone
+Labyrinth Zone
+Star Light Zone
+Scrap Brain Zone
+Final Zone
+
+// @title Sonic the Hedgehog 2 Locations
+// @author Sean Hale
+Emerald Hill Zone
+Chemical Plant Zone
+Aquatic Ruin Zone
+Casino Night Zone
+Hill Top Zone
+Mystic Cave Zone
+Oil Ocean Zone
+Metropolis Zone
+Sky Chase Zone
+Wing Fortress Zone
+Death Egg Zone
+
+// @title Sonic CD Locations
+// @author Sean Hale
+Palmtree Panic Zone
+Collision Chaos Zone
+Tidal Tempest Zone
+Quartz Quadrant Zone
+Wacky Workbench Zone
+Stardust Speedway Zone
+Metallic Madness Zone
+Desert Dazzle Zone
+
+// @title Sonic the Hedgehog 3 & Knuckles Locations
+// @author Sean Hale
+Angel Island Zone
+Hydrocity Zone
+Marble Garden Zone
+Carnival Night Zone
+IceCap Zone
+Launch Base Zone
+Mushroom Hill Zone
+Flying Battery Zone
+Sandopolis Zone
+Lava Reef Zone
+Hidden Palace Zone
+Sky Sanctuary Zone
+Death Egg Zone
+The Doomsday Zone
+
+// @title Sonic Triple Trouble Locations
+// @author Sean Hale
+Great Turquoise Zone
+Sunset Park Zone
+Meta Junglira Zone
+Robotnik Winter Zone
+Tidal Plant Zone
+Atomic Destroyer Zone
+
+// @title Tails Adventure Locations
+// @author Sean Hale
+Poloy Forest
+Volcanic Tunnel
+Polly Mountain
+Lake Rocky
+Cavern Island
+Green Island
+Caron Forest
+Lake Crystal
+Coco Island
+Battle Fortress
+
+// @title Sonic Blast Locations
+// @author Sean Hale
+Blue Marine Zone
+Green Hill Zone
+Red Volcano Zone
+Silver Castle Zone
+Yellow Desert Zone
+
+// @title Sonic 3D Blast Locations
+// @author Sean Hale
+Green Grove Zone
+Rusty Ruin Zone
+Spring Stadium Zone
+Diamond Dust Zone
+Volcano Valley Zone
+Gene Gadget Zone
+Panic Puppet Zone
+
+// @title Sonic R Locations
+// @author Sean Hale
+Resort Island
+Radical City
+Regal Ruin
+Reactive Factory
+Radiant Emerald
+
+// @title Sonic Adventure Locations
+// @author Sean Hale
+Casinopolis
+Emerald Coast
+Final Egg
+Hot Shelter
+Icecap
+Lost World
+Red Mountain
+Sky Deck
+Speed Highway
+Twinkle Park
+Windy Valley
+Station Square
+Mystic Ruins
+Egg Carrier
+
+// @title Sonic Adventure 2 Locations
+// @author Sean Hale
+City Escape
+Wild Canyon
+Prison Lane
+Metal Harbor
+Green Forest
+Pumpkin Hill
+Mission Street
+Aquatic Mine
+Route 101
+Hidden Base
+Pyramid Cave
+Death Chamber
+Eternal Engine
+Meteor Herd
+Crazy Gadget
+Iron Gate
+Dry Lagoon
+Sand Ocean
+Radical Highway
+Egg Quarters
+Lost Colony
+Weapons Bed
+Security Hall
+White Jungle
+Route 280
+Sky Rail
+Mad Space
+Cosmic Wall
+Cannon's Core
+
+// @title Sonic Heroes Locations
+// @author Sean Hale
+Sea Gate
+Seaside Hill
+Ocean Palace
+Grand Metropolis
+Power Plant
+Casino Park
+BINGO Highway
+Rail Canyon
+Bullet Station
+Frog Forest
+Lost Jungle
+Hang Castle
+Mystic Mansion
+Egg Fleet
+Final Fortress
+
+// @title Sonic the Hedgehog (2006) Locations
+// @author Sean Hale
+Aquatic Base
+Crisis City
+Dusty Desert
+End Of The World
+Flame Core
+Kingdom Valley
+Radical Train
+Tropical Jungle
+Wave Ocean
+White Acropolis
+
+// @title Sonic Rush Locations
+// @author Sean Hale
+Altitude Limit Zone
+Dead Line Zone
+Huge Crisis Zone
+Leaf Storm Zone
+Mirage Road Zone
+Night Carnival Zone
+Water Palace Zone
+
+// @title Sonic Rush Adventure Locations
+// @author Sean Hale
+Plant Kingdom
+Machine Labyrinth
+Coral Cave
+Haunted Ship
+Sky Babylon
+Blizzard Peaks
+Pirates' Island
+Big Swell
+Deep Core
+
+// @title Shadow the Hedgehog Locations
+// @author Sean Hale
+Westopolis
+Lethal Highway
+Glyphic Path
+Digital Circuit
+Cryptic Castle
+Circus Park
+Prison Island
+Central City
+The Doom
+Sky Troops
+Death Ruins
+Mad Matrix
+The Ark
+Air Fleet
+Iron Jungle
+Lost Impact
+Space Gadget
+Cosmic Fall
+GUN Fortress
+Black Comet
+Lava Shelter
+Normal Haunt
+The Last Way
+
+// @title Sonic Advance Locations
+// @author Sean Hale
+Neo Green Hill Zone
+Secret Base Zone
+Casino Paradise Zone
+Ice Mountain Zone
+Angel Island Zone
+Egg Rocket Zone
+Cosmic Angel Zone
+X-Zone
+The Moon Zone
+
+// @title Sonic Advance 2 Locations
+// @author Sean Hale
+Leaf Forest
+Hot Crater
+Music Plant
+Ice Paradise
+Sky Canyon
+Techno Base
+Egg Utopia
+XX
+True Area 53
+
+// @title Sonic Advance 3 Locations
+// @author Sean Hale
+Route 99
+Sunset Hill
+Ocean Base
+Toy Kingdom
+Twinkle Snow
+Cyber Track
+Chaos Angel
+Altar Emerald
+
+// @title Sonic Mania Locations
+// @author Sean Hale
+Green Hill Zone
+Chemical Plant Zone
+Studiopolis Zone
+Flying Battery Zone
+Press Garden Zone
+Stardust Speedway Zone
+Hydrocity Zone
+Mirage Saloon Zone
+Oil Ocean Zone
+Lava Reef Zone
+Metallic Madness Zone
+Titanic Monarch Zone
+Egg Reverie Zone
+
+// @title Sonic and the Secret Rings Locations
+// @author Sean Hale
+Lost Prologue
+Sand Oasis
+Dinosaur Jungle
+Evil Foundry
+Levitated Ruin
+Pirate Storm
+Skeleton Dome
+Night Palace
+
+// @title Sonic Unleashed Locations
+// @author Sean Hale
+Windmill Isle
+Rooftop Run
+Savannah Citadel
+Cool Edge
+Dragon Road
+Arid Sands
+Skyscraper Scamper
+Jungle Joyride
+Eggmanland
+
+// @title Sonic and the Black Knight Locations
+// @author Sean Hale
+Misty Lake
+Camelot Castle
+Deep Woods
+Titanic Plain
+Crystal Cave
+Molten Mine
+Faraway Avalon
+Knight's Passage
+Shrouded Forest
+Great Megalith
+The Cauldron
+Dragon's Lair
+Dark Hollow
+
+// @title Sonic Colors Locations
+// @author Sean Hale
+Tropical Resort
+Sweet Mountain
+Starlight Carnival
+Planet Wisp
+Aquarium Park
+Asteroid Coaster
+Terminal Velocity
+
+// @title Sonic Generations Locations
+// @author Sean Hale
+Green Hill
+Chemical Plant
+Sky Sanctuary
+Speed Highway
+City Escape
+Seaside Hill
+Crisis City
+Rooftop Run
+Planet Wisp
+
+// @title Sonic Lost World Locations
+// @author Sean Hale
+Windy Hill
+Desert Ruins
+Tropical Coast
+Frozen Factory
+Silent Forest
+Sky Road
+Lava Mountain
+Hidden World
+
+// @title Pokémon Generation I
+// @author Sean Hale
+Bulbasaur
+Ivysaur
+Venusaur
+Charmander
+Charmeleon
+Charizard
+Squirtle
+Wartortle
+Blastoise
+Caterpie
+Metapod
+Butterfree
+Weedle
+Kakuna
+Beedrill
+Pidgey
+Pidgeotto
+Pidgeot
+Rattata
+Raticate
+Spearow
+Fearow
+Ekans
+Arbok
+Pikachu
+Raichu
+Sandshrew
+Sandslash
+Nidoran♀
+Nidorina
+Nidoqueen
+Nidoran♂
+Nidorino
+Nidoking
+Clefairy
+Clefable
+Vulpix
+Ninetales
+Jigglypuff
+Wigglytuff
+Zubat
+Golbat
+Oddish
+Gloom
+Vileplume
+Paras
+Parasect
+Venonat
+Venomoth
+Diglett
+Dugtrio
+Meowth
+Persian
+Psyduck
+Golduck
+Mankey
+Primeape
+Growlithe
+Arcanine
+Poliwag
+Poliwhirl
+Poliwrath
+Abra
+Kadabra
+Alakazam
+Machop
+Machoke
+Machamp
+Bellsprout
+Weepinbell
+Victreebel
+Tentacool
+Tentacruel
+Geodude
+Graveler
+Golem
+Ponyta
+Rapidash
+Slowpoke
+Slowbro
+Magnemite
+Magneton
+Farfetch'd
+Doduo
+Dodrio
+Seel
+Dewgong
+Grimer
+Muk
+Shellder
+Cloyster
+Gastly
+Haunter
+Gengar
+Onix
+Drowzee
+Hypno
+Krabby
+Kingler
+Voltorb
+Electrode
+Exeggcute
+Exeggutor
+Cubone
+Marowak
+Hitmonlee
+Hitmonchan
+Lickitung
+Koffing
+Weezing
+Rhyhorn
+Rhydon
+Chansey
+Tangela
+Kangaskhan
+Horsea
+Seadra
+Goldeen
+Seaking
+Staryu
+Starmie
+Mr. Mime
+Scyther
+Jynx
+Electabuzz
+Magmar
+Pinsir
+Tauros
+Magikarp
+Gyarados
+Lapras
+Ditto
+Eevee
+Vaporeon
+Jolteon
+Flareon
+Porygon
+Omanyte
+Omastar
+Kabuto
+Kabutops
+Aerodactyl
+Snorlax
+Articuno
+Zapdos
+Moltres
+Dratini
+Dragonair
+Dragonite
+Mewtwo
+Mew
+
+// @title Pokémon Generation II
+// @author Sean Hale
+Chikorita
+Bayleef
+Meganium
+Cyndaquil
+Quilava
+Typhlosion
+Totodile
+Croconaw
+Feraligatr
+Sentret
+Furret
+Hoothoot
+Noctowl
+Ledyba
+Ledian
+Spinarak
+Ariados
+Crobat
+Chinchou
+Lanturn
+Pichu
+Cleffa
+Igglybuff
+Togepi
+Togetic
+Natu
+Xatu
+Mareep
+Flaaffy
+Ampharos
+Bellossom
+Marill
+Azumarill
+Sudowoodo
+Politoed
+Hoppip
+Skiploom
+Jumpluff
+Aipom
+Sunkern
+Sunflora
+Yanma
+Wooper
+Quagsire
+Espeon
+Umbreon
+Murkrow
+Slowking
+Misdreavus
+Unown
+Wobbuffet
+Girafarig
+Pineco
+Forretress
+Dunsparce
+Gligar
+Steelix
+Snubbull
+Granbull
+Qwilfish
+Scizor
+Shuckle
+Heracross
+Sneasel
+Teddiursa
+Ursaring
+Slugma
+Magcargo
+Swinub
+Piloswine
+Corsola
+Remoraid
+Octillery
+Delibird
+Mantine
+Skarmory
+Houndour
+Houndoom
+Kingdra
+Phanpy
+Donphan
+Porygon2
+Stantler
+Smeargle
+Tyrogue
+Hitmontop
+Smoochum
+Elekid
+Magby
+Miltank
+Blissey
+Raikou
+Entei
+Suicune
+Larvitar
+Pupitar
+Tyranitar
+Lugia
+Ho-Oh
+Celebi
+
+// @title Pokémon Generation III
+// @author Sean Hale
+Treecko
+Grovyle
+Sceptile
+Torchic
+Combusken
+Blaziken
+Mudkip
+Marshtomp
+Swampert
+Poochyena
+Mightyena
+Zigzagoon
+Linoone
+Wurmple
+Silcoon
+Beautifly
+Cascoon
+Dustox
+Lotad
+Lombre
+Ludicolo
+Seedot
+Nuzleaf
+Shiftry
+Taillow
+Swellow
+Wingull
+Pelipper
+Ralts
+Kirlia
+Gardevoir
+Surskit
+Masquerain
+Shroomish
+Breloom
+Slakoth
+Vigoroth
+Slaking
+Nincada
+Ninjask
+Shedinja
+Whismur
+Loudred
+Exploud
+Makuhita
+Hariyama
+Azurill
+Nosepass
+Skitty
+Delcatty
+Sableye
+Mawile
+Aron
+Lairon
+Aggron
+Meditite
+Medicham
+Electrike
+Manectric
+Plusle
+Minun
+Volbeat
+Illumise
+Roselia
+Gulpin
+Swalot
+Carvanha
+Sharpedo
+Wailmer
+Wailord
+Numel
+Camerupt
+Torkoal
+Spoink
+Grumpig
+Spinda
+Trapinch
+Vibrava
+Flygon
+Cacnea
+Cacturne
+Swablu
+Altaria
+Zangoose
+Seviper
+Lunatone
+Solrock
+Barboach
+Whiscash
+Corphish
+Crawdaunt
+Baltoy
+Claydol
+Lileep
+Cradily
+Anorith
+Armaldo
+Feebas
+Milotic
+Castform
+Kecleon
+Shuppet
+Banette
+Duskull
+Dusclops
+Tropius
+Chimecho
+Absol
+Wynaut
+Snorunt
+Glalie
+Spheal
+Sealeo
+Walrein
+Clamperl
+Huntail
+Gorebyss
+Relicanth
+Luvdisc
+Bagon
+Shelgon
+Salamence
+Beldum
+Metang
+Metagross
+Regirock
+Regice
+Registeel
+Latias
+Latios
+Kyogre
+Groudon
+Rayquaza
+Jirachi
+Deoxys
+
+// @title Pokémon Generation IV
+// @author Sean Hale
+Turtwig
+Grotle
+Torterra
+Chimchar
+Monferno
+Infernape
+Piplup
+Prinplup
+Empoleon
+Starly
+Staravia
+Staraptor
+Bidoof
+Bibarel
+Kricketot
+Kricketune
+Shinx
+Luxio
+Luxray
+Budew
+Roserade
+Cranidos
+Rampardos
+Shieldon
+Bastiodon
+Burmy
+Wormadam
+Mothim
+Combee
+Vespiquen
+Pachirisu
+Buizel
+Floatzel
+Cherubi
+Cherrim
+Shellos
+Gastrodon
+Ambipom
+Drifloon
+Drifblim
+Buneary
+Lopunny
+Mismagius
+Honchkrow
+Glameow
+Purugly
+Chingling
+Stunky
+Skuntank
+Bronzor
+Bronzong
+Bonsly
+Mime Jr.
+Happiny
+Chatot
+Spiritomb
+Gible
+Gabite
+Garchomp
+Munchlax
+Riolu
+Lucario
+Hippopotas
+Hippowdon
+Skorupi
+Drapion
+Croagunk
+Toxicroak
+Carnivine
+Finneon
+Lumineon
+Mantyke
+Snover
+Abomasnow
+Weavile
+Magnezone
+Lickilicky
+Rhyperior
+Tangrowth
+Electivire
+Magmortar
+Togekiss
+Yanmega
+Leafeon
+Glaceon
+Gliscor
+Mamoswine
+Porygon-Z
+Gallade
+Probopass
+Dusknoir
+Froslass
+Rotom
+Uxie
+Mesprit
+Azelf
+Dialga
+Palkia
+Giratina
+Manaphy
+
+// @title Pokémon Generation V
+// @author Sean Hale
+Victini
+Snivy
+Servine
+Serperior
+Tepig
+Pignite
+Emboar
+Oshawott
+Dewott
+Samurott
+Patrat
+Watchog
+Lillipup
+Herdier
+Stoutland
+Purrloin
+Liepard
+Pansage
+Simisage
+Pansear
+Simisear
+Panpour
+Simipour
+Munna
+Musharna
+Pidove
+Tranquill
+Unfezant
+Blitzle
+Zebstrika
+Roggenrola
+Boldore
+Gigalith
+Woobat
+Swoobat
+Drilbur
+Excadrill
+Audino
+Timburr
+Gurdurr
+Conkeldurr
+Tympole
+Palpitoad
+Seismitoad
+Throh
+Sawk
+Sewaddle
+Swadloon
+Leavanny
+Venipede
+Whirlipede
+Scolipede
+Cottonee
+Whimsicott
+Petilil
+Lilligant
+Basculin
+Sandile
+Krokorok
+Krookodile
+Darumaka
+Darmanitan
+Maractus
+Dwebble
+Crustle
+Scraggy
+Scrafty
+Sigilyph
+Yamask
+Cofagrigus
+Tirtouga
+Carracosta
+Archen
+Archeops
+Trubbish
+Garbodor
+Zorua
+Zoroark
+Minccino
+Cinccino
+Gothita
+Gothorita
+Gothitelle
+Solosis
+Duosion
+Reuniclus
+Ducklett
+Swanna
+Vanillite
+Vanillish
+Vanilluxe
+Deerling
+Sawsbuck
+Emolga
+Karrablast
+Escavalier
+Foongus
+Amoonguss
+Frillish
+Jellicent
+Alomomola
+Joltik
+Galvantula
+Ferroseed
+Ferrothorn
+Klink
+Klang
+Klinklang
+Tynamo
+Eelektrik
+Eelektross
+Elgyem
+Beheeyem
+Litwick
+Lampent
+Chandelure
+Axew
+Fraxure
+Haxorus
+Cubchoo
+Beartic
+Cryogonal
+Shelmet
+Accelgor
+Stunfisk
+Mienfoo
+Mienshao
+Druddigon
+Golett
+Golurk
+Pawniard
+Bisharp
+Bouffalant
+Rufflet
+Braviary
+Vullaby
+Mandibuzz
+Heatmor
+Durant
+Deino
+Zweilous
+Hydreigon
+Larvesta
+Volcarona
+Cobalion
+Terrakion
+Virizion
+Tornadus
+Thundurus
+Reshiram
+Zekrom
+Landorus
+Kyurem
+Keldeo
+Meloetta
+Genesect
+
+// @title Pokémon Generation VI
+// @author Sean Hale
+Chespin
+Quilladin
+Chesnaught
+Fennekin
+Braixen
+Delphox
+Froakie
+Frogadier
+Greninja
+Bunnelby
+Diggersby
+Fletchling
+Fletchinder
+Talonflame
+Scatterbug
+Spewpa
+Vivillon
+Litleo
+Pyroar
+Flabébé
+Floette
+Florges
+Skiddo
+Gogoat
+Pancham
+Pangoro
+Furfrou
+Espurr
+Meowstic
+Honedge
+Doublade
+Aegislash
+Spritzee
+Aromatisse
+Swirlix
+Slurpuff
+Inkay
+Malamar
+Binacle
+Barbaracle
+Skrelp
+Dragalge
+Clauncher
+Clawitzer
+Helioptile
+Heliolisk
+Tyrunt
+Tyrantrum
+Amaura
+Aurorus
+Sylveon
+Hawlucha
+Dedenne
+Carbink
+Goomy
+Sliggoo
+Goodra
+Klefki
+Phantump
+Trevenant
+Pumpkaboo
+Gourgeist
+Bergmite
+Avalugg
+Noibat
+Noivern
+Xerneas
+Yveltal
+Zygarde
+Diancie
+Hoopa
+Volcanion
+
+// @title Pokémon Generation VII
+// @author Sean Hale
+Rowlet
+Dartrix
+Decidueye
+Litten
+Torracat
+Incineroar
+Popplio
+Brionne
+Primarina
+Pikipek
+Trumbeak
+Toucannon
+Yungoos
+Gumshoos
+Grubbin
+Charjabug
+Vikavolt
+Crabrawler
+Crabominable
+Oricorio
+Cutiefly
+Ribombee
+Rockruff
+Lycanroc
+Wishiwashi
+Mareanie
+Toxapex
+Mudbray
+Mudsdale
+Dewpider
+Araquanid
+Fomantis
+Lurantis
+Morelull
+Shiinotic
+Salandit
+Salazzle
+Stufful
+Bewear
+Bounsweet
+Steenee
+Tsareena
+Comfey
+Oranguru
+Passimian
+Wimpod
+Golisopod
+Sandygast
+Palossand
+Pyukumuku
+Type: Null
+Silvally
+Minior
+Komala
+Turtonator
+Togedemaru
+Mimikyu
+Bruxish
+Drampa
+Dhelmise
+Jangmo-o
+Hakamo-o
+Kommo-o
+Tapu Koko
+Tapu Lele
+Tapu Bulu
+Tapu Fini
+Cosmog
+Cosmoem
+Solgaleo
+Lunala
+Nihilego
+Buzzwole
+Pheromosa
+Xurkitree
+Celesteela
+Kartana
+Guzzlord
+Necrozma
+Magearna
+Marshadow
+Poipole
+Naganadel
+Stakataka
+Blacephalon
+Zeraora
+Meltan
+Melmetal
+
+// @title Pokémon Generation VIII
+// @author Sean Hale
+Grookey
+Thwackey
+Rillaboom
+Scorbunny
+Raboot
+Cinderace
+Sobble
+Drizzile
+Inteleon
+Skwovet
+Greedent
+Rookidee
+Corvisquire
+Corviknight
+Blipbug
+Dottler
+Orbeetle
+Nickit
+Thievul
+Gossifleur
+Eldegoss
+Wooloo
+Dubwool
+Chewtle
+Drednaw
+Yamper
+Boltund
+Rolycoly
+Carkol
+Coalossal
+Applin
+Flapple
+Appletun
+Silicobra
+Sandaconda
+Cramorant
+Arrokuda
+Barraskewda
+Toxel
+Toxtricity
+Sizzlipede
+Centiskorch
+Clobbopus
+Grapploct
+Sinistea
+Polteageist
+Hatenna
+Hattrem
+Hatterene
+Impidimp
+Morgrem
+Grimmsnarl
+Obstagoon
+Perrserker
+Cursola
+Sirfetch'd
+Mr. Rime
+Runerigus
+Milcery
+Alcremie
+Falinks
+Pincurchin
+Snom
+Frosmoth
+Stonjourner
+Eiscue
+Indeedee
+Morpeko
+Cufant
+Copperajah
+Dracozolt
+Arctozolt
+Dracovish
+Arctovish
+Duraludon
+Dreepy
+Drakloak
+Dragapult
+Zacian
+Zamazenta
+Eternatus
+Kubfu
+Urshifu
+Zarude
+Regieleki
+Regidrago
+Glastrier
+Spectrier
+Calyrex
+Wyrdeer
+Kleavor
+Ursaluna
+Basculegion
+Sneasler
+Overqwil
+Enamorus
+
+// @title Pokémon Generation IX
+// @author Sean Hale
+Sprigatito
+Fuecoco
+Quaxly
+Pawmi
+Smoliv
+Lechonk
+Fidough
+Cetitan
+Cyclizar
+Grafaiai
+Klawf
+Armarouge
+Ceruledge
+Koraidon
+Miraidon
+
+// @title Pokémon Poké Balls
+// @author Sean Hale
+Beast Ball
+Cherish Ball
+Dive Ball
+Dream Ball
+Dusk Ball
+Fast Ball
+Feather Ball
+Friend Ball
+Gigaton Ball
+Great Ball
+Heal Ball
+Heavy Ball
+Jet Ball
+Leaden Ball
+Level Ball
+Love Ball
+Lure Ball
+Luxury Ball
+Master Ball
+Moon Ball
+Nest Ball
+Net Ball
+Origin Ball
+Park Ball
+Poké Ball
+Premier Ball
+Quick Ball
+Repeat Ball
+Safari Ball
+Sport Ball
+Strange Ball
+Timer Ball
+Ultra Ball
+Wing Ball
+
+// @title Pokémon Kanto Locations
+// @author Sean Hale
+Pallet Town
+Viridian City
+Pewter City
+Cerulean City
+Vermilion City
+Lavender Town
+Celadon City
+Saffron City
+Fuchsia City
+Cinnabar Island
+Indigo Plateau
+Sevii Islands
+
+// @title Pokémon Johto Locations
+// @author Sean Hale
+New Bark Town
+Cherrygrove City
+Violet City
+Azalea Town
+Goldenrod City
+Ecruteak City
+Olivine City
+Frontier Access
+Cianwood City
+Safari Zone Gate
+Mahogany Town
+Blackthorn City
+
+// @title Pokémon Hoenn Locations
+// @author Sean Hale
+Littleroot Town
+Oldale Town
+Petalburg City
+Rustboro City
+Dewford Town
+Slateport City
+Mauville City
+Verdanturf Town
+Fallarbor Town
+Lavaridge Town
+Fortree City
+Lilycove City
+Mossdeep City
+Sootopolis City
+Pacifidlog Town
+Ever Grande City
+
+// @title Pokémon Sinnoh Locations
+// @author Sean Hale
+Twinleaf Town
+Sandgem Town
+Jubilife City
+Oreburgh City
+Floaroma Town
+Eterna City
+Hearthome City
+Solaceon Town
+Veilstone City
+Pastoria City
+Celestic Town
+Canalave City
+Snowpoint City
+Sunyshore City
+Pokémon League
+Fight Area
+Survival Area
+Resort Area
+
+// @title Pokémon Unova Locations
+// @author Sean Hale
+Nuvema Town
+Accumula Town
+Striaton City
+Nacrene City
+Aspertia City
+Floccesy Town
+Virbank City
+Castelia City
+Nimbasa City
+Anville Town
+Driftveil City
+Mistralton City
+Icirrus City
+Opelucid City
+Lacunosa Town
+Undella Town
+Lentimas Town
+Humilau City
+Pokémon League
+Black City
+White Forest
+
+// @title Pokémon Kalos Locations
+// @author Sean Hale
+Vaniville Town
+Aquacorde Town
+Santalune City
+Lumiose City
+Coumarine City
+Shalour City
+Geosenge Town
+Cyllage City
+Ambrette Town
+Laverre City
+Denemille Town
+Anistar City
+Couriway Town
+Snowbelle City
+Pokémon League
+Kiloude City
+
+// @title Super Smash Bros. Fighters
+// @author Sean Hale
+Banjo & Kazooie
+Bayonetta
+Bowser
+Bowser Jr.
+Byleth
+Captain Falcon
+Charizard
+Chrom
+Cloud
+Corrin
+Daisy
+Dark Pit
+Dark Samus
+Diddy Kong
+Donkey Kong
+Dr. Mario
+Duck Hunt
+Falco
+Fox
+Ganondorf
+Greninja
+Hero
+Ice Climbers
+Ike
+Incineroar
+Inkling
+Isabelle
+Ivysaur
+Jigglypuff
+Joker
+Kazuya
+Ken
+King Dedede
+King K. Rool
+Kirby
+Link
+Little Mac
+Lucario
+Lucas
+Lucina
+Luigi
+Mario
+Marth
+Mega Man
+Meta Knight
+Mewtwo
+Mii Brawler
+Mii Gunner
+Mii Swordfighter
+Min Min
+Mr. Game & Watch
+Mythra
+Ness
+Olimar
+Pac-Man
+Palutena
+Peach
+Pichu
+Pikachu
+Piranha Plant
+Pit
+Pyra
+Richter
+Ridley
+R.O.B.
+Robin
+Rosalina & Luma
+Roy
+Ryu
+Samus
+Sephiroth
+Sheik
+Shulk
+Simon
+Snake
+Sonic
+Sora
+Squirtle
+Steve
+Terry
+Toon Link
+Villager
+Wario
+Wii Fit Trainer
+Wolf
+Yoshi
+Young Link
+Zelda
+Zero Suit Samus
+
+// @title Super Smash Bros. Stages
+// @author Sean Hale
+3D Land
+75m
+Arena Ferox
+Balloon Fight
+Battlefield
+Big Battlefield
+Big Blue
+Boxing Ring
+Bridge of Eldin
+Brinstar
+Brinstar Depths
+Castle Siege
+Cloud Sea of Alrest
+Coliseum
+Corneria
+Delfino Plaza
+Distant Planet
+Dracula's Castle
+Dream Land
+Dream Land GB
+Duck Hunt
+Figure-8 Circuit
+Final Destination
+Find Mii
+Flat Zone X
+Fountain of Dreams
+Fourside
+Frigate Orpheon
+Gamer
+Garden of Hope
+Garreg Mach Monastery
+Gaur Plain
+Gerudo Valley
+Golden Plains
+Great Bay
+Great Plateau Tower
+Green Greens
+Green Hill Zone
+Halberd
+Hanenbow
+Hollow Bastion
+Hyrule Castle
+Jungle Japes
+Kalos Pokémon League
+King of Fighters Stadium
+Kongo Falls
+Kongo Jungle
+Living Room
+Luigi's Mansion
+Lylat Cruise
+Magicant
+Mario Bros.
+Mario Circuit
+Mario Galaxy
+Mementos
+Midgar
+Minecraft World
+Mishima Dojo
+Moray Towers
+Mushroom Kingdom
+Mushroom Kingdom II
+Mushroom Kingdom U
+Mushroomy Kingdom
+Mute City SNES
+New Donk City Hall
+New Pork City
+Norfair
+Northern Cave
+Onett
+Pac-Land
+Palutena's Temple
+Paper Mario
+Peach's Castle
+PictoChat 2
+Pilotwings
+Pirate Ship
+Pokémon Stadium
+Pokémon Stadium 2
+Port Town Aero Dive
+Princess Peach's Castle
+Prism Tower
+Rainbow Cruise
+Reset Bomb Forest
+Saffron City
+Shadow Moses Island
+Skyloft
+Skyworld
+Small Battlefield
+Smashville
+Spear Pillar
+Spiral Mountain
+Spirit Train
+Spring Stadium
+Summit
+Super Happy Tree
+Super Mario Maker
+Suzaku Castle
+Temple
+The Great Cave Offensive
+Tomodachi Life
+Tortimer Island
+Town and City
+Umbra Clock Tower
+Unova Pokémon League
+Venom
+WarioWare, Inc.
+Wii Fit Studio
+Wily Castle
+Windy Hill Zone
+Wrecking Crew
+Wuhu Island
+Yggdrasil's Altar
+Yoshi's Island
+Yoshi's Island (Melee)
+Yoshi's Story
+
+// @title Kirby Copy Abilities
+// @author Sean Hale
+Animal
+Archer
+Artist
+Backdrop
+Ball
+Balloon
+Beam
+Beetle
+Bell
+Bomb
+Bubble
+Burning
+Circus
+Cleaning
+Copy
+Cupid
+Cutter
+Doctor
+Drill
+ESP
+Fighter
+Fire
+Freeze
+Ghost
+Hammer
+Hi-Jump
+Ice
+Jelly
+Jet
+Laser
+Leaf
+Magic
+Mecha
+Metal
+Mini
+Mirror
+Missile
+Needle
+Ninja
+Parasol
+Plasma
+Poison
+Ranger
+Sleep
+Smash Bros.
+Spark
+Spear
+Spider
+Staff
+Stone
+Suplex
+Sword
+Throw
+Tornado
+UFO
+Water
+Wheel
+Whip
+Wing
+Wrestler
+Yo-Yo
+
+// @title Stardew Valley Crops
+// @author Sean Hale
+Amaranth
+Artichoke
+Beets
+Blueberries
+Bok Choy
+Cauliflower
+Corn
+Cranberries
+Crop
+Eggplant
+Fairy Rose
+Garlic
+Grapes
+Green Bean
+Hops
+Hot Peppers
+Jazz Flower
+Kale
+Melon
+Parsnip
+Poppy
+Potato
+Pumpkin
+Radish
+Red Cabbage
+Rhubarb
+Spangle
+Starfruit
+Strawberry
+Sunflower
+Tomato
+Tulip
+Wheat
+Yam
+
+// @title Dark Souls 1 Locations
+// @author Sean Hale
+Anor Londo
+Ash Lake
+Blighttown
+Chasm of the Abyss
+Crystal Cave
+Darkroot Basin
+Darkroot Garden
+Demon Ruins
+Depths
+Firelink Altar
+Firelink Shrine
+Kiln of the First Flame
+Lost Izalith
+New Londo Ruins
+Oolacile Sanctuary
+Oolacile Township
+Oolacile Township Dungeon
+Painted World of Ariamis
+Quelaag's Domain
+Royal Wood
+Sanctuary Garden
+Sen's Fortress
+The Catacombs
+The Duke's Archives
+The Great Hollow
+Tomb of the Giants
+Undead Asylum
+Undead Burg
+Undead Parish
+Valley of Drakes
+
+// @title Dark Souls 2 Locations
+// @author Sean Hale
+Aldia's Keep
+Belfry Luna
+Belfry Sol
+Black Gulch
+Brightstone Cove Tseldora
+Brume Tower
+Cathedral of Blue
+Cave of the Dead
+Dark Chasm of Old
+Doors of Pharros
+Dragon Aerie
+Dragon Memories
+Dragon Shrine
+Dragon's Rest
+Dragon's Sanctum
+Drangleic Castle
+Earthen Peak
+Forest of Fallen Giants
+Frigid Outskirts
+Frozen Eleum Loyce
+Grand Cathedral
+Grave of Saints
+Harvest Valley
+Heide's Tower of Flame
+Huntsman's Copse
+Iron Keep
+Iron passage
+Lord's Private Chamber
+Majula
+Memory of Jeigh
+Memory of Orro
+Memory of the King
+Memory of the Old Iron King
+Memory of Vammar
+No-man's Wharf
+Old Chaos
+Shaded Woods
+Shrine of Amana
+Shrine of Winter
+Shulva, Sanctum City
+Sinners' Rise
+The Gutter
+The Lost Bastille
+The Pit
+Things Betwixt
+Throne Of Want
+Undead Crypt
+Undead Purgatory
+
+// @title Dark Souls 3 Locations
+// @author Sean Hale
+Anor Londo
+Archdragon Peak
+Catacombs of Carthus
+Cathedral of the Deep
+Cemetery of Ash
+Church of Yorshka
+Consumed King's Garden
+Farron Keep
+Firelink Shrine
+Grand Archives
+High Wall of Lothric
+Irithyll Dungeon
+Irithyll of the Boreal Valley
+Kiln of the First Flame
+Lothric Castle
+Painted World of Ariandel
+Profaned Capital
+Road of Sacrifices
+Smouldering Lake
+The Dreg Heap
+The Ringed City
+Undead Settlement
+Untended Graves
+
+// @title Bloodborne Locations
+// @author Sean Hale
+1st Floor Sickroom
+Abandoned Old Workshop
+Advent Plaza
+Amygdala's Chamber
+Byrgenwerth
+Moonside Lake
+Cathedral Ward
+Central Yharnam
+Church of the Good Chalice
+Fishing Hamlet
+Forbidden Grave
+Forbidden Woods
+Forsaken Cainhurst Castle
+Graveyard of the Darkbeast
+Healing Church Workshop
+Hemwick Charnel Lane
+Hunter's Nightmare
+Iosefka's Clinic
+Lecture Building
+Lighthouse Hut
+Logarius' Seat
+Mergo's Loft
+Nightmare Frontier
+Nightmare of Mensis
+Old Yharnam
+Research Hall
+The Nightmare Frontier
+Tomb of Oedon
+Underground Corpse Pile
+Vileblood Queen's Chamber
+Wet Nurse's Lunarium
+Witch's Abode
+Yahar'Gul Chapel
+Yahar'Gul, Unseen Village
+
+// @title Binding of Isaac Active Items
+// @author Sean Hale
+A Pony
+Anarchist Cookbook
+Best Friend
+Blank Card
+Blood Rights
+Bob's Rotten Head
+Book of Revelations
+Book of Secrets
+Book of Shadows
+Box of Spiders
+Breath of Life
+Butter Bean
+Converter
+Crack the Sky
+Crystal Ball
+D10
+D100
+D20
+D4
+Dad's Key
+Dead Sea Scrolls
+Deck of Cards
+Doctor's Remote
+Flush!
+Forget Me Now
+Guppy's Head
+Guppy's Paw
+Head of Krampus
+How to Jump
+Isaac's Tears
+IV Bag
+Kamikaze!
+Lemon Mishap
+Magic Fingers
+Mom's Bottle of Pills
+Mom's Bra
+Mom's Pad
+Monster Manual
+Monstro's Tooth
+Mr. Boom
+My Little Unicorn
+Notched Axe
+Pandora's Box
+Portable Slot
+Prayer Card
+Razor Blade
+Red Candle
+Remote Detonator
+Satanic Bible
+Scissors
+Shoop Da Whoop!
+Spider Butt
+Tammy's Head
+Telepathy for Dummies
+Teleport!
+The Bean
+The Bible
+The Book of Belial
+The Book of Sin
+The Boomerang
+The Candle
+The D6
+The Gamekid
+The Hourglass
+The Jar
+The Nail
+The Necronomicon
+The Pinking Shears
+The Poop
+Undefined
+Unicorn Stump
+We Need to Go Deeper!
+White Pony
+Yum Heart
+Box of Friends
+D12
+D7
+D8
+Diplopia
+Friendly Ball
+Glass Cannon
+Glowing Hour Glass
+Jar of Flies
+Kidney Bean
+Mega Bean
+Mega Blast
+Mine Crafter
+Mom's Box
+Placebo
+Tear Detonator
+Teleport 2.0
+Ventricle Razor
+Wooden Nickel
+Black Hole
+Book of the Dead
+Broken Shovel
+Brown Nugget
+Clicker
+Compost
+Coupon
+Crooked Penny
+D Infinity
+D1
+Dataminer
+Delirious
+Dull Razor
+Eden's Soul
+Mama Mega!
+Metronome
+Mom's Shovel
+Moving Box
+Mr. ME!
+Mystery Gift
+Pause
+Plan C
+Potato Peeler
+Sacrificial Altar
+Sharp Straw
+Smelter
+Sprinkler
+Telekinesis
+Void
+Wait What?
+Abyss
+Alabaster Box
+Anima Sola
+Bag of Crafting
+Berserk!
+Book of Virtues
+Broken Glass Cannon
+Clear Rune
+Damocles
+Dark Arts
+Death Certificate
+Decap Attack
+Eraser
+Esau Jr.
+Eternal D6
+Everything Jar
+Flip
+Fortune Cookie
+Free Lemonade
+Friend Finder
+Gello
+Genesis
+Golden Razor
+Hold
+Jar of Wisps
+Keeper's Box
+Larynx
+Lemegeton
+Magic Skin
+Meat Cleaver
+Mega Mush
+Mom's Bracelet
+Plum Flute
+R Key
+Recall
+Red Key
+Sharp Key
+Spin to Win
+Spindown Dice
+Stitches
+Sulfur
+Sumptorium
+Suplex!
+The Scooper
+Urn of Souls
+Vade Retro
+Wavy Cap
+Yuck Heart
+
+// @title Binding of Isaac Passive Items
+// @author Sean Hale
+???'s Only Friend
+<3
+120 Volt
+1up!
+20/20
+2Spooky
+3 Dollar Bill
+4.5 Volt
+7 Seals
+8 Inch Nails
+9 Volt
+A Bar of Soap
+A Dollar
+A Lump of Coal
+A Pound of Flesh
+A Quarter
+A Snack
+Abaddon
+Abel
+Acid Baby
+Act of Contrition
+Adrenaline
+Akeldama
+Almond Milk
+Analog Stick
+Anemic
+Angelic Prism
+Angry Fly
+Ankh
+Anti-Gravity
+Apple!
+Aquarius
+Aries
+Astral Projection
+Athame
+Azazel's Rage
+Backstabber
+Ball of Bandages
+Ball of Tar
+Battery Pack
+BBF
+Belly Button
+Belly Jelly
+Best Bud
+Betrayal
+BFFS!
+Big Chubby
+Big Fan
+Binge Eater
+Binky
+Bird Cage
+Bird's Eye
+Birthright
+Black Candle
+Black Lotus
+Black Powder
+Blanket
+Blood Bag
+Blood Bombs
+Blood Clot
+Blood Oath
+Blood of the Martyr
+Blood Puppy
+Bloodshot Eye
+Bloody Gust
+Bloody Lust
+Blue Cap
+Blue Map
+Bob's Brain
+Bob's Curse
+Bobby-Bomb
+Bogo Bombs
+Boiled Baby
+Bomb Bag
+Bomber Boy
+Bone Spurs
+Boom!
+Booster Pack
+Bot Fly
+Box
+Bozo
+Breakfast
+Brimstone
+Brimstone Bombs
+Brittle Bones
+Broken Modem
+Broken Shovel
+Broken Watch
+Brother Bobby
+Bucket of Lard
+Buddy in a Box
+Bum Friend
+Bumbo
+Bursting Sack
+Butt Bombs
+C Section
+Caffeine Pill
+Cain's Other Eye
+Cambion Conception
+Camo Undies
+Cancer
+Candy Heart
+Capricorn
+Car Battery
+Card Reading
+Cat-O-Nine-Tails
+Celtic Cross
+Censer
+Ceremonial Robes
+Champion Belt
+Chaos
+Charged Baby
+Charm of the Vampire
+Chemical Peel
+Chocolate Milk
+Circle of Protection
+Compound Fracture
+Cone Head
+Consolation Prize
+Contagion
+Continuum
+Contract From Below
+Crack Jacks
+Cracked Orb
+Cricket's Body
+Cricket's Head
+Crown of Light
+Cube Baby
+Cube of Meat
+Cupid's Arrow
+Curse of the Tower
+Cursed Eye
+Dad's Lost Coin
+Dad's Note
+Dad's Ring
+Daddy Longlegs
+Dark Bum
+Dark Matter
+Dark Prince's Crown
+Dead Bird
+Dead Cat
+Dead Dove
+Dead Eye
+Dead Onion
+Dead Tooth
+Death's List
+Death's Touch
+Deep Pockets
+Demon Baby
+Depression
+Dessert
+Dinner
+Dirty Mind
+Distant Admiration
+Divine Intervention
+Divorce Papers
+Dog Tooth
+Dogma
+Dr. Fetus
+Dream Catcher
+Dry Baby
+Duality
+E. Coli
+Echo Chamber
+Eden's Blessing
+Empty Heart
+Empty Vessel
+Epic Fetus
+Epiphora
+Eucharist
+Euthanasia
+Eve's Mascara
+Evil Charm
+Evil Eye
+Experimental Treatment
+Explosivo
+Eye Drops
+Eye of Belial
+Eye of Greed
+Eye of the Occult
+Eye Sore
+False PHD
+Fanny Pack
+Farting Baby
+Fast Bombs
+Fate
+Fate's Reward
+Finger!
+Fire Mind
+Flat Stone
+Forever Alone
+Freezer Baby
+Friend Zone
+Fruit Cake
+Fruity Plum
+GB Bug
+Gemini
+Ghost Baby
+Ghost Bombs
+Ghost Pepper
+Giant Cell
+Gimpy
+Glass Eye
+Glaucoma
+Glitched Crown
+Glitter Bombs
+Glyph of Balance
+Gnawed Leaf
+Goat Head
+God's Flesh
+Godhead
+Greed's Gullet
+Growth Hormones
+Guardian Angel
+Guillotine
+Guppy's Collar
+Guppy's Eye
+Guppy's Hair Ball
+Guppy's Tail
+Habit
+Haemolacria
+Hallowed Ground
+Halo of Flies
+Harlequin Baby
+Head of the Keeper
+Headless Baby
+Heartbreak
+Hemoptysis
+Hive Mind
+Holy Grail
+Holy Light
+Holy Mantle
+Holy Water
+Host Hat
+Hot Bombs
+Humbling Bundle
+Hungry Soul
+Hushy
+Hypercoagulation
+IBS
+Immaculate Conception
+Immaculate Heart
+Incubus
+Infamy
+Infestation
+Infestation 2
+Inner Child
+Ipecac
+Iron Bar
+Isaac's Heart
+Isaac's Tomb
+It Hurts
+Jacob's Ladder
+Jaw Bone
+Jesus Juice
+Judas' Shadow
+Juicy Sack
+Jumper Cables
+Jupiter
+Keeper's Kin
+Keeper's Sack
+Key Bum
+Key Piece 1
+Key Piece 2
+Kidney Stone
+King Baby
+Knife Piece 1
+Knife Piece 2
+Knockout Drops
+Lachryphagy
+Large Zit
+Latch Key
+Lazarus' Rags
+Lead Pencil
+Leech
+Leo
+Leprosy
+Libra
+Lil Abaddon
+Lil Brimstone
+Lil Chest
+Lil Delirium
+Lil Dumpy
+Lil Gurdy
+Lil Haunt
+Lil Loki
+Lil Monstro
+Lil Portal
+Lil Spewer
+Linger Bean
+Little Baggy
+Little C.H.A.D.
+Little Chubby
+Little Gish
+Little Horn
+Little Steven
+Lodestone
+Loki's Horns
+Lord of the Pit
+Lost Contact
+Lost Fly
+Lost Soul
+Lucky Foot
+Luna
+Lunch
+Lusty Blood
+Maggy's Bow
+Magic 8 Ball
+Magic Mushroom
+Magic Scab
+Magneto
+Marbles
+Marked
+Marrow
+Mars
+Match Book
+Maw of the Void
+MEAT!
+Member Card
+Mercurius
+Metal Plate
+Midas' Touch
+Midnight Snack
+Milk!
+Mini Mush
+Missing No.
+Missing Page 2
+Mitre
+Mom's Coin Purse
+Mom's Contacts
+Mom's Eye
+Mom's Eyeshadow
+Mom's Heels
+Mom's Key
+Mom's Knife
+Mom's Lipstick
+Mom's Pearls
+Mom's Perfume
+Mom's Purse
+Mom's Razor
+Mom's Ring
+Mom's Underwear
+Mom's Wig
+Money = Power
+Mongo Baby
+Monstrance
+Monstro's Lung
+Montezuma's Revenge
+More Options
+Mr. Dolly
+Mr. Mega
+Mucormycosis
+Multidimensional Baby
+Mutant Spider
+My Reflection
+My Shadow
+Mysterious Liquid
+Mystery Egg
+Mystery Sack
+Nancy Bombs
+Neptunus
+Night Light
+Number One
+Number Two
+Obsessed Fan
+Ocular Rift
+Odd Mushroom
+Old Bandage
+Options?
+Orphan Socks
+Ouija Board
+Pageant Boy
+Papa Fly
+Parasitoid
+Paschal Candle
+Pay to Play
+Pentagram
+PHD
+Piggy Bank
+Pisces
+PJs
+Placenta
+Playdough Cookie
+Pluto
+Pointy Rib
+Poke Go
+Polydactyly
+Polyphemus
+Pop!
+Proptosis
+Psy Fly
+Punching Bag
+Pupula Duplex
+Purgatory
+Purity
+Pyro
+Pyromaniac
+Quints
+Rainbow Baby
+Raw Liver
+Red Stew
+Redemption
+Restock
+Revelation
+Robo-Baby
+Robo-Baby 2.0
+Rock Bottom
+Rocket in a Jar
+Roid Rage
+Rosary
+Rotten Baby
+Rotten Meat
+Rotten Tomato
+Rubber Cement
+Rune Bag
+Sack Head
+Sack of Pennies
+Sack of Sacks
+Sacred Heart
+Sacred Orb
+Sacrificial Dagger
+Sad Bombs
+Safety Pin
+Sagittarius
+Salvation
+Samson's Chains
+Sanguine Bond
+Saturnus
+Sausage
+Scapular
+Scatter Bombs
+Schoolbag
+Scorpio
+Screw
+Seraphim
+Serpent's Kiss
+Shade
+Shard of Glass
+Sharp Plug
+Sinus Infection
+Sissy Longlegs
+Sister Maggy
+Skatole
+Skeleton Key
+Slipped Rib
+Smart Fly
+SMB Super Fan
+Sol
+Soul Locket
+Soy Milk
+Spear of Destiny
+Speed Ball
+Spelunker Hat
+Spider Bite
+Spider Mod
+Spiderbaby
+Spirit of the Night
+Spirit Shackles
+Spirit Sword
+Spoon Bender
+Squeezy
+Stapler
+Star of Bethlehem
+Starter Deck
+Steam Sale
+Stem Cells
+Steven
+Sticky Bombs
+Stigmata
+Stop Watch
+Strange Attractor
+Strawman
+Stye
+Succubus
+Sulfuric Acid
+Super Bandage
+Supper
+Sworn Protector
+Synthoil
+Tarot Cloth
+Taurus
+Tech X
+Tech.5
+Technology
+Technology 2
+Technology Zero
+Terra
+The Battery
+The Belt
+The Black Bean
+The Body
+The Common Cold
+The Compass
+The Halo
+The Inner Eye
+The Intruder
+The Ladder
+The Ludovico Technique
+The Mark
+The Mind
+The Mulligan
+The Negative
+The Pact
+The Parasite
+The Peeper
+The Polaroid
+The Relic
+The Sad Onion
+The Small Rock
+The Soul
+The Stairway
+The Swarm
+The Virus
+The Wafer
+The Wiz
+There's Options
+Thunder Thighs
+Tiny Planet
+Tinytoma
+TMTRAINER
+Tonsil
+Tooth and Nail
+Toothpicks
+Torn Photo
+Tough Love
+Toxic Shock
+Tractor Beam
+Transcendence
+Treasure Map
+Trinity Shield
+Trisagion
+Tropicamide
+Twisted Pair
+Uranus
+Vanishing Twin
+Varicose Veins
+Vasculitis
+Vengeful Spirit
+Venus
+Virgo
+Voodoo Head
+Whore of Babylon
+Wire Coat Hanger
+Wooden Spoon
+Worm Friend
+X-Ray Vision
+YO LISTEN!
+Zodiac
+
+// @title Binding of Isaac Trinkets
+// @author Sean Hale
+???'s Soul
+'M
+A Lighter
+A Missing Page
+AAA Battery
+Ace of Spades
+Adoption Papers
+Apollyon's Best Friend
+Apple of Sodom
+Azazel's Stump
+Baby-Bender
+Bag Lunch
+Bat Wing
+Beth's Essence
+Beth's Faith
+Bible Tract
+Black Feather
+Black Lipstick
+Black Tooth
+Blasting Cap
+Blessed Penny
+Blind Rage
+Blister
+Bloody Crown
+Bloody Penny
+Blue Key
+Bob's Bladder
+Brain Worm
+Broken Ankh
+Broken Glasses
+Broken Magnet
+Broken Padlock
+Broken Remote
+Broken Syringe
+Brown Cap
+Burnt Penny
+Butt Penny
+Butter!
+Cain's Eye
+Callus
+Cancer
+Cartridge
+Charged Penny
+Chewed Pen
+Child Leash
+Child's Heart
+Counterfeit Penny
+Cracked Crown
+Cracked Dice
+Cricket Leg
+Crow Heart
+Crystal Key
+Cursed Penny
+Cursed Skull
+Curved Horn
+Daemon's Tail
+Devil's Crown
+Dice Bag
+Dim Bulb
+Dingle Berry
+Door Stop
+Duct Tape
+Endless Nameless
+Equality!
+Error
+Eve's Bird Foot
+Expansion Pack
+Extension Cord
+Faded Polaroid
+Filigree Feather
+Finger Bone
+Fish Head
+Fish Tail
+Flat File
+Flat Penny
+Flat Worm
+Forgotten Lullaby
+Found Soul
+Fragmented Card
+Friendship Necklace
+Gigante Bean
+Gilded Key
+Goat Hoof
+Golden Horse Shoe
+Hairpin
+Hollow Heart
+Holy Crown
+Hook Worm
+Ice Cube
+Isaac's Fork
+Isaac's Head
+Jawbreaker
+Judas' Tongue
+Karma
+Keeper's Bargain
+Kid's Drawing
+Lazy Worm
+Liberty Cap
+Lil Clot
+Lil Larva
+Locust of Conquest
+Locust of Death
+Locust of Famine
+Locust of Pestilence
+Locust of War
+Lost Cork
+Louse
+Lucky Rock
+Lucky Sack
+Lucky Toe
+Maggy's Faith
+Match Stick
+Meconium
+Missing Poster
+Modeling Clay
+Mom's Lock
+Mom's Locket
+Mom's Pearl
+Mom's Toenail
+Monkey Paw
+Mother's Kiss
+Myosotis
+Mysterious Candy
+Mysterious Paper
+NO!
+Nose Goblin
+Nuh Uh!
+Number Magnet
+Old Capacitor
+Ouroboros Worm
+Panic Button
+Paper Clip
+Pay to Win
+Perfection
+Petrified Poop
+Pinky Eye
+Poker Chip
+Polished Bone
+Pulse Worm
+Purple Heart
+Push Pin
+Rainbow Worm
+RC Remote
+Red Patch
+Rib of Greed
+Ring Cap
+Ring Worm
+Rosary Bead
+Rotten Penny
+Rusted Key
+Safety Cap
+Safety Scissors
+Samson's Lock
+Second Hand
+Shiny Rock
+Short Fuse
+Sigil of Baphomet
+Silver Dollar
+Stem Cell
+Store Credit
+Store Key
+Strange Key
+Stud Finder
+Super Ball
+Super Magnet
+Swallowed M80
+Swallowed Penny
+Tape Worm
+Teardrop Charm
+Telescope Lens
+Temporary Tattoo
+The Left Hand
+The Twins
+Tick
+Tonsil
+Torn Card
+Torn Pocket
+Umbilical Cord
+Used Diaper
+Vibrant Bulb
+Walnut
+Watch Battery
+Whip Worm
+Wicked Crown
+Wiggle Worm
+Wish Bone
+Wooden Cross
+Your Soul
+
+// @title Minecraft Passive Mobs
+// @author Sean Hale
+Allay
+Axolotl
+Bat
+Cat
+Chicken
+Cod
+Cow
+Donkey
+Fox
+Frog
+Glow Squid
+Horse
+Mooshroom
+Mule
+Ocelot
+Parrot
+Pig
+Pufferfish
+Rabbit
+Salmon
+Sheep
+Skeleton Horse
+Snow Golem
+Squid
+Strider
+Tadpole
+Tropical Fish
+Turtle
+Villager
+Wandering Trader
+
+// @title Minecraft Neutral Mobs
+// @author Sean Hale
+Dolphin
+Bee
+Cave Spider
+Dolphin
+Enderman
+Goat
+Iron Golem
+Llama
+Panda
+Piglin
+Polar Bear
+Spider
+Trader Llama
+Wolf
+Zombified Piglin
+
+// @title Minecraft Hostile Mobs
+// @author Sean Hale
+Drowned
+Blaze
+Chicken Jockey
+Creeper
+Drowned
+Elder Guardian
+Endermite
+Evoker
+Ghast
+Guardian
+Hoglin
+Phantom
+Husk
+Magma Cube
+Phantom
+Piglin Brute
+Pillager
+Ravager
+Shulker
+Silverfish
+Skeleton
+Skeleton Horseman
+Slime
+Spider Jockey
+Stray
+Vex
+Vindicator
+Warden
+Witch
+Wither Skeleton
+Zoglin
+Zombie
+Zombie Villager
+Ender Dragon
+Wither
+
+// @title Minecraft Biomes
+// @author Sean Hale
+Plains
+Desert
+Mountains
+Forest
+Taiga
+Swamp
+River
+Nether Wastes
+The End
+Frozen Ocean
+Frozen River
+Snowy Tundra
+Hills
+Extreme Hills
+Mushroom Fields
+Mushroom Field Shore
+Beach
+Mountain Edge
+Jungle
+Jungle Edge
+Deep Ocean Biome
+Stone Shore
+Snowy Beach
+Birch Forest
+Dark Forest
+Snowy Taiga
+Giant Tree Taiga
+Wooded Mountains
+Savanna
+Plateau
+Badlands
+Mesa Biome
+Wooded Badlands Plateau
+Small End Islands
+End Midlands
+End Highlands
+End Barrens
+Warm Ocean
+Lukewarm Ocean
+Cold Ocean
+Deep Warm Ocean
+Deep Lukewarm Ocean
+Deep Cold Ocean
+Deep Frozen Ocean
+Desert Lakes
+Gravelly Mountains
+Flower Forest
+Taiga Mountains
+Swamp Hills
+Ice Spikes
+Modified Jungle
+Modified Jungle Edge
+Tall Birch Forest
+Dark Forest Hills
+Snowy Taiga Mountains
+Giant Spruce Taiga
+Gravelly Mountains
+Shattered Savanna
+Shattered Savanna Plateau
+Eroded Badlands
+Modified Wooded Badlands Plateau
+Modified Badlands Plateau
+Bamboo Jungle
+Soul Sand Valley
+Crimson Forest
+Warped Forest
+Basalt Deltas
+
+// @title Among Us Maps
+// @author Sean Hale
+The Skeld
+MIRA HQ
+Polus
+The Airship
+
+// @title Dice used in D&D
+// @author Sean Hale
+D2
+D4
+D6
+D8
+D10
+D20
+D100
+
+// @title Disney Animated Films
+// @author Sean Hale
+A Bug's Life
+A Christmas Carol
+A Goofy Movie
+Aladdin
+Alice in Wonderland
+Alice Through the Looking Glass
+Atlantis: The Lost Empire
+Bambi
+Beauty and the Beast
+Bedknobs and Broomsticks
+Big Hero 6
+Bolt
+Brave
+Brother Bear
+Cars
+Cars 2
+Cars 3
+Chicken Little
+Christopher Robin
+Cinderella
+Coco
+Dinosaur
+Doug's 1st Movie
+DuckTales the Movie: Treasure of the Lost Lamp
+Dumbo
+Encanto
+Enchanted
+Fantasia
+Fantasia 2000
+Finding Dory
+Finding Nemo
+Frankenweenie
+Frozen
+Frozen II
+Fun and Fancy Free
+G-Force
+Gnomeo & Juliet
+Hercules
+Home on the Range
+Incredibles 2
+Inside Out
+James and the Giant Peach
+Lady and the Tramp
+Lightyear
+Lilo & Stitch
+Make Mine Music
+Maleficent
+Maleficent: Mistress of Evil
+Mars Needs Moms
+Mary Poppins
+Mary Poppins Returns
+Meet the Robinsons
+Melody Time
+Moana
+Monsters University
+Monsters, Inc.
+Mulan
+Oliver & Company
+One Hundred and One Dalmatians
+Onward
+Pete's Dragon
+Peter Pan
+Piglet's Big Movie
+Pinocchio
+Planes
+Planes: Fire & Rescue
+Pocahontas
+Pooh's Heffalump Movie
+Ralph Breaks the Internet
+Ratatouille
+Raya and the Last Dragon
+Recess: School's Out
+Return to Never Land
+Robin Hood
+Ron's Gone Wrong
+Saludos Amigos
+Saving Mr. Banks
+Secret of the Wings
+Sleeping Beauty
+Snow White and the Seven Dwarfs
+So Dear to My Heart
+Song of the South
+Spies in Disguise
+Strange Magic
+Tangled
+Tarzan
+Teacher's Pet
+The Adventures of Ichabod and Mr. Toad
+The Aristocats
+The Black Cauldron
+The Bob's Burgers Movie
+The Brave Little Toaster
+The Call of the Wild
+The Emperor's New Groove
+The Fox and the Hound
+The Good Dinosaur
+The Great Mouse Detective
+The Hunchback of Notre Dame
+The Incredibles
+The Jungle Book
+The Jungle Book 2
+The Lion King
+The Little Mermaid
+The Lizzie McGuire Movie
+The Many Adventures of Winnie the Pooh
+The Nightmare Before Christmas
+The Pirate Fairy
+The Princess and the Frog
+The Reluctant Dragon
+The Rescuers
+The Rescuers Down Under
+The Sword in the Stone
+The Three Caballeros
+The Tigger Movie
+The Wild
+Tinker Bell
+Tinker Bell and the Great Fairy Rescue
+Tinker Bell and the Legend of the NeverBeast
+Tinker Bell and the Lost Treasure
+Toy Story
+Toy Story 2
+Toy Story 3
+Toy Story 4
+Treasure Planet
+Up
+Valiant
+Victory Through Air Power
+WALL-E
+Who Framed Roger Rabbit
+Winnie the Pooh
+Wreck-It Ralph
+Zootopia
+
+// @title StarCraft Factions
+// @author Konrad
+Kel-Morian Combine
+Terran Dominion
+Terran Confederacy
+Umojan Protectorate
+United Earth Directorate
+Raynor's Raiders
+Sons of Korhal
+Moebius Foundation
+Tal'darim
+Nerazim
+Khalai
+The Purifiers
+Daelaam
+Zerg Swarm
+Primal Zerg
+Tiamat Brood
+Baelrog Brood
+Fenris Brood
+Garm Brood
+Jormungand Brood
+Surtur Brood
+Char Brood
+Mecha Swarm
+Xel'naga
+
+// @title D&D 5E Artifacts
+//@author Konrad
+Akmon, Hammer of Purphoros
+Axe of the Dwarvish Lords
+Baba Yaga's Mortar and Pestle
+Blade of Avernus
+Blade of Broken Mirrors
+Book of Exalted Deeds
+Book of Vile Darkness
+Crook of Rao
+Dekella, Bident of Thassa
+Demonomicon of Iggwilv
+Draakhorn
+Ephixis, Bow of Nylea
+Eye and Hand of Vecna
+Grovelthrash
+Iggwilv's Cauldron
+Khrusor, Spear of Heliod
+Lash of Shadows
+Luba's Tarokka of Souls
+Mace of the Black Crown
+Mask of the Dragon Queen
+Mastix, Whip of Erebos
+Mighty Servant of Leuk-o
+Orb of Dragonkind
+Orrery of the Wnaderer
+Ring of the Winter
+Ruin's Wake
+Ruinstone
+Silken Spite
+Staff of the Forgotten One
+Stone of Golorr
+Sword of Kas
+Sword of Zariel
+Teeth of Dahlver-Nar
+The Bloody End
+The Infernal Engine of Lum the Mad
+Will of the Talon
+Wyrmskull Throne    
+Wand of Orcus
+
+// @title Pathfinder Nations
+// @author Konrad
+Absalom
+Andoran
+Hold of Belkzen
+Brevoy
+Cheliax
+Druma
+Five Kings Mountains
+Galt
+Gravelands
+Hermea
+Irrisen
+Isger
+Kyonin
+Lands of the Linnorm Kings
+Mendev
+Molthune
+New Thassilon
+Nidal
+Nirmathas
+Numeria
+Oprak
+Qadira
+Ravounel
+Razmiran
+Realm of the Mammoth Lords
+The River Kingdoms
+Sarkoris Scar
+Taldor
+Ustalav
+Varisia
+Rahadoum
+Thuvia
+Osirion
+Katapesh
+Nex
+Alkenstar
+Geb
+Jalmeray
+Mediogalti Island
+Sodden Lands
+The Shackles
+Mwangi Expanse
+Sargava
+
+// @title World of Warcraft Factions
+// @author Konrad 
+The Horde
+The Alliance
+Argent Dawn
+Bloodsail Buccaneers
+Cenarion Circle
+Darkmoon Faire
+Syndicate
+Darkspear Tribe
+Scourge
+Defias Bortherhood
+Scarlet Crusade
+Burning Legion
+Cult of the Damned
+Knights of the Ebon Blade
+Twilight's Hammer
+Knights of the Silver Hand
+Kirin Tor
+Elite Tauren Chieftain
+
+// @title Warhammer Fantasy Factions
+// @author Konrad
+Clan Eshin
+Clan Mors
+Clan Moulder
+Clan Pestilens
+Clan Rictus
+Clan Skryre
+Von Carstein Vampire Counts
+The Dreadfleet
+The Empire of Man
+Tomb Kingdom of Nehekhara
+Lizardmen of Lustria
+Warherd of the One-eyed
+Crooked Moon Night Goblins
+Orc Tribes of Da Badlands
+High Elves of Ulthuan
+Warriors of Chaos
+Dwarves of the Karak Ankor
+Orge Kingdoms
+Dark Elves of Naggaroth
+Wood Elves of Athel Loren
+Kingdom of Bretonnia
+
+// @title Warhammer 40k Factions
+// @author Konrad
+Bad Moons Clan
+Blood Axes Clan
+Deathskulls Clan
+Evil Sunz Clan
+Goffs Clan
+Snakebites Clan
+Farsight Enclaves
+Tau Empire
+Imperium of Man
+Mephrit Dynasty
+Nephrekh Dynasty
+Nihilakh Dynasty
+Novokh Dynasty
+Sautekh Dynasty
+Szarekhan Dynasty
+Craftworld Alaitoc
+Craftworld Biel-tan
+Craftworld Iyanden
+Craftworld Saim-Hann
+Craftworld Ulthwé
+Kabal of the Black Heart
+Kabal of the Flayed Skull
+Kabal of the Obsidian Rose
+Kabal of the Poisoned Tongue
+Black Legion
+World Eaters
+Thousand Suns
+Death Guard
+Emperor's Children
+Word Bearers
+Iron Warriors
+Alpha Legion
+Night Lords
+Adeptus Mechanicus
+Blood Angels
+Dark Angels
+Imperial Fists
+Salamanders
+Iron Hands
+Space Wolves
+Ultramarines
+White Scars
+Raven Guard
+Cadian Shock Troopers
+Catachan Jungle Fighters
+Death Korps of Krieg
+Elysian Drop Troops
+Valhallan Ice Warriors
+Tanith First and Only
+Tallarn Desert Raiders
+Vostroyan Firstborn
+Ordos Xenos
+Ordos Hereticus
+Ordos Malleus
+Deathwatch
+Grey Knights
+Adepta Soroitas
+
+// @title Chess Pieces
+// @author Sean Hale
+Pawn
+Rook
+Bishop
+Knight
+Queen
+King
+
+// @title VVVVVV OST
+// @author Sean Hale
+Powerup
+Presenting VVVVVV
+Pause
+Pushing Onwards
+Path Complete
+Passion for Exploring
+Positive Force
+Predestined Fate
+Potential for Anything
+Pressure Cooker
+Plenary
+Pipe Dream
+Popular Potpourri
+
+// @title Wii Sports & Wii Sports Resort Sports
+// @author Sean Hale
+Archery
+Baseball
+Basketball
+Bowling
+Boxing
+Canoeing
+Cycling
+Dogfight
+Flyover
+Frisbee
+Golf
+Power Cruising
+Skydiving
+Swordplay
+Table Tennis
+Tennis
+Wakeboarding
+
+// @title Hollow Knight Locations
+// @author Sean Hale
+Abyss
+Ancient Basin
+City of Tears
+Colosseum of Fools
+Crystal Peak
+Deepnest
+Dirtmouth
+Fog Canyon
+Forgotten Crossroads
+Fungal Wastes
+Godhome
+Greenpath
+Hive
+Howling Cliffs
+Kingdom's Edge
+Queen's Gardens
+Resting Grounds
+Royal Waterways
+White Palace
+
+// @title Super Mario RPG Locations
+// @author Sean Hale
+Bandit's Way
+Barrel Volcano
+Bean Valley
+Belome Temple
+Booster Hill
+Booster Pass
+Booster Tower
+Bowser's Castle
+Forest Maze
+Kero Sewers
+Land's End
+Mario Bros. House
+Marrymore
+Midas River
+Moleville
+Moleville Mines
+Monstro Town
+Mushroom Kingdom
+Mushroom Way
+Nimbus Land
+Pipe Vault
+Rose Town
+Rose Way
+Sea
+Seaside Town
+Smithy Factory
+Star Hill
+Sunken Ship
+Tadpole Pond
+Vista Hill
+Yo'ster Isle
+
+// @title Pikmin Series Locations
+// @author Sean Hale
+Awakening Wood
+Brilliant Garden
+Distant Tundra
+Formidable Oak
+Garden of Hope
+Leafswirl Lagoon
+Lushlife Murk
+Perplexing Pool
+Ravaged Rustworks
+Snowfall Field
+Sparkling Labyrinth
+Sweltering Parchland
+The Distant Spring
+The Forest Navel
+The Forest of Hope
+The Impact Site
+Tropical Wilds
+Twilight River
+Valley of Repose
+Verdant Waterfront
+Wistful Wild
+
+// @title Pikmin Ship Parts
+// @author Sean Hale
+#1 Ionium Jet
+#2 Ionium Jet
+Analog Computer
+Anti-Dioxin Filter
+Automatic Gear
+Bowsprit
+Chronos Reactor
+Eternal Fuel Dynamo
+Extraordinary Bolt
+Geiger Counter
+Gluon Drive
+Gravity Jumper
+Guard Satellite
+Interstellar Radio
+Libra
+Main Engine
+Massage Machine
+Nova Blaster
+Omega Stabilizer
+Pilot's Seat
+Positron Generator
+Radiation Canopy
+Repair-type Bolt
+Sagittarius
+Secret Safe
+Shock Absorber
+Space Float
+UV Lamp
+Whimsical Radar
+Zirconium Rotor
+
+// @title Pikmin 2 Treasures
+// @author Sean Hale
+Abstract Masterpiece
+Activity Arouser
+Adamantine Girdle
+Air Brake
+Alien Billboard
+Alternative Reactor
+Amplified Amplifier
+Anti-hiccup Fungus
+Anxious Sprout
+Anywhere Floater
+Aquatic Mine
+Arboreal Frippery
+Armored Nut
+Behemoth Jaw
+Boom Cone
+Boss Stone
+Broken Cooking God
+Broken Food Master
+Brute Knuckles
+Bug Bait
+Chance Totem
+Child of the Earth
+Chocolate Cushion
+Citrus Lump
+Coiled Launcher
+Coiny The Refined
+Colossal Fossil
+Combustion Berry
+Comedy Bomb
+Comfort Cookie
+Compelling Cookie
+Confection Hoop
+Conifer Spire
+Container of Knowledge
+Container of Sea Bounty
+Corpulent Nut
+Cosmic Archive
+Courage Reactor
+Creative Inspiration
+Crystal Clover
+Crystal King
+Crystallized Clairvoyance
+Crystallized Telekinesis
+Crystallized Telepathy
+Cupid's Grenade
+Danger Chime
+Decorative Goo
+Diet Doomer
+Dimensional Slicer
+Director of Destiny
+Disguised Delicacy
+Doomsday Apparatus
+Dream Architect
+Dream Material
+Drone Supplies
+Drought Ender
+Durable Energy Cell
+Emperor Whistle
+Empty Space Container
+Enamel Buster
+Endless Repository
+Essence of Desire
+Essence of Despair
+Essence of Rage
+Essence of True Love
+Essential Furnishing
+Estimated Object GF
+Eternal Emerald Eye
+Exhausted Superstick
+Extreme Perspirator
+Family Raft
+Favorite Gyro Block
+Five-man Napsack
+Flame of Tomorrow
+Flame Tiller
+Flare Cannon
+Fleeting Art Form
+Flying Saucer
+Fond Gyro Block
+Forged Courage
+Fortified Delicacy
+Fossilized Ursidae
+Frosty Bauble
+Fruit Guard
+Fuel Reservoir
+Furious Adhesive
+Future Orb
+Gemstar Husband
+Gemstar Wife
+Geographic Projection
+Gherkin Gate
+Glee Spinner
+Good Old Memories
+Growshroom
+Gyroid Bust
+Happiness Emblem
+Harmonic Synthesizer
+Healing Cask
+Heavy-duty Magnetizer
+Hideous Victual
+Hypnotic Platter
+Icon of Progress
+Idea Assistant
+Impediment Scourge
+Impenetrable Cookie
+Imperative Cookie
+Implement of Toil
+Indomitable CPU
+Infernal Vegetable
+Innocence Lost
+Insect Condo
+Invigorator
+Inviting...Thing
+Joy Receptacle
+Joyless Jewel
+Justice Alloy
+King of Bugs
+King of Sweets
+Leviathan Feather
+Lightning Bolt
+Lip Service
+Lost Gyro Block
+Love and Courage Reactor
+Love Nugget
+Love Sphere
+Luck Wafer
+Lustrous Element
+Magical Stage
+Manual Honer
+Massage Girdle
+Massive Lid
+Master's Instrument
+Maternal Sculpture
+Meat of Champions
+Meat Satchel
+Memorable Gyro Block
+Memorial Shell
+Merciless Extractor
+Milk Lid
+Milk Tub
+Milky Cradle
+Milky Team
+Mirrored Element
+Mirrored Stage
+Mirth Sphere
+Monster Pump
+Mysterious Remains
+Mystical Disc
+Network Mainbrain
+Nouveau Table
+Nutrient Silo
+Olimarnite Shell
+Omega Flywheel
+Omegatron
+Omniscient Sphere
+Onion Replica
+Open Architecture
+Open Archive
+Optical Illustration
+Pale Passion
+Paper Slider
+Paradoxical Enigma
+Pastry Wheel
+Patience Tester
+Permanent Container
+Petrified Heart
+Pilgrim Bulb
+Pink Menace
+Plentiful Tank
+Pondering Emblem
+Possessed Squash
+Priceless Statue
+Princess Pearl
+Professional Noisemaker
+Proton AA
+Proton X
+Prototype Detector
+Quenching Emblem
+Regal Diamond
+Remembered Old Buddy
+Repair Juggernaut
+Repugnant Appendage
+Revised Eternal Fuel Dynamo
+Rubber Ugly
+Salivatrix
+Science Project
+Scrumptious Shell
+Seat of Enlightenment
+Seed of Greed
+Shock Therapist
+Silencer
+Space Wave Receiver
+Spherical Atlas
+Spiny Alien Treat
+Spirit Flogger
+Spouse Alert
+Stellar Orb
+Stone of Glory
+Strife Monolith
+Stringent Container
+Stupendous Lens
+Succulent Mattress
+Sud Generator
+Sulking Antenna
+Sunseed Berry
+Superstick Textile
+Superstrong Stabilizer
+Survival Ointment
+Sweet Dreamer
+Talisman of Life
+Taste Sensation
+Tear Stone
+Temporal Mechanism
+The Key
+Thirst Activator
+Time Capsule
+Toxic Toadstool
+Treasured Gyro Block
+Triple Sugar Threat
+Ultimate Spinner
+Understood Person Symbol
+Universal Com
+Universally Best Art
+Unknown Merit
+Unspeakable Wonder
+Utter Scrap
+Vacuum Processor
+Vorpal Platter
+White Goodness
+Wiggle Noggin
+Worthless Statue
+Yell Battery
+Yellow Taste Tyrant
+
+// @title Pikmin 3 Fruit
+// @author Sean Hale
+Astringent Clump
+Blonde Impostor
+Citrus Lump FF
+Crimson Banquet
+Crunchy Deluge
+Cupid's Grenade
+Dapper Blob
+Dawn Pustules
+Delectable Bouquet
+Disguised Delicacy
+Dusk Pustules
+Face Wrinkler
+Fire-Breathing Feast
+Heroine's Tear
+Insect Condo
+Juicy Gaggle
+Lesser Mock Bottom
+Mock Bottom
+Pocked Airhead
+Portable Sunset
+Scaly Custard
+Searing Acidshock
+Seed Hive
+Slapstick Crescent
+Stellar Extrusion
+Sunseed Berry
+Tremendous Sniffer
+Velvety Dreamdrop
+Wayward Moon
+Zest Bomb
+
+// @title Pokémon Mystery Dungeon Red / Blue Rescue Team Dungeons
+// @author Sean Hale
+Buried Relic
+Darknight Relic
+Desert Region
+Fantasy Strait
+Far-Off Sea
+Fiery Field
+Frosty Forest
+Grand Sea
+Great Canyon
+Howling Forest
+Joyous Tower
+Lapis Cave
+Lightning Field
+Magma Cavern
+Marvelous Sea
+Meteor Cave
+Mt. Blaze
+Mt. Faraway
+Mt. Freeze
+Mt. Steel
+Mt. Thunder
+Murky Cave
+Northern Range
+Northwind Field
+Oddity Cave
+Pitfall Valley
+Purity Forest
+Remains Island
+Rescue Team Maze
+Rock Path
+Silent Chasm
+Silver Trench
+Sinister Woods
+Sky Tower
+Snow Path
+Solar Cave
+Southern Cavern
+Stormy Sea
+Thunderwave Cave
+Tiny Woods
+Unown Relic
+Uproar Forest
+Waterfall Pond
+Western Cave
+Wish Cave
+Wyvern Hill
+
+// @title Pokémon Mystery Dungeon Explorers of Time / Darkness / Sky Dungeons
+// @author Sean Hale
+Aegis Cave
+Amp Plains
+Apple Woods
+Barren Valley
+Beach Cave
+Blizzard Island
+Bottomless Sea
+Boulder Quarry
+Brine Cave
+Challenge River
+Craggy Coast
+Crevice Cave
+Crystal Cave
+Crystal Crossing
+Dark Hill
+Dark Ice Mountain
+Dark Wasteland
+Deep Dusk Forest
+Destiny Tower
+Drenched Bluff
+Dusk Forest
+Eastern Cave
+Final Maze
+Fogbound Lake
+Forest Path
+Fortune Ravine
+Frozen Island
+Giant Volcano
+Gilded Hall
+Guiding Sea
+Happy Outlook
+Hidden Land
+Hidden Shopkeeper Village
+Hot Spring
+Icicle Forest
+Inferno Cave
+Labyrinth Cave
+Lake Afar
+Landslide Cave
+Left Cave Path
+Limestone Cavern
+Little Plains
+Luminous Spring
+Midnight Forest
+Miracle Sea
+Mt. Bristle
+Mt. Clear
+Mt. Mistral
+Mt. Travail
+Murky Forest
+Mystery Jungle
+Mystifying Forest
+Oblivion Forest
+Oran Forest
+Pelipper Island
+Quicksand Cave
+Right Cave Path
+Sealed Ruin
+Secret Bazaar
+Serenity River
+Sharpedo Bluff
+Shaymin Village
+Shimmer Desert
+Shimmer Hill
+Side Path
+Sky Peak
+Sky Peak Mountain Path
+Sky Stairway
+Southeastern Islands
+Southern Jungle
+Spacial Cliffs
+Spacial Rift
+Spinda's Café
+Spring Cave
+Star Cave
+Steam Cave
+Surrounded Sea
+Temporal Tower
+Treacherous Waters
+Treeshroud Forest
+Trial Forest
+Vast Ice Mountain
+Wigglytuff's Guild
+Zero Isle Center
+Zero Isle East
+Zero Isle North
+Zero Isle South
+Zero Isle West
+
+// @title Pokémon Mystery Dungeon Gates to Infinity Dungeons
+// @author Sean Hale
+Axe Rock
+Breezy Meadow
+Buried Ruins
+Canyon Foot
+Cape at the Edge
+Crags of Lament
+Daybreak Ridge
+Desolate Canyon
+Dreamy Island
+Eastern Savanna
+Eternal Ruins
+Forest Grotto
+Forest of Shadows
+Freezing Pillar
+Gilded Hall
+Glacial Underpass
+Glacier Palace
+Glacier Palace Eastern Spire
+Glacier Palace Great Spire
+Glacier Palace Western Spire
+Great Glacier
+Grove of Whispers
+Hazy Pass
+Hoarfrost Tower
+Holehills
+Inflora Forest
+Ivory Peak
+Ivy Park
+Jaws of the Abyss
+Kecleon Bazaar
+Kilionea Road
+Legend of the Mysterious Ruins
+Miragesands
+Moonlit Forest
+Mount Tepid
+Mountain Pass
+Mt. Travail
+Obsidian Edge
+Ochre Quarry
+Path of No Return
+Pika Land
+Poké Forest
+Pokémon Paradise
+Post Town
+Ragged Mountain
+Redland Reaches
+Rusty Mountain
+Scalchop Beach
+Scorching Desert
+Seasound Ruins
+Silent Tundra
+Skill Treasury
+Slumbering Cave
+Smoking Mountain
+Stompstump Peak
+Stony Cave
+Strongest Trail
+Telluric Path
+Tempting Path
+Treasure Trove
+Treat Road
+Turbulent Tor
+Tyrian Maze
+Ultimate Wilds
+Uncharted Road
+Windy Shoreline
+Withered Savanna
+Worldcore
+
+// @title Pokémon Super Mystery Dungeon Dungeons
+// @author Sean Hale
+Abundant Pass
+Abyssal Badlands
+Altar of Ice
+Altar of Ice: Depths
+Ancient Barrow
+Apex Mountain
+Aurora's Edge
+Baram Town
+Berry Forest
+Blue Point
+Buried Ruins
+Bustling Valley
+Calm Craggy Area
+Cape of Wonders
+Capim Town
+Casameownca
+Cave of the Deep
+Cave of Training
+Clear Lake
+Crystalline Maze
+Deep Ocean Tunnel
+Destiny Tower
+Distress Mountain
+Dragon Gate
+Drilbur Coal Mine
+Electric Wasteland
+Elegant Gorge
+Fire Island Volcano
+Flagstone Cave
+For a Few Boldores More
+Foreboding Forest
+Forest of Bounty
+Forest of Fairies
+Fossil Excavation
+Freedom Coast
+Fresh Meadow
+Friendly Meadow
+Frosty Tree Steps
+Frozen Falls
+Frozen Mountain
+Gentle Slope Cave
+Ghost Island
+Giant Stone Meadow
+Glittering Mountain
+Golden Suite
+Gooey Bog
+Guidance Ruins
+Hall of Magic
+Headwater Hollow
+Heart Lake
+Hidden Cave
+Holey Meadow
+Island of Isolation
+Island of Storms
+Isle of Light
+It's a Meownderful Life
+Jewel Road
+Lake of Enlightenment
+Lake of Mysterious Light
+Leafy Highlands
+Little Canyon
+Lively Town
+Longfield Cave
+Lush Forest
+Magma Chamber
+Maze Meadow
+Meowth in Black
+Meowth Theater
+Meteorite Crater
+Midnight Sun Gorge
+Moonlit Cave
+My Fair Misdreavus
+Mysterious Geoglyph
+Mysterious Plains
+Mystery Jungle
+Mystical Forest
+Nectar Meadow
+Noe Town
+Ocean Tempest
+Odd Field
+Open Pass
+Path of Fallen Leaves
+Peewee Meadow
+Pelipper Dungeon: End
+Pelipper Dungeon: Middle
+Pelipper Dungeon: Start
+Pelipper Island
+Pledge Hill
+Poliwrath River
+Prehistoric Ruins
+Prism Bridge
+Pumpkaboo Forest
+Purifying Cave
+Red Point
+Revelation Mountain
+Reverse Mountain
+Road to Primeval Forest
+Rolling Pass
+Rough Tunnel
+Sacred Ruins
+Sahra Town
+Sand Dune of Spirits
+Sandy Cave
+School Forest
+Sea Shrine
+Seafloor Ruins
+Secret Quarry
+Serene Village
+Serpentine Mountain Trail
+Sheer Mountain Range
+Showdown Mountain
+Sky Ruins
+Small Sand Dune
+Snowy Cave
+Spiral Vortex
+Spring of Resolve
+Stealth Cavern
+Stone Field
+Stone Tree Mountain
+Submerged Cave
+Sunbathed Garden
+Sunny Spot Hill
+Super Apple Forest
+Temple Remains
+Thirsty Desert
+Thorny Shadow Path
+Thrash Dungeon
+Tree of Life
+Tree of Life: Roots
+Tree of Life: Trunk
+Triangle Temple
+Uprise Range
+Valley of Strong Winds
+Waterfall Basin Grotto
+World Tree
+Yellow Point
+Yellow Sand Labyrinth
+Zero Isle
+
+// @title Celeste Levels
+// @author Sean Hale
+Forsaken City
+Old Site
+Celestial Resort
+Golden Ridge
+Mirror Temple
+Reflection
+The Summit
+Core
+Farewell
+
+// @title Harry Potter Books
+// @author Sean Hale
+Sorcerer’s Stone
+Chamber of Secrets
+Prisoner of Azkaban
+Goblet of Fire
+Order of the Phoenix
+Half-Blood Prince
+Deathly Hallows
+
+// @title Emoji Group 1
+// @author Sean Hale
+🙂
+😀
+😃
+😄
+😁
+😅
+😆
+🤣
+😂
+🙃
+😉
+😊
+😇
+😎
+🤓
+🧐
+🥳
+🥰
+😍
+🤩
+😘
+😗
+😚
+😙
+🥲
+😋
+😛
+😜
+🤪
+😝
+🤑
+🤗
+🤭
+🤫
+🤔
+😐
+🤐
+🤨
+😑
+😶
+😏
+😒
+🙄
+😬
+😮‍💨
+🤥
+😪
+😴
+😌
+😔
+🤤
+😷
+🤒
+🤕
+🤢
+🤮
+🤧
+🥵
+🥶
+🥴
+😵
+🤯
+😕
+😟
+🙁
+😮
+😯
+😲
+😳
+🥺
+😦
+😧
+😨
+😰
+😥
+😢
+😭
+😱
+😖
+😣
+😞
+😓
+😩
+😫
+🥱
+😤
+😡
+😠
+🤬
+😈
+👿
+💀
+💩
+🤡
+👹
+👺
+👻
+👽
+👾
+🤖
+😺
+😸
+😹
+😻
+😼
+😽
+🙀
+😿
+😾
+🙈
+🙉
+🙊
+
+// @title Emoji Group 2
+// @author Sean Hale
+💋
+💌
+💘
+💝
+💖
+💗
+💓
+💞
+💕
+💟
+💔
+❤️‍🔥
+❤️‍🩹
+🧡
+💛
+💚
+💙
+💜
+🤎
+🖤
+🤍
+💯
+💢
+💥
+💫
+💦
+💨
+💣
+💬
+👁️‍🗨️
+💭
+💤
+👋
+🤚
+🖐
+✋
+🖖
+👌
+🤌
+🤏
+✌
+🤞
+🤟
+🤘
+🤙
+👈
+👉
+👆
+👇
+🖕
+☝
+👍
+👎
+✊
+👊
+🤛
+🤜
+👏
+🙌
+👐
+🤲
+🤝
+🙏
+✍
+💅
+🤳
+💪
+🦾
+🦵
+🦿
+🦶
+👂
+🦻
+👃
+🧠
+👣
+🫀
+🫁
+🦷
+🦴
+👀
+👅
+👄
+
+// @title Emoji Group 3
+// @author Sean Hale
+🧑
+👶
+🧒
+👦
+👧
+👱
+👨
+🧔
+🧔‍♂‍
+🧔‍♀‍
+👨‍🦰
+👨‍🦱
+👨‍🦳
+👨‍🦲
+👩
+👩‍🦰
+👩‍🦱
+👩‍🦳
+👩‍🦲
+👱‍♀‍
+👱‍♂‍
+🧓
+👴
+👵
+🙍
+🙍‍♂‍
+🙍‍♀‍
+🙎
+🙎‍♂‍
+🙎‍♀‍
+🙅
+🙅‍♂‍
+🙅‍♀‍
+🙆
+🙆‍♂‍
+🙆‍♀‍
+💁
+💁‍♂‍
+💁‍♀‍
+🙋
+🙋‍♂‍
+🙋‍♀‍
+🧏
+🧏‍♂‍
+🧏‍♀‍
+🙇
+🙇‍♂‍
+🙇‍♀‍
+🤦
+🤦‍♂‍
+🤦‍♀‍
+🤷
+🤷‍♂‍
+🤷‍♀‍
+🧑‍⚕‍
+👨‍⚕‍
+👩‍⚕‍
+🧑‍🎓
+👨‍🎓
+🧑‍🏫
+👨‍🏫
+👩‍🏫
+🧑‍⚖‍
+👨‍⚖‍
+👩‍⚖‍
+🧑‍🌾
+👨‍🌾
+👩‍🌾
+🧑‍🍳
+👨‍🍳
+👩‍🍳
+🧑‍🔧
+👨‍🔧
+👩‍🔧
+🧑‍🏭
+👨‍🏭
+👩‍🏭
+🧑‍💼
+👨‍💼
+👩‍💼
+🧑‍🔬
+👨‍🔬
+👩‍🔬
+🧑‍💻
+👨‍💻
+👩‍💻
+🧑‍🎤
+👨‍🎤
+👩‍🎤
+🧑‍🎨
+👨‍🎨
+👩‍🎨
+🧑‍✈‍
+👨‍✈‍
+👩‍✈‍
+🧑‍🚀
+👨‍🚀
+👩‍🚀
+🧑‍🚒
+👨‍🚒
+👩‍🚒
+👮
+👮‍♂‍
+👮‍♀‍
+🕵
+🕵️‍♂‍
+🕵️‍♀‍
+💂
+💂‍♂‍
+💂‍♀‍
+🥷
+👷
+👷‍♂‍
+👷‍♀‍
+🤴
+👸
+👳
+👳‍♂‍
+👳‍♀‍
+👲
+🧕
+🤵
+🤵‍♂‍
+🤵‍♀‍
+👰
+👰‍♂‍
+👰‍♀‍
+🤰
+🤱
+🧑‍🍼
+👩‍🍼
+👨‍🍼
+👼
+🎅
+🤶
+🧑‍🎄
+🦸
+🦸‍♂‍
+🦸‍♀‍
+🦹
+🦹‍♂‍
+🦹‍♀‍
+🧙
+🧙‍♂‍
+🧙‍♀‍
+🧚
+🧚‍♂‍
+🧚‍♀‍
+🧛
+🧛‍♂‍
+🧛‍♀‍
+🧜
+🧜‍♂‍
+🧜‍♀‍
+🧝
+🧝‍♂‍
+🧝‍♀‍
+🧞
+🧞‍♂‍
+🧞‍♀‍
+🧟
+🧟‍♂‍
+🧟‍♀‍
+💆
+💆‍♂‍
+💆‍♀‍
+💇
+💇‍♂‍
+💇‍♀‍
+🚶
+🚶‍♂‍
+🚶‍♀‍
+🧍
+🧍‍♂‍
+🧍‍♀‍
+🧎
+🧎‍♂‍
+🧎‍♀‍
+🧑‍🦯
+👨‍🦯
+👩‍🦯
+🧑‍🦼
+👨‍🦼
+👩‍🦼
+🧑‍🦽
+👨‍🦽
+👩‍🦽
+🏃
+🏃‍♂‍
+🏃‍♀‍
+💃
+🕺
+🕴
+👯
+👯‍♂‍
+👯‍♀‍
+🧖
+🧖‍♂‍
+🧖‍♀‍
+🧗
+🧗‍♂‍
+🧗‍♀‍
+🤺
+🏇
+🏂
+🏌
+🏌️‍♂‍
+🏌️‍♀‍
+🏄
+🏄‍♂‍
+🏄‍♀‍
+🚣
+🚣‍♂‍
+🚣‍♀‍
+🏊
+🏊‍♂‍
+🏊‍♀‍
+⛹
+⛹️‍♂‍
+⛹️‍♀‍
+🏋
+🏋️‍♂‍
+🏋️‍♀‍
+🚴
+🚴‍♂‍
+🚴‍♀‍
+🚵
+🚵‍♂‍
+🚵‍♀‍
+🤸
+🤸‍♂‍
+🤸‍♀‍
+🤼
+🤼‍♂‍
+🤼‍♀‍
+🤽
+🤽‍♂‍
+🤽‍♀‍
+🤾
+🤾‍♂‍
+🤾‍♀‍
+🤹
+🤹‍♂‍
+🤹‍♀‍
+🧘
+🧘‍♂‍
+🧘‍♀‍
+🛀
+🛌
+👪
+👨‍👩‍👦
+👨‍👩‍👧
+👨‍👩‍👧‍👦
+👨‍👩‍👦‍👦
+👨‍👩‍👧‍👧
+👨‍👨‍👦
+👨‍👨‍👧
+👨‍👨‍👧‍👦
+👨‍👨‍👦‍👦
+👨‍👨‍👧‍👧
+👩‍👩‍👦
+👩‍👩‍👧
+👩‍👩‍👧‍👦
+👩‍👩‍👦‍👦
+👩‍👩‍👧‍👧
+👨‍👦
+👨‍👦‍👦
+👨‍👧
+👨‍👧‍👦
+👨‍👧‍👧
+👩‍👦
+👩‍👦‍👦
+👩‍👧
+👩‍👧‍👦
+👩‍👧‍👧
+🧑‍🤝‍🧑
+👭
+👫
+👬
+💏
+👩‍❤‍💋‍👨
+👨‍❤‍💋‍👨
+👩‍❤‍💋‍👩
+💑
+👤
+👥
+🫂
+
+// @title Emoji Group 4
+// @author Sean Hale
+🐵
+🐒
+🦍
+🦧
+🐶
+🐕
+🦮
+🐕‍🦺
+🐩
+🐺
+🦊
+🦝
+🐱
+🐈
+🐈‍⬛
+🦁
+🐯
+🐅
+🐆
+🐴
+🐎
+🦄
+🦓
+🦌
+🦬
+🐮
+🐄
+🐂
+🐃
+🐷
+🐖
+🐗
+🐽
+🐏
+🐑
+🐐
+🐪
+🐫
+🦙
+🦒
+🐘
+🦣
+🦏
+🦛
+🐭
+🐁
+🐀
+🐹
+🐰
+🐇
+🦫
+🦔
+🦇
+🐻
+🐻‍❄️
+🐨
+🐼
+🦥
+🦦
+🦨
+🦘
+🦡
+🐾
+🦃
+🐔
+🐓
+🐣
+🐤
+🐥
+🐦
+🐧
+🦅
+🦆
+🦢
+🦉
+🦤
+🪶
+🦩
+🦜
+🐸
+🐊
+🐢
+🦎
+🐍
+🐲
+🐉
+🦕
+🦖
+🐳
+🐋
+🐬
+🦭
+🐟
+🐠
+🐡
+🦈
+🐙
+🐚
+🐌
+🦋
+🐛
+🐜
+🐝
+🪲
+🐞
+🦗
+🪳
+🦂
+🦟
+🪰
+🪱
+🦠
+💐
+🌸
+💮
+🌹
+🥀
+🌺
+🌻
+🌼
+🌷
+🌱
+🪴
+🌲
+🌳
+🌴
+🌵
+🌾
+🌿
+🍀
+🍁
+🍂
+🍃
+🪴
+
+// @title Emoji Group 5
+// @author Sean Hale
+🍇
+🍈
+🍉
+🍊
+🍋
+🍌
+🍍
+🥭
+🍎
+🍏
+🍐
+🍑
+🍒
+🍓
+🫐
+🥝
+🍅
+🫒
+🥥
+🥑
+🍆
+🥔
+🥕
+🌽
+🫑
+🥒
+🥬
+🥦
+🧄
+🧅
+🍄
+🥜
+🫑
+🌰
+🍞
+🥐
+🥖
+🫓
+🥨
+🥯
+🥞
+🧇
+🧀
+🍖
+🍗
+🥩
+🥓
+🍔
+🍟
+🍕
+🌭
+🥪
+🌮
+🌯
+🫔
+🥙
+🧆
+🥚
+🍳
+🥘
+🍲
+🫕
+🥣
+🥗
+🍿
+🧈
+🧂
+🥫
+🍱
+🍘
+🍙
+🍚
+🍛
+🍜
+🍝
+🍠
+🍢
+🍣
+🍤
+🍥
+🥮
+🍡
+🥟
+🥠
+🥡
+🦀
+🦞
+🦐
+🦑
+🦪
+🍨
+🍧
+🍦
+🍩
+🍪
+🎂
+🍰
+🧁
+🥧
+🍫
+🍬
+🍭
+🍮
+🍯
+🍼
+🥛
+☕
+🫖
+🍵
+🍶
+🍾
+🍷
+🍸
+🍹
+🍺
+🍻
+🥂
+🥃
+🥤
+🧋
+🧃
+🧉
+🧊
+🥢
+🍴
+🥄
+🔪
+🧋
+
+// @title Emoji Group 6
+// @author Sean Hale
+🏺
+🌍
+🌎
+🌏
+🌐
+🧭
+🌋
+🗻
+🧱
+🪨
+🪵
+🛖
+🏠
+🏡
+🏢
+🏣
+🏤
+🏥
+🏦
+🏨
+🏩
+🏪
+🏫
+🏬
+🏭
+🏯
+🏰
+💒
+🗼
+🗽
+⛪
+🕌
+🛕
+🕍
+🕋
+⛲
+⛺
+🌁
+🌃
+🌅
+🌄
+🌆
+🌇
+🌉
+♨
+🎠
+🎡
+🎢
+💈
+🎪
+🚂
+🚃
+🚄
+🚅
+🚆
+🚇
+🚈
+🚉
+🚊
+🚝
+🚞
+🚋
+🚌
+🚍
+🚎
+🚐
+🚑
+🚒
+🚓
+🚔
+🚕
+🚖
+🚗
+🚘
+🚙
+🛻
+🚚
+🚛
+🚜
+🏎
+🛵
+🦽
+🦼
+
+// @title Emoji Group 7
+// @author Sean Hale
+⌛
+⏳
+⌚
+⏰
+⏱
+⏲
+🕛
+🕧
+🕐
+🕜
+🕑
+🕝
+🕒
+🕞
+🕓
+🕟
+🕔
+🕠
+🕕
+🕡
+🕖
+🕢
+🕗
+🕣
+🕘
+🕤
+🕙
+🕥
+🕚
+🕦
+🌑
+🌒
+🌓
+🌔
+🌕
+🌖
+🌗
+🌘
+🌙
+🌚
+🌛
+🌜
+🌝
+🌞
+🪐
+⭐
+🌟
+🌠
+🌌
+☁
+⛅
+🌀
+🌈
+🌂
+☔
+⚡
+⛄
+🔥
+💧
+🌊
+🎃
+🎄
+🎆
+🎇
+🧨
+✨
+🎈
+🎉
+🎊
+🎋
+🎍
+🎎
+🎏
+🎑
+🧧
+🎀
+🎁
+🎫
+
+// @title Emoji Group 8
+// @author Sean Hale
+🏆
+🏅
+🥇
+🥈
+🥉
+⚽
+⚾
+🥎
+🏀
+🏐
+🏈
+🏉
+🎾
+🥏
+🎳
+🏏
+🏑
+🏒
+🥍
+🏓
+🏸
+🥊
+🥋
+🥅
+⛳
+⛸
+🎣
+🤿
+🎽
+🎿
+🛷
+🥌
+🎯
+🪀
+🪁
+🎱
+🔮
+🪄
+🧿
+🪄
+🎮
+🕹
+🎰
+🎲
+🧩
+🧸
+🪅
+🪆
+🃏
+🀄
+🎴
+🎭
+🎨
+🧵
+🪡
+🧶
+🪢
+👓
+🥽
+🥼
+🦺
+👔
+👕
+👖
+🧣
+🧤
+🧥
+🧦
+👗
+👘
+🥻
+🩱
+🩲
+🩳
+👙
+👚
+👛
+👜
+👝
+🛍
+🎒
+🩴
+👞
+👟
+🥾
+🥿
+👠
+👡
+🩰
+👢
+👑
+👒
+🎩
+🎓
+🧢
+🪖
+📿
+💄
+💍
+💎
+🔇
+🔈
+🔉
+🔊
+📢
+📣
+📯
+🔔
+🔕
+🎼
+🎵
+🎶
+🎤
+🎧
+📻
+🎷
+🪗
+🎸
+🎹
+🎺
+🎻
+🪕
+🥁
+🪘
+
+// @title Emoji Group 9
+// @author Sean Hale
+📱
+📲
+📞
+📟
+📠
+🔌
+💻
+💽
+💾
+💿
+📀
+🧮
+🎥
+🎞
+📽
+🎬
+📺
+📷
+📸
+📹
+📼
+🔍
+🔎
+💡
+🔦
+🏮
+🪔
+📔
+📕
+📖
+📗
+📘
+📙
+📚
+📓
+📒
+📃
+📜
+📄
+📰
+🗞
+📑
+🔖
+💰
+🪙
+💴
+💵
+💶
+💷
+💸
+💳
+🧾
+💹
+📧
+📩
+📤
+📥
+📦
+📫
+📪
+📬
+📭
+📮
+🗳
+💼
+📁
+📂
+🗂
+📅
+📆
+📇
+📈
+📉
+📊
+📋
+📌
+📍
+📎
+🖇
+📏
+📐
+🔒
+🔓
+🔏
+🔐
+🔑
+🔨
+🪓
+⛏
+🛠
+🗡
+⚔
+🔫
+🪃
+🏹
+🛡
+🪚
+🔧
+🪛
+🔩
+⚙
+🗜
+⚖
+🦯
+🔗
+⛓
+🪝
+🧰
+🧲
+🪜
+⚗
+🧪
+🧫
+🧬
+🔬
+🔭
+📡
+💉
+🩸
+💊
+🩹
+🩺
+🚪
+🛗
+🪞
+🪟
+🛏
+🛋
+🪑
+🚽
+🪠
+🚿
+🛁
+🪤
+🪒
+🧴
+🧷
+🧹
+🧺
+🧻
+🪣
+🧼
+🪥
+🧽
+🧯
+🛒
+🚬
+🪦
+🗿
+🪧
+
+// @title Emoji Group 10
+// @author Sean Hale
+🏧
+🚮
+🚰
+♿
+🚹
+🚺
+🚻
+🚼
+🚾
+🛂
+🛄
+🛅
+🚸
+⛔
+🚫
+🚳
+🚭
+🚯
+🚱
+🚷
+📵
+🔞
+♈
+♉
+♊
+♋
+♌
+♍
+♎
+♏
+♐
+♑
+♒
+♓
+⛎
+🔀
+🔁
+🔂
+⏸
+⏩
+⏭
+⏯
+⏪
+⏮
+🔼
+⏫
+🔽
+⏬
+⏹
+⏺
+🎦
+🔅
+🔆
+📶
+📳
+📴
+➕
+➖
+➗
+❓
+❔
+❗
+❕
+💱
+💲
+🔱
+📛
+🔰
+⭕
+✅
+❌
+❎
+🏁
+🚩
+🎌
+🏴
+🏳️‍🌈
+🏳️‍⚧️
+🏴‍☠️
+
+// @title Splatoon Series Stages
+// @author Sean Hale
+Ancho-V Games
+Arowana Mall
+Blackbelly Skatepark
+Bluefin Depot
+Camp Triggerfish
+Eeltail Alley
+Flounder Heights
+Goby Arena
+Hagglefish Market
+Hammerhead Bridge
+Humpback Pump Track
+Inkblot Art Academy
+Kelp Dome
+Mahi-Mahi Resort
+MakoMart
+Manta Maria
+Mincemeat Metalworks
+Moray Towers
+Museum d'Alfonsino
+Musselforge Fitness
+New Albacore Hotel
+Piranha Pit
+Port Mackerel
+Saltspray Rig
+Scorch Gorge
+Shellendorf Institute
+Shifty Station
+Skipper Pavilion
+Snapper Canal
+Starfish Mainstage
+Sturgeon Shipyard
+The Reef
+Undertow Spillway
+Urchin Underpass
+Wahoo World
+Walleye Warehouse
+
+// @title Mario Series Koopalings
+// @author Sean Hale
+Larry Koopa
+Morton Koopa Jr.
+Wendy O. Koopa
+Iggy Koopa
+Roy Koopa
+Lemmy Koopa
+Ludwig von Koopa
+
+// @title Super Monkey Ball Series Playable Characters
+// @author Sean Hale
+A-Baby
+AiAi
+Ale'wat
+B-Jet
+Baby
+Beat
+C-AiAi
+Ch'Chi
+Doctor
+F-GonGon
+Future AiAi
+GonGon
+Hello Kitty
+Jam
+Jeck-jeck
+Jet
+Kazuma Kiryu
+Ma d'Kee
+Mee'nee
+MeeMee
+Mermer
+Miles "Tails" Prower
+Morgana
+N-Jam
+P-YanYan
+Paipai
+Papa
+Po d'Pow
+Prince AbeABE
+Princess Dee-Dee
+Queen Jenjen
+R-Doctor
+Si'mian
+Sisi
+Sonic the Hedgehog
+Suezo
+Sumsum
+TokTOK
+W-MeeMee
+YanYan
+
+// @title Sekiro: Shadows Die Twice Locations
+// @author Jun
+Abandoned Dungeon
+Abandoned Dungeon Entrance
+Ashina Castle
+Ashina Castle Gate
+Ashina Castle Gate Fortress
+Ashina Depths
+Ashina Outskirts
+Ashina Reservoir
+Bamboo Thicket Slope
+Bell Demon's Temple
+Bodhisattva Valley
+Bottomless Hole
+Castle Tower Lookout
+Dilapidated Temple
+Dragonspring - Hirata Estate
+Estate Path
+Feeding Grounds
+Flames of Hatred
+Flower Viewing Stage
+Fountainhead Palace
+Great Sakura
+Great Serpent Shrine
+Guardian Ape's Burrow
+Guardian Ape's Watering Hole
+Gun Fort
+Hidden Forest
+Hirata Audience Chamber
+Hirata Estate
+Hirata Estate - Hidden Temple
+Hirata Estate - Main Hall
+Inner Sanctum
+Main Hall
+Mibu Manor
+Mibu Village
+Near Pot Noble
+Near Secret Passage
+Old Grave
+Outskirts Wall - Gate Path
+Outskirts Wall - Stairway
+Palace Grounds
+Poison Pool
+Riven Cave
+Sanctuary
+Senpou Temple
+Shugendo
+Sunken Valley
+Sunken Valley Cavern
+Temple Grounds
+Under-Shrine Valley
+Underbridge Valley
+Underground Waterway
+Upper Tower - Antechamber
+Upper Tower - Ashina Dojo
+Upper Tower - Kuro's Room
+Vermilion Bridge
+Water Mill
+Wedding Cave Door
+
+// @title Paper Mario Locations
+// @author Sean Hale
+Boo's Mansion
+Bowser's Castle
+Cloudy Climb
+Club 64
+Crystal Palace
+Dry Dry Outpost
+Dry Dry Ruins
+Flower Fields
+Forever Forest
+Goomba Fortress
+Goomba Road
+Goomba Village
+Gusty Gulch
+Harry's Shop
+Jade Jungle
+Jr. Troopa's Playground
+Koopa Bros. Fortress
+Lavalava Island
+Mt. Lavalava
+Mushroom Kingdom
+Peach's Castle
+Rowf's Badge Shop
+Shiver City
+Shiver Mountain
+Shooting Star Summit
+Shy Guy Toybox
+Star Road
+Starborn Valley
+The Oasis
+Toad Town
+Toad Town Dojo
+Toad Town Tunnels
+Windy Mill
+Yoshi's Village
+
+// @title Paper Mario TTYD Locations
+// @author Sean Hale
+Black Skull
+Boggly Woods
+Boo's Mansion
+Bowser's Castle
+Broadshroom
+Circuit Break Island
+Creepy Steeple
+Deepdown Depot
+Excess Express
+Fahr Outpost
+Flurrie's House
+Fresh Juice Bar
+Glitz Pit
+Glitzville
+Goomstar Temple
+Grimble Forest
+Hatesong Tower
+Herb T.'s Place
+Hooktail Castle
+Hot Dog Stand
+Inn
+Item Shop
+Jazzafrazz Town
+Keelhaul Galleria
+Keelhaul Key
+Lovely Howz of Badges
+Mario Bros. House
+Netherworld
+Niff T.'s Shop
+Northwinds Mart
+Palace of Shadow
+Petal Meadows
+Petalburg
+Pianta Parlor
+Pirate's Grotto
+Pit of 100 Trials
+Plumpbelly Village
+Podley's Place
+Poshley Heights
+Poshley Sanctum
+Pudding Continent
+Pungent's shop
+Rapturous Ruins
+Riddle Tower
+Riverside Station
+Rogueport
+Rogueport Sewers
+Rumblebump Volcano
+S. S. Flavion
+Sales Stall
+Shhwonk Fortress
+Souvenir Shop
+Strudel Continent
+The Great Tree
+The Moon
+The Thousand-Year Door
+Toad Bros. Bazaar
+Toad House
+Trouble Center
+Twilight Shop
+Twilight Town
+Twilight Trail
+Waffle Kingdom
+Westside Goods
+X-Naut Fortress
+
+// @title Super Paper Mario Locations
+// @author Sean Hale
+Castle Bleck
+Catch a Dream
+Catch Card Shop
+Dimension D
+Dotwood Tree
+Downtown of Crag
+Flipside
+Flipside Arcade
+Flipside Pit of 100 Trials
+Flipside Tower
+Flopside
+Flopside Pit of 100 Trials
+Flopside Tower
+Floro Caverns
+Fondest Hopes
+Fort Francis
+Gap of Crag
+Gloam Valley
+Hot Fraun
+Itty Bits
+Land of the Cragnons
+Lineland
+Lineland Road
+Mario Bros. House
+Merlee's Basement
+Merlee's Mansion
+Mount Lineland
+Outer Limits
+Outer Space
+Overthere Stair
+Pit of 100 Trials
+Planet Blobule
+River Twygz
+Rubee Savings and Loan
+Sammer's Kingdom
+Squirpia
+Sweet Smiles
+The Bitlands
+The Overthere
+The Underwhere
+Tile Pool
+Twinkle Mart
+Underwhere Road
+Whoa Zone
+World of Nothing
+Yold Desert
+Yold Ruins
+Yold Town
+
+// @title Paper Mario Partners
+// @author Sean Hale
+Goombario
+Kooper
+Bombette
+Parakarry
+Bow
+Watt
+Sushie
+Lakilester
+
+// @title Paper Mario TTYD Partners
+// @author Sean Hale
+Goombella
+Koops
+Madame Flurrie
+Yoshi Kid
+Vivian
+Admiral Bobbery
+Ms. Mowz
+
+// @title Super Paper Mario Pixels
+// @author Sean Hale
+Tippi
+Thoreau
+Boomer
+Slim
+Thudley
+Carrie
+Fleep
+Cudge
+Dottie
+Barry
+Dashell
+Piccolo
+Tiptron
+
+// @title Kirby Series Enemies
+// @author Sean Hale
+Balloon Waddle Dee
+Bandana Waddle Dee
+Beetley
+Big Metalun
+Big Waddle Dee
+Biospark
+Birdon
+Blade Knight
+Blatzy
+Blipper
+Bomber
+Bonkers
+Booler
+Bronto Burt
+Broom Hatter
+Bubbles
+Burning Leo
+Buttonbee
+Buttonbug
+Buttonfly
+Cappy
+Capsule J
+Capsule J2
+Cawcun
+Chilly
+Como
+Dandan
+Driblee
+Dropso
+Flamer
+Flotzo
+Freezo
+Galbo
+Gaspar
+Gim
+Glunk
+Golem
+Gordo
+Grinder
+Grizzo
+Grumples
+Ice Dragon
+Jammerjab
+Kabu
+Kibble Blade
+Kittarihattari
+Knuckle Joe
+Koozer
+Laser Ball
+Moonja
+Mumbies
+NESP
+Nidoo
+Ooki
+Orbitfly
+Parasol Waddle Dee
+Peezer
+Plasma Wisp
+Plugg
+Poppy Bros. Jr.
+Propeller
+Rocky
+Rolling Clod
+Scarfy
+Shotzo
+Simirror
+Sir Kibble
+Slobba
+Sphere Doomer
+Squeakers
+Squishy
+Starman
+Storo
+Sword Knight
+Tac
+Trident Knight
+Twiggy Woods
+Uniclod
+Waddle Dee
+Waddle Doo
+Wester
+Wheelie
+
+// @title Minecraft Dungeons Locations
+// @author Sean Hale
+Abyssal Monument
+Arch Haven
+Basalt Deltas
+Broken Citadel
+Cacti Canyon
+Colossal Rampart
+Coral Rise
+Creeper Woods
+Creepy Crypt
+Crimson Forest
+Desert Temple
+Dingy Jungle
+End Wilds
+Fiery Forge
+Frosted Fjord
+Gale Sanctum
+Gauntlet of Gales
+Highblock Halls
+Lone Fortress
+Lost Settlement
+Lower Temple
+Nether Fortress
+Nether Wastes
+Obsidian Pinnacle
+Overgrown Temple
+Panda Plateau
+Pumpkin Pastures
+Radiant Ravine
+Redstone Mines
+Soggy Cave
+Soggy Swamp
+Soul Sand Valley
+Spider Cave
+Squid Coast
+The Stronghold
+Underhalls
+Warped Forest
+Windswept Peaks
+Woodland Mansion
+Woodland Prison
+
+// @title Mario Kart Series Tracks
+// @author Sean Hale
+Airship Fortress
+Baby Park
+Banana Cup
+Banshee Boardwalk
+Battle Course 1
+Battle Course 2
+Battle Course 3
+Battle Course 4
+Battle Tracks
+Big Donut
+Block City
+Block Fort
+Block Plaza
+Bone-Dry Dunes
+Boo Lake
+Bowser Castle 1
+Bowser Castle 2
+Bowser Castle 3
+Bowser Castle 4
+Bowser's Castle
+Broken Pier
+Chain Chomp Wheel
+Cheep Cheep Beach
+Cheep Cheep Lagoon
+Cheep-Cheep Island
+Cheese Land
+Choco Island 1
+Choco Island 2
+Choco Mountain
+Cloudtop Cruise
+Coconut Mall
+Cookie Land
+Daisy Circuit
+Daisy Cruiser
+Daisy Hills
+Delfino Pier
+Delfino Square
+Desert Hills
+Dino Dino Jungle
+DK Jungle
+DK Mountain
+DK Pass
+DK Summit
+DK's Jungle Parkway
+Dolphin Shoals
+Donut Plains 1
+Donut Plains 2
+Donut Plains 3
+Double Deck
+Dry Dry Desert
+Dry Dry Ruins
+Electrodrome
+Figure-8 Circuit
+Flower Cup
+Frappe Snowland
+Funky Stadium
+Ghost Valley 1
+Ghost Valley 2
+Ghost Valley 3
+Grumble Volcano
+Honeybee Hive
+Kalimari Desert
+Koopa Beach 1
+Koopa Beach 2
+Koopa Cape
+Koopa Troopa Beach
+Lakeside Park
+Leaf Cup
+Lightning Cup
+Luigi Circuit
+Luigi Raceway
+Luigi's Mansion
+Maka Wuhu
+Maple Treeway
+Mario Circuit
+Mario Circuit 1
+Mario Circuit 2
+Mario Circuit 3
+Mario Circuit 4
+Mario Raceway
+Moo Moo Farm
+Moo Moo Meadows
+Moonview Highway
+Mount Wario
+Mushroom Bridge
+Mushroom City
+Mushroom Gorge
+Music Park
+Neo Bowser City
+Nintendo DS
+Nintendo GameCube
+Palm Shore
+Peach Beach
+Peach Circuit
+Peach Gardens
+Pipe Plaza
+Piranha Plant Slide
+Rainbow Road
+Retro Battle Tracks
+Ribbon Road
+Riverside Park
+Rock Rock Mountain
+Rosalina's Ice World
+Royal Raceway
+Shell Cup
+Sherbet Land
+Sherbet Rink
+Shroom Ridge
+Shy Guy Bazaar
+Shy Guy Beach
+Shy Guy Falls
+Sky Garden
+Skyscraper
+Snow Land
+Special Cup
+Star Cup
+Sunset Wilds
+Sunshine Airport
+Super Mario Kart
+Sweet Sweet Canyon
+Tart Top
+Thwomp Desert
+Thwomp Ruins
+Tick-Tock Clock
+Tilt-a-Kart
+Toad Circuit
+Toad Harbor
+Toad's Factory
+Toad's Turnpike
+Twilight House
+Twisted Mansion
+Vanilla Lake 1
+Vanilla Lake 2
+Waluigi Pinball
+Waluigi Stadium
+Wario Colosseum
+Wario Shipyard
+Wario Stadium
+Wario's Gold Mine
+Water Park
+Wuhu Loop
+Wuhu Town
+Yoshi Circuit
+Yoshi Desert
+Yoshi Falls
+Yoshi Valley
+
+// @title Constellations
+// @author Sean Hale
+Andromeda
+Antlia
+Apus
+Aquarius
+Aquila
+Ara
+Aries
+Auriga
+Boötes
+Caelum
+Camelopardalis
+Cancer
+Canes Venatici
+Canis Major
+Canis Minor
+Capricornus
+Carina
+Cassiopeia
+Centaurus
+Cepheus
+Cetus
+Chamaeleon
+Circinus
+Columba
+Coma Berenices
+Corona Australis
+Corona Borealis
+Corvus
+Crater
+Crux
+Cygnus
+Delphinus
+Dorado
+Draco
+Equuleus
+Eridanus
+Fornax
+Gemini
+Grus
+Hercules
+Horologium
+Hydra
+Hydrus
+Indus
+Lacerta
+Leo
+Leo Minor
+Lepus
+Libra
+Lupus
+Lynx
+Lyra
+Mensa
+Microscopium
+Monoceros
+Musca
+Norma
+Octans
+Ophiuchus
+Orion
+Pegasus
+Perseus
+Phoenix
+Pictor
+Pisces
+Piscis Austrinus
+Pleiades
+Praesepe
+Puppis
+Pyxis
+Reticulum
+Sagitta
+Sagittarius
+Scorpius
+Sculptor
+Scutum
+Serpens
+Sextans
+Taurus
+Telescopium
+Triangulum
+Triangulum Australe
+Tucana
+Ursa Major
+Ursa Minor
+Vela
+Virgo
+Volans
+Vulpecula
+
+// @title Mountain Dew Flavors
+// @author Sean Hale
+Atomic Blue
+Baja Blast
+Baja Blast Energy
+Berry Blitz Energy
+Berry Monsoon
+Championship Citrus Cherry
+Charged Berry Blast
+Charged Cherry Burst
+Charged Orange Storm
+Charged Original Dew
+Charged Tropical Strike
+Cherry Lime Lift Energy
+Code Red
+Code Red Energy
+Courageous Sherbet
+Dark Berry Bash
+Dewgarita
+Diet Caffeine-Free Mountain Dew
+Diet Mountain Dew
+Frost Bite
+Goji Citrus Strawberry
+Hard Baja Blast
+Hard Black Cherry
+Hard Mountain Dew
+Hard Watermelon
+Kickstart Black Cherry
+Kickstart Blood Orange
+Kickstart Blueberry Pomegranate
+Kickstart Fruit Punch
+Kickstart Hydrating Watermelon
+Kickstart Limeade
+Kickstart Mango Lime
+Kickstart Midnight Grape
+Kickstart Orange Citrus
+Kickstart Original
+Kickstart Pineapple Orange Mango
+Kickstart Raspberry Citrus
+Kickstart Ultra
+Legend
+LiveWire
+Major Melon
+Maui Burst
+Mountain Dew
+Orange Breeze Energy
+Overdrive
+Peach Mango Dawn Energy
+Pomegranate Blue Burst Energy
+Purple Thunder
+Real Sugar
+Southern Shock
+Spark
+Strawberry Melon Spark Energy
+Sweet Lightning
+Thrashed Apple
+Tropical Sunrise Energy
+Uproar
+Vibe
+Voltage
+Voo-DEW
+Zero Charged Raspberry Lemonade
+Zero Charged Watermelon Shock
+
+// @title Hot Ones Hot Sauces
+// @author Sean Hale
+13 Angry Scorpions - Jekyll & Hyde
+Adoboloco - Island Wings
+Adoboloco Fiya!Fiya!
+Adoboloco Hawaiian Hot Sauce Hamajang Kiawe Smoked Ghost Pepper
+Adoboloco Kolohe Kid
+Angry Goat Hippy Dippy Green
+Angry Goat Pepper Co. - The Phoenix
+Angry Goat Pepper Company – Goat Rider
+Blair's Mega Death Sauce
+Blair's Original Death Sauce with Chipotle
+Bravado Spice Company – Aka Miso Ghost Reaper
+Bravado Spice Company – Black Garlic Carolina Reaper Sauce
+Bravado Spice Company – Ghost Pepper and Blueberry
+Bunsters – Black Label
+Burns & McCoy - Mezcaline Oaxacan Hot Sauce
+Burns & McCoy – Exhorresco
+Butterfly Bakery of Vermont – Maple Wood Smoked Onion
+Cantina Royal – Spicy Habanero & Manzano Chile
+Cantina Royal – Tamaulipeka
+Chile Lengua de Fuego - Bhutila Fire Hot Sauce
+Cholula Original Hot Sauce
+Clark + Hopkins - Calabria Hot Sauce
+Clark and Hopkins – Assam
+Crystal
+Culley's – Fire Water
+Da' Bomb - Beyond Insanity
+Da' Bomb – Beyond Insanity
+Da' Bomb Beyond Insanity
+Dave's Gourmet Insanity Hot Sauce
+Dave's Gourmet Temporary Insanity
+Dawson's – Shawarma Sauce
+Dawson's Hot Sauce - Cedar Smoked Garlic
+Dawson's Original Hot Sauce
+Dingo Sauce Co. - Psycho Hot Sauce
+Dingo Sauce Co. - Widow Maker
+Dirty Dicks
+Double Take Salsa Co. - Scotch Bonnet Mustard
+El Yucateco Caribbean Hot Sauce – Chile Habanero
+El Yucateco Chile Habanero
+Fiji Fire – Native Bongo Chilli Hot Sauce
+Fly By Jing - Sichuan Gold
+Fresno Sauce Co – Chipotle & Habanero
+Halogi Hot Sauce - Tyrfing's Curse
+Heartbeat Hot Sauce – Pineapple Habanero
+Heartbeat Hot Sauce – Red Habanero
+Heartbeat Hot Sauce Company – Scorpion
+Hell Fire Detroit – Bourbon Habanero Ghost
+Hell Fire Detroit Habanero
+Hell Fire Hot Sauce – Fiery Fool
+Hellfire - Kranked Hot Sauce
+Hellfire – Devil's Blend
+Hellfire Fear This
+High Desert Sauce Co. – Tikk-Hot Masala
+High River – Rogue
+High River Sauces – Tears of the Sun Private Reserve
+High River Sauces Cheeba Gold
+Hoff & Pepper - Hoff's Haus Sauce
+Hot Heads Official - Revolutionary Hot Sauce
+Hot N Saucy - Collards N Ghost
+Hot N Saucy – Garlic N Peperoncini
+Hot Ones - Los Calientes
+Hot Ones - Los Calientes Rojo
+Hot Ones - Los Calientes Verde
+Hot Ones - The Classic
+Hot Ones - The Classic (Chili Maple Edition)
+Hot Ones - The Classic (Garlic Fresno Edition)
+Hot Ones - The Last Dab Apollo
+Hot Ones - The Classic
+Hot Ones – Eye of the Scorpion
+Hot Ones – Fiery Chipotle
+Hot Ones – Los Calientes
+Hot Ones – Los Calientes Barbacoa Hot Sauce
+Hot Ones – Los Calientes Rojo
+Hot Ones – The Classic
+Hot Ones – The Classic (Garlic Fresno Edition)
+Hot Ones – The Last Dab (Reaper Edition)
+Hot Ones – The Last Dab Apollo
+Hot Ones – The Last Dab Reduxx
+Hot Ones – The Last Dab XXX
+Hotter Than El – Ghost Sauce
+Hotter Than El – Love Burns
+Howler Monkey – Original
+Humble House Ancho & Morita
+Humble House Guajillo & Red Jalapeño
+Huy Fong Sriracha
+Karma Sauce - Cosmic Disco
+Karma Sauce – Burn After Eating
+Karma Sauce – Scorpion Disco
+Karma Sauce Extreme Karma
+Lottie's Traditional Barbados Yellow Hot Pepper Sauce
+Lucky Dog Year of The Dog Thai Chile Pineapple
+Mad Dog 357 – 25th Anniversary Edition
+Mad Dog 357,000
+Mark's – Barbados Style
+Microsaucerie Piko Peppers - Piko Riko
+Monoloco – Pierde Almas
+Original Louisiana Hot Sauce
+Paddy O's Potion
+Pain 100%
+Pain is Good Louisiana Style
+Pepper North – Stargazer
+Pirate's Lantern – Pepper Sauce
+Puckerbutt Chocolate Plague
+Puckerbutt Pepper Co. - Unique Garlique
+Puckerbutt Pepper Company - Extra Mean Green Hot Sauce
+PuckerButt Pepper Company – Chipotle eXpress
+Queen Majesty - Cocoa Ghost Hot Sauce
+Queen Majesty – Red Habanero and Black Coffee
+Queen Majesty – Scotch Bonnet and Ginger
+Sauce Bae Skinny Habanero
+Savir Foods – Jala Pepa
+Seafire Gourmet – Reaper
+Secret Aardvark
+Seed Ranch – Hot Thai Green
+Señor Lechuga - .718 Hot Sauce
+Shaquanda's – West Indian Curry
+Shaquanda's Hot Pepper
+Sinai Gourmet - Tropiquanté
+Small Axe Peppers – Habanero Mango
+Small Axe Peppers – The Bronx Greenmarket Hot Sauce
+Small Axe Peppers – The Chicago Red Hot Jalapeño Hot Sauce
+Son of Zombie – Torchbearer
+Sriracha
+Steel City Sauce Co – Jade Jaguar
+Tabasco
+Tapatío
+Texas Pete Original Hot Sauce
+The Last Dab
+The Original Goat – Ginger Goat
+The Seventh Reaper - Carolina Reaper
+Torchbearer Garlic Reaper
+Torchbearer Headless Horseradish
+Torchbearer Sauces – Honey Badger
+Tumeric Bomb - Chili Lengua de Fuego
+Valentina Black Label
+Volcanic Pepper's – Thor's Hammer
+Wiltshire Chilli Farm Trinidad Scorpion
+Yellowbird Foods - Bliss & Vinegar
+Zombie Apocalypse Ghost Chili Sauce
+
+// @title Pokemon Ranger Locations
+// @author Sean Hale
+Dusk Factory
+East Road
+Fall City
+Fiore Temple
+Go-Rock Base
+Jungle Relic
+Kisara Plain
+Krokka Tunnel
+Lyra Forest
+North Road
+Olive Jungle
+Panula Cave
+Ringtown
+Safra Sea
+Sekra Range
+Summerland
+Waterworks
+Wintown
+
+// @title Pokemon Ranger: Shadows of Almia Locations
+// @author Sean Hale
+Almia Castle
+Altru Building
+Altru Park
+Altru Tower
+Boyleland
+Cargo Ship
+Chicole Path
+Chicole Village
+Chroma Highlands
+Chroma Road
+Chroma Ruins
+Crysta Cave
+Haruba Desert
+Haruba Village
+Hia Valley
+Hippowdon Temple
+Ice Lake
+Marine Cave
+Nabiki Beach
+Oil Field Hideout
+Partner Farm
+Peril Cliffs
+Puel Sea
+Pueltown
+Ranger School
+Ranger Union
+Sea of Wailord
+Shiver Camp
+Union Road
+Vien Forest
+Vientown
+Volcano Cave
+
+// @title Mario Party Boards
+// @author Sean Hale
+DK's Jungle Adventure
+Peach's Birthday Cake
+Yoshi's Tropical Island
+Wario's Battle Canyon
+Luigi's Engine Room
+Mario's Rainbow Castle
+Bowser's Magma Mountain
+Eternal Star
+
+// @title Mario Party 2 Boards
+// @author Sean Hale
+Pirate Land
+Western Land
+Space Land
+Mystery Land
+Horror Land
+Bowser Land
+
+// @title Mario Party 3 Boards
+// @author Sean Hale
+Chilly Waters
+Deep Bloober Sea
+Spiny Desert
+Woody Woods
+Creepy Cavern
+Waluigi's Island
+
+// @title Mario Party 4 Boards
+// @author Sean Hale
+Toad's Midway Madness
+Goomba's Greedy Gala
+Boo's Haunted Bash
+Koopa's Seaside Soiree
+Shy Guy's Jungle Jam
+Bowser's Gnarly Party (unlockable)
+
+// @title Mario Party 5 Boards
+// @author Sean Hale
+Toy Dream
+Rainbow Dream
+Pirate Dream
+Undersea Dream
+Future Dream
+Sweet Dream
+Bowser Nightmare
+
+// @title Mario Party 6 Boards
+// @author Sean Hale
+Towering Treetop
+E. Gadd's Garage
+Faire Square
+Snowflake Lake
+Castaway Bay
+Clockwork Castle
+Thirsty Gulch
+Astro Avenue
+Infernal Tower
+
+// @title Mario Party 7 Boards
+// @author Sean Hale
+Grand Canal
+Pagoda Peak
+Pyramid Park
+Neon Heights
+Windmillville
+Bowser's Enchanted Inferno!
+
+// @title Mario Party 8 Boards
+// @author Sean Hale
+DK's Treetop Temple
+Goomba's Booty Boardwalk
+King Boo's Haunted Hideaway
+Shy Guy's Perplex Express
+Koopa's Tycoon Town
+Bowser's Warped Orbit
+
+// @title Mario Party DS Boards
+// @author Sean Hale
+Wiggler's Garden
+Toadette's Music Room
+DK's Stone Statue
+Kamek's Library
+Bowser's Pinball Machine (unlockable)
+
+// @title Mario Party 9 Boards
+// @author Sean Hale
+Toad Road
+Bob-omb Factory
+Boo's Horror Castle
+Blooper Beach
+Magma Mine
+Bowser Station
+DK's Jungle Ruins
+
+// @title Mario Party: Island Tour Boards
+// @author Sean Hale
+Perilous Palace Path
+Rocket Road
+Shy Guy's Shuffle City
+Banzai Bill's Mad Mountain
+Star-Crossed Skyway
+Kamek's Carpet Ride
+Bowser's Peculiar Peak
+
+// @title Mario Party 10 Boards
+// @author Sean Hale
+Mushroom Park
+Haunted Trail
+Whimsical Waters
+Airship Central
+Chaos Castle
+
+// @title Super Mario Party Boards
+// @author Sean Hale
+Whomp's Domino Ruins
+King Bob-omb's Powderkeg Mine
+Megafruit Paradise
+Kamek's Tantalizing Tower (unlockable)
+
+// @title Old School RuneScape Skills
+// @author Nick Main
+Agility
+Attack
+Construction
+Cooking
+Crafting
+Defence
+Farming
+Firemaking
+Fishing
+Fletching
+Herblore
+Hitpoints
+Hunter
+Magic
+Mining
+Prayer
+Ranged
+Runecraft
+Slayer
+Smithing
+Strength
+Thieving
+Woodcutting
+
+// @title Old School RuneScape Member's Quests
+// @author Nick Main
+Druidic Ritual
+Lost City
+Witch's House
+Merlin's Crystal
+Heroes' Quest
+Scorpion Catcher
+Family Crest
+Tribal Totem
+Fishing Contest
+Monk's Friend
+Temple of Ikov
+Clock Tower
+Holy Grail
+Tree Gnome Village
+Fight Arena
+Hazeel Cult
+Sheep Herder
+Plague City
+Sea Slug
+Waterfall Quest
+Biohazard
+Jungle Potion
+The Grand Tree
+Shilo Village
+Underground Pass
+Observatory Quest
+The Tourist Trap
+Watchtower
+Dwarf Cannon
+Murder Mystery
+The Dig Site
+Gertrude's Cat
+Legends' Quest
+Big Chompy Bird Hunting
+Elemental Workshop I
+Priest in Peril
+Nature Spirit
+Death Plateau
+Troll Stronghold
+Tai Bwo Wannai Trio
+Regicide
+Eadgar's Ruse
+Shades of Mort'ton
+The Fremennik Trials
+Horror from the Deep
+Throne of Miscellania
+Monkey Madness I
+Haunted Mine
+Troll Romance
+In Search of the Myreque
+Creature of Fenkenstrain
+Roving Elves
+Ghosts Ahoy
+One Small Favour
+Mountain Daughter
+Between a Rock...
+The Feud
+The Golem
+Desert Treasure
+Icthlarin's Little Helper
+Tears of Guthix
+Zogre Flesh Eaters
+The Lost Tribe
+The Giant Dwarf
+Recruitment Drive
+Mourning's End Part I
+Forgettable Tale...
+Garden of Tranquillity
+A Tail of Two Cats
+Wanted!
+Mourning's End Part II
+Rum Deal
+Shadow of the Storm
+Making History
+Ratcatchers
+Spirits of the Elid
+Devious Minds
+The Hand in the Sand
+Enakhra's Lament
+Cabin Fever
+Fairytale I - Growing Pains
+Recipe for Disaster
+Another Cook's Quest
+Defeating the Culinaromancer
+Freeing the Mountain Dwarf
+Freeing the Goblin generals
+Freeing Pirate Pete
+Freeing the Lumbridge Guide
+Freeing Evil Dave
+Freeing King Awowogei
+Freeing Sir Amik Varze
+Freeing Skrach Uglogwee
+In Aid of the Myreque
+A Soul's Bane
+Rag and Bone Man I
+Swan Song
+Royal Trouble
+Death to the Dorgeshuun
+Fairytale II - Cure a Queen
+Lunar Diplomacy
+The Eyes of Glouphrie
+Darkness of Hallowvale
+The Slug Menace
+Elemental Workshop II
+My Arm's Big Adventure
+Enlightened Journey
+Eagles' Peak
+Animal Magnetism
+Contact!
+Cold War
+The Fremennik Isles
+Tower of Life
+The Great Brain Robbery
+What Lies Below
+Olaf's Quest
+Another Slice of H.A.M.
+Dream Mentor
+Grim Tales
+King's Ransom
+Monkey Madness II
+Client of Kourend
+Rag and Bone Man II
+Bone Voyage
+The Queen of Thieves
+The Depths of Despair
+Dragon Slayer II
+Tale of the Righteous
+A Taste of Hope
+Making Friends with My Arm
+The Forsaken Tower
+The Ascent of Arceuus
+Song of the Elves
+The Fremennik Exiles
+Sins of the Father
+A Porcine of Interest
+Getting Ahead
+A Night at the Theatre
+A Kingdom Divided
+Land of the Goblins
+Temple of the Eye
+Beneath Cursed Sands
+Sleeping Giants
+
+// @title Old School RuneScape Free-to-play Quests
+// @author Nick Main
+Cook's Assistant
+Demon Slayer
+The Restless Ghost
+Romeo & Juliet
+Sheep Shearer
+Shield of Arrav
+Ernest the Chicken
+Vampyre Slayer
+Imp Catcher
+Prince Ali Rescue
+Doric's Quest
+Black Knights' Fortress
+Witch's Potion
+The Knight's Sword
+Goblin Diplomacy
+Pirate's Treasure
+Dragon Slayer I
+Rune Mysteries
+Misthalin Mystery
+The Corsair Curse
+X Marks the Spot
+Below Ice Mountain
+
+// @title Old School RuneScape Music
+// @author Nick Main
+7th Realm
+Adventure
+Al Kharid
+Alchemical Attack!
+All's Fairy in Love & War
+Alone
+Altar Ego
+Alternative Root
+Amascut's Promise
+Ambient Jungle
+The Ancient Prison
+The Angel's Fury
+Anywhere
+Ape-ex Predator
+Arabian
+Arabian 2
+Arabian 3
+Arabique
+Arachnids of Vampyrium
+Arboretum
+Arcane
+Architects of Prifddinas
+Armadyl Alliance
+Armageddon
+Army of Darkness
+Arrival
+Artistry
+Ascent
+Assault and Battery
+Attack 1
+Attack 2
+Attack 3
+Attack 4
+Attack 5
+Attack 6
+Attention
+Autumn Voyage
+Awful Anthem
+Aye Car Rum Ba
+Aztec
+Back to Life
+Background
+Bait
+Ballad of Enchantment
+Ballad of the Basilisk
+Bandit Camp
+Bandos Battalion
+Bane
+The Bane of Ashihama
+Barb Wire
+Barbarian Workout
+Barbarianism
+Barking Mad
+Baroque
+Barren Land
+Beetle Juice
+Beneath Cursed Sands
+Beneath the Kingdom
+Beneath the Stronghold
+Beyond
+Beyond the Meadow
+Big Chords
+Blistering Barnacles
+Bloodbath
+Bob's on Holiday
+Body Parts
+Bone Dance
+Bone Dry
+Book of Spells
+Borderland
+Box of Delights
+Brain Battle
+Breeze
+Brew Hoo Hoo!
+Brimstail's Scales
+Bubble and Squeak
+Bunny's Sugar Rush
+Burning Desire
+Cabin Fever
+Cain's Tutorial
+Camelot
+Castle Wars
+Catacombs and Tombs
+Catch Me If You Can
+Cave Background
+Cave of Beasts
+Cave of the Goblins
+Cavern
+The Cellar Dwellers
+Cellar Song
+Chain of Command
+Chamber
+Chef Surprise
+Chickened Out
+Chompy Hunt
+The Chosen
+City of the Dead
+Clan Wars
+Clanliness
+Claustrophobia
+Close Quarters
+Coil
+Competition
+Complication
+Confrontation
+The Consortium
+Conspiracy
+Contest
+Corporal Punishment
+Corridors of Power
+Country Jig
+Courage
+Creature Cruelty
+Creeping Vines
+Crest of a Wave
+Crystal Castle
+Crystal Cave
+Crystal Sword
+Cursed
+The Curtain Closes
+Dagannoth Dawn
+Dance of Death
+Dance of the Meilyr
+Dance of the Nylocas
+Dance of the Undead
+Dangerous
+A Dangerous Game
+Dangerous Road
+Dangerous Way
+Dark
+The Dark Beast Sotetseg
+Darkly Altared
+Darkmeyer
+Darkness in the Depths
+Davy Jones' Locker
+Dead Can Dance
+Dead Quiet
+Deadlands
+Deep Down
+Deep Wildy
+Delrith
+The Depths
+Desert Heat
+Desert Voyage
+The Desert
+The Desolate Isle
+The Desolate Mage
+Devils May Care
+Diango's Little Helpers
+Dies Irae
+Dimension X
+Distant Land
+Distillery Hilarity
+Dogs of War
+Dogfight
+Domain of the Vampyres
+Don't Panic Zanik
+The Doors of Dinh
+Doorways
+Dorgeshuun City
+Dorgeshuun Deep
+Dorgeshuun Treaty
+Down and Out
+Down Below
+Down by the Docks
+Down to Earth
+The Dragon Slayer
+Dragontooth Island
+Dream
+Dreamstate
+The Emir's Arena
+Dunes of Eternity
+Dunjun
+Dusk in Yu'biusk
+Dwarf Theme
+Dwarven Domain
+Dynasty
+Eagles' Peak
+Easter Jig
+Egypt
+Elven Guardians
+Elven Mist
+Elven Seed
+Emotion
+Emperor
+The Enchanter
+The Enclave
+Escape
+Espionage
+Etceteria
+Eve's Epinette
+Everlasting
+Everlasting Fire
+The Everlasting Slumber
+Everywhere
+Evil Bob's Island
+Expanse
+Expecting
+Expedition
+Exposed
+Eye of the Storm
+Faerie
+The Fairy Dragon
+Faith of the Hefin
+Faithless
+Fanfare
+Fanfare 2
+Fanfare 3
+Fangs for the Memory
+Far Away
+The Far Side
+A Farmer's Grind
+The Fat Lady Sings
+Fe Fi Fo Fum
+Fear and Loathing
+Fenkenstrain's Refrain
+A Festive Party
+Fight of the Basilisk
+Fight or Flight
+Find My Way
+Fire and Brimstone
+Fire in the Deep
+The Fires of Lletya
+Fishing
+Floating Free
+Flute Salad
+Food for Thought
+Forbidden
+Forest
+The Forests of Shayzien
+Forever
+Forgettable Melody
+Forgotten
+A Forgotten Religion
+The Forgotten Tomb
+The Forlorn Homestead
+The Forsaken Tower
+The Forsaken
+Fossilised
+The Foundry
+The Fragment
+The Fremennik Kings
+Frogland
+Frostbite
+Fruits de Mer
+Ful to the Brim
+Funny Bunnies
+The Galleon
+Gaol
+Garden
+Garden of Autumn
+Garden of Spring
+Garden of Summer
+Garden of Winter
+The Gates of Menaphos
+The Gauntlet
+The Genie
+Getting Down to Business
+Gill Bill
+Gnome King
+Gnome Village
+Gnome Village 2
+Gnome Village Party
+Gnomeball
+Goblin Game
+Goblin Village
+Golden Touch
+The Golem
+Greatness
+Grimly Fiendish
+Grip of the Talon
+Grotto
+Grow Grow Grow
+Grumpy
+Guardians of the Rift
+The Guardians Prepare
+H.A.M. and Seek
+H.A.M. Attack
+H.A.M. Fisted
+Harmony
+Harmony 2
+Haunted Mine
+Have a Blast
+Have an Ice Day
+Head to Head
+Heart and Mind
+Hells Bells
+Hermit
+High Seas
+High Spirits
+Hoe Down
+Home Sweet Home
+Horizon
+The Houses of Kourend
+Hypnotised
+Iban
+Ice and Fire
+Ice Melody
+Illusive
+Impetuous
+Impulses
+In Between
+In the Brine
+In the Clink
+In the Manor
+In the Pits
+Inadequacy
+Incantation
+Inferno
+Insect Queen
+Inspiration
+Into the Abyss
+Into the Tombs
+Intrepid
+Invader
+Iorwerth's Lament
+Island Life
+Island of the Trolls
+Isle of Everywhere
+It's not over 'til...
+Itsy Bitsy...
+Jaws of the Basilisk
+Jaws of Gluttony
+Jester Minute
+Jolly R
+Joy of the Hunt
+Judgement of the Depths
+Jungle Bells
+Jungle Hunt
+Jungle Island
+Jungle Island Xmas
+Jungle Troubles
+Jungly 1
+Jungly 2
+Jungly 3
+Kanon of Kahlith
+Karamja Jam
+King of the Trolls
+Kingdom
+Knightly
+Knightmare
+Kourend the Magnificent
+La Mort
+Labyrinth
+Lagoon
+Laid to Rest
+Lair
+Lair of the Basilisk
+Lament
+Lament for the Hallowed
+Lament of Meiyerditch
+Land Down Under
+Land of Snow
+Land of the Dwarves
+Landlubber
+Last King of the Yarasa
+Last Man Standing
+The Last Shanty
+Last Stand
+Lasting
+Lava is Mine
+Legend
+Legion
+Life's a Beach!
+Lighthouse
+Lightness
+Lightwalk
+Little Cave of Horrors
+Lonesome
+Long Ago
+Long Way Home
+Look to the Stars
+Looking Back
+Lore and Order
+The Lost Melody
+Lost Soul
+The Lost Tribe
+Lower Depths
+Lucid Dream
+Lucid Nightmare
+Lullaby
+Lumbering
+The Lunar Isle
+Mad Eadgar
+The Mad Mole
+Mage Arena
+Magic Dance
+Magic, Magic, Magic
+Magical Journey
+The Maiden's Anger
+The Maiden's Sorrow
+Major Miner
+Making Waves
+Malady
+March
+March of the Shayzien
+Marooned
+Marzipan
+Masquerade
+Mastermindless
+Mausoleum
+Maws, Jaws & Claws
+The Maze
+Meddling Kids
+Medieval
+Mellow
+Melodrama
+Meridian
+Method of Madness
+Miles Away
+Military Life
+The Militia
+Mind over Matter
+Miracle Dance
+Mirage
+Miscellania
+The Mollusc Menace
+Monarch Waltz
+Monkey Badness
+Monkey Business
+Monkey Madness
+Monkey Sadness
+Monkey Trouble
+Monster Melee
+The Monsters Below
+Moody
+Mor Ul Rek
+Morytania
+Morytanian Mystery
+A Mother's Curse
+Mother Ruckus
+Mouse Trap
+Mudskipper Melody
+Museum Medley
+Mutant Medley
+My Arm's Journey
+Mystics of Nature
+Mythical
+Narnode's Theme
+Natural
+The Navigator
+Nether Realm
+Neverland
+Newbie Farming
+Newbie Melody
+Night of the Vampyre
+Nightfall
+The Nightmare Continues
+No Pasaran
+No Way Out
+The Noble Rodent
+Nomad
+Norse Code
+Not a Moment of Relief
+Nox Irae
+Null and Void
+Ogre the Top
+On the Frontline
+On the Shore
+On the Up
+On the Wing
+On Thin Ice
+Oncoming Foe
+Organ Music 1
+Organ Music 2
+Oriental
+The Other Side
+Out at the Mines
+Out of the Deep
+Over to Nardah
+Overpass
+Overture
+Parade
+The Part Where You Die
+Path of Peril
+The Penguin Bards
+Penguin Plots
+Pathways
+Pest Control
+Pharaoh's Tomb
+The Pharaoh
+Phasmatys
+Pheasant Peasant
+Pick & Shovel
+Pinball Wizard
+Pirates of Penance
+Pirates of Peril
+Poles Apart
+The Power of Tears
+Power of the Shadow Realm
+Predator Xarpus
+Preservation
+Preserved
+Prime Time
+Principality
+Quest
+The Quizmaster
+Race Against the Clock
+Rat a Tat Tat
+Rat Hunt
+Ready for Battle
+Regal
+Regal Pomp
+Reggae
+Reggae 2
+Reign of the Basilisk
+Relics
+Rellekka
+Rest in Peace
+Revenants
+Rhapsody
+Right on Track
+Righteousness
+Rising Damp
+Riverside
+Roc and Roll
+The Rogues' Den
+Roll the Bones
+Romancing the Crone
+Romper Chomper
+Roots and Flutes
+Rose
+Royale
+Rugged Terrain
+The Ruins of Camdozaal
+Ruins of Isolation
+Rune Essence
+Sad Meadow
+Safety in Numbers
+Saga
+Sands of Time
+Sarachnis
+Sarcophagus
+Sarim's Vermin
+Scape Ape
+Scape Cave
+Scape Crystal
+Scape Five
+Scape Ground
+Scape Home
+Scape Hunter
+Scape Main
+Scape Original
+Scape Sad
+Scape Santa
+Scape Scared
+Scape Soft
+Scape Wild
+Scarab
+School's Out
+Scorpia Dances
+Scrubfoot's Descent
+Sea Minor Shanty
+Sea Shanty
+Sea Shanty 2
+Sea Shanty Xmas
+The Seed of Crwys
+Serenade
+Serene
+Servants of Strife
+Settlement
+The Shadow
+Shadowland
+Sharp End of the Crystal
+Shattered Relics
+Shine
+Shining
+Shining Spirit
+Shipwrecked
+Showdown
+Sigmund's Showdown
+The Sinclairs
+The Slayer
+Slice of Silent Movie
+Slice of Station
+Slither and Thither
+Slug a Bug Ball
+Snowflake & My Arm
+Sojourn
+Song of the Elves
+Sorceress's Garden
+Soul Fall
+Soul Wars
+Soundscape
+Sphinx
+Spirit
+Spirits of the Elid
+Splendour
+Spooky
+Spooky 2
+Spooky Jungle
+The Spurned Demon
+The Spymaster
+Stagnant
+Stand Up and Be Counted
+Starlight
+Start
+Still Night
+Stillness
+Storm Brew
+Stranded
+Strange Place
+Stratosphere
+Strength of Saradomin
+Stuck in the Mire
+Subterranea
+Sunburn
+Superstition
+Surok's Theme
+Suspicious
+Tale of Keldagrim
+Talking Forest
+Tarn Razorlor
+A Taste of Hope
+Tears of Guthix
+Technology
+Tempest
+Temple
+Temple of Light
+Temple of the Eye
+Temple of Tribes
+Tempor of the Storm
+The Terrible Caverns
+The Terrible Tower
+The Terrible Tunnels
+Test of Companionship
+Test of Isolation
+Test of Resourcefulness
+Test of Strength
+That Sullen Hall
+Theme
+A Thorn in My Side
+Thrall of the Devourer
+Thrall of the Serpent
+Throne of the Demon
+Time Out
+Time to Mine
+Tiptoe
+Title Fight
+Tomb Raider
+Tomorrow
+Too Many Cooks...
+The Tower of Voices
+The Tower
+The Trade Parade
+Trahaearn Toil
+Trawler
+Trawler Minor
+Tree Spirits
+Tremble
+Tribal
+Tribal 2
+Tribal Background
+Trinity
+Troll Shuffle
+Trouble Brewing
+Troubled
+Troubled Waters
+Twilight
+TzHaar!
+Undead Dungeon
+Undercurrent
+Underground
+Underground Pass
+Understanding
+Unknown Land
+Untouchable
+Upcoming
+Upir Likhyi
+Upper Depths
+Vampyre Assault
+Vanescula
+Venomous
+Venture
+Venture 2
+Victory is Mine
+Village
+Vision
+Volcanic Vikings
+Voodoo Cult
+Voyage
+The Waiting Game
+Waking Dream
+A Walk in the Woods
+The Walking Dead
+Wally the Hero
+Wander
+Warpath
+Warrior
+Warriors' Guild
+Watch Your Step
+Waterfall
+Waterlogged
+Way of the Enchanter
+Way of the Wyrm
+Wayward
+We are the Fairies
+Welcome to my Nightmare
+Welcome to the Theatre
+Well Hallowed Air
+Well of Voyage
+What Happens Below...
+Where Eagles Lair
+Wild Isle
+Wild Side
+Wilderness
+Wilderness 2
+Wilderness 3
+Wildwood
+Winter Funfair
+Witching
+Woe of the Wyvern
+Wonder
+Wonderous
+Woodland
+Work, Work, Work
+Workshop
+Wrath and Ruin
+Xenophobe
+Yesteryear
+You Have My Attention
+Zamorak Zoo
+Zanik's Theme
+Zaros Zeitgeist
+Zealot
+Zogre Dance
+Zombiism
+
+// @title Old School RuneScape Emotes
+// @author Nick Main
+Air Guitar
+Angry
+Beckon
+Blow Kiss
+Bow
+Cheer
+Clap
+Climb Rope
+Crazy dance
+Cry
+Dance
+Explore
+Flap
+Flex
+Glass Box
+Glass Wall
+Goblin Bow
+Goblin Salute
+Headbang
+Hypermobile Drinker
+Idea
+Jig
+Jog
+Jump for Joy
+Laugh
+Lean
+No
+Panic
+Preen
+Premier Shield
+Push up
+Rabbit Hop
+Raspberry
+Relic Unlock
+Sacred
+Salute
+Shiver
+Shrug
+Sit up
+Skill Cape
+Slap Head
+Smooth dance
+Spin
+Stamp
+Star jump
+Think
+Uri transform
+Wave
+Yawn
+Yes
+Zombie Dance
+Zombie Hand
+Zombie Walk
+
+// @title Old School RuneScape Minigames
+// @author Nick Main
+Barbarian Assault
+Barrows
+Bounty Hunter
+Burgh de Rott Ramble
+Castle Wars
+Chambers of Xeric
+Clan Wars
+Creature Creation
+Emir's Arena
+Inferno
+Last Man Standing
+Mage Arena
+Nightmare Zone
+Pest Control
+Soul Wars
+Tackle Organised Crime
+Temple Trekking
+Theatre of Blood
+Tombs of Amascut
+TzHaar Fight Cave
+TzHaar Fight Pit
+Blast Furnace
+Blast Mine
+Brimhaven Agility Arena
+Fishing Trawler
+Gnome Ball
+Gnome Restaurant
+Guardians of the Rift
+Hallowed Sepulchre
+Impetuous Impulses
+Mage Training Arena
+Mahogany Homes
+Pyramid Plunder
+Ranging Guild
+Rogues' Den
+Sorceress's Garden
+Stealing Artefacts
+Tithe Farm
+Trouble Brewing
+Underwater Agility and Thieving
+Volcanic Mine
+Shades of Mort'ton
+Tai Bwo Wannai Cleanup
+The Gauntlet
+Burthorpe Games Room
+Camdozaal Valut
+Rat Pits
+Rogue Trader
+Tears of Guthix
+
+// @title Fortnite Emotes
+// @author Sean Hale
+A Warrior Prepares
+Accolades
+Advanced Math
+Air Horn
+Air Shredder
+Amazing Cube
+Around the Clock
+Azarath Metrion Zinthos!
+B.R.U.T.A.L. Dab
+Backstroke
+Baller
+Balletic
+Ballsy
+Banner Wave
+Bat Signal
+Battle Brother
+Battle Call
+Beep Beep
+Behold!
+BeSeeingYo
+Best Mates
+Bhangra Boogie
+Billy Bounce
+Bio-Helmet Online
+Blinding Lights
+Bloomin' Bouquet
+Blowing Bubbles
+Bobbin'
+Boing!
+Bold Stance
+Bombastic
+Boneless
+Boobytrapped
+Boogie Down
+Boom!
+Boomin'
+Boots N' Cats
+Bounce Berry
+Bouncer
+Breakdown
+Breakin'
+Breaking Point
+Breakneck
+Breezy
+Bring It
+Brush Your Shoulders
+Buckets
+Buckle Up
+Bulletproo
+Bully
+BunnyHopEmot
+Burpee
+Burst Case Scenario Emote
+Business Hips
+Busy
+Butterfly Knife
+C'mere
+Calculated
+Call Me
+Cap Kick
+Capoeira
+Cardistry
+Cartwheelin'
+Cat Flip
+Cheer Up
+Chicken
+Chicken Wing It
+Chimichanga!
+Clean Groove
+Click!
+CluckStru
+Coin Flip
+Confused
+Conga
+Controller Crew
+Crabby
+Crackdown
+Crazy Feet
+CrazyBoy
+Criss Cross
+Cyberdyne Salute
+Dab
+Dabstand
+Dance Moves
+Dance Therapy
+DanceOf
+Dark Side
+Daydream
+Daywalker's Kata
+Deep Dab
+Deep End Emote
+Denied
+Dip
+Disc Spinner
+Disco Fever
+Distracted
+Don't Start Now
+Double Up
+Dragon Stance
+Dream Feet
+Dream Stance
+Droop
+Drop The Bass
+Drum Major
+Dynamic Shuffle
+Eagle
+Electro Shuffle
+Electro Swing
+Extracurricularmor
+Extraterrestrial
+Face Palm
+Fanciful
+Fancy Feet
+Fancy Footwork
+Fandangle
+Featherweight
+Feelin' Jaunty
+Fierce
+Finger Guns
+Finger Wag
+Fire Spinner
+Fishin'
+Fist Pump
+Flamenco
+Flapper
+Flex On 'Em
+Flippin' Away
+Flippin' Incredible
+Flippin' Sexy
+Floss
+Flux
+Focused
+Free Flow
+Freemix
+Freestylin'
+Freewheelin'
+Freezing Burst
+Fresh
+Fright Funk
+Full Tilt
+Gale Force
+Gamma Overload
+Gangnam Style
+Gentleman's Dab
+Get Funky
+Get Loose
+Glitter
+Glitter-Up
+Glowsticks
+Glyphic
+Go Cat Go
+Go Home!
+Go Mufusa Emote
+Go! Go! Go!
+God of Thunder
+Golf Clap
+Grand Salute
+Groove Jam
+Ground Pound
+Guitar Walk
+Gun Show
+Hand Signals
+Hang Loose
+Hang On
+Harmony
+Have a Seat
+Head Banger
+Headbanger
+Hello Friend
+Hero's Beacon
+High Five
+Hitchhiker
+Hoop Master
+Hootenanny
+Hoppity
+Hot Marat
+Hot Stuff
+Hover
+Hover Pram Control
+Howl
+Hula
+Hula Hoopin'
+Hunter Protocol
+Hype
+I Declare!
+I'm Diamond
+IDK
+Infectious
+Infinite Dab
+Intensity
+Introducing...
+Island Vibes
+It's Complicated
+It's Dynamite!
+It's Go Time!
+It's Good!
+Jabba Switchway Emote
+Jamboree
+Jaywalking
+Jazz Hands
+Jedi Training
+Jitterbug
+Job Well Done
+Jubilation
+Jugglin'
+Jumbo Popcorn
+Jumping Jacks
+JumpJet
+KeepItMelloEmot
+Keyed Up
+Kick Ups
+Kiss Kiss
+Kiss The Cup
+Kite!
+Knee Slapper
+LaidBackShuffl
+Last Forever
+Laugh It Up
+Lavis
+Lazer Blast
+Lazer Flex
+Lazy Shuffle
+Leapin'
+Levitate
+Light Up
+Lightning Kick!
+Living Large
+Llama Bell
+Llama Conga
+Llamacadabra
+Lock It Up
+Lunch Break
+Make It Plantain
+Make it Rain
+Marsh Walk
+Martial Arts Master
+Mashed Potato
+Members Only
+Mic Drop
+Mime Time
+Mind Blown
+Moon Bounce
+My Idol!
+Nana Nana
+Never Gonna
+Ninja Style
+No Sweat
+Office Chariot
+Old School
+Ollie Bounce
+On the Hook
+On Your mark...
+On Your Marks...
+Orange Justice
+Out West
+Out With The Old
+Overdrive
+Paddle Royale
+Pandemonium
+Party Favor
+Party Hips
+Paws & Claws
+PeaceOu
+Peely Pulse
+Pelé's Air Punch
+Penalty
+Phew!
+Phone It In
+Phono Follies
+Pick It Up
+Pickin'
+Pirouette
+Pizza Party
+Planetary Vibe
+PointItOu
+Poki
+Pony Up
+Poof
+Pop Lock
+Popcorn
+Power Roar
+Praise The Tomato
+PricklyPos
+Primo Moves
+Pull Up
+Pump It Up
+Pumpernickel
+Punched Up
+Pure Salt
+PWR Punch Emote
+Quick Bite
+Rage
+Rage Quit
+Raining Doubloons
+Raise The Cup
+Raise The Roof
+Rambunctious
+Rawr
+Reanimated
+Red Card
+Regal Wave
+Resistance Thumbs Up
+Respect
+Respect The Peace
+Revel
+Ribbon Dancer
+Ride Along
+Ride the Pony
+Ring It On
+Rock Out
+Rock Paper Scissors
+Rocket Rodeo
+Rocket Spinner
+Rollie
+Running Man
+Sackin'
+Sad Claps
+SadTrombon
+Salute
+Sasquatchin'
+Savage
+Savor The W
+Say So
+ScenarioEmot
+Scootin'
+Scorecard
+Shadow Boxer
+Shadow Spar
+Shake It Up
+Shanty for a Squad
+Shaolin Sip
+Shaolin Sit-Up
+Shapeshifter
+Sharpshooter
+Shimmer
+Shoryuken!
+Showstopper
+Side Hustle
+Signature Shuffle
+SignSpinne
+Sing Along
+Sizzlin'
+Skipper
+Slap Happy
+Slick
+Slitherin'
+Slow Clap
+Smeeze Emote
+Smooth Moves
+Snap
+Snikt!
+Snoozefest
+Snow Day
+Snowshaker
+So Square
+Something Stinks
+Sparkler
+Spike It
+Spin Out
+Spring-Loaded
+Springy
+Sprinkler
+Spyglass
+Squat Kick
+Star Power
+Statuesque
+Steamed
+Step it Up
+Storm Salutation
+Stormy
+Stride
+Strut
+Sugar Rush
+Suit Up
+Swipe It
+SwitchstepEmot
+Swole Cat
+Syrup Slinger
+T-Pose
+Taco Time
+Tai Chi
+Take 14
+Take The Cake
+Take the Elf
+Take the L
+Taxi!
+Team Burger
+Team Mech
+Team Monster
+Team Space
+Team Tomato
+The Flow Emote
+The Renegade
+The Robot
+The Worm
+Thumbs Down
+Thumbs Up
+Tidy
+Time Out
+Tiniest Violin
+Tippy Tap
+Toasty
+Toosie Slide
+Tower Guard
+Tra La La
+Traitor!
+Treat Yourself
+True Heart
+True Love
+Tsssss
+Turbocharged
+Twist
+Unicycle
+Unification
+Unwrapped
+Vengeful Wish
+Verve
+Very Sneaky
+Vibin'
+Victory Von Doom
+Vivacious
+Wakandan Salute
+Wanna See Me
+Waterworks
+Wave
+Wavy T
+We Are Venom Emote
+Welcome!
+Well Rounded
+Where is Matt?
+Whipcrack
+Whirlwind
+Widow'sPirouett
+Wiggle
+Windmill Floss
+Witch Way
+Witchcraft
+Work It
+Work It Out
+Xeno Menace Emote
+Xylo-bone
+Yay
+You're Awesome
+Zany
+Zombified
+
+// @title Old School RuneScape Realms
+// @author Nick Main
+Abyss
+Cosmic Plane
+Dream World
+Dwarven Realm
+Enchanted Valley
+Fisher Realm
+Freneskae
+Gorak Plane
+Infernal Dimensions
+Killerwatt Plane
+Puro-Puro
+ScapeRune
+Shadow Realm
+The Black Hole
+Zanaris
+
+// @title Old School RuneScape Player-owned house rooms
+// @author Nick Main
+Achievement Gallery
+Bedroom
+Chapel
+Combat Room
+Costume Room
+Dining Room
+Dungeon
+Formal Garden
+Games Room
+Garden
+Kitchen
+League Hall
+Menagerie
+Oubliette
+Parlour
+Portal Chamber
+Portal Nexus
+Quest Hall
+Skill Hall
+Study
+Superior Garden
+Throne Room
+Treasure Room
+Workshop
+
+// @title Old School RuneScape Player-owned house locations
+// @author Nick Main
+Rimmington
+Taverley
+Pollnivneach
+Hosidius
+Rellekka
+Brimhaven
+Yanille
+Prifddinas
+
+// @title Old School RuneScape Player-owned house hotspots
+// @author Nick Main
+Adventure Log Space
+Altar Space
+Amulet Space
+Arena Space
+Armour Case Space
+Armour Space
+Barrel Space
+Bed Space
+Bell Pull Space
+Big Plant
+Big Plant 2
+Big Plant Space 1
+Big Plant Space 2
+Big Tree Space
+Bookcase Space
+Boss Lair Space
+Cabinet Space
+Cape Rack Space
+Cat Basket Space
+Centrepiece Space
+Chair Space
+Clockmaking Space
+Coffin Hotspot
+Combat Dummy Space
+Combat Ring Space
+Corner Space
+Crate
+Crystal Ball Space
+Cupboard Space
+Curtain Space
+Decoration Space
+Display Space
+Door Hotspot
+Door Space
+Drawer Space
+Dresser Space
+Elemental Balance Space
+Fancy Dress Box Space
+Fence Space
+Fencing
+Fireplace Space
+Fishing Trophy Space
+Floor Space
+Game Space
+Globe Space
+Guard Space
+Guild Trophy Space
+Habitat Space
+Head Trophy Space
+Hedging
+Heraldry Space
+Icon Space
+Jewellery Box Space
+Ladder Space
+Lamp Space
+Landscape Space
+Larder Space
+Lectern Space
+Lever Space
+Lighting Space
+Magic Wardrobe Space
+Map Space
+Monster Space
+Mounted Head Space
+Musical Space
+Pet Feeder Space
+Pet House Space
+Pet List Space
+Pool Space
+Portal Nexus Space
+Portal Space
+Portrait Space
+Prison Space
+Prize Chest Space
+Quest List Space
+Ranging Game Space
+Repair Space
+Rug Space
+Rune Case Space
+Scratching Post Space
+Seating Space
+Shelf Space
+Shelves Space
+Sink Space
+Small Plant
+Small Plant 2
+Small Plant Space 1
+Small Plant Space 2
+Spice Rack Space
+Stair Space
+Statue Space
+Stone Space
+Storage Space
+Storage Unit
+Stove Space
+Sword Space
+Table Space
+Teleport Space
+Telescope Space
+Theme Space
+Throne Space
+Tip Jar Space
+Tool Space
+Topiary Space
+Toy Box Space
+Trap Space
+Trapdoor Space
+Treasure Chest Space
+Treasure Space
+Tree Space
+Wall Chart Space
+Wardrobe Space
+Window Space
+Workbench Space
+
+// @title Old School RuneScape Locations
+// @author Nick Main
+Abyss
+Air Altar
+Al Kharid
+Ancient Cavern
+Ape Atoll
+Ape Atoll Dungeon
+Arandar
+Arceuus
+Ardougne
+Asgarnian Ice Dungeon
+Astral Altar
+Bandit Camp
+Bandit Camp Quarry
+Barbarian Outpost
+Barbarian Village
+Barrows
+Battlefront
+Baxtorian Falls
+Bedabin Camp
+Black Knights' Fortress
+Blast Furnace
+Blast Mine
+Blood Altar
+Body Altar
+Bone Yard
+Brimhaven
+Brimhaven Agility Arena
+Brimhaven Dungeon
+Burgh de Rott
+Burthorpe
+Burthorpe Games Room
+Camelot
+Canifis
+Canifis Slayer Tower
+Castle Wars
+Catacombs of Kourend
+Catherby
+Chambers of Xeric
+Champions' Guild
+Chaos Altar
+Chaos Temple
+Chasm of Fire
+Clan Wars
+Cooks' Guild
+Corporeal Beast Lair
+Corsair Cove
+Corsair Cove Dungeon
+Corsair Cove Resource Area
+Cosmic Altar
+Crafting Guild
+Crandor
+Crandor and Karamja Dungeon
+Crash Site Cavern
+Dark Altar
+Dark Warriors' Fortress
+Dark Wizards' Tower
+Darkmeyer
+Death Altar
+Death Plateau
+Demonic Ruins
+Dense essence mine
+Desert Mining Camp
+Deserted Keep
+Digsite
+Dorgesh-Kaan
+Doric's hut
+Draynor Manor
+Draynor Village
+Druid's Circle
+Dwarven Mine
+Eagles' Peak
+Earth Altar
+East Ardougne
+Ectofuntus
+Edgeville
+Edgeville Dungeon
+Edgeville Monastery
+Edgeville Wilderness Dungeon
+Emir's Arena
+Entrana
+Falador
+Falador farm
+Falador Park
+Farming Guild
+Feldip Hills
+Ferox Enclave
+Fire Altar
+Fishing Guild
+Forgotten Cemetery
+Fossil Island
+Fountain of Rune
+Fremennik Slayer Dungeon
+Frozen Waste Plateau
+Gnome Stronghold Agility Course
+Goblin Village
+God Wars Dungeon
+Grand Exchange
+Grand Tree
+Graveyard of Shadows
+Gu'Tanoth
+Hardwood Grove
+Harmony Island
+Haunted Woods
+Hemenster
+Heroes' Guild
+High-level Wilderness
+Hobgoblin Mine
+Hollows
+Hosidius
+House on the Hill
+Ice Mountain
+Iceberg
+Iorwerth Camp
+Isle of Souls
+Jatizso
+Jiggig
+Kalphite Cave
+Kalphite Lair
+Karamja Volcano
+Karuulm Slayer Dungeon
+Keldagrim
+Kharazi Jungle
+King Black Dragon Lair
+Lava Dragon Isle
+Lava Maze
+Lava Maze Dungeon
+Law Altar
+Legends' Guild
+Lighthouse
+Lithkren
+Lithkren Vault
+Lizardman Canyon
+Lizardman Caves
+Lizardman Settlement
+Lizardman Temple
+Lletya
+Lovakengj
+Lumbridge
+Lumbridge Swamp
+Lunar Isle
+Mage Arena
+Mage Training Arena
+Marim
+Meiyerditch
+Melzar's Maze
+Mind Altar
+Mining Guild
+Miscellania and Etceteria
+Molch
+Mole lair
+Mor Ul Rek
+Mort Myre Swamp
+Mort'ton
+Mos Le'Harmless
+Mos Le'Harmless Cave
+Motherlode Mine
+Mount Karuulm
+Mount Quidamortem
+Mudskipper Point
+Museum Camp
+Myths' Guild
+Nardah
+Nature Altar
+Nature Grotto
+Neitiznot
+Otto's Grotto
+Paterdomus
+Piscatoris
+Pollnivneach
+Port Khazard
+Port Phasmatys
+Port Piscarilius
+Port Sarim
+Prifddinas
+Puro-Puro
+Pyramid
+Pyramid Plunder
+Ranging Guild
+Rellekka
+Resource Area
+Revenant Caves
+Rimmington
+Rogues' Castle
+Rogues' Den
+Rune Mine
+Scorpion Pit
+Seers' Village
+Shantay Pass
+Shayzien
+Shilo Village
+Shilo Village mine
+Silvarea
+Smoke Dungeon
+Sophanem
+Sophanem Dungeon
+Soul Altar
+Stronghold of Security
+Stronghold Slayer Cave
+Tai Bwo Wannai
+Taverley
+Taverley Dungeon
+Theatre of Blood
+Tithe Farm
+Tree Gnome Stronghold
+Troll Country
+Troll Stronghold
+Trollheim
+Tyras Camp
+Underground Pass
+Underwater
+Ungael
+Uzer
+Varrock
+Varrock Sewers
+Ver Sinhaza
+Void Knights' Outpost
+Volcanic Mine
+Warriors' Guild
+Water Altar
+Waterbirth Island
+Waterbirth Island Dungeon
+Waterfall Dungeon
+Weiss
+West Ardougne
+White Knights' Castle
+White Wolf Mountain
+Wilderness Agility Course
+Wilderness God Wars Dungeon
+Wintertodt
+Wintertodt Camp
+Witchaven
+Wizards' Guild
+Wizards' Tower
+Woodcutting Guild
+Wyvern Cave
+Yanille
+Yanille Agility dungeon
+Zanaris
+Zul-Andra
+
+// @title Papers, Please Countries
+// @author Chris
+Antegria
+Arstotzka
+Impor
+Kolechia
+Obristan
+Republia
+United Federation
+
+// @title Risk of Rain 2 Items
+// @author Chris
+Armor-Piercing Rounds
+Backup Magazine
+Bison Steak
+Bundle of Fireworks
+Bustling Fungus
+Cautious Slug
+Crowbar
+Delicate Watch
+Energy Drink
+Focus Crystal
+Gasoline
+Item Scrap, White
+Lens-Maker's Glasses
+Medkit
+Mocha
+Monster Tooth
+Oddly-shaped Opal
+Paul's Goat Hoof
+Personal Shield Generator
+Power Elixir
+Repulsion Armor Plate
+Roll of Pennies
+Rusted Key
+Soldier's Syringe
+Sticky Bomb
+Stun Grenade
+Topaz Brooch
+Tougher Times
+Tri-Tip Dagger
+Warbanner
+AtG Missile Mk. 1
+Bandolier
+Berzerker's Pauldron
+Chronobauble
+Death Mark
+Fuel Cell
+Ghor's Tome
+Harvester's Scythe
+Hopoo Feather
+Hunter's Harpoon
+Ignition Tank
+Infusion
+Item Scrap, Green
+Kjaro's Band
+Leeching Seed
+Lepton Daisy
+Old Guillotine
+Old War Stealthkit
+Predatory Instincts
+Razorwire
+Red Whip
+Regenerating Scrap
+Rose Buckler
+Runald's Band
+Shipping Request Form
+Shuriken
+Squid Polyp
+Ukulele
+War Horn
+Wax Quail
+Will-o'-the-wisp
+57 Leaf Clover
+Aegis
+Alien Head
+Ben's Raincoat
+Bottled Chaos
+Brainstalks
+Brilliant Behemoth
+Ceremonial Dagger
+Defensive Microbots
+Dio's Best Friend
+Frost Relic
+H3AD-5T v2
+Happiest Mask
+Hardlight Afterburner
+Interstellar Desk Plant
+Item Scrap, Red
+Laser Scope
+N'kuhana's Opinion
+Pocket I.C.B.M.
+Rejuvenation Rack
+Resonance Disc
+Sentient Meat Hook
+Shattering Justice
+Soulbound Catalyst
+Spare Drone Parts
+Symbiotic Scorpion
+Unstable Tesla Coil
+Wake of Vultures
+Artifact Key
+Charged Perforator
+Defense Nucleus
+Empathy Cores
+Genesis Loop
+Halcyon Seed
+Irradiant Pearl
+Item Scrap, Yellow
+Little Disciple
+Mired Urn
+Molten Perforator
+Pearl
+Planula
+Queen's Gland
+Shatterspleen
+Titanic Knurl
+Beads of Fealty
+Brittle Crown
+Corpsebloom
+Defiant Gouge
+Egocentrism
+Essence of Heresy
+Eulogy Zero
+Focused Convergence
+Gesture of the Drowned
+Hooks of Heresy
+Light Flux Pauldron
+Mercurial Rachis
+Purity
+Shaped Glass
+Stone Flux Pauldron
+Strides of Heresy
+Transcendence
+Visions of Heresy
+Benthic Bloom
+Encrusted Key
+Lost Seer's Lenses
+Lysate Cell
+Needletick
+Newly Hatched Zoea
+Plasma Shrimp
+Pluripotent Larva
+Polylute
+Safer Spaces
+Singularity Band
+Tentabauble
+Voidsent Flame
+Weeping Fungus
+Blast Shower
+Disposable Missile Launcher
+Eccentric Vase
+Executive Card
+Foreign Fruit
+Forgive Me Please
+Fuel Array
+Gnarled Woodsprite
+Goobo Jr.
+Gorag's Opus
+Jade Elephant
+Milky Chrysalis
+Molotov (6-Pack)
+Ocular HUD
+Preon Accumulator
+Primordial Cube
+Radar Scanner
+Recycler
+Remote Caffeinator
+Royal Capacitor
+Sawmerang
+Super Massive Leech
+The Back-up
+The Crowdfunder
+Trophy Hunter's Tricorn
+Volcanic Egg
+Effigy of Grief
+Glowing Meteorite
+Helfire Tincture
+Spinel Tonic
+
+// @title Risk of Rain 2 Stages
+// @author Chris
+Distant Roost
+Titanic Plains
+Siphoned Forest
+Wetlands Aspect
+Abandoned Aqueduct
+Aphelian Sanctuary
+Rallypoint Delta
+Scorched Acres
+Sulfur Pools
+Abyssal Depths
+Siren's Call
+Sundered Grove
+Sky Meadow
+Commencement
+Bazaar Between Time
+A Moment, Fractured
+A Moment, Whole
+Gilded Coast
+Bulwark's Ambry
+Void Fields
+Void Locus
+The Planetarium
+
+// @title Greek Gods
+// @author Chris
+Achelous
+Aeolus
+Aether
+Alastor
+Apollo
+Ares
+Aristaeus
+Asclepius
+Atlas
+Attis
+Boreas
+Caerus
+Castor
+Cerus
+Chaos
+Charon
+Cronos
+Crios
+Cronus
+Dinlas
+Deimos
+Dionysus
+Erebus
+Eros
+Eurus
+Glaucus
+Hades
+Helios
+Hephaestus
+Heracles
+Hermes
+Hesperus
+Hymenaios
+Hypnos
+Kratos
+Momus
+Morpheus
+Moros
+Nereus
+Notus
+Oceanus
+Oneiroi
+Paean
+Pallas
+Pan
+Phosphorus
+Plutus
+Pollux
+Pontus
+Poseidon
+Priapus
+Pricus
+Prometheus
+Primordial
+Tartarus
+Thanatos
+Triton
+Typhon
+Uranus
+Zelus
+Zephyrus
+Zeus
+
+// @title Norse Gods
+// @author Chris
+Baldur
+Borr
+Bragi
+Búri
+Dagur
+Delling
+Eir
+Ēostre
+Elli
+Forseti
+Freyja
+Freyr
+Frigg
+Fulla
+Gefjun
+Hel
+Heimdallur
+Hermóður
+Hlín
+Höðr
+Hœnir
+Iðunn
+Jörð
+Kvasir
+Lofn
+Loki
+Magni
+Máni
+Mímir
+Nanna
+Nerþus
+Njörður
+Nótt
+Óðinn
+Sága
+Rán
+Sif
+Sigyn
+Sjöfn
+Skaði
+Snotra
+Sol
+Thor
+Thruer
+Týr
+Ullr
+Váli
+Vár
+Vé
+Víðarr
+Vör
+Yggdrasil
+
+// @title Egyptian Gods
+// @author Chris
+Aker
+Amun
+Amunet
+Anhur
+Anubis
+Anubis/Anput
+Anuket
+Aten
+Atum
+Bastet
+Bat
+Bennu
+Geb
+Hapi
+Hathor
+Hatmehit
+Heh
+Heqet
+Hesat
+Horus
+Imentet
+Isis
+Kek
+Khepri
+Khnum
+Khonsu
+Maahes
+Maat
+Menhit
+Montu
+Mut
+Nefertum
+Neith
+Nekhbet
+Nemty
+Neper
+Nephthys
+Nepit
+Nu
+Nut
+Osiris
+Pakhet
+Ptah
+Ra
+Renenutet
+Satet
+Sekhmet
+Set
+Shu
+Sobek
+Sopdu
+Tatenen
+Tefnut
+Thoth
+Wadj-wer
+Wadjet
+Wosret
+
+// @title Allen Panakal's Ancient Ones Codex
+// @author Nick Main
+Tree of Divination
+The Fifth Legion
+Escape
+Aeon of Horus
+Ilana
+Elven Riders
+Bagh Deo. Tiger God.
+Morningstar
+Homeworld
+Escape
+Sypha: Knight of Earth
+Mangala: Harbor Town
+The Traveler: Keybinder to the World Machine
+Tol'ja: Knight of Sol (Jupiter)
+Sala'cia: Knight of Sol (Neptune)
+Baeldrun: Commander of the 5th Legion
+Tree of Ardalore
+Neith: Hidden Moon of Venus
+Pleiades: Portal to the Seven Sisters
+Lemuria: City of Orbs
+Triton: Moon of Neptune
+Alpha Centauri
+
+// @title Witcher Characters
+// @author Chris
+Geralt of Rivia
+Ciri of Cintra
+Yennefer of Vengerberg
+Triss Merigold
+Dandelion (Jaskier)
+King Foltest
+Milva
+Cahir Ceallach
+Emiel Regis
+Angoulême
+Philippa Eilhart
+Dijkstra
+Vilgefortz
+Leo Bonhart
+Eredin
+Mousesack
+Queen Calanthe
+Yarpen Zigrin
+
+// @title The Settlers of Catan Resources
+// @author Nick Main
+Ore
+Wheat
+Brick
+Wood
+Sheep
+
+// @title The Settlers of Catan Development Cards
+// @author Nick Main
+Knight
+Road Building
+Year of Plenty
+Monopoly
+University
+Market
+Great Hall
+Chapel
+Library
+
+// @title Fallout New Vegas Factions
+// @author Chris
+New California Republic
+Caesar's Legion
+Boomers
+Followers of the Apocalypse
+Crimson Caravan
+Gun Runners
+Freeside
+Novac
+Primm
+Bright Brotherhood
+Westside
+Powder Gangers
+Kings gang members
+Robert House/Free Economic Zone of New Vegas
+Great Khans
+Omertas
+White Glove Society
+Van Graffs
+Happy Trails Trading Company
+Fiends
+Enclave Remnants
+Jackals
+The Strip
+Jacobstown
+Westside Militia
+Brotherhood of Steel
+
+// @title Base 5e playable races
+// @author Chris
+Dwarf
+Elf
+Halfling
+Human
+Dragonborn
+Gnome
+Half-elf
+Half-orc
+Tiefling
+
+// @title Darkest Dungeon Heroes
+// @author Chris
+Abomination
+Antiquarian
+Arbalest
+Bounty Hunter
+Crusader
+Grave Robber
+Hellion
+Highwayman
+Houndmaster
+Jester
+Leper
+Man-at-Arms
+Musketeer
+Occultist
+Plague Doctor
+Vestal
+Flagellant
+Shieldbreaker
+
+// @title FTL Races
+// @author Chris
+Humans
+Engi
+Rockman
+Mantis
+Zoltan
+Slug
+Crystal
+
+// @title Jedi Council Members
+// @author Chris
+Anakin Skywalker
+Obi-Wan Kenobi
+Shaak Ti
+Stass Allie
+Agen Kolar
+Depa Billaba
+Coleman Kcaj
+Saesee Tiin
+Oppo Rancisis
+Kit Fisto
+Plo Koon
+Luminara Unduli
+Ki-Adi-Mundi
+Mace Windu
+Yoda
+
+// @title Ways to order Waffle House hashbrowns
+// @author Nick Main
+Smothered
+Covered
+Chunked
+Diced
+Peppered
+Capped
+Topped
+Country
+Regular
+Large
+Triple
+
+// @title Jimmy John's Originals
+// @author Nick Main
+The Pepe
+Big John
+Totally Tuna
+Turkey Tom
+Vito
+The Veggie
+J.J.B.L.T.
+
+// @title Jimmy John's Favorites
+// @author Nick Main
+Spicy East Cost Italian
+Billy Club
+Italian Night Club
+Hunter's Club
+Country Club
+Beach Club
+Jimmy Cubano
+Bootlegger Club
+Club Tuna
+Club Lulu
+Ultimate Porker
+
+// @title Ghibli Movies
+// @author Sean Hale
+Nausicaä of the Valley of the Wind
+Castle in the Sky
+Grave of the Fireflies
+My Neighbor Totoro
+Kiki's Delivery Service
+Only Yesterday
+Porco Rosso
+Ocean Waves
+Pom Poko
+Whisper of the Heart
+Princess Mononoke
+My Neighbors the Yamadas
+Spirited Away
+The Cat Returns
+Howl's Moving Castle
+Tales from Earthsea
+Ponyo
+Arrietty
+From Up on Poppy Hill
+The Wind Rises
+The Tale of the Princess Kaguya
+When Marnie Was There
+Earwig and the Witch
+
+// @title Lovecraftian Ancient Ones
+// @author Chris
+Cthulhu
+Yig
+Yog-Sothoth
+Azathoth
+Ithaqua
+Shub-Niggurath
+Nyarlathotep
+Hastur
+
+// @title Nintendo Consoles
+// @author Sean Hale
+2DS
+3DS
+3DS XL
+Color TV Game
+DS
+DS Lite
+DSi
+DSi XL
+Game & Watch
+Game & Watch: Super Mario Bros.
+Game & Watch: The Legend of Zelda
+Game Boy
+Game Boy Advance
+Game Boy Advance SP
+Game Boy Color
+Game Boy Light
+Game Boy Micro
+Game Boy Pocket
+GameCube
+N64
+NES
+NES Classic
+New 2DS XL
+New 3DS
+New 3DS XL
+Panasonic Q
+Pokémon Mini
+Pokémon Pikachu
+Pokémon Pikachu 2 GS
+SNES
+SNES Classic
+Switch
+Switch Lite
+Switch OLED
+Virtual Boy
+Wii
+Wii Family Edition
+Wii Mini
+Wii U
+
+// @title Xbox Consoles
+// @author Sean Hale
+Xbox
+Xbox 360
+Xbox 360 S
+Xbox 360 E
+Xbox One
+Xbox One S
+Xbox One X
+Xbox Series X
+Xbox Series S
+
+// @title Playstation Consoles
+// @author Sean Hale
+PlayStation
+PS One
+PlayStation 2
+PlayStation 2 Slim
+PlayStation Portable
+PlayStation 3
+PlayStation 3 Slim
+PlayStation Vita
+PlayStation 3 Super Slim
+PlayStation 4
+PlayStation 4 Slim
+PlayStation 4 Pro
+PlayStation 5
+
+// @title Mario Series Power-ups
+// @author Sean Hale
+Bee Mushroom
+Big Mushroom
+Blimp Fruit
+Blue Shell
+Boo Mushroom
+Boomerang Flower
+Boost Star
+Bulb Berry
+Bull Pot
+Bullet Bill Mask
+Buzzy Shell
+Cannon Box
+Cape Feather
+Carrot
+Cloud Flower
+Coin Box
+Coin Rush Star
+Dash Pepper
+Double Cherry
+Dragon Crystal
+Dragon Pot
+Dry Bones Shell
+Eagle Statue
+Fire Flower
+Frog Suit
+Garlic bottle
+Garlic Pot
+Giga Bell
+Gold Block
+Gold Flower
+Goomba Mask
+Goomba's Shoe
+Hammer
+Hammer Suit
+Ice Flower
+Ice Skate
+Invincibility Bell
+Invincibility Leaf
+Invincibility Mushroom
+Jet Pot
+Light Box
+Lucky Bell
+Luigi's Cap
+Mario's Cap
+Master Sword
+Mega Mushroom
+Mega Star
+Metal Cap
+Mini Mushroom
+Mystery Mushroom
+P-Acorn
+P-Wing
+Pal Pill
+Penguin Suit
+Power Balloon
+Power Flower
+Propeller Box
+Propeller Mushroom
+Rainbow Star
+Red POW Box
+Red Star
+Rock Mushroom
+SMB2 Mushroom
+Spin Drill
+Spiny Shell
+Spring Mushroom
+Statue Leaf
+Super Acorn
+Superball Flower
+Super Bell
+Super Crown
+Super Hammer
+Super Leaf
+Super Mushroom
+Super Pickax
+Super Star
+Tanooki Suit
+Vanish Cap
+Viking helmet
+Wario's Cap
+Weird Mushroom
+Wing
+Wing Cap
+Wings
+Yoshi's Wings
+
+// @title Mario & Luigi: Superstar Saga Locations
+// @author Sean Hale
+Beanbean Castle
+Beanbean Castle Sewer
+Beanbean Castle Town
+Beanbean Fields
+Beanbean International Airport
+Beanbean Kingdom
+Bowser's Castle
+Chateau de Chucklehuck
+Chucklehuck Woods
+Fire Palace
+Guffawha Ruins
+Gwarhar Lagoon
+Harhall's Studio
+Hoohoo Mountain
+Hoohoo Village
+Information Booth
+Joke's End
+Little Fungitown
+Mario Bros.' House
+Oho Oasis
+Oho Ocean
+Oho Ocean Seabed
+Peach's Castle
+Pipe House
+Relaxation Room
+S.S. Chuckola
+Starbeans Cafe
+Stardust Fields
+Teehee Valley
+Thunder Palace
+Winkle Colosseum
+Woohoo Hooniversity
+Yoshi Theater
+
+// @title Mario & Luigi: Partners in Time Locations
+// @author Sean Hale
+Bowser's Castle
+Fawful's Bean 'n' Badge
+Gramma's Place
+Gritzy Caves
+Gritzy Desert
+Hollijolli Village
+Koopaseum
+Monty Mart
+Peach's Castle
+Peach's Castle Dungeon
+Princess Peach's Room
+Shroob Castle
+Shroob Mother Ship
+Shroob Planet
+Shroom Shop
+Star Hill
+Star Shrine
+Thwomp Caverns
+Thwomp Volcano
+Toad Town
+Toadwood Forest
+Vim Factory
+Yoob's Belly
+Yoshi's Island
+
+// @title Mario & Luigi: Bowser's Inside Story Locations
+// @author Sean Hale
+Airway
+Arm Center
+Badge Shop
+Blubble Lake
+Bowser Path
+Bowser's body
+Bowser's Castle
+Broggy's Shop
+Broque Monsieur's Shop
+Bumpsy Plains
+Cavi Cape
+Challenge Node
+Chest Station
+Cholesteroad
+Conference Hall
+Dimble Wood
+Energy Hold
+Fawful Theater
+Flab Zone
+Flame Pipe
+Funny Bone
+Gear Shop
+Gut Check
+Joint Tower
+Leg Outpost
+Lumbar Nook
+Memory Banks
+Nerve Cluster
+Nose Deck
+Peach's Castle
+Peach's Castle Garden
+Pipe Yard
+Plack Beach
+Princess Peach's Room
+Project K
+Pump Works
+Rump Command
+Star Shop
+Tea Kiosk
+The Gauntlet
+Toad Square
+Toad Town
+Toad Town Caves
+Toad Town Mall
+Toadles Boutique
+Toadley Clinic
+Tower of Yikk
+Trash Pit
+Treasure Chamber
+Tunnel
+
+// @title Mario & Luigi: Dream Team Locations
+// @author Sean Hale
+Battle Ring (Mario & Luigi: Dream Team)
+Dozing Sands
+Dream World
+Dream's Deep
+Dreamy Dozing Sands
+Dreamy Driftwood Shore
+Dreamy Mount Pajamaja
+Dreamy Mushrise Park
+Dreamy Neo Bowser Castle
+Dreamy Pi'illo Castle
+Dreamy Somnom Woods
+Dreamy Wakeport
+Driftwood Shore
+Mount Pajamaja
+Mushrise Park
+Neo Bowser Castle
+Pi'illo Blimport
+Pi'illo Castle
+Pi'illo Island
+Pi'illo Temple
+Rose Broquet
+Somnom Woods
+Wakeport
+
+// @title Mario & Luigi: Paper Jam Locations
+// @author Sean Hale
+Arcade
+Battle Ring
+Card Shop
+Doop Doop Dunes
+Doop Doop Dunes Grotto
+Gloomy Woods
+Lakitu Info Center
+Mount Brrr
+Mushroom Kingdom
+Neo Bowser Castle
+Peach's Castle
+Sunbeam Plains
+Twinsy Tropics
+Twinsy Tropics Dungeon
+
+// @title Paper Mario: The Origami King Locations
+// @author Sean Hale
+? Island
+Autumn Mountain
+Big Sho' Theater
+Bonehead Island
+Bowser's Castle
+Breezy Tunnel
+Chestnut Valley
+Club Island
+Crescent Moon Island
+Diamond Island
+Earth Vellumental Temple
+Eddy River
+Final Zone Guides
+Fire Vellumental Cave
+Graffiti Underground
+Hammer Island
+Heart Island
+Hotfoot Crater
+Ice Vellumental Temple
+Mushroom Island
+Ninja Attraction
+Origami Castle
+Overlook Mountain
+Overlook Tower
+Picnic Road
+Scorching Sandpaper Desert
+Scuffle Island
+Sea Tower
+Shangri-spa
+Shogun Studios
+Shroom City
+Spade Island
+Spring of Jungle Mist
+Spring of Rainbows
+Sweetpaper Valley
+Temple Of Shrooms
+The Great Sea
+The Princess Peach
+Toad Town
+Water Vellumental Shrine
+Whispering Woods
+
+// @title Pokémon Legends: Arceus Locations
+// @author Sean Hale
+Aipom Hill
+Alabaster Icelands
+Ancient Quarry
+Arena's Approach
+Aspiration Hill
+Avalanche Slopes
+Avalugg's Legacy
+Bathers' Lagoon
+Bolderoll Ravine
+Bolderoll Slope
+Bonechill Wastes
+Brava Arena
+Castaway Shore
+Celestica Ruins
+Celestica Trail
+Clamberclaw Cliffs
+Cloudpool Ridge
+Cobalt Coastlands
+Coronet Highlands
+Cottonsedge Prairie
+Crimson Mirelands
+Crossing Slope
+Deadwood Haunt
+Deertrack Heights
+Deertrack Path
+Diamond Heath
+Diamond Settlement
+Droning Meadow
+Fabled Spring
+Firespit Island
+Floaro Gardens
+Galaxy Hall
+Gapejaw Bog
+Ginkgo Landing
+Glacier Terrace
+Golden Lowlands
+Grandtree Arena
+Grueling Grove
+Hall of Origin
+Heart's Crag
+Heavenward Lookout
+Hideaway Bay
+Holm of Trials
+Horseshoe Plains
+Icebound Falls
+Icepeak Arena
+Icepeak Cavern
+Islespy Shore
+Jubilife Village
+Lake Acuity
+Lake Valor
+Lake Verity
+Lava Dome Sanctum
+Lonely Spring
+Lunker's Lair
+Molten Arena
+Moonview Arena
+Mount Coronet
+Nature's Pantry
+Obsidian Falls
+Obsidian Fieldlands
+Oreburrow Tunnel
+Pastures
+Pearl Settlement
+Primeval Grotto
+Ramanas Island
+Sacred Plaza
+Sand's Reach
+Sandgem Flats
+Scarlet Bog
+Seagrass Haven
+Seaside Hollow
+Shrouded Ruins
+Sludge Mound
+Snowfall Hot Spring
+Snowpoint Temple
+Solaceon Ruins
+Sonorous Path
+Spring Path
+Stonetooth Rows
+Temple of Sinnoh
+The Heartwood
+Tidewater Dam
+Tombolo Walk
+Training grounds
+Tranquility Cove
+Turnback Cave
+Ursa's Ring
+Veilstone Cape
+Wayward Cave
+Wayward Wood
+Whiteout Valley
+Windbreak Stand
+Windswept Run
+Worn Bridge
+
+// @title Justice League Members
+// @author Sean Hale
+Agent Liberty
+Amazing Man
+Ambush Bug
+Antaeus
+Aquaman
+Atom
+Aztek
+Batman
+Big Barda
+Big Sir
+Black Adam
+Black Canary
+Black Condor
+Black Lightning
+Black Orchid
+Bloodwynd
+Blue Beetle
+Blue Devil
+Blue Jay
+Booster Gold
+Brainwave
+Bulleteer
+Captain Atom
+Captain Marvel
+Citizen Steel
+Clock King
+Cluemaster
+Coldcast
+Congorilla
+Crimson Avenger
+Crimson Fox
+Cyborg
+Dark Flash
+Deadman
+Doctor Fate
+Doctor Light
+Doctor Mid-Nite
+Donna Troy
+Elongated Man
+Faith
+Fire
+Firehawk
+Firestorm
+Flash
+G'nort
+Gangbuster
+General Glory
+Geo-Force
+Green Arrow
+Green Lantern
+Guardian
+Gypsy
+Hawkgirl
+Hawkman
+Hawkwoman
+Hourman
+Huntress
+Ice
+Icemaiden
+Jade
+Jason Blood
+Jesse Quick
+Kasumi
+L-Ron/Despero
+Lex Luthor
+Lightray
+Major Disaster
+Manitou Dawn
+Manitou Raven
+Martian Manhunter
+Maxima
+Maya
+Menagerie
+Metamorpho
+Mister Miracle
+Mister Terrific
+Mon-El
+Moon Maiden
+Multi-Man
+Mystek
+Naif al-Sheikh
+Nightshade
+Nightwing
+Nuklon
+Obsidian
+Oracle
+Orion
+Phantom Stranger
+Plastic Man
+Power Girl
+Ragman
+Raven
+Ray
+Red Arrow
+Red Tornado
+Rocket Red #7
+Rocket Red 4
+Rocket Red 7
+Sandmaster
+Scarlet Skier
+Silver Sorceress
+Sister Superior
+Skyrocket
+Starfire
+Stargirl
+Starman
+Steel
+Super-Chief
+Supergirl
+Superman
+Tasmanian Devil
+The Flash
+The Mighty Bruce
+Tomorrow Woman
+Triumph
+Vibe
+Vixen
+Wonder Woman
+Zan & Jayna
+Zatanna
+Zauriel
+
+// @title Avengers Members
+// @author Sean Hale
+3-D Man
+Amadeus Cho
+Ant-Man
+Ares
+Beast
+Black Bolt
+Black Knight
+Black Panther
+Black Widow
+Bucky Barnes
+Cannonball
+Captain America
+Captain Britain
+Captain Universe
+Carol Danvers
+Cassie Lang
+Crystal
+Daredevil
+Darkhawk
+Demolition Man
+Doctor Druid
+Doctor Octopus
+Doctor Strange
+Echo
+Eric O'Grady
+Falcon
+Firebird
+Firestar
+Flash Thompson
+Gilgamesh
+Hank Pym
+Hawkeye
+Hellcat
+Hercules
+Hulk
+Human Torch
+Hyperion
+Invisible Woman
+Iron Fist
+Iron Man
+Jack of Hearts
+Jessica Jones
+Jocasta
+Julia Carpenter
+Justice
+Lionheart
+Living Lightning
+Luke Cage
+Machine Man
+Manifold
+Mantis
+Mockingbird
+Moon Knight
+Moondragon
+Mr. Fantastic
+Namor
+Noh-Varr
+Nova
+Quake
+Quasar
+Quicksilver
+Rage
+Sandman
+Scarlet Witch
+Sentry
+Sersi
+Shang-Chi
+Sharon Carter
+She-Hulk
+Silverclaw
+Smasher
+Spectrum
+Spider-Man
+Spider-Woman
+Starfox
+Stingray
+Storm
+Sunspot
+Swordsman
+Thing
+Thor
+Thunderbolt Ross
+Thunderstrike
+Tigra
+Two-Gun Kid
+U.S.Agent
+Valkyrie
+Vision
+War Machine
+Wasp
+Wolverine
+Wonder Man
+
+// @title Spongebob Characters
+// @author Sean Hale
+Barnacle Boy
+Bikini Bottomites
+Bubble Bass
+French Narrator
+Gary the Snail
+Harold SquarePants
+Jellyfish
+King Neptune
+Larry the Lobster
+Margaret SquarePants
+Mermaid Man
+Mr. Krabs
+Mrs. Puff
+Patchy the Pirate
+Patrick Star
+Pearl Krabs
+Perch Perkins
+Plankton and Karen
+Potty the Parrot
+Realistic Fish Head
+Sandy Cheeks
+SpongeBob SquarePants
+Squidward Tentacles
+The Flying Dutchman
+
+// @title Olympic Sports
+// @author Sean Hale
+3x3 Basketball
+Alpine Skiing
+Archery
+Artistic Gymnastics
+Artistic Swimming
+Athletics
+Badminton
+Baseball Softball
+Basketball
+Beach Handball
+Beach Volleyball
+Biathlon
+Bobsleigh
+Boxing
+Breaking
+Canoe Flatwater
+Canoe Slalom
+Cross-Country Skiing
+Curling
+Cycling BMX Freestyle
+Cycling BMX Racing
+Cycling Mountain Bike
+Cycling Road
+Cycling Track
+Diving
+Equestrian
+Fencing
+Figure Skating
+Football
+Freestyle Skiing
+Futsal
+Golf
+Handball
+Hockey
+Ice Hockey
+Judo
+Karate
+Luge
+Marathon Swimming
+Modern Pentathlon
+Nordic Combined
+Rhythmic Gymnastics
+Rowing
+Rugby Sevens
+Sailing
+Shooting
+Short Track Speed Skating
+Skateboarding
+Skeleton
+Ski Jumping
+Ski Mountaineering
+Snowboard
+Speed Skating
+Sport Climbing
+Surfing
+Swimming
+Table Tennis
+Taekwondo
+Tennis
+Trampoline
+Triathlon
+Volleyball
+Water Polo
+Weightlifting
+Wrestling
