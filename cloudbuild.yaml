@@ -1,12 +1,18 @@
 steps:
   # Build the new version of the bot
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us.gcr.io/rusty-244803/prod:latest', '.']
+    args:
+      [
+        'build',
+        '-t',
+        'gcr.io/${PROJECT_ID}/${_REGISTRY_NAME}:${_REGISTRY_TAG}',
+        '.'
+      ]
     timeout: 600s
 
   # Push up the newest version once we are done pruning
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us.gcr.io/rusty-244803/prod:latest']
+    args: ['push', 'gcr.io/${PROJECT_ID}/${_REGISTRY_NAME}:${_REGISTRY_TAG}']
 
   # Complete the process by updating the container with the newest image
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -15,7 +21,7 @@ steps:
         'compute',
         'instances',
         'update-container',
-        'rusty-prod',
-        '--zone=us-east1-b',
-        '--container-image=us.gcr.io/rusty-244803/prod:latest'
+        '${_CONTAINER_NAME}',
+        '--zone=${_ZONE}',
+        '--container-image=gcr.io/${PROJECT_ID}/${_REGISTRY_NAME}:${_REGISTRY_TAG}'
       ]
