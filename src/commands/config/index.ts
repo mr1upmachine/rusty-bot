@@ -13,9 +13,12 @@ import {
   RANDOM_VOICE_CHANNEL_NAMES_FREQUENCY_CHOICES
 } from './subcommands/random-voice-channel-names/constants.js';
 import { KarmaTrackingSubcommand } from './subcommands/karma-tracking/types.js';
+import { LogsSubcommand } from './subcommands/logs/constants.js';
+import { logsSubcommand } from './subcommands/logs/index.js';
 
 enum ConfigSubcommandGroup {
   KarmaTracking = 'karma-tracking',
+  Logs = 'logs',
   RandomVoiceChannelNames = 'random-voice-channel-names'
 }
 
@@ -56,6 +59,36 @@ class ConfigCommand extends Command {
       )
       .addSubcommandGroup((subcommandGroup) =>
         subcommandGroup
+          .setName(ConfigSubcommandGroup.Logs)
+          .setDescription('Config for where Rusty Bot will log server events')
+          .addSubcommand((subcommand) =>
+            subcommand
+              .setName(LogsSubcommand.Channel)
+              .setDescription('Set the text channel that Rusty will log to')
+              .addChannelOption((option) =>
+                option
+                  .setName('value')
+                  .setDescription('The channel to send logs to')
+                  .setRequired(true)
+                  .addChannelTypes(ChannelType.GuildText)
+              )
+          )
+          .addSubcommand((subcommand) =>
+            subcommand
+              .setName(LogsSubcommand.Role)
+              .setDescription(
+                'Set which role Rusty will mention if logs are important'
+              )
+              .addRoleOption((option) =>
+                option
+                  .setName('value')
+                  .setDescription('The role Rusty will tag')
+                  .setRequired(true)
+              )
+          )
+      )
+      .addSubcommandGroup((subcommandGroup) =>
+        subcommandGroup
           .setName(ConfigSubcommandGroup.RandomVoiceChannelNames)
           .setDescription('Config for the random voice channel name feature')
           .addSubcommand((subcommand) =>
@@ -84,7 +117,7 @@ class ConfigCommand extends Command {
             subcommand
               .setName(RandomVoiceChannelNamesSubcommand.Frequency)
               .setDescription(
-                'Set how often the vioce channel names will update'
+                'Set how often the voice channel names will update'
               )
               .addStringOption((option) =>
                 option
@@ -114,10 +147,18 @@ class ConfigCommand extends Command {
         response = await karmaTrackingSubcommand(interaction);
         break;
       }
+      case ConfigSubcommandGroup.Logs: {
+        response = await logsSubcommand(interaction);
+        break;
+      }
       case ConfigSubcommandGroup.RandomVoiceChannelNames: {
         response = await randomVoiceChannelNamesSubcommand(interaction);
         break;
       }
+    }
+
+    if (!response) {
+      response = 'Something went VERY wrong';
     }
 
     await interaction.editReply(response);

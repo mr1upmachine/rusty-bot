@@ -7,7 +7,11 @@ const DEFAULT_CHANNEL_NAME = 'Voice Channel';
 
 export async function setRandomVoiceChannelNames(
   channels: VoiceBasedChannel[]
-): Promise<void> {
+): Promise<readonly [string, string][]> {
+  if (!channels.length) {
+    throw new Error('Array of channels passed is empty!');
+  }
+
   // Pull list from json
   const { groups } = await getRandomVoiceChannelNamesFromFile();
 
@@ -30,9 +34,17 @@ export async function setRandomVoiceChannelNames(
     }
   );
 
+  // Get current name to new name map
+  const oldToNewNameMap = nameChannelMap.map(([newName, voiceChannel]) => [
+    voiceChannel.name,
+    newName
+  ]) as readonly [string, string][];
+
   // Set voice channel names
   const setAllNames = nameChannelMap.map(([randomName, voiceChannel]) =>
     voiceChannel.setName(randomName)
   );
   await Promise.all(setAllNames);
+
+  return oldToNewNameMap;
 }

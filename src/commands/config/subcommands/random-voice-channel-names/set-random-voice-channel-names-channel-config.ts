@@ -31,7 +31,7 @@ export async function setRandomVoiceChannelNamesChannelConfig(
   );
 
   // Update cron job
-  setupRandomVoiceChannelNamesCron(guild, channels);
+  await setupRandomVoiceChannelNamesCron(guild, channels);
 
   // Build response text
   const valueText = value ? 'enabled' : 'disabled';

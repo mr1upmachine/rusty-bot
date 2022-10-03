@@ -33,7 +33,7 @@ export async function setRandomVoiceChannelNamesFrequencyConfig(
   );
 
   // Update cron job
-  setupRandomVoiceChannelNamesCron(guild, channels, value);
+  await setupRandomVoiceChannelNamesCron(guild, channels, value);
 
   // Build response text
   const choiceKeys = Object.keys(
