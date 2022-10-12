@@ -82,9 +82,32 @@ class ConfigCommand extends Command {
           )
           .addSubcommand((subcommand) =>
             subcommand
+              .setName(RandomVoiceChannelNamesSubcommand.Cron)
+              .setDescription(
+                'Set how often the voice channel names will update'
+              )
+              .addStringOption((option) =>
+                option
+                  .setName('value')
+                  .setDescription(
+                    'Cron expression for when the names should update'
+                  )
+                  .setRequired(true)
+                  .setMinLength(9)
+              )
+              .addStringOption((option) =>
+                option
+                  .setName('timezone')
+                  .setDescription(
+                    'Which timezone it will update relative to. (Default: UTC)'
+                  )
+              )
+          )
+          .addSubcommand((subcommand) =>
+            subcommand
               .setName(RandomVoiceChannelNamesSubcommand.Frequency)
               .setDescription(
-                'Set how often the vioce channel names will update'
+                'Set how often the voice channel names will update'
               )
               .addStringOption((option) =>
                 option
@@ -92,6 +115,13 @@ class ConfigCommand extends Command {
                   .setDescription('How often the channel names will update')
                   .setRequired(true)
                   .addChoices(...RANDOM_VOICE_CHANNEL_NAMES_FREQUENCY_CHOICES)
+              )
+              .addStringOption((option) =>
+                option
+                  .setName('timezone')
+                  .setDescription(
+                    'Which timezone it will update relative to. (Default: UTC)'
+                  )
               )
           )
       );

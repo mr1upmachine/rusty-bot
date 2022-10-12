@@ -8,7 +8,8 @@ import { setRandomVoiceChannelNames } from './set-random-voice-channel-names.js'
 export function setupRandomVoiceChannelNamesCron(
   guild: Guild,
   channels: VoiceBasedChannel[],
-  frequency?: string | null
+  frequency?: string,
+  timezone?: string
 ): void {
   // Get dependencies
   const cronJobMap = useRandomVoiceChannelNameCronMap();
@@ -32,9 +33,15 @@ export function setupRandomVoiceChannelNamesCron(
     DEFAULT_RANDOM_VOICE_CHANNEL_NAMES_CRON;
 
   // Build new cron job
-  const newCronJob = new CronJob(newFrequency, () => {
-    void setRandomVoiceChannelNames(channels);
-  });
+  const newCronJob = new CronJob(
+    newFrequency,
+    () => {
+      void setRandomVoiceChannelNames(channels);
+    },
+    undefined,
+    undefined,
+    timezone ?? undefined
+  );
 
   // Add / overwrite cron job
   cronJobMap.set(guild.id, {

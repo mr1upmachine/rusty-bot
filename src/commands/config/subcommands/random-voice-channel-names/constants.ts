@@ -1,5 +1,6 @@
 export enum RandomVoiceChannelNamesSubcommand {
   Channel = 'channel',
+  Cron = 'cron',
   Frequency = 'frequency'
 }
 

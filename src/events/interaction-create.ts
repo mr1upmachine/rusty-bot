@@ -18,7 +18,9 @@ class InteractionCreateEvent extends ClientEvent<'interactionCreate'> {
 
       const message = e.message;
 
-      if (interaction.replied) {
+      if (interaction.deferred) {
+        await interaction.editReply({ content: message });
+      } else if (interaction.replied) {
         await interaction.followUp({ content: message, ephemeral: true });
       } else {
         await interaction.reply({ content: message, ephemeral: true });

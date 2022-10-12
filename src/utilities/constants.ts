@@ -73,3 +73,8 @@ export const CLIENT_EVENT_TYPES: readonly (keyof ClientEvents)[] = [
 export const RANDOM_ACTIVITY_CRON = '0 0 0 * * *';
 
 export const DEFAULT_RANDOM_VOICE_CHANNEL_NAMES_CRON = '0 0 0 * * *';
+
+/** Minimum number of minutes between changing the channel names */
+export const CHANNEL_NAME_CHANGE_RATE_LIMIT = 10;
+
+export const RUSTY_WEBSITE_URL = 'https://rusty.mr1upmachine.com/';

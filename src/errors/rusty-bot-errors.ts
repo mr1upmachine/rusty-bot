@@ -26,6 +26,13 @@ export class MissingEnvironmentVariableError extends Error {
   }
 }
 
+export class CronTooFrequentError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'CronTooFrequentError';
+  }
+}
+
 /**
  * This should be thrown when a command throws an expected error that
  * should be reported to the user. Typically this is thrown due to

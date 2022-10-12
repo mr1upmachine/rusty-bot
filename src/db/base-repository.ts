@@ -4,6 +4,7 @@ import type {
   Firestore,
   PartialWithFieldValue
 } from '@google-cloud/firestore';
+import { removeEmptyProps } from '../utilities/remove-empty-props.js';
 
 import { QueryBuilder } from './query-builder.js';
 import type { BaseModel } from './types.js';
@@ -41,7 +42,11 @@ export abstract class BaseRepository<T extends BaseModel> {
   }
 
   async save(id: string, data: Partial<T>): Promise<void> {
-    await this.collection.doc(id).set({ ...data, id: null }, { merge: true });
+    const parsedData = removeEmptyProps({
+      ...data,
+      id: undefined
+    });
+    await this.collection.doc(id).set(parsedData, { merge: true });
   }
 
   // TODO find better typing for `data` to merge with the main `save` method
@@ -49,6 +54,10 @@ export abstract class BaseRepository<T extends BaseModel> {
     id: string,
     data: PartialWithFieldValue<T>
   ): Promise<void> {
-    await this.collection.doc(id).set({ ...data, id: null }, { merge: true });
+    const parsedData = removeEmptyProps({
+      ...data,
+      id: undefined
+    });
+    await this.collection.doc(id).set(parsedData, { merge: true });
   }
 }
