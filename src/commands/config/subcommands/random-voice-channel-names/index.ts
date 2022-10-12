@@ -6,7 +6,7 @@ import type {
 import type { RandomVoiceChannelNamesFrequencyCron } from './constants.js';
 import { RandomVoiceChannelNamesSubcommand } from './constants.js';
 import { setRandomVoiceChannelNamesChannelConfig } from './set-random-voice-channel-names-channel-config.js';
-import { setRandomVoiceChannelNamesFrequencyConfig } from './set-random-voice-channel-names-frequency-config.js';
+import { setRandomVoiceChannelNamesCronConfig } from './set-random-voice-channel-names-cron-config.js';
 
 export async function randomVoiceChannelNamesSubcommand(
   interaction: ChatInputCommandInteraction
@@ -27,12 +27,18 @@ export async function randomVoiceChannelNamesSubcommand(
       ) as VoiceBasedChannel;
       return setRandomVoiceChannelNamesChannelConfig(channel, value);
     }
+    case RandomVoiceChannelNamesSubcommand.Cron: {
+      const value = interaction.options.getString('value', true);
+      const timezone = interaction.options.getString('timezone');
+      return setRandomVoiceChannelNamesCronConfig(guild, value, timezone);
+    }
     case RandomVoiceChannelNamesSubcommand.Frequency: {
       const value = interaction.options.getString(
         'value',
         true
       ) as RandomVoiceChannelNamesFrequencyCron;
-      return setRandomVoiceChannelNamesFrequencyConfig(guild, value);
+      const timezone = interaction.options.getString('timezone');
+      return setRandomVoiceChannelNamesCronConfig(guild, value, timezone);
     }
   }
 }
