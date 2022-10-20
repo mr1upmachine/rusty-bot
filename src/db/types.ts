@@ -8,6 +8,8 @@ export type DBRoot = BaseModel;
 
 export interface DBGuild extends BaseModel {
   readonly randomVoiceChannelNamesFrequency?: string;
+  readonly logChannelId?: string;
+  readonly logRoleId?: string;
 }
 
 export interface DBGuildChannel extends BaseModel {

@@ -49,7 +49,7 @@ export class ReadyEvent extends ClientEvent<'ready'> {
       return acc;
     }, []);
     for (const [guild, guildChannels] of guildChannelsToSetup) {
-      setupRandomVoiceChannelNamesCron(guild, guildChannels);
+      await setupRandomVoiceChannelNamesCron(guild, guildChannels);
     }
   }
 }

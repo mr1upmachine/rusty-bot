@@ -1,17 +1,19 @@
 import { CronJob } from 'cron';
 import type { Guild, VoiceBasedChannel } from 'discord.js';
+import { useLogger } from '../services/use-logger.js';
 
 import { useRandomVoiceChannelNameCronMap } from '../services/use-random-voice-channel-name-cron-map.js';
 import { DEFAULT_RANDOM_VOICE_CHANNEL_NAMES_CRON } from './constants.js';
 import { setRandomVoiceChannelNames } from './set-random-voice-channel-names.js';
 
-export function setupRandomVoiceChannelNamesCron(
+export async function setupRandomVoiceChannelNamesCron(
   guild: Guild,
   channels: VoiceBasedChannel[],
   frequency?: string | null
-): void {
+): Promise<void> {
   // Get dependencies
   const cronJobMap = useRandomVoiceChannelNameCronMap();
+  const logger = await useLogger(guild);
 
   // Stop previous cron job
   const currentCronMeta = cronJobMap.get(guild.id);
@@ -33,7 +35,14 @@ export function setupRandomVoiceChannelNamesCron(
 
   // Build new cron job
   const newCronJob = new CronJob(newFrequency, () => {
-    void setRandomVoiceChannelNames(channels);
+    void setRandomVoiceChannelNames(channels).then((oldToNewNameMap) => {
+      // Log to logging channel
+      const logText = oldToNewNameMap.reduce(
+        (acc, [oldName, newName]) => acc + `${oldName} -> ${newName}\n`,
+        'Voice channel names have been automatically updated:\n'
+      );
+      void logger.info(logText);
+    });
   });
 
   // Add / overwrite cron job
