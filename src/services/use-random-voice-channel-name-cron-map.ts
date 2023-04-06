@@ -1,4 +1,4 @@
-import type { RandomVoiceChannelNamesCronMeta } from '../types/random-voice-channel-names-cron-meta';
+import type { RandomVoiceChannelNamesCronMeta } from '../types/random-voice-channel-names-cron-meta.js';
 
 const randomVoiceChannelNameCronMap = new Map<
   string,

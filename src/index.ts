@@ -1,6 +1,6 @@
 import { Client, IntentsBitField, Partials } from 'discord.js';
-import * as path from 'path';
-import * as url from 'url';
+import * as path from 'node:path';
+import * as url from 'node:url';
 
 import type { GCPAppOptions } from './create-db-connection.js';
 import { createDBConnection } from './create-db-connection.js';

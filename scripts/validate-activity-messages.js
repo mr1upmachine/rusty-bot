@@ -1,6 +1,6 @@
-import { readFileSync } from 'fs';
-import * as path from 'path';
-import * as url from 'url';
+import { readFileSync } from 'node:fs';
+import * as path from 'node:path';
+import * as url from 'node:url';
 
 /** Current directory */
 const CURRENT_DIR = url.fileURLToPath(new URL('.', import.meta.url));
