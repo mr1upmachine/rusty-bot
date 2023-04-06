@@ -8,7 +8,7 @@ import { validateDiceExpression } from './validate-dice-expression.js';
 import type {
   CommandBuilder,
   CommandBuilderOutput
-} from '../../types/command-builder';
+} from '../../types/command-builder.js';
 
 class RollCommand extends Command {
   public readonly description =

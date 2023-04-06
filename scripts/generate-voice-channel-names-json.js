@@ -1,6 +1,6 @@
-import { readFileSync, writeFileSync } from 'fs';
-import * as path from 'path';
-import * as url from 'url';
+import { readFileSync, writeFileSync } from 'node:fs';
+import * as path from 'node:path';
+import * as url from 'node:url';
 
 /** @typedef {{ title?: string; authors?: string[]; names: string[]; }} VoiceChannelNameGroup */
 

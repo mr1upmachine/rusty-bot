@@ -1,17 +1,19 @@
-import * as path from 'path';
-import { statSync } from 'fs';
-import { readdir } from 'fs/promises';
+import * as path from 'node:path';
+import { statSync } from 'node:fs';
+import { readdir } from 'node:fs/promises';
+import { pathToFileURL } from 'node:url';
 
 import { hasProperty } from './has-property.js';
 
 interface FileMeta<T extends object> {
   itemName: string;
-  fileName: string;
-  fullPath: string;
   content: T;
 }
 
-type FileMetaWithoutContent<T extends object> = Omit<FileMeta<T>, 'content'>;
+type FileMetaWithoutContent<T extends object> = Omit<FileMeta<T>, 'content'> & {
+  fileName: string;
+  url: string;
+};
 
 export async function getDirectoryContents<T extends object>(
   dirPath: string
@@ -25,21 +27,20 @@ export async function getDirectoryContents<T extends object>(
 
         let itemName: string;
         let fileName: string;
-        let fullPath: string;
+        let url = pathToFileURL(fullPathStr).toString();
         if (isDir) {
-          itemName = fullPathStr.split('/').at(-1)!;
+          itemName = url.split('/').at(-1) ?? '';
           fileName = 'index.js';
-          fullPath = path.join(fullPathStr, 'index.js');
+          url = pathToFileURL(path.join(fullPathStr, fileName)).toString();
         } else {
-          itemName = dirContentItem.split('.').at(0)!;
+          itemName = path.basename(url).split('.').at(0) ?? '';
           fileName = dirContentItem;
-          fullPath = fullPathStr;
         }
 
         const newFileMeta: FileMetaWithoutContent<T> = {
           itemName,
           fileName,
-          fullPath
+          url
         };
         return [...acc, newFileMeta];
       },
@@ -47,23 +48,18 @@ export async function getDirectoryContents<T extends object>(
     );
 
   const fileMetas: FileMeta<T>[] = [];
-  for (const { fileName, fullPath, itemName } of fileMetasWithoutContent) {
-    const module = (await import(fullPath)) as unknown;
+  for (const { url, itemName } of fileMetasWithoutContent) {
+    const module = (await import(url)) as unknown;
 
     if (
       typeof module !== 'object' ||
       module === null ||
       !hasProperty(module, 'default')
     ) {
-      throw new Error(`${fullPath} needs to default export`);
+      throw new Error(`${url} needs to default export`);
     }
 
-    fileMetas.push({
-      content: module.default as T,
-      itemName,
-      fileName,
-      fullPath
-    });
+    fileMetas.push({ content: module.default as T, itemName });
   }
 
   return fileMetas;
