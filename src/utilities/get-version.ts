@@ -1,8 +1,11 @@
-const ASSET_PATH = '../assets/package.json';
+import { pathToFileURL } from 'node:url';
+
+const FILE_PATH = 'dist/assets/package.json';
 
 export async function getVersion(): Promise<string> {
+  const url = pathToFileURL(FILE_PATH);
   return (
-    import(ASSET_PATH, {
+    import(url.toString(), {
       assert: {
         type: 'json'
       }

@@ -1,7 +1,9 @@
+import { pathToFileURL } from 'node:url';
+
 import { hasProperty } from './has-property.js';
 import { isArray } from './is-array.js';
 
-const FILE_PATH = '../assets/voice-channel-names.json';
+const FILE_PATH = 'dist/assets/voice-channel-names.json';
 
 interface VoiceChannelNameJSON {
   groups: readonly VoiceChannelNameGroup[];
@@ -15,7 +17,8 @@ interface VoiceChannelNameGroup {
 }
 
 export async function getRandomVoiceChannelNamesFromFile(): Promise<VoiceChannelNameJSON> {
-  const fileContents: unknown = await import(FILE_PATH, {
+  const url = pathToFileURL(FILE_PATH);
+  const fileContents: unknown = await import(url.toString(), {
     assert: {
       type: 'json'
     }

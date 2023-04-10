@@ -5,6 +5,8 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
+RUN npm i -g npm@9
+
 RUN npm ci
 
 COPY . .

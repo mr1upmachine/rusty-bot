@@ -1,4 +1,5 @@
 import type { ActivityType } from 'discord.js';
+import { pathToFileURL } from 'node:url';
 
 import { hasProperty } from './has-property.js';
 import { isArray } from './is-array.js';
@@ -14,10 +15,11 @@ interface ActivityMessagesJSON {
 }
 type ActivityTypeTextMapEntry = [SupportedActivityType, string];
 
-const FILE_PATH = '../assets/activity-messages.json';
+const FILE_PATH = 'dist/assets/activity-messages.json';
 
 export async function getRandomActivitiesFromFile(): Promise<ActivityMessagesJSON> {
-  const fileContents: unknown = await import(FILE_PATH, {
+  const url = pathToFileURL(FILE_PATH);
+  const fileContents: unknown = await import(url.toString(), {
     assert: {
       type: 'json'
     }
