@@ -21,10 +21,12 @@ class ShuffleVoiceChannelNamesCommand extends Command {
     );
   }
 
-  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+  async execute(
+    interaction: ChatInputCommandInteraction<'cached'>
+  ): Promise<void> {
     await interaction.deferReply({ ephemeral: true });
 
-    const guild = interaction.guild!;
+    const guild = interaction.guild;
 
     // Get dependencies
     const guildChannelsRepository = useGuildChannelsRepository(guild.id);

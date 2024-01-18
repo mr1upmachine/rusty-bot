@@ -1,8 +1,4 @@
-import type {
-  ChatInputCommandInteraction,
-  ColorResolvable,
-  GuildMember
-} from 'discord.js';
+import type { ChatInputCommandInteraction, ColorResolvable } from 'discord.js';
 
 import { Command } from '../../types/command.js';
 import {
@@ -30,9 +26,11 @@ export class ColorCommand extends Command {
     );
   }
 
-  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
-    const roleName = `USER-${interaction.member!.user.id}`;
-    const myRole = interaction.guild!.roles.cache.find(
+  async execute(
+    interaction: ChatInputCommandInteraction<'cached'>
+  ): Promise<void> {
+    const roleName = `USER-${interaction.member.user.id}`;
+    const myRole = interaction.guild.roles.cache.find(
       (role: { name: string }) => role.name === roleName
     );
     const color = interaction.options.getString('hex', true).toUpperCase();
@@ -49,14 +47,13 @@ export class ColorCommand extends Command {
 
       let message: string;
       if (!myRole) {
-        const createdRole = await interaction.guild!.roles.create({
+        const createdRole = await interaction.guild.roles.create({
           // Creates new role with user selected color
           color: formattedColor as ColorResolvable,
           name: roleName
         });
 
-        const member = interaction.member as GuildMember;
-        await member.roles.add(createdRole); // Assigns newly created role to user
+        await interaction.member.roles.add(createdRole); // Assigns newly created role to user
 
         message = `Role created with color ${formattedColor}`;
       } else {

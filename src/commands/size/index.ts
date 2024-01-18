@@ -22,11 +22,13 @@ class SizeCommand extends Command {
     );
   }
 
-  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+  async execute(
+    interaction: ChatInputCommandInteraction<'cached'>
+  ): Promise<void> {
     const user = interaction.options.getUser('user') ?? interaction.user;
 
     const hash = this._hashCode(user.id);
-    const displayId = /^\d+$/.test(user.id) ? `<@!${user.id}>` : user.id; // Adds mention characters
+    const displayName = user.toString();
     const generator = new MersenneTwister(hash);
     const modifier = this._determineSize(hash);
     let size = 0;
@@ -35,22 +37,22 @@ class SizeCommand extends Command {
     switch (modifier) {
       case 'magnum':
         size = generator.random() * 5 + 5;
-        message += `Wow ${displayId} you got a *MAGNUM* dong!`;
+        message += `Wow ${displayName} you got a *MAGNUM* dong!`;
         break;
       case 'normal':
         size = generator.random() * 3 + 3;
-        message += `Hey ${displayId} it's not the size of the wave, it's the motion of the ocean.`;
+        message += `Hey ${displayName} it's not the size of the wave, it's the motion of the ocean.`;
         break;
       case 'micro':
         size = generator.random() * 3;
-        message += `Uhh.. ${displayId}, where is it..?`;
+        message += `Uhh.. ${displayName}, where is it..?`;
         break;
     }
     message += `\nYour dong is ${size.toFixed(2)} inches!`;
 
     const donger = `8${'='.repeat(Math.floor(size))}D`;
 
-    message += `\nEveryone look at ${displayId}'s dong: ${donger}`;
+    message += `\nEveryone look at ${displayName}'s dong: ${donger}`;
     await interaction.reply(message);
   }
 

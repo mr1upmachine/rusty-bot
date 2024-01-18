@@ -6,7 +6,7 @@ import { setKarmaTrackingConfig } from './set-karma-tracking-config.js';
 import { KarmaTrackingSubcommand } from './types.js';
 
 export async function karmaTrackingSubcommand(
-  interaction: ChatInputCommandInteraction
+  interaction: ChatInputCommandInteraction<'cached'>
 ): Promise<string> {
   const subcommandName = interaction.options.getSubcommand(
     true

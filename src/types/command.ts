@@ -15,5 +15,7 @@ export abstract class Command {
     return commandBuilder;
   }
 
-  abstract execute(interaction: ChatInputCommandInteraction): Promise<void>;
+  abstract execute(
+    interaction: ChatInputCommandInteraction<'cached'>
+  ): Promise<void>;
 }

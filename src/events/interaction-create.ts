@@ -6,7 +6,12 @@ import { useCommand } from '../utilities/use-command.js';
 
 class InteractionCreateEvent extends ClientEvent<'interactionCreate'> {
   async execute(interaction: Interaction): Promise<void> {
-    if (!interaction.isCommand() || !interaction.isChatInputCommand()) return;
+    if (
+      !interaction.isCommand() ||
+      !interaction.isChatInputCommand() ||
+      !interaction.inCachedGuild()
+    )
+      return;
 
     try {
       const command = useCommand(interaction.commandName);

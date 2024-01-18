@@ -1,11 +1,11 @@
 # Build Stage
-FROM node:18 AS build
+FROM node:20 AS build
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm i -g npm@9
+RUN npm i -g npm@10
 
 RUN npm ci
 
@@ -14,7 +14,7 @@ COPY . .
 RUN npm run build
 
 # Run Stage
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /usr/src/app
 

@@ -56,17 +56,15 @@ export async function processReactionEvent(
     newDBGuildMessage = { ...newDBGuildMessage, content: message.cleanContent };
   }
 
-  const messageAttachment = message.attachments.first()?.attachment;
+  const messageAttachment = message.attachments.first()?.toString();
   if (
     messageAttachment &&
-    (Buffer.isBuffer(messageAttachment) ||
-      typeof messageAttachment === 'string') &&
     (!currentDBGuildMessage?.attachment ||
       messageAttachment !== currentDBGuildMessage.attachment)
   ) {
     newDBGuildMessage = {
       ...newDBGuildMessage,
-      attachment: messageAttachment.toString()
+      attachment: messageAttachment
     };
   }
 

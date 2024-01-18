@@ -9,9 +9,9 @@ import { setRandomVoiceChannelNamesChannelConfig } from './set-random-voice-chan
 import { setRandomVoiceChannelNamesCronConfig } from './set-random-voice-channel-names-cron-config.js';
 
 export async function randomVoiceChannelNamesSubcommand(
-  interaction: ChatInputCommandInteraction
+  interaction: ChatInputCommandInteraction<'cached'>
 ): Promise<string> {
-  const guild = interaction.guild!;
+  const guild = interaction.guild;
 
   // Get subcommand
   const subcommandName = interaction.options.getSubcommand(

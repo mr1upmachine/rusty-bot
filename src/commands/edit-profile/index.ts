@@ -1,4 +1,4 @@
-import type { ChatInputCommandInteraction, GuildMember } from 'discord.js';
+import type { ChatInputCommandInteraction } from 'discord.js';
 
 import { Command } from '../../types/command.js';
 import { formatHexColor } from '../../utilities/hex-color-helper.js';
@@ -30,10 +30,12 @@ class EditProfileCommand extends Command {
       );
   }
 
-  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+  async execute(
+    interaction: ChatInputCommandInteraction<'cached'>
+  ): Promise<void> {
     try {
-      const guildId = interaction.guild!.id;
-      const member = interaction.member as GuildMember;
+      const guildId = interaction.guild.id;
+      const member = interaction.member;
 
       // Get dependencies
       const guildMembersRepository = useGuildMembersRepository(guildId);

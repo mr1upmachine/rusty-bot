@@ -56,9 +56,8 @@ createDBConnection(gcpAppOptions);
 // Finds all command files in `./commands/` and registers them to global state
 const COMMANDS_RELATIVE_FILE_PATH = './commands/';
 const COMMANDS_FILE_PATH = path.join(CURRENT_DIR, COMMANDS_RELATIVE_FILE_PATH);
-const COMMAND_FILE_METAS = await getDirectoryContents<CommandDerived>(
-  COMMANDS_FILE_PATH
-);
+const COMMAND_FILE_METAS =
+  await getDirectoryContents<CommandDerived>(COMMANDS_FILE_PATH);
 for (const { content, itemName } of COMMAND_FILE_METAS) {
   registerCommand(itemName, content);
 }
@@ -66,9 +65,8 @@ for (const { content, itemName } of COMMAND_FILE_METAS) {
 // Finds all event files in `./events/` and creates listeners for all of them
 const EVENTS_RELATIVE_FILE_PATH = './events/';
 const EVENTS_FILE_PATH = path.join(CURRENT_DIR, EVENTS_RELATIVE_FILE_PATH);
-const EVENT_FILE_METAS = await getDirectoryContents<ClientEventDerived>(
-  EVENTS_FILE_PATH
-);
+const EVENT_FILE_METAS =
+  await getDirectoryContents<ClientEventDerived>(EVENTS_FILE_PATH);
 for (const { content, itemName } of EVENT_FILE_METAS) {
   const eventName = itemName
     .toLowerCase()

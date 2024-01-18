@@ -25,7 +25,9 @@ class RollCommand extends Command {
     );
   }
 
-  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+  async execute(
+    interaction: ChatInputCommandInteraction<'cached'>
+  ): Promise<void> {
     try {
       // Joins args together in case spaces are in the expression
       const expression = interaction.options.getString('expression', true);
