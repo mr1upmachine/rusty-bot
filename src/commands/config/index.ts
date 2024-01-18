@@ -127,7 +127,9 @@ class ConfigCommand extends Command {
       );
   }
 
-  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+  async execute(
+    interaction: ChatInputCommandInteraction<'cached'>
+  ): Promise<void> {
     if (!interaction.inGuild()) {
       return;
     }

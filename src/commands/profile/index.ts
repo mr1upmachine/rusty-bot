@@ -21,10 +21,12 @@ class ProfileCommand extends Command {
     );
   }
 
-  async execute(interaction: ChatInputCommandInteraction): Promise<void> {
+  async execute(
+    interaction: ChatInputCommandInteraction<'cached'>
+  ): Promise<void> {
     await interaction.deferReply();
 
-    const guild = interaction.guild!;
+    const guild = interaction.guild;
 
     // Get dependencies
     const guildMembersRepository = useGuildMembersRepository(guild.id);
@@ -32,7 +34,11 @@ class ProfileCommand extends Command {
     // Get options
     const user = interaction.options.getUser('user') ?? interaction.user;
 
-    const member = guild.members.cache.get(user.id)!;
+    const member = guild.members.cache.get(user.id);
+    if (!member) {
+      await interaction.editReply('No user found!');
+      return;
+    }
 
     const profilePictureUrl = user.displayAvatarURL();
     const memberNickname = member.nickname ?? member.user.username;

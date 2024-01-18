@@ -9,7 +9,7 @@ export async function deployCommands(
   guildId: string,
   token: string
 ): Promise<void> {
-  const rest = new REST({ version: '9' }).setToken(token);
+  const rest = new REST({ version: '10' }).setToken(token);
   const commandsJSON = useCommands().map((command) => buildCommand(command));
 
   try {

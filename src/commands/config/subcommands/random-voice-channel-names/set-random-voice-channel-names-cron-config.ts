@@ -15,20 +15,6 @@ import {
   RUSTY_WEBSITE_URL
 } from '../../../../utilities/constants.js';
 
-// HACK: This temporarily resolves the issue found here: https://github.com/microsoft/TypeScript/issues/49231
-// eslint-disable-next-line @typescript-eslint/no-namespace
-declare namespace Intl {
-  type Key =
-    | 'calendar'
-    | 'collation'
-    | 'currency'
-    | 'numberingSystem'
-    | 'timeZone'
-    | 'unit';
-
-  function supportedValuesOf(input: Key): string[];
-}
-
 export async function setRandomVoiceChannelNamesCronConfig(
   guild: Guild,
   value: string,
