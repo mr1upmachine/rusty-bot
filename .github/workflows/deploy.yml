@@ -60,5 +60,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
 
-      - name: Restart VM
-        run: gcloud compute instances reset ${{ vars.GCP_COMPUTE_VM_NAME }} --zone=${{ vars.GCP_PROJECT_ZONE }}
+      - name: Stop VM
+        run: gcloud compute instances stop ${{ vars.GCP_COMPUTE_VM_NAME }} --zone=${{ vars.GCP_PROJECT_ZONE }}
+
+      - name: Start VM
+        run: gcloud compute instances start ${{ vars.GCP_COMPUTE_VM_NAME }} --zone=${{ vars.GCP_PROJECT_ZONE }}
