@@ -26,6 +26,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
+          project_id: ${{ vars.GCP_PROJECT_ID }}
 
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v2'
@@ -34,17 +35,14 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: gcr.io
-          username: _json_key
-          password: ${{ secrets.GCP_CREDENTIALS_JSON }}
+          username: oauth2accesstoken
+          password: ${{ steps.gcp-auth.outputs.auth_token }}
 
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
-          # list of Docker images to use as base name for tags
-          images:
-            gcr.io/${{ steps.gcp-auth.outputs.project_id }}/${{ vars.GCP_ARTIFACT_NAME }}
-            # generate Docker tags based on the following events/attributes
+          images: gcr.io/${{ steps.gcp-auth.outputs.project_id }}/${{ vars.GCP_ARTIFACT_NAME }}
           tags: |
             ${{ vars.GCP_ARTIFACT_TAG }}
             type=sha
@@ -57,5 +55,3 @@ jobs:
 
       - name: Restart VM
         run: gcloud compute instances reset ${{ vars.GCP_COMPUTE_VM_NAME }} --zone=${{ vars.GCP_PROJECT_ZONE }}
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.gcp-auth.outputs.credentials_file_path }}
