@@ -31,7 +31,7 @@ jobs:
 
       - name: Save service account key to variable
         id: save-key
-        run: echo "::add-mask::::set-output name=key::$(cat ${{ steps.gcp-auth.outputs.credentials_file_path }})"
+        run: echo "::set-output name=key::$(cat ::add-mask::${{ steps.gcp-auth.outputs.credentials_file_path }})"
 
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v2'
@@ -41,7 +41,7 @@ jobs:
         with:
           registry: gcr.io
           username: _json_key
-          password: ${{ steps.save-key.outputs.key }}
+          password: ::add-mask::${{ steps.save-key.outputs.key }}
 
       - name: Docker meta
         id: meta
