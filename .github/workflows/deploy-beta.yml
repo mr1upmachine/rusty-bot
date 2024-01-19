@@ -1,0 +1,13 @@
+name: Deploy Beta
+
+on:
+  push:
+    branches:
+      - beta
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    with:
+      environment: beta

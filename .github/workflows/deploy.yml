@@ -1,14 +1,25 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      dir:
+        type: string
+      environment:
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+      dir:
+        type: string
+      environment:
+        required: true
+        type: environment
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: prod
+    environment: ${{ inputs.environment }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,7 +37,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images:
-            gcr.io/${{ vars.GCP_PROJECT_ID }}/prod
+            gcr.io/${{ vars.GCP_PROJECT_ID }}/${{ inputs.dir || inputs.environment }}
             # generate Docker tags based on the following events/attributes
           tags: |
             latest
