@@ -1,6 +1,6 @@
 {
   "name": "rusty-bot",
-  "version": "5.0.3",
+  "version": "5.0.4",
   "description": "A discord bot for idiots",
   "main": "dist/index.js",
   "type": "module",
