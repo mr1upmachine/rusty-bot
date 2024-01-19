@@ -41,7 +41,7 @@ jobs:
         with:
           registry: gcr.io
           username: _json_key
-          password: ::add-mask::${{ steps.save-key.outputs.key }}
+          password: ${{ steps.save-key.outputs.key }}
 
       - name: Docker meta
         id: meta
