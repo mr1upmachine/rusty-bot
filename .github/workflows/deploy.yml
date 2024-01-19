@@ -35,8 +35,8 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: gcr.io
-          username: oauth2accesstoken
-          password: ${{ steps.gcp-auth.outputs.auth_token }}
+          username: _json_key
+          password: ${{ steps.gcp-auth.outputs.credentials_file_path }}
 
       - name: Docker meta
         id: meta
