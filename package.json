@@ -49,7 +49,7 @@
     "mersenne-twister": "1.1.0"
   },
   "devDependencies": {
-    "@types/cron": "2.0.1",
+    "@types/cron": "2.4.0",
     "@types/mersenne-twister": "1.1.7",
     "@types/node": "20.11.5",
     "@types/node-fetch": "2.6.11",
