@@ -25,6 +25,7 @@ jobs:
         name: Authenticate with GCP
         uses: google-github-actions/auth@v2
         with:
+          create_credentials_file: true
           credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
           project_id: ${{ vars.GCP_PROJECT_ID }}
 
