@@ -13,12 +13,22 @@ on:
         type: environment
 
 jobs:
-  build:
+  deploy:
+    name: Deploy ${{ inputs.environment }}
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - id: gcp-auth
+        name: Authenticate with GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
 
       - name: Login to GAR
         uses: docker/login-action@v3
@@ -33,7 +43,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images:
-            gcr.io/${{ vars.GCP_PROJECT_ID }}/${{ vars.GCP_ARTIFACT_NAME }}
+            gcr.io/${{ steps.gcp-auth.outputs.project_id }}/${{ vars.GCP_ARTIFACT_NAME }}
             # generate Docker tags based on the following events/attributes
           tags: |
             ${{ vars.GCP_ARTIFACT_TAG }}
@@ -45,15 +55,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
 
-      - name: Authenticate with GCP
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
-
-      - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v2'
-
       - name: Restart VM
         run: gcloud compute instances reset ${{ vars.GCP_COMPUTE_VM_NAME }} --zone=${{ vars.GCP_PROJECT_ZONE }}
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.gcp-auth.outputs.credentials_file_path }}
