@@ -31,7 +31,9 @@ jobs:
 
       - name: Save service account key to variable
         id: save-key
-        run: echo "key=$(cat ${{ steps.gcp-auth.outputs.credentials_file_path }})" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "key=$(cat ${{ steps.gcp-auth.outputs.credentials_file_path }})" >> "$GITHUB_OUTPUT"
+          echo "::add-mask::$(cat ${{ steps.gcp-auth.outputs.credentials_file_path }})"
 
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v2'
