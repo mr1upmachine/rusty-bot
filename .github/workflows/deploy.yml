@@ -3,18 +3,22 @@ name: Deploy
 on:
   workflow_call:
     inputs:
-      dir:
+      artifact-dir:
         type: string
       environment:
         required: true
         type: string
+      vm-name:
+        type: string
   workflow_dispatch:
     inputs:
-      dir:
+      artifact-dir:
         type: string
       environment:
         required: true
         type: environment
+      vm-name:
+        type: string
 
 jobs:
   build:
@@ -37,7 +41,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images:
-            gcr.io/${{ vars.GCP_PROJECT_ID }}/${{ inputs.dir || inputs.environment }}
+            gcr.io/${{ vars.GCP_PROJECT_ID }}/${{ inputs.artifact-dir || inputs.environment }}
             # generate Docker tags based on the following events/attributes
           tags: |
             latest
@@ -48,3 +52,16 @@ jobs:
         with:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+
+      - name: Authenticate with GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+
+      - name: Restart VM
+        run: gcloud compute instances reset ${{ inputs.vm-name || inputs.environment }} --zone=[ZONE]
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
