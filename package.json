@@ -51,7 +51,7 @@
   "devDependencies": {
     "@types/cron": "2.4.0",
     "@types/mersenne-twister": "1.1.7",
-    "@types/node": "20.11.10",
+    "@types/node": "20.11.16",
     "@types/node-fetch": "2.6.11",
     "@types/ws": "8.5.10",
     "@typescript-eslint/eslint-plugin": "6.19.1",
