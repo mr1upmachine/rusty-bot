@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  check-commit-message:
     runs-on: ubuntu-latest
     steps:
       - name: Check if commit message is semantic version
@@ -14,13 +14,15 @@ jobs:
         run: |
           regex="^[0-9]+\.[0-9]+\.[0-9]+$"
           if [[ "${{ github.event.head_commit.message }}" =~ $regex ]]; then
-            echo "is_semantic=true" >> $GITHUB_ENV
+            echo "is_semantic_version=true" >> $GITHUB_OUTPUT
           else
-            echo "is_semantic=false" >> $GITHUB_ENV
+            echo "is_semantic_version=false" >> $GITHUB_OUTPUT
           fi
-      - name: Deploy
-        if: env.is_semantic == 'true'
-        uses: ./.github/workflows/deploy.yml
-        with:
-          GCP_CREDENTIALS_JSON: ${{ secrets.GCP_CREDENTIALS_JSON }}
-          environment: prod
+  deploy:
+    name: Deploy
+    needs: check-commit-message
+    if: needs.check-commit-message.outputs.is_semantic_version == true
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    with:
+      environment: prod
