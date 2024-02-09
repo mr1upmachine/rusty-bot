@@ -18,6 +18,8 @@ jobs:
           else
             echo "is_semantic_version=false" >> $GITHUB_OUTPUT
           fi
+    outputs:
+      is_semantic_version: ${{ steps.check_semantic_version.outputs.is_semantic_version }}
   deploy:
     name: Deploy
     needs: check-commit-message
