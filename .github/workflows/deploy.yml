@@ -6,6 +6,9 @@ on:
       environment:
         required: true
         type: string
+    secrets:
+      GCP_CREDENTIALS_JSON:
+        required: true
   workflow_dispatch:
     inputs:
       environment:
