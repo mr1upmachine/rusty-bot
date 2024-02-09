@@ -23,7 +23,7 @@ jobs:
   deploy:
     name: Deploy
     needs: check-commit-message
-    if: needs.check-commit-message.outputs.is_semantic_version == true
+    if: needs.check-commit-message.outputs.is_semantic_version == 'true'
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
     with:
