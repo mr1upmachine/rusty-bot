@@ -6,5 +6,6 @@ updates:
       dependencies:
         patterns:
           - '*'
+        update-types: ['minor']
     schedule:
       interval: 'monthly'
