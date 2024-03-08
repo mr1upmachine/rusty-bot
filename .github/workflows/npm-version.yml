@@ -27,20 +27,24 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run npm version
-        id: version-step
-        run: |
-          version="npm version ${{ inputs.type }} --no-git-tag-version" >> $GITHUB_OUTPUT
-
       - name: Commit version bump
         run: |
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"
           git config --local user.password "${{ secrets.GITHUB_TOKEN }}"
-          git checkout -b ${{steps.version-step.outputs.version}}
+          git checkout -b release/${{steps.version-step.outputs.version}}
+
+      - name: Run npm version
+        id: version-step
+        run: |
+          npm version ${{ inputs.type }} --no-git-tag-version
+          version="cat package.json | jq -r '.version'" >> $GITHUB_OUTPUT
+
+      - name: Commit version bump
+        run: |
           git add .
           git commit -m "Bump version"
-          git push origin ${{steps.version-step.outputs.version}}
+          git push origin release/${{steps.version-step.outputs.version}}
 
       - name: Create pull request
         uses: octokit/request-action@v2.x
@@ -50,5 +54,5 @@ jobs:
           repo: ${{ github.repository }}
           title: Version ${{steps.version-step.outputs.version}}
           body: Automated pull request to bump version
-          head: ${{steps.version-step.outputs.version}}
+          head: release/${{steps.version-step.outputs.version}}
           base: main
