@@ -1,0 +1,43 @@
+name: NPM Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run npm version
+        run: npm version patch --no-git-tag-version
+
+      - name: Commit version bump
+        run: |
+          git config --local user.name "GitHub Action"
+          git config --local user.email "action@github.com"
+          git config --local user.password "${{ secrets.GITHUB_TOKEN }}"
+          git add .
+          git commit -m "Bump version"
+
+      - name: Push changes
+        run: |
+          git push origin main
