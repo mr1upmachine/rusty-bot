@@ -27,13 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Commit version bump
-        run: |
-          git config --local user.name "GitHub Action"
-          git config --local user.email "action@github.com"
-          git config --local user.password "${{ secrets.GITHUB_TOKEN }}"
-          git checkout -b release/${{steps.version-step.outputs.version}}
-
       - name: Run npm version
         id: version-step
         run: |
@@ -42,6 +35,10 @@ jobs:
 
       - name: Commit version bump
         run: |
+          git config --local user.name "GitHub Action"
+          git config --local user.email "action@github.com"
+          git config --local user.password "${{ secrets.GITHUB_TOKEN }}"
+          git checkout -b release/${{steps.version-step.outputs.version}}
           git add .
           git commit -m "Bump version"
           git push origin release/${{steps.version-step.outputs.version}}
