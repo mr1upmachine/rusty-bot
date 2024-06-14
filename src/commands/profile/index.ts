@@ -10,7 +10,6 @@ import { useGuildMembersRepository } from '../../db/use-guild-members-repository
 
 const DEFAULT_ABOUT_TEXT =
   'This is a default about section! Use the profile command to edit it!';
-const DEFAULT_PROFILE_COLOR = '#1B9403';
 
 class ProfileCommand extends Command {
   public readonly description = 'Displays information about a user.';
@@ -31,17 +30,13 @@ class ProfileCommand extends Command {
     // Get dependencies
     const guildMembersRepository = useGuildMembersRepository(guild.id);
 
-    // Get options
+    // Get arguments
     const user = interaction.options.getUser('user') ?? interaction.user;
 
-    const member = guild.members.cache.get(user.id);
-    if (!member) {
-      await interaction.editReply('No user found!');
-      return;
-    }
-
-    const profilePictureUrl = user.displayAvatarURL();
-    const memberNickname = member.nickname ?? member.user.username;
+    // Fetch member information
+    const member = await guild.members.fetch({ user });
+    const profilePictureUrl = member.displayAvatarURL();
+    const memberNickname = member.nickname ?? user.username;
 
     // Get member object from db
     const dbMember = await guildMembersRepository.findById(member.id);
@@ -50,13 +45,16 @@ class ProfileCommand extends Command {
       return;
     }
 
-    const about = dbMember.about ?? DEFAULT_ABOUT_TEXT;
-    const color: ColorResolvable =
+    // Parse info from the db
+    const about = dbMember.aboutText ?? dbMember.about ?? DEFAULT_ABOUT_TEXT;
+    const color: ColorResolvable | null =
+      (dbMember.color as ColorResolvable | undefined) ??
       (dbMember.infoColor as ColorResolvable | undefined) ??
-      DEFAULT_PROFILE_COLOR;
+      null;
     const postCount = dbMember.posts ?? 0;
     const karma = dbMember.karma ?? 0;
 
+    // Create embed
     const embed = new EmbedBuilder()
       .setTitle('About')
       .setDescription(about)
@@ -64,7 +62,7 @@ class ProfileCommand extends Command {
       .setAuthor({ name: memberNickname, iconURL: profilePictureUrl })
       .setColor(color)
       .setFooter({
-        text: 'Use the `profile` command for customization!'
+        text: 'Use the `edit-profile` command for customization!'
       })
       .setThumbnail(profilePictureUrl)
       .addFields([
@@ -80,6 +78,7 @@ class ProfileCommand extends Command {
         }
       ]);
 
+    // Respond to user
     await interaction.editReply({
       embeds: [embed]
     });
