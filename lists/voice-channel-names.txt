@@ -162,14 +162,14 @@ Firebase
 
 // @title F1 Teams
 // @author Ty Simpson
-Red Bull
+Red Bull Racing
 Ferrari
 Mercedes
 Alpine
 McLaren
-Alfa Romeo
+Kick Sauber
 Haas
-AlphaTauri
+RB
 Aston Martin
 Williams
 
@@ -2509,54 +2509,6 @@ Nest
 SailsJS
 egg
 Restify
-
-// @title Bands That Ty Made Me Listen To In The Car
-Underoath
-Deathcab For Cutie
-Area 11
-Billy Talent
-His Dad
-The Protomen
-Kero Kero Bonito
-RichaadEB
-Foo Fighters
-The Black Keys
-Adriana Figueroa
-Green Day
-Anberlin
-Norma Jean
-Animals As Leaders
-Hot Dad
-Flyleaf
-Run The Jewels
-They Might Be Giants
-Thank You Scientist
-Avenged Sevenfold
-The Mountain Goats
-Ninja Sex Party
-
-// @title Bands That I Made Ty Listen To In The Car
-Blink-182
-Just Way Too Much Blink-182
-The Offspring
-Falling In Reverse IRONICALLY
-Sum 41
-Maroon 5
-Mayday Parade
-A Day To Remember
-The Cab
-All Time Low
-Anarbor
-The Living Tombstone
-Rise Against
-P!ATD
-A Fuckton of MonsterCat
-Three Days Grace
-Fall Out Boy
-Imagine Dragons
-Breaking Benjamin
-Caravan Palace
-Despacito
 
 // @title States that I don't know the capital of off the top of my head
 // @author Tyler Hocker
