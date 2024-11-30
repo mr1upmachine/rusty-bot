@@ -17,7 +17,11 @@ export interface DBGuildChannel extends BaseModel {
 }
 
 export interface DBGuildMember extends BaseModel {
+  /** @deprecated use aboutText instead */
   readonly about?: string;
+  readonly aboutText?: string;
+  readonly color?: string;
+  /** @deprecated use color instead */
   readonly infoColor?: string;
   readonly karma?: number;
   readonly name?: string;
