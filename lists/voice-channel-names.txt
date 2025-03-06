@@ -433,36 +433,6 @@ Dragon
 Puss In Boots
 Fairy Godmother
 
-// @title Yugioh Cards
-// @author Tyler Hocker
-Nibiru, The Primal Being
-Dark Ruler No More
-Pot of Greed
-Graceful Charity
-Ultimate Sacrifice
-Forbidden Droplet
-Pot of Prosperity
-Dark Magician
-Blue-Eyes White Dragon
-Red-Eyes Black Dragon
-Call of the Haunted
-Premature Burial
-Monster Reborn
-Blackwing - Gofu The Vague Shadow
-Maxx "C"
-Chicken Game
-Satellarknight Trivver
-Delinquent Duo
-Giant Trunade
-Heavy Storm
-Painful Choice
-Forceful Century
-Madolche Hootcake
-Ash Blossom & Joyous Spring
-Imperial Order
-Mirror Force
-Horn of the Unicorn
-
 // @title Animal Crossing NPCs
 // @author Chris
 Tom Nook 🦝
@@ -2510,53 +2480,6 @@ SailsJS
 egg
 Restify
 
-// @title States that I don't know the capital of off the top of my head
-// @author Tyler Hocker
-Alabama
-Alaska
-Arizona
-Arkansas
-Colorado
-Connecticut
-Delaware
-Florida
-Idaho
-Illinois
-Indiana
-Iowa
-Kansas
-Kentucky
-Louisiana
-Maine
-Maryland
-Massachusetts
-Michigan
-Minnesota
-Mississippi
-Missouri
-Montana
-Nebraska
-Nevada
-New Hampshire
-New Jersey
-New Mexico
-North Carolina
-North Dakota
-Ohio
-Oklahoma
-Oregon
-Pennsylvania
-Rhode Island
-South Carolina
-South Dakota
-Texas
-Utah
-Vermont
-Virginia
-West Virginia
-Wisconsin
-Wyoming
-
 // @title Things my dog Kenta barks at
 Upstairs neighbors
 People outside our door
@@ -2585,19 +2508,6 @@ Hand What Pet Him
 Amiibo
 Small Thing On Desk
 The Far Reaches of Space
-
-// @title Popular manga you should read
-// @author Tyler Hocker
-One Piece
-Kaguya-Sama Love is War
-Sakamoto Days
-Black Clover
-JoJo
-Spy x Family
-Blue Box
-JuJutsu Kaisen
-Chainsaw Man
-One Punch Man
 
 // @title Planets in our solar system
 // @author Sean Hale
