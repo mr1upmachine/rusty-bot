@@ -1075,6 +1075,120 @@ Valley of Bowser
 Star World
 Special Zone
 
+// @title Super Mario Wonder Worlds
+// @author Sean Hale
+Pipe Rock Plateau
+Fluff-Puff Peaks
+Shining Falls
+Sunbaked Desert
+Fungi Mines
+Deep Magma Bog
+Petal Isles
+Special World
+
+// @title Super Mario Wonder Levels
+// @author Sean Hale
+Welcome to the Flower Kingdom
+Piranha Plants on Parade
+Scram, Skeddadlers
+Bulrush Coming Through
+Here Come The Hoppos
+Wiggler Race - Mountaineering
+Rolla Koopa Derby
+Badge Challenge - Parachute Cap 1
+Wall Climb 1
+Bulrush Express
+Sproings In The Twilight Forest
+Cosmic Hoppos
+Swamp Pipe Crawl
+KO Arena - Pipe-Rock Rumble
+Angry Spikes and Sinkin' Pipes
+Pipe Rock Plateau Palace
+Break Time! Wonder Token Tunes
+Outmaway Valley
+Break Time! Kick It, Outmaway
+Pokipede Pass
+Search Party Puzzling Park
+Wall-Climb Jump II
+Condarts Away!
+Pole Block Passage
+Break Time! Cloud Cover
+KO Arena - Fluff-Puff Kerfuff
+Badge Challenge - Floating High Jump 1
+Jump! Jump! Jump!
+Up 'n' Down With Puffy Lifts
+Fluff-Puff Peaks Flying Battleship
+Cruising With Linking Lifts
+Countdown To Drop Down
+Fluff-Puff Peaks Palace
+The Hoppycat Trial: Hop, Hop and Awaaay!
+POOF! Badge Challenge - Crouching High Jump 1
+The Anglefish Trial - Ready, Aim, Fly!
+The Midway Trial: Hop To It!
+Search Party - An Empty Park?
+The Sharp Trial: Launch To Victory
+The Sugarstar Trial - Across The Night Sky
+The Final Trial: Zip Track Dash
+Ninji Jump Party
+Rolling Ball Hall
+Break Time! Revver Run
+Armads On The Roll
+Break Time! Treasure Vault
+The Desert Mystery
+Badge Challenge - Parachute Cap II
+Valley Fulla Snootles
+Badge Challenge - Crouching High Jump II
+KO Arena - Sunbaked Skirmish
+Color-Switch Dungeon
+Secrets Of Shova Mansion
+Flight Of The Bloomps
+Badge Challenge! Invisibility
+Sunbaked Desert Palace
+Upshroom Downshroom
+Taily's Toxic Pond
+Light-Switch Mansion
+Beware Of The Rifts
+An Uncharted Area: Wubba Ruins
+Badge Challenge - Grappling Vine 1
+Another Uncharted Area: Swaying Ruins
+A Final Uncharted Area: Poison Ruins
+Badge Challenge - Floating High Jump II
+Where The Rrrumbas Rule
+Badge Challenge - Boosting Spin Jump II
+Raarghs In The Ruins
+Deep Magma Bog Flying Battleship
+Hot-Hot Hot!
+Deep Magma Bog Palace
+Wavy Ride Through The Magma Tube
+Dragon Boneyard
+Pull, Turn, Burn
+Badge Challenge - Grappling Vine II
+Expert Badge Challenge - Spring Feet II
+Petal Isles
+Dolphin Kick 1
+Leaping Smackerel
+Robbird Cove
+Blewbird Roost
+Downpour Uproar
+Jewel-Block Cave
+Flying Battleship
+Muncher Fields
+Gnawsher Lair
+Maw-Maw Mouthful
+Missile Meg Mayhem
+High-Voltage Gauntlet
+Evade The Seeker Bullet Bills!
+Knucklefest Bowser's Blazing Beats
+Sunbaked Desert Special Pole Block Allure
+Fluff-Puff Peaks Special Climb To The Beat
+Shining Falls Special Triple Threat Deluge
+Fungi Mines Special Dangerous Donut Ride
+Pipe-Rock Plateau Special Bounce, Bounce, Bounce
+Deep Magma Bog Special Solar Roller
+The Semifinal Test - Piranha Plant Reprise
+Petal Isles Special Way Of The Goombas
+The Final Test Wonder Gauntlet
+
 // @title Donkey Kong Country Locations
 // @author Sean Hale
 Kongo Jungle
@@ -2369,6 +2483,295 @@ Yah Rin Shrine
 Zalta Wa Shrine
 Ze Kasho Shrine
 Zuna Kai Shrine
+
+// @title The Legend of Zelda: Tears of the Kingdom Runes
+// @author Sean Hale
+Ultrahand
+Ascend
+Fuse
+Recall
+Camera
+Autobuild
+Amiibo
+
+// @title The Legend of Zelda: Tears of the Kingdom Shrines
+// @author Sean Hale
+Anedamimik Shrine
+Apogek Shrine
+Bamitok Shrine
+Chichim Shrine
+Domizuin Shrine
+Ekochiu Shrine
+En-oma Shrine
+Eshos Shrine
+Eutoum Shrine
+Eutoum Shrine
+Ga-ahisas Shrine
+Ganos Shrine
+Gasas Shrine
+Gatakis Shrine
+Gatanisis Shrine
+Gemimik Shrine
+Gikaku Shrine
+Gutanbac Shrine
+Igashuk Shrine
+Igoshon Shrine
+Ihen-a Shrine
+Ijo-o Shrine
+Ikatak Shrine
+In-isa Shrine
+Irasak Shrine
+Ishodag Shrine
+Ishokin Shrine
+Isisim Shrine
+Iun-orok Shrine
+Jikais Shrine
+Jinodok Shrine
+Jiosin Shrine
+Jiotak Shrine
+Jirutagumac Shrine
+Jiukoum Shrine
+Jochi-ihiga Shrine
+Jochi-iu Shrine
+Jochisiu Shrine
+Jogou Shrine
+Jojon Shrine
+Joju-u-u Shrine
+Joku-u Shrine
+Joku-usin Shrine
+Joniu Shrine
+Jonsau Shrine
+Josiu Shrine
+Kadaunar Shrine
+Kahatanaum Shrine
+Kamatukis Shrine
+Kamizun Shrine
+Karahatag Shrine
+Kikakin Shrine
+Kimayat Shrine
+Kisinona Shrine
+Kitawak Shrine
+Kiuyoyou Shrine
+Kudanisar Shrine
+Kumamayn Shrine
+Kurakat Shrine
+Kyokugon Shrine
+Kyononis Shrine
+Makasura Shrine
+Makurukis Shrine
+Maoikes Shrine
+Marakuguc Shrine
+Marari-in Shrine
+Mayachideg Shrine
+Mayachin Shrine
+Mayahisik Shrine
+Mayak Shrine
+Mayam Shrine
+Mayamats Shrine
+Mayanas Shrine
+Mayaotaki Shrine
+Mayasiar Shrine
+Mayatat Shrine
+Mayaumekis Shrine
+Mayausiy Shrine
+Minetak Shrine
+Miryotanog Shrine
+Mogawak Shrine
+Mogisari Shrine
+Momosik Shrine
+Morok Shrine
+Moshapin Shrine
+Motsusis Shrine
+Musanokir Shrine
+Nachoyah Shrine
+Natak Shrine
+Ninjis Shrine
+Nouda Shrine
+O-ogim Shrine
+Orochium Shrine
+Oromuwak Shrine
+Oshozan-u Shrine
+Otak Shrine
+Otutsum Shrine
+Pupunke Shrine
+Rakakudaj Shrine
+Rakashog Shrine
+Rasitakiwak Shrine
+Rasiwak Shrine
+Ren-iz Shrine
+Riogok Shrine
+Rotsumamu Shrine
+Runakit Shrine
+Rutafu-um Shrine
+Sahirow Shrine
+Sakunbomar Shrine
+Sepapa Shrine
+Serutabomac Shrine
+Sibajitak Shrine
+Sifumim Shrine
+Sihajog Shrine
+Sikukuu Shrine
+Simosiwak Shrine
+Sinakawak Shrine
+Sinatanika Shrine
+Sisuran Shrine
+Sitsum Shrine
+Siwakama Shrine
+Siyamotsus Shrine
+Sonapan Shrine
+Soryotanog Shrine
+Suariwak Shrine
+Susub Shrine
+Susuyai Shrine
+Tadarok Shrine
+Tajikats Shrine
+Taki-ihaban Shrine
+Taninoud Shrine
+Taunhiy Shrine
+Tauyosipun Shrine
+Tenbez Shrine
+Teniten Shrine
+Tenmaten Shrine
+Timawak Shrine
+Tokiy Shrine
+Tsutsu-um Shrine
+Tukarok Shrine
+Turakamik Shrine
+Ukoojisi Shrine
+Ukouh Shrine
+Usazum Shrine
+Utojis Shrine
+Utsushok Shrine
+Wao-os Shrine
+Yamiyo Shrine
+Yansamin Shrine
+Yomizuk Shrine
+Zakusu Shrine
+Zanmik Shrine
+
+// @title The Legend of Zelda: Tears of the Kingdom Lightroots
+// @author Sean Hale
+A-nehi Lightroot
+Aduon Lightroot
+Agihi-ihcoj Lightroot
+Akinatanis Lightroot
+Amakawis Lightroot
+Amo-ne Lightroot
+Anonisik Lightroot
+Apapes Lightroot
+Arusakam Lightroot
+Busus Lightroot
+Camobatures Lightroot
+Cugukaram Lightroot
+Eknupup Lightroot
+Gadohsi Lightroot
+Gataharak Lightroot
+Gedihcayam Lightroot
+Gonatoyrim Lightroot
+Gonatoyros Lightroot
+Iayusus Lightroot
+Ikatoayam Lightroot
+Jadukakar Lightroot
+Kasari Lightroot
+Kataki Lightroot
+Katenim Lightroot
+Katijabis Lightroot
+Kato Lightroot
+Katoij Lightroot
+Kawagom Lightroot
+Kawakanis Lightroot
+Kawakarut Lightroot
+Kawamit Lightroot
+Kawatik Lightroot
+Kawikatisar Lightroot
+Kawiraus Lightroot
+Kawisar Lightroot
+Kawumoro Lightroot
+Kayam Lightroot
+Kegopa Lightroot
+Kimakarut Lightroot
+Kimimadena Lightroot
+Kimimeg Lightroot
+Kimnaz Lightroot
+Kisihayam Lightroot
+Kisomom Lightroot
+Kogoir Lightroot
+Kohsustu Lightroot
+Koradat Lightroot
+Korakut Lightroot
+Koro-nui Lightroot
+Korom Lightroot
+Kotimab Lightroot
+Kuhsagi Lightroot
+Kuzimoy Lightroot
+Migo-o Lightroot
+Mihcihc Lightroot
+Mimufis Lightroot
+Misisi Lightroot
+Mu-ufatur Lightroot
+Mu-ustust Lightroot
+Muihcoro Lightroot
+Muokuij Lightroot
+Muotue Lightroot
+Mustis Lightroot
+Mustuto Lightroot
+Muzasu Lightroot
+Nabahi-ikat Lightroot
+Napanos Lightroot
+Narusis Lightroot
+Netamnet Lightroot
+Netinet Lightroot
+Ni-iraram Lightroot
+Nihcayam Lightroot
+Nikakik Lightroot
+Nikohsi Lightroot
+Nipahsom Lightroot
+Nisoij Lightroot
+Niuzimod Lightroot
+Nogukoyk Lightroot
+Nojoj Lightroot
+Nupisoyuat Lightroot
+Nuzimak Lightroot
+Oyimay Lightroot
+Ramobnukas Lightroot
+Rasinaduk Lightroot
+Rikonasum Lightroot
+Sasag Lightroot
+Sekioam Lightroot
+Siakij Lightroot
+Sijnin Lightroot
+Sijotu Lightroot
+Sikatag Lightroot
+Sikurukam Lightroot
+Sikutamak Lightroot
+Sinonoyk Lightroot
+Sisinatag Lightroot
+Sisustom Lightroot
+So-oaw Lightroot
+Sohse Lightroot
+Stakijat Lightroot
+Stamayam Lightroot
+Takaruk Lightroot
+Tatayam Lightroot
+Tayamik Lightroot
+Tikanur Lightroot
+TotK Sijotu Lightroot
+U-nazohso Lightroot
+U-u-ujoj Lightroot
+Uasnoj Lightroot
+Ui-ihcoj Lightroot
+Uihcoke Lightroot
+Uinoj Lightroot
+Uisihcoj Lightroot
+Umamustor Lightroot
+Uogoj Lightroot
+Uoyoyuik Lightroot
+Usukaz Lightroot
+Uukukis Lightroot
+Worihas Lightroot
+Yikot Lightroot
+Yisuayam Lightroot
+Zi-ner Lightroot
 
 // @title My Passwords
 // @author Nick Main
@@ -11600,6 +12003,7 @@ SNES Classic
 Switch
 Switch Lite
 Switch OLED
+Switch 2
 Virtual Boy
 Wii
 Wii Family Edition
@@ -11633,6 +12037,7 @@ PlayStation 4
 PlayStation 4 Slim
 PlayStation 4 Pro
 PlayStation 5
+PlayStation 5 Pro
 
 // @title Mario Series Power-ups
 // @author Sean Hale
@@ -11643,6 +12048,7 @@ Blue Shell
 Boo Mushroom
 Boomerang Flower
 Boost Star
+Bubble Flower
 Bulb Berry
 Bull Pot
 Bullet Bill Mask
@@ -11657,8 +12063,10 @@ Dash Pepper
 Double Cherry
 Dragon Crystal
 Dragon Pot
+Drill Mushroom
 Dry Bones Shell
 Eagle Statue
+Elephant Fruit
 Fire Flower
 Frog Suit
 Garlic bottle
@@ -11720,6 +12128,7 @@ Weird Mushroom
 Wing
 Wing Cap
 Wings
+Wonder Flower
 Yoshi's Wings
 
 // @title Mario & Luigi: Superstar Saga Locations
@@ -12753,3 +13162,105 @@ Pastel yellow
 Pastel brown
 Royal purple
 Hot pink
+
+// @title Astro Bot Worlds
+// @author Sean Hale
+Crash Site
+Gorilla Nebula
+Tentacle System
+Serpent Starway
+Camo Cosmos
+Feather Cluster
+Deja Vi Dimension
+Stellar Speedway
+Winter Wonder
+Vicious Void
+
+// @title Astro Bot Levels
+// @author Sean Hale
+Sky Garden
+Az-Tech Trail
+Creamy Canyon
+Construction Derby
+Mighty Chewy
+Apes on the Loose
+Rolling Star Sola
+Retro Rampage 1
+Crumble Rumble 1
+Go-Go Archipelago!
+Trunk of Funk
+Downsize Surprise
+Wormy Passage
+Wako Tako
+Bot of War
+Retro Rampage 2
+Crumble Rumble 2
+Cut 'n Grind
+Pumpkin Peril
+Dashing Dillo
+Fragile Frenzy
+Slo-Mo Casino
+Bathhouse Battle
+Free Big Brother!
+Trapped in Time
+Lady Venomara
+Dude Raiding
+Rolling Star Luna
+Retro Rampage 3
+Crumble Rumble 3
+Magnetic Mayhem
+Swinging Sentries
+Ropeway Rally
+Rolling Rampage
+Hieroglitch Pyramid
+Bubbling Under
+Balloon Breeze
+Spooky Time
+Mecha Leon
+Going Loco
+Retro Rampage 4
+Crumble Rumble 4
+Follow the Light
+Vertical Velocity
+Boing! Bonanza
+Splashing Sprint
+Djinny of the Lamp
+Luna Sola
+Frozen Meal
+Orbital Blitz
+Cannon Brawl
+Falcon McFly
+Machine Learning
+Djinny's Revenge
+Retro Rampage 5
+Crumble Rumble 5
+Shocking Behavior
+Slowdown Showdown
+Birdy Barrage
+To the Beat!
+Play Squadron Go!
+Space Bully Nebulax
+Credits Clash
+Fan Club
+Funky Fungi
+Light Bulb Limbo
+Boxel Bust-Up
+Furnace Fever
+Ghouls & Bots
+Rocket Full Power!
+Danger Dojo
+High-Suction Hero
+Turtles in Trash
+Final Encore
+Building Speed
+Let It Slide
+Spring-Loaded Run
+Helium Heights
+Rising Heat
+Winter Wonder
+Tick-Tock Shock
+Thrust or Bust
+Cock-A-Doodle-Doom
+Hard to Bear
+Armored Hardcore
+Great Master Challenge
