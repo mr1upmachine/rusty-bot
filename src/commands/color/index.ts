@@ -1,18 +1,19 @@
-import type { ChatInputCommandInteraction, ColorResolvable } from 'discord.js';
+import type { ChatInputCommandInteraction } from 'discord.js';
 
-import { Command } from '../../types/command.js';
+import { useGuildMembersRepository } from '../../db/use-guild-members-repository.js';
 import {
-  formatHexColor,
-  validateHexColorContrast
-} from '../../utilities/hex-color-helper.js';
+  InvalidColorStringError,
+  RustyBotInvalidArgumentError
+} from '../../errors/rusty-bot-errors.js';
+import { Command } from '../../types/command.js';
 import type {
   CommandBuilder,
   CommandBuilderOutput
 } from '../../types/command-builder.js';
 import {
-  InvalidColorStringError,
-  RustyBotInvalidArgumentError
-} from '../../errors/rusty-bot-errors.js';
+  formatHexColor,
+  validateHexColorContrast
+} from '../../utilities/hex-color-helper.js';
 
 export class ColorCommand extends Command {
   public readonly description = "Changes the color of the user's name.";
@@ -29,47 +30,61 @@ export class ColorCommand extends Command {
   async execute(
     interaction: ChatInputCommandInteraction<'cached'>
   ): Promise<void> {
-    const roleName = `USER-${interaction.member.user.id}`;
-    const myRole = interaction.guild.roles.cache.find(
-      (role: { name: string }) => role.name === roleName
-    );
-    const color = interaction.options.getString('hex', true).toUpperCase();
-
     try {
-      const formattedColor = formatHexColor(color);
+      await interaction.deferReply({ ephemeral: true });
 
-      if (!validateHexColorContrast(formattedColor)) {
+      const guild = interaction.guild;
+      const member = interaction.member;
+      const roleName = `USER-${member.id}`;
+      const role = guild.roles.cache.find(({ name }) => name === roleName);
+
+      // Get dependencies
+      const guildMembersRepository = useGuildMembersRepository(guild.id);
+
+      // Get arguments
+      const colorArg = interaction.options.getString('hex', true);
+
+      // Adjust hex color to a valid format
+      const color = formatHexColor(colorArg);
+
+      // Validate if the color contrast is visible on all discord's themes
+      if (!validateHexColorContrast(color)) {
         throw new RustyBotInvalidArgumentError(
           'hex',
           "Provided color code is not readable on one of Discord's themes"
         );
       }
 
+      // Setup accumulators
       let message: string;
-      if (!myRole) {
-        const createdRole = await interaction.guild.roles.create({
-          // Creates new role with user selected color
-          color: formattedColor as ColorResolvable,
+
+      if (role) {
+        // Updates existing role with new color
+        await role.edit({
+          color
+        });
+
+        message = `Color changed to ${color}`;
+      } else {
+        // Creates new role with user selected color
+        const createdRole = await guild.roles.create({
+          color,
           name: roleName
         });
 
-        await interaction.member.roles.add(createdRole); // Assigns newly created role to user
+        // Assigns newly created role to user
+        await member.roles.add(createdRole);
 
-        message = `Role created with color ${formattedColor}`;
-      } else {
-        // Updates existing role with new color
-        await myRole.edit({
-          color: formattedColor as ColorResolvable
-        });
-
-        message = `Color changed to ${formattedColor}`;
+        message = `Role created with color ${color}`;
       }
 
-      // Inform user of success
-      await interaction.reply({
-        content: message,
-        ephemeral: true
+      // Update db with new info
+      await guildMembersRepository.save(member.id, {
+        color
       });
+
+      // Respond to user
+      await interaction.editReply(message);
     } catch (e: unknown) {
       if (e instanceof InvalidColorStringError) {
         throw new RustyBotInvalidArgumentError(
