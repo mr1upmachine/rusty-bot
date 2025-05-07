@@ -43,7 +43,7 @@
     "cron": "3.1.6",
     "cron-parser": "4.9.0",
     "discord-api-types": "0.37.71",
-    "discord.js": "14.14.1",
+    "discord.js": "14.15.3",
     "dotenv": "16.4.5",
     "firebase-admin": "12.0.0",
     "mersenne-twister": "1.1.0"
